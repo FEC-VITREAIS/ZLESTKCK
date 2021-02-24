@@ -1,0 +1,19 @@
+{
+  "name": "zlestkck",
+  "version": "1.0.0",
+  "description": "Front End Capstone - Team Vitréais",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FEC-VITREAIS/ZLESTKCK.git"
+  },
+  "author": "Tim Kang, Christina Kirk, Zachary Lewitton, Eddy Santos",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FEC-VITREAIS/ZLESTKCK/issues"
+  },
+  "homepage": "https://github.com/FEC-VITREAIS/ZLESTKCK#readme"
+}
