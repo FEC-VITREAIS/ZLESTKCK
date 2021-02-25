@@ -2,12 +2,12 @@ const path = require("path");
 const webpack = require("webpack");
 
 const config = {
-  /*  entry is where to enter and find our file 
+  /*  entry is where to enter and find our file
     output is where to bundle everything and put it into
     resolve these extensions so we dont have to teddiously have to write it out
     */
 
-  entry: ".client/src/index.js",
+  entry: path.join(__dirname, "/client/src/app.jsx"),
   output: {
     path: path.resolve(__dirname, "client/dist"),
     filename: "bundle.js",
@@ -15,7 +15,7 @@ const config = {
   },
 
   mode: 'development',
-  
+
   resolve: { extensions: [".mjs", ".js", ".jsx", ".css", ".scss"] },
 
   module: {
