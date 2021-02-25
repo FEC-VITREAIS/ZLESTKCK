@@ -10,3 +10,7 @@
 *.code-workspace
 
 # End of https://www.toptal.com/developers/gitignore/api/vscode
+
+# ignore package-lock.json and like
+package-lock.json
+node_modules
