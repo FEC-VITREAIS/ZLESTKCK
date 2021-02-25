@@ -7,9 +7,9 @@ const config = {
     resolve these extensions so we dont have to teddiously have to write it out
     */
 
-  entry: "./src/index.js",
+  entry: ".client/src/index.js",
   output: {
-    path: path.resolve(__dirname, "dist"),
+    path: path.resolve(__dirname, "client/dist"),
     filename: "bundle.js",
     publicPath: '/'
   },
