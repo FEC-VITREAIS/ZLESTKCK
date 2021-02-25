@@ -7,7 +7,7 @@ const config = {
     resolve these extensions so we dont have to teddiously have to write it out
     */
 
-  entry: path.join(__dirname, "/client/src/app.jsx"),
+  entry: [path.join(__dirname, "/client/src/app.jsx"), path.join(__dirname, "/client/src/index.ts")],
   output: {
     path: path.resolve(__dirname, "client/dist"),
     filename: "bundle.js",
@@ -16,7 +16,7 @@ const config = {
 
   mode: 'development',
 
-  resolve: { extensions: [".mjs", ".js", ".jsx", ".css", ".scss"] },
+  resolve: { extensions: ['.tsx', '.ts',".mjs", ".js", ".jsx", ".css", ".scss"] },
 
   module: {
     rules: [
@@ -32,6 +32,11 @@ const config = {
       {
         test: /\.css$/,
         loader: "css-loader",
+      },
+      {
+        test: /\.tsx?$/,
+        use: 'ts-loader',
+        exclude: /node_modules/,
       },
       {
         test: /\.s[ac]ss$/i,
