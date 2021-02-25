@@ -14,3 +14,9 @@
 # ignore package-lock.json and like
 package-lock.json
 node_modules
+
+# Webpack compilation output
+./client/dist/bundle.js
+
+#API key file
+config.js
