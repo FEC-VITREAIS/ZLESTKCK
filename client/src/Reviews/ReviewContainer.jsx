@@ -2,7 +2,7 @@ import React from 'react'
 
 let ReviewContainer = function(props) {
   return (
-    <div>Product Reviews Container</div>
+    <div>Product Reviews Container {review}</div>
   )
 }
 
