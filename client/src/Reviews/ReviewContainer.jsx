@@ -23,9 +23,9 @@ let ReviewContainer = function(props) {
     })
   }
 
-  useEffect(() => {
-    fetchAll();
-  })
+  // useEffect(() => {
+  //   fetchAll();
+  // })
 
 
 

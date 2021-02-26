@@ -9,6 +9,72 @@
 /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
+/***/ "./node_modules/@babel/runtime/helpers/arrayLikeToArray/_index.mjs":
+/*!*************************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/arrayLikeToArray/_index.mjs ***!
+  \*************************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ _arrayLikeToArray)\n/* harmony export */ });\nfunction _arrayLikeToArray(arr, len) {\n  if (len == null || len > arr.length) len = arr.length;\n\n  for (var i = 0, arr2 = new Array(len); i < len; i++) {\n    arr2[i] = arr[i];\n  }\n\n  return arr2;\n}\n\n//# sourceURL=webpack://zlestkck/./node_modules/@babel/runtime/helpers/arrayLikeToArray/_index.mjs?");
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/arrayWithHoles/_index.mjs":
+/*!***********************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/arrayWithHoles/_index.mjs ***!
+  \***********************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ _arrayWithHoles)\n/* harmony export */ });\nfunction _arrayWithHoles(arr) {\n  if (Array.isArray(arr)) return arr;\n}\n\n//# sourceURL=webpack://zlestkck/./node_modules/@babel/runtime/helpers/arrayWithHoles/_index.mjs?");
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/iterableToArrayLimit/_index.mjs":
+/*!*****************************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/iterableToArrayLimit/_index.mjs ***!
+  \*****************************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ _iterableToArrayLimit)\n/* harmony export */ });\nfunction _iterableToArrayLimit(arr, i) {\n  if (typeof Symbol === \"undefined\" || !(Symbol.iterator in Object(arr))) return;\n  var _arr = [];\n  var _n = true;\n  var _d = false;\n  var _e = undefined;\n\n  try {\n    for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) {\n      _arr.push(_s.value);\n\n      if (i && _arr.length === i) break;\n    }\n  } catch (err) {\n    _d = true;\n    _e = err;\n  } finally {\n    try {\n      if (!_n && _i[\"return\"] != null) _i[\"return\"]();\n    } finally {\n      if (_d) throw _e;\n    }\n  }\n\n  return _arr;\n}\n\n//# sourceURL=webpack://zlestkck/./node_modules/@babel/runtime/helpers/iterableToArrayLimit/_index.mjs?");
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/nonIterableRest/_index.mjs":
+/*!************************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/nonIterableRest/_index.mjs ***!
+  \************************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ _nonIterableRest)\n/* harmony export */ });\nfunction _nonIterableRest() {\n  throw new TypeError(\"Invalid attempt to destructure non-iterable instance.\\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.\");\n}\n\n//# sourceURL=webpack://zlestkck/./node_modules/@babel/runtime/helpers/nonIterableRest/_index.mjs?");
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/slicedToArray/_index.mjs":
+/*!**********************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/slicedToArray/_index.mjs ***!
+  \**********************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ _slicedToArray)\n/* harmony export */ });\n/* harmony import */ var _babel_runtime_helpers_arrayWithHoles__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/arrayWithHoles */ \"./node_modules/@babel/runtime/helpers/arrayWithHoles/_index.mjs\");\n/* harmony import */ var _babel_runtime_helpers_iterableToArrayLimit__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/iterableToArrayLimit */ \"./node_modules/@babel/runtime/helpers/iterableToArrayLimit/_index.mjs\");\n/* harmony import */ var _babel_runtime_helpers_unsupportedIterableToArray__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime/helpers/unsupportedIterableToArray */ \"./node_modules/@babel/runtime/helpers/unsupportedIterableToArray/_index.mjs\");\n/* harmony import */ var _babel_runtime_helpers_nonIterableRest__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime/helpers/nonIterableRest */ \"./node_modules/@babel/runtime/helpers/nonIterableRest/_index.mjs\");\n\n\n\n\nfunction _slicedToArray(arr, i) {\n  return (0,_babel_runtime_helpers_arrayWithHoles__WEBPACK_IMPORTED_MODULE_0__.default)(arr) || (0,_babel_runtime_helpers_iterableToArrayLimit__WEBPACK_IMPORTED_MODULE_1__.default)(arr, i) || (0,_babel_runtime_helpers_unsupportedIterableToArray__WEBPACK_IMPORTED_MODULE_2__.default)(arr, i) || (0,_babel_runtime_helpers_nonIterableRest__WEBPACK_IMPORTED_MODULE_3__.default)();\n}\n\n//# sourceURL=webpack://zlestkck/./node_modules/@babel/runtime/helpers/slicedToArray/_index.mjs?");
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/unsupportedIterableToArray/_index.mjs":
+/*!***********************************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/unsupportedIterableToArray/_index.mjs ***!
+  \***********************************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ _unsupportedIterableToArray)\n/* harmony export */ });\n/* harmony import */ var _babel_runtime_helpers_arrayLikeToArray__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/arrayLikeToArray */ \"./node_modules/@babel/runtime/helpers/arrayLikeToArray/_index.mjs\");\n\nfunction _unsupportedIterableToArray(o, minLen) {\n  if (!o) return;\n  if (typeof o === \"string\") return (0,_babel_runtime_helpers_arrayLikeToArray__WEBPACK_IMPORTED_MODULE_0__.default)(o, minLen);\n  var n = Object.prototype.toString.call(o).slice(8, -1);\n  if (n === \"Object\" && o.constructor) n = o.constructor.name;\n  if (n === \"Map\" || n === \"Set\") return Array.from(o);\n  if (n === \"Arguments\" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return (0,_babel_runtime_helpers_arrayLikeToArray__WEBPACK_IMPORTED_MODULE_0__.default)(o, minLen);\n}\n\n//# sourceURL=webpack://zlestkck/./node_modules/@babel/runtime/helpers/unsupportedIterableToArray/_index.mjs?");
+
+/***/ }),
+
 /***/ "./node_modules/axios/index.js":
 /*!*************************************!*\
   !*** ./node_modules/axios/index.js ***!
@@ -356,7 +422,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var _styles_styles_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./styles/styles.css */ \"./client/src/Related/styles/styles.css\");\n/* harmony import */ var _Related_List_jsx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Related-List.jsx */ \"./client/src/Related/Related-List.jsx\");\n\n\n\n\nvar RelatedContainer = function RelatedContainer(props) {\n  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(\"div\", {\n    className: \"related-container\"\n  }, \"Related Products Container\", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Related_List_jsx__WEBPACK_IMPORTED_MODULE_2__.default, {\n    className: 'related-list'\n  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Related_List_jsx__WEBPACK_IMPORTED_MODULE_2__.default, {\n    className: 'outfits-list'\n  }));\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (RelatedContainer);\n\n//# sourceURL=webpack://zlestkck/./client/src/Related/RelatedContainer.jsx?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _babel_runtime_helpers_slicedToArray__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/slicedToArray */ \"./node_modules/@babel/runtime/helpers/slicedToArray/_index.mjs\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var _styles_styles_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./styles/styles.css */ \"./client/src/Related/styles/styles.css\");\n/* harmony import */ var _Related_List_jsx__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Related-List.jsx */ \"./client/src/Related/Related-List.jsx\");\n/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! axios */ \"./node_modules/axios/index.js\");\n/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_4__);\n/* harmony import */ var _config_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../config.js */ \"./config.js\");\n\n\n\n\n\n\n\nvar RelatedContainer = function RelatedContainer(props) {\n  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)([]),\n      _useState2 = (0,_babel_runtime_helpers_slicedToArray__WEBPACK_IMPORTED_MODULE_0__.default)(_useState, 2),\n      currentProduct = _useState2[0],\n      updateProduct = _useState2[1];\n\n  var fetchRelatedItems = function fetchRelatedItems() {\n    axios__WEBPACK_IMPORTED_MODULE_4___default().get('https://app-hrsei-api.herokuapp.com/api/fec2/hrnyc/products/11001/related', {\n      headers: {\n        Authorization: _config_js__WEBPACK_IMPORTED_MODULE_5__.default\n      }\n    }).then(function (data) {\n      console.log(data);\n      updateProduct(data.data.map(function (item) {\n        item;\n      }));\n    })[\"catch\"](function (err) {\n      console.log(err);\n    });\n  };\n\n  (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(function () {// fetchRelatedItems(), currentProduct\n  });\n  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(\"div\", {\n    className: \"related-container\"\n  }, \"Related Products Container\", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(_Related_List_jsx__WEBPACK_IMPORTED_MODULE_3__.default, {\n    className: 'related-list'\n  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(_Related_List_jsx__WEBPACK_IMPORTED_MODULE_3__.default, {\n    className: 'outfits-list'\n  }));\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (RelatedContainer);\n\n//# sourceURL=webpack://zlestkck/./client/src/Related/RelatedContainer.jsx?");
 
 /***/ }),
 
@@ -367,7 +433,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ \"./node_modules/axios/index.js\");\n/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var _config_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../config.js */ \"./config.js\");\n\n\n\nvar ProductContext = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createContext(0);\n\nvar ReviewContainer = function ReviewContainer(props) {\n  var value = (0,react__WEBPACK_IMPORTED_MODULE_0__.useContext)(ProductContext);\n\n  var fetchAll = function fetchAll() {\n    axios__WEBPACK_IMPORTED_MODULE_1___default().get('https://app-hrsei-api.herokuapp.com/api/fec2/hrnyc/reviews?product_id=11001&page=1', {\n      headers: {\n        Authorization: _config_js__WEBPACK_IMPORTED_MODULE_2__.default\n      }\n    }).then(function (data) {\n      console.log(data);\n    })[\"catch\"](function (err) {\n      console.log(err);\n    });\n  };\n\n  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {\n    fetchAll();\n  });\n  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(ProductContext.Provider, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(\"div\", null, \"Product Reviews Container\"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(\"div\", null, value));\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ReviewContainer);\n\n//# sourceURL=webpack://zlestkck/./client/src/Reviews/ReviewContainer.jsx?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ \"./node_modules/axios/index.js\");\n/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var _config_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../config.js */ \"./config.js\");\n\n\n\nvar ProductContext = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createContext(0);\n\nvar ReviewContainer = function ReviewContainer(props) {\n  var value = (0,react__WEBPACK_IMPORTED_MODULE_0__.useContext)(ProductContext);\n\n  var fetchAll = function fetchAll() {\n    axios__WEBPACK_IMPORTED_MODULE_1___default().get('https://app-hrsei-api.herokuapp.com/api/fec2/hrnyc/reviews?product_id=11001&page=1', {\n      headers: {\n        Authorization: _config_js__WEBPACK_IMPORTED_MODULE_2__.default\n      }\n    }).then(function (data) {\n      console.log(data);\n    })[\"catch\"](function (err) {\n      console.log(err);\n    });\n  }; // useEffect(() => {\n  //   fetchAll();\n  // })\n\n\n  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(ProductContext.Provider, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(\"div\", null, \"Product Reviews Container\"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(\"div\", null, value));\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ReviewContainer);\n\n//# sourceURL=webpack://zlestkck/./client/src/Reviews/ReviewContainer.jsx?");
 
 /***/ }),
 
