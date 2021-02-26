@@ -3,7 +3,7 @@ import './styles/styles.css';
 
 let RelatedContainer = function(props) {
   return (
-    <div>Related Products Container</div>
+    <div className='related-container'>Related Products Container</div>
   )
 }
 
