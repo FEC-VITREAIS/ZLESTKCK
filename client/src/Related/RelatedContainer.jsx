@@ -6,8 +6,8 @@ let RelatedContainer = function(props) {
   return (
     <div className='related-container'>
       Related Products Container
-      <RelatedList />
-      <RelatedList />
+      <RelatedList className={'related-list'}/>
+      <RelatedList className={'outfits-list'}/>
     </div>
   )
 }

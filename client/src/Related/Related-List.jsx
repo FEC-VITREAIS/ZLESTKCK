@@ -1,9 +1,9 @@
 import React from 'react';
 
 
-var RelatedList = () => {
+var RelatedList = ({className}) => {
   return (
-    <div className='related-list'> Related List Component </div>
+    <div className={className}> Related List Component </div>
   )
 }
 
