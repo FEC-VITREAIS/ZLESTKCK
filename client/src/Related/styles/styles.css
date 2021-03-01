@@ -16,23 +16,36 @@
 .outfits-list {
   width: auto;
   border: 1px solid blue;
-  height: 150px;
+  height: 200px;
   margin: 10px;
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
   flex-wrap: nowrap;
+  overflow: hidden;
 }
 
 .related-list-card {
-  background-color: purple;
-  border: 1px dotted purple;
+  border: 1px solid black;
   height: auto;
-  width: 100px;
+  width: 250px;
   margin: 10px;
 }
 
 .related-list-card-img {
-  width: 100%;
-  height: 50px;
+  width: 100px;
+  height: 70%;
+}
+
+.related-card-category {
+  font-size: 10px;
+}
+
+.related-card-price {
+  font-size: 8px;
+}
+
+.related-card-name {
+  font-size: 10px;
+  font-weight: bold;
 }
