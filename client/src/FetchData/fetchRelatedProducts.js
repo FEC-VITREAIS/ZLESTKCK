@@ -15,10 +15,6 @@ var fetchRelatedProducts = (productID) => {
     // console.log(data);
     var allRelatedItems = [];
 
-    // allRelatedItems = data.data.map((relatedItem) => {
-    //   fetchProductDetails(allRelatedItems)
-    // })
-
     data.data.forEach((item) => {
       console.log(item);
       allRelatedItems.push(fetchProductDetails(item))
@@ -27,8 +23,6 @@ var fetchRelatedProducts = (productID) => {
     console.log(allRelatedItems);
 
     return Promise.all(allRelatedItems);
-    // return allRelatedItems
-    // return data.data;
   })
   .catch((err) => {
     // console.log(err);
