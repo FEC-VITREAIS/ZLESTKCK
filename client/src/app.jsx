@@ -14,6 +14,8 @@ import ReviewContainer from './Reviews/ReviewContainer.jsx'
 
 let App = function(props) {
 
+  console.log('rerender!');
+
   //using 11101 as the default product
   const [currentProduct, setProduct] = useState("11101");
   const [relatedItems, setRelatedItems] = useState([]);
@@ -42,16 +44,26 @@ let App = function(props) {
 
   }
 
+  var updateCurrentProduct = (newProductID) => {
+    // console.log('new product id: ', newProductID);
+    // console.log('current product: ', currentProduct)
+
+    //this works and updates the current product
+    setProduct(newProductID)
+  }
+
   useEffect(() => {
+    console.log('use effect current product:', currentProduct)
     fetchRelatedItems()
     fetchCurrentProduct()
-  }, []);
+  }, [currentProduct]);
 
 
 
   return (
     <ProductContext.Provider value={{
-      relatedProducts: relatedItems
+      relatedProducts: relatedItems,
+      updateCurrentProduct: updateCurrentProduct
     }}>
       <div>
         <ProductContainer />
