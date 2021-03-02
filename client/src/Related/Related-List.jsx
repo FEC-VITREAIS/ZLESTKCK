@@ -1,6 +1,6 @@
 import React, {useState, useContext} from 'react';
 import RelatedListCard from './Related-List-Card.jsx';
-import ProductContext from '../context.js';
+import ProductContext from '../context.jsx';
 
 var RelatedList = ({className}) => {
   const context = useContext(ProductContext);

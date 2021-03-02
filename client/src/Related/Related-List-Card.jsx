@@ -1,5 +1,5 @@
 import React, {useContext} from 'react';
-import ProductContext from '../context.js';
+import ProductContext from '../context.jsx';
 
 
 var RelatedListCard = ({product}) => {
