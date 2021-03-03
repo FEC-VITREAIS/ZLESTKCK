@@ -1,19 +1,27 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from "react";
 
-let ProductContainer = function(props) {
+import ProductContext from '../context';
 
-  const [CurrentProducts, setCurrentProducts] = useState([]); /* all the list of products for display */  
-  const [CurrentProductView, setCurrentProductView] = useState({}); /* Current product when clicked on in CurrentProducts */ 
-  
-  const HandleProductChange = (e) => {
+import DisplayProductPreview from './components/DisplayProductPreview/DisplayProductPreview';
 
-  }
+let ProductContainer = function (props) {
+  const [CurrentProducts, setCurrentProducts] = useState(
+    []
+  ); /* all the list of products for display */
+  const [CurrentProductView, setCurrentProductView] = useState(
+    {}
+  ); /* Current product when clicked on in CurrentProducts */
+
+  const context = useContext(ProductContext);
+
+  const HandleProductChange = (e) => {};
 
   return (
-
-    <div>Product Detail Container</div>
-  )
-}
-
+    <>
+      < DisplayProductPreview styles={context.productStyles} />
+      <div>Product Detail Container</div>
+    </>
+  );
+};
 
 export default ProductContainer;
