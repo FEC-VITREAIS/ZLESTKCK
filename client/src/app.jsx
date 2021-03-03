@@ -15,7 +15,7 @@ import ReviewContainer from './Reviews/ReviewContainer.jsx'
 
 let App = function(props) {
 
-  console.log('rerender!');
+  // console.log('rerender!');
 
   // STATE HOOKS
   const [currentProduct, setProduct] = useState("11101"); //using 11101 as the default product
@@ -52,7 +52,7 @@ let App = function(props) {
     fetchRelatedProducts(currentProduct)
     .then((data) => {
       //data will contain all of the related items product objects
-      console.log('all related products', data);
+      // console.log('all related products', data);
 
       setRelatedItems(data);
 
