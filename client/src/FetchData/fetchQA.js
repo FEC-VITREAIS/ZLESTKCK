@@ -11,12 +11,12 @@ var fetchQA = (productID) => {
     }
   })
   .then((payload) => {
-    // console.log(payload);
+    console.log(payload);
     var allProductQA = {};
 
-    payload.results.forEach((question) => {
+    payload.data.results.forEach((question) => {
       // console.log(question);
-      allProductQA[question.question_id] = fetchAnswers(item)
+      allProductQA[question.question_id] = fetchAnswers(question.question_id)
     })
 
     return Promise.all(allProductQA);

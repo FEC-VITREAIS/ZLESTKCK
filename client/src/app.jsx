@@ -5,6 +5,7 @@ import ProductContext from './context.jsx';
 import fetchProductDetails from './FetchData/fetchProductDetails.js';
 import fetchRelatedProducts from './FetchData/fetchRelatedProducts.js';
 import fetchQA from './FetchData/fetchQA.js';
+import fetchStyles from './FetchData/fetchStyles.js';
 
 import ProductContainer from './Product/ProductContainer.jsx'
 import QAContainer from './QA/QAContainer.jsx'
@@ -21,6 +22,7 @@ let App = function(props) {
   const [currentProduct, setProduct] = useState("11101"); //using 11101 as the default product
   const [relatedItems, setRelatedItems] = useState([]);
   const [productQA, setProductQA] = useState([]);
+  const [productStyles, setProductStyles] = useState([]);
 
 
   // CURRENT PRODUCT STATE
@@ -34,9 +36,6 @@ let App = function(props) {
   }
 
   var updateCurrentProduct = (newProductID) => {
-    // console.log('new product id: ', newProductID);
-    // console.log('current product: ', currentProduct)
-
     //this works and updates the current product
     setProduct(newProductID)
   }
@@ -68,6 +67,14 @@ let App = function(props) {
 
       setProductQA(data)
     })
+  };
+
+  var fetchProductStyles = () => {
+    fetchStyles(currentProduct)
+    .then((data) => {
+      // console.log('current product styles: ', data)
+      setProductStyles(data)
+    })
   }
 
 
@@ -76,7 +83,8 @@ let App = function(props) {
     console.log('use effect current product:', currentProduct)
     fetchRelatedItems()
     fetchCurrentProduct()
-    fetchQA()
+    fetchProductQA()
+    fetchProductStyles()
   }, [currentProduct]);
 
 
@@ -85,7 +93,8 @@ let App = function(props) {
     <ProductContext.Provider value={{
       relatedProducts: relatedItems,
       productQA: productQA,
-      updateCurrentProduct: updateCurrentProduct
+      updateCurrentProduct: updateCurrentProduct,
+      productStyles: productStyles
     }}>
       <div>
         <ProductContainer />
