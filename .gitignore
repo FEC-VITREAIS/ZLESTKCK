@@ -17,7 +17,6 @@ node_modules
 
 # Webpack compilation output
 ./client/dist/bundle.js
-*.key
 bundle.js
 
 #API key file
