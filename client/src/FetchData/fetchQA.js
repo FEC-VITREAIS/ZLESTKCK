@@ -12,14 +12,18 @@ var fetchQA = (productID) => {
   })
   .then((payload) => {
     // console.log(payload);
-    var allProductQA = {};
+    // var allProductQA = {};
+    var allQuestions = [];
+    var allProductQA = [];
 
-    payload.results.forEach((question) => {
-      // console.log(question);
-      allProductQA[question.question_id] = fetchAnswers(item)
+    payload.data.results.forEach((question) => {
+      // console.log('question: ', question);
+
+      allQuestions.push(question)
+
     })
 
-    return Promise.all(allProductQA);
+    return allQuestions
   })
   .catch((err) => {
     // console.log(err);
@@ -34,6 +38,14 @@ var fetchAnswers = (questionID) => {
     {
       headers: {
         Authorization: API_KEY
+      }
+    })
+    .then((data) => {
+      // console.log('fetch answers data:', data)
+      // return data.data.results
+      return {
+        question_id: questionID,
+        answers: data.data.results
       }
     })
 }
