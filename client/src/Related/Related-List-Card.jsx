@@ -4,7 +4,6 @@ import ProductContext from '../context.jsx';
 
 var RelatedListCard = ({product}) => {
   const context = useContext(ProductContext);
-  console.log(context.productReviews);
 
   const handleClick = (e) => {
     console.log(product.id);

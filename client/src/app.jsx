@@ -44,8 +44,6 @@ let App = function(props) {
   }
 
 
-
-
   // RELATED ITEMS STATE
   var fetchRelatedItems = () => {
 
@@ -66,7 +64,7 @@ let App = function(props) {
 
     fetchQA(currentProduct)
     .then((data) => {
-      // console.log('all product questions and answers', data);
+      console.log('all product questions and answers', data);
 
       setProductQA(data)
     })
@@ -84,7 +82,7 @@ let App = function(props) {
 
     fetchReviews(currentProduct, reviewsSortBy)
     .then((data) => {
-      console.log('product review data: ', data);
+      // console.log('product review data: ', data);
       setProductReviews(data);
     })
 
