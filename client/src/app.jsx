@@ -1,9 +1,10 @@
 import React, {useState, useEffect} from 'react';
 import ReactDOM from "react-dom";
-import ProductContext from './context.js';
+import ProductContext from './context.jsx';
 
-import fetchRelatedProducts from './FetchData/fetchRelatedProducts.js';
 import fetchProductDetails from './FetchData/fetchProductDetails.js';
+import fetchRelatedProducts from './FetchData/fetchRelatedProducts.js';
+import fetchQA from './FetchData/fetchQA.js';
 
 import ProductContainer from './Product/ProductContainer.jsx'
 import QAContainer from './QA/QAContainer.jsx'
@@ -16,25 +17,13 @@ let App = function(props) {
 
   console.log('rerender!');
 
-  //using 11101 as the default product
-  const [currentProduct, setProduct] = useState("11101");
+  // STATE HOOKS
+  const [currentProduct, setProduct] = useState("11101"); //using 11101 as the default product
   const [relatedItems, setRelatedItems] = useState([]);
+  const [productQA, setProductQA] = useState([]);
 
 
-  var fetchRelatedItems = () => {
-
-    var relatedItems = [];
-
-    fetchRelatedProducts(currentProduct)
-    .then((data) => {
-      //data will contain all of the related items product objects
-      console.log('all related products', data);
-
-      setRelatedItems(data);
-
-    })
-  }
-
+  // CURRENT PRODUCT STATE
   var fetchCurrentProduct = () => {
 
     fetchProductDetails(currentProduct)
@@ -52,17 +41,50 @@ let App = function(props) {
     setProduct(newProductID)
   }
 
+
+
+
+  // RELATED ITEMS STATE
+  var fetchRelatedItems = () => {
+
+    var relatedItems = [];
+
+    fetchRelatedProducts(currentProduct)
+    .then((data) => {
+      //data will contain all of the related items product objects
+      console.log('all related products', data);
+
+      setRelatedItems(data);
+
+    })
+  }
+
+  // QA STATE
+  var fetchProductQA = () => {
+
+    fetchQA(currentProduct)
+    .then((data) => {
+      console.log('all product questions and answers', data);
+
+      setProductQA(data)
+    })
+  }
+
+
+  // EFFECT HOOKS
   useEffect(() => {
     console.log('use effect current product:', currentProduct)
     fetchRelatedItems()
     fetchCurrentProduct()
+    fetchQA()
   }, [currentProduct]);
 
 
-
+  // PROVIDER AND APP STRUCTURE (CONTAINERS)
   return (
     <ProductContext.Provider value={{
       relatedProducts: relatedItems,
+      productQA: productQA,
       updateCurrentProduct: updateCurrentProduct
     }}>
       <div>
@@ -75,6 +97,8 @@ let App = function(props) {
   )
 }
 
+
+  //RENDER
 ReactDOM.render(
   <App />,
   document.getElementById('app')

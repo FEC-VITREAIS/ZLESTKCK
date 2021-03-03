@@ -5,6 +5,8 @@ const ProductContext = React.createContext({
   updateCurrentProduct: (newProductID) => {},
   relatedProducts: [],
   updateRelatedProducts: () => {},
+  productQA: [],
+  updateProductQA: () => {},
 });
 
 export default ProductContext;
