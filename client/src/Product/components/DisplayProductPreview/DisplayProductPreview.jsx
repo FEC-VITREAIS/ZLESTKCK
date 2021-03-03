@@ -8,12 +8,18 @@ let DisplayProductPreview = (products) => {
   return (
     <>
       <div className="DisplayProductPreviewContainer">
+        {products.map((product) => {
 
-        {products.map( product => {
+          const StylesArr =
+            product.results; /* Objects that have styles and photots theres a go to photo somewhere in here */
+            
+          const { photos } = StylesArr[0];
+
+          const thumbnail_url = photos[0].thumbnail_url;
           
-          const StylesArr = product.results; /* Objects that have styles and photots theres a go to photo somewhere in here */
-        })}
+          return <img src={thumbnail_url}></img>
 
+        })}
       </div>
     </>
   );
