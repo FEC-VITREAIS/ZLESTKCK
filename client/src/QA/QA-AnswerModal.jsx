@@ -6,6 +6,7 @@ let AnswerModal = function(props) {
     <div className="QAamodal">
       <h3 className="QAamodal_title">Submit Your Answer</h3>
       <h5 className="QAamodal_subtitle">PRODUCT NAME : QUESTION BODY</h5>
+      <div className="QAamodal_subscript">* - Indicates a mandatory field</div>
       <label className="QAamodal_label">Display name*
         <input
           className="QAamodal_inputfield"
@@ -30,16 +31,6 @@ let AnswerModal = function(props) {
         </input>
       </label>
       <div className="QAamodal_subscript">For authentication reasons, you will not be emailed.</div>
-      <ImageContainer />
-      <label className="QAamodal_label">Upload images
-        <input
-          className="QAamodal_uploadButton"
-          type="file"
-          id="uploadImagesButton"
-          accept="image/*,.pdf"
-          multiple>
-        </input>
-      </label>
       <label className="QAamodal_label">Answer*
         <textarea
           className="QAamodal_textareaField"
@@ -52,13 +43,22 @@ let AnswerModal = function(props) {
           required>
         </textarea>
       </label>
-      <div className="QAamodal_subscript">* - Indicates a mandatory field</div>
-      <button
-        className="QAamodal_submitButton"
-        type="button"
-        id="answerModalSubmitButton">
-          Submit
-      </button>
+      <ImageContainer />
+      <label className="QAamodal_label">Upload images
+        <input
+          className="QAamodal_uploadButton"
+          type="file"
+          id="uploadImagesButton"
+          accept="image/*,.pdf"
+          multiple>
+        </input>
+      </label>
+        <button
+          className="QAamodal_submitButton"
+          type="button"
+          id="answerModalSubmitButton">
+            Submit
+        </button>
     </div>
   )
 }

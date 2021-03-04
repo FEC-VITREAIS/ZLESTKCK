@@ -5,6 +5,7 @@ let QuestionModal = function(props) {
     <div className="QAqmodal">
       <h3 className="QAqmodal_title">Ask Your Question</h3>
       <h5 className="QAqmodal_subtitle">About the PRODUCT NAME</h5>
+      <div className="QAqmodal_subscript">* - Indicates a mandatory field</div>
       <label className="QAqmodal_label">Display name*
         <input
           className="QAqmodal_inputField"
@@ -40,7 +41,6 @@ let QuestionModal = function(props) {
           required>
         </textarea>
       </label>
-      <div className="QAqmodal_subscript">* - Indicates a mandatory field</div>
       <button
         className="QAqmodal_submitButton"
         type="button"

@@ -138,14 +138,20 @@
 
 .QAqmodal_title {
   border: solid 2px mediumblue;
+  display: flex;
+  justify-content: center;
 }
 
 .QAqmodal_subtitle {
   border: solid 2px mediumblue;
+  display: flex;
+  justify-content: center;
 }
 
 .QAqmodal_label {
   border: solid 2px mediumblue;
+  display: flex;
+  justify-content: space-between;
 }
 
 .QAqmodal_inputField {
@@ -173,14 +179,20 @@
 
 .QAamodal_title {
   border: solid 2px brown;
+  display: flex;
+  justify-content: center;
 }
 
 .QAamodal_subtitle {
   border: solid 2px brown;
+  display: flex;
+  justify-content: center;
 }
 
 .QAamodal_label {
   border: solid 2px brown;
+  display: flex;
+  justify-content: space-between;
 }
 
 .QAamodal_inputField {
@@ -207,6 +219,8 @@
 /* QA-ImageContainer Styling */
 .QAimage {
   border: solid 2px rgb(112, 165, 42);
+  display: flex;
+  justify-content: space-evenly;
 }
 
 .QAimage_thumbnail {
