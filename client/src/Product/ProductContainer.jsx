@@ -16,19 +16,24 @@ let ProductContainer = function (props) {
 
   useEffect(() => { /* on component mount will update all the current products and will update the current view / product */
 
-
+    const currentStyles = context.productStyles;
+  
+    setCurrentProducts(currentStyles);
+    setCurrentProductView( currentStyles[0] );
 
   }, [CurrentProductView] );
 
-  const HandleProductChange = (e) => {};
+  const HandleProductChange = (e, product) => {
 
-  const CurrentProductViewHandler = (e) => {};
+    
+
+  };
 
   return (
     <>
       <DisplayProductPreview
         styles={context.productStyles}
-        changeView={CurrentProductViewHandler}
+        changeView={HandleProductChange}
       />
       <div>Product Detail Container</div>
     </>
