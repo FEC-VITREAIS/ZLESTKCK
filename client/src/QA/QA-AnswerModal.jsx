@@ -3,11 +3,12 @@ import ImageContainer from './QA-ImageContainer'
 
 let AnswerModal = function(props) {
   return (
-    <div>
-      <h3>Submit Your Answer</h3>
-      <h5>PRODUCT NAME : QUESTION BODY</h5>
-      <label>Display name*
+    <div className="QAamodal">
+      <h3 className="QAamodal_title">Submit Your Answer</h3>
+      <h5 className="QAamodal_subtitle">PRODUCT NAME : QUESTION BODY</h5>
+      <label className="QAamodal_label">Display name*
         <input
+          className="QAamodal_inputfield"
           id="answererDisplayName"
           type="text"
           size="50"
@@ -16,9 +17,10 @@ let AnswerModal = function(props) {
           required>
         </input>
       </label>
-      <div>For privacy reasons, do not use your full name or email address.</div>
-      <label>Email*
+      <div className="QAamodal_subscript">For privacy reasons, do not use your full name or email address.</div>
+      <label className="QAamodal_label">Email*
         <input
+          className="QAamodal_inputfield"
           id="answererEmailAddress"
           type="email"
           size="50"
@@ -27,20 +29,20 @@ let AnswerModal = function(props) {
           required>
         </input>
       </label>
-      <div>For authentication reasons, you will not be emailed.</div>
+      <div className="QAamodal_subscript">For authentication reasons, you will not be emailed.</div>
       <ImageContainer />
-      <label>Upload images
+      <label className="QAamodal_label">Upload images
         <input
-          className="uploadImagesButton"
+          className="QAamodal_uploadButton"
           type="file"
           id="uploadImagesButton"
           accept="image/*,.pdf"
           multiple>
         </input>
       </label>
-      <label>Answer*
+      <label className="QAamodal_label">Answer*
         <textarea
-          className="AnswerModalBody"
+          className="QAamodal_textareaField"
           id="newAnswerBody"
           rows="10"
           cols="50"
@@ -50,9 +52,9 @@ let AnswerModal = function(props) {
           required>
         </textarea>
       </label>
-      <div>* - Indicates a mandatory field</div>
+      <div className="QAamodal_subscript">* - Indicates a mandatory field</div>
       <button
-        className="answerModalSubmitButton"
+        className="QAamodal_submitButton"
         type="button"
         id="answerModalSubmitButton">
           Submit

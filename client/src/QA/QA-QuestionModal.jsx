@@ -2,11 +2,12 @@ import React from 'react'
 
 let QuestionModal = function(props) {
   return (
-    <div>
-      <h3>Ask Your Question</h3>
-      <h5>About the PRODUCT NAME</h5>
-      <label>Display name*
+    <div className="QAqmodal">
+      <h3 className="QAqmodal_title">Ask Your Question</h3>
+      <h5 className="QAqmodal_subtitle">About the PRODUCT NAME</h5>
+      <label className="QAqmodal_label">Display name*
         <input
+          className="QAqmodal_inputField"
           id="questionerDisplayName"
           type="text"
           size="50"
@@ -15,9 +16,10 @@ let QuestionModal = function(props) {
           required>
         </input>
       </label>
-      <div>For privacy reasons, do not use your full name or email address.</div>
-      <label>Email*
+      <div className="QAqmodal_subscript">For privacy reasons, do not use your full name or email address.</div>
+      <label className="QAqmodal_label">Email*
         <input
+          className="QAqmodal_inputField"
           id="questionerEmailAddress"
           type="email"
           size="50"
@@ -26,10 +28,10 @@ let QuestionModal = function(props) {
           required>
         </input>
       </label>
-      <div>For authentication reasons, you will not be emailed.</div>
-      <label>Question*
+      <div className="QAqmodal_subscript">For authentication reasons, you will not be emailed.</div>
+      <label className="QAqmodal_label">Question*
         <textarea
-          className="questionModalBody"
+          className="QAqmodal_textareaField"
           id="newQuestionBody"
           rows="10"
           cols="50"
@@ -38,9 +40,9 @@ let QuestionModal = function(props) {
           required>
         </textarea>
       </label>
-      <div>* - Indicates a mandatory field</div>
+      <div className="QAqmodal_subscript">* - Indicates a mandatory field</div>
       <button
-        className="questionModalSubmitButton"
+        className="QAqmodal_submitButton"
         type="button"
         id="questionModalSubmitButton">
           Submit
