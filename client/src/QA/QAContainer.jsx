@@ -5,7 +5,9 @@ import ProductContext from '../context.jsx'
 
 import QASearch from './QA-Search.jsx'
 import QAList from './QA-List.jsx'
-import QAModal from './QA-AnswerModal'
+
+// import AModal from './QA-AnswerModal'
+// import QModal from './QA-QuestionModal'
 
 let QAContainer = function(props) {
 
@@ -17,7 +19,8 @@ let QAContainer = function(props) {
       <h4>Ask for information about this product from the customers who own it.</h4>
       <QASearch />
       <QAList />
-      <QAModal />
+      {/* <QModal />
+      <AModal /> */}
     </div>
   )
 }

@@ -7,3 +7,5 @@ let AnswerEntries = (props) => {
     </li>
   )
 }
+
+export default AnswerEntries

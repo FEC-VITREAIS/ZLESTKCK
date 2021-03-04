@@ -4,6 +4,8 @@ import ImageContainer from './QA-ImageContainer'
 let AnswerModal = function(props) {
   return (
     <div>
+      <h3>Submit Your Answer</h3>
+      <h5>PRODUCT NAME : QUESTION BODY</h5>
       <label>Display name*
         <input
           id="answererDisplayName"

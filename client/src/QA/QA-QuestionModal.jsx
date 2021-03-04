@@ -3,6 +3,8 @@ import React from 'react'
 let QuestionModal = function(props) {
   return (
     <div>
+      <h3>Ask Your Question</h3>
+      <h5>About the PRODUCT NAME</h5>
       <label>Display name*
         <input
           id="questionerDisplayName"
