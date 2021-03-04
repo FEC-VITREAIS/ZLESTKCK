@@ -4,7 +4,7 @@ import ProductContext from './context.jsx';
 
 import fetchProductDetails from './FetchData/fetchProductDetails.js';
 import fetchRelatedProducts from './FetchData/fetchRelatedProducts.js';
-import fetchRelatedProductThumbnails from './FetchData/fetchRelatedProductThumbnails.js';
+import fetchRelatedStyleData from './FetchData/fetchRelatedStyleData.js';
 import fetchQA from './FetchData/fetchQA.js';
 import fetchStyles from './FetchData/fetchStyles.js';
 import fetchReviews from './FetchData/fetchReviews.js'
@@ -23,7 +23,7 @@ let App = function(props) {
   // STATE HOOKS
   const [currentProduct, setProduct] = useState("11101"); //using 11101 as the default product
   const [relatedItems, setRelatedItems] = useState([]);
-  const [relatedThumbnails, setRelatedThumbnails] = useState([]);
+  const [relatedStyleData, setrelatedStyleData] = useState([]);
   const [productQA, setProductQA] = useState([]);
   const [productStyles, setProductStyles] = useState([]);
   const [productReviews, setProductReviews] = useState([]);
@@ -56,16 +56,24 @@ let App = function(props) {
       var allRelatedItems = data;
       setRelatedItems(data);
 
-      fetchRelatedProductThumbnails(data)
+      fetchRelatedStyleData(data)
       .then((styleData) => {
         console.log('styles: ', styleData)
-        var allThumbnails = [];
+
+        var relatedStyleData = [];
 
         styleData.forEach((style) => {
-          allThumbnails.push(style[0].photos[0].thumbnail_url);
+           //Index 0 is always the 'default' style.
+          relatedStyleData.push({
+            photo: style[0].photos[0].url, //change to .thumbnail_url for thumbnails.
+            price: style[0].original_price,
+            salePrice: style[0].sale_price
+          })
+
+
         });
 
-        setRelatedThumbnails(allThumbnails);
+        setrelatedStyleData(relatedStyleData);
 
       })
 
@@ -125,7 +133,7 @@ let App = function(props) {
   return (
     <ProductContext.Provider value={{
       relatedProducts: relatedItems,
-      relatedThumbnails: relatedThumbnails,
+      relatedStyleData: relatedStyleData,
       productQA: productQA,
       updateCurrentProduct: updateCurrentProduct,
       productStyles: productStyles,

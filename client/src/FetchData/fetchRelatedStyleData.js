@@ -3,7 +3,7 @@ import API_KEY from '../../../config.js';
 import fetchStyles from './fetchStyles.js';
 
 
-var fetchRelatedProductThumbnails = (listOfProducts) => {
+var fetchRelatedStyleData = (listOfProducts) => {
   var allThumbnails = [];
 
   listOfProducts.forEach((product) => {
@@ -14,4 +14,4 @@ var fetchRelatedProductThumbnails = (listOfProducts) => {
 
 }
 
-export default fetchRelatedProductThumbnails;
+export default fetchRelatedStyleData;
