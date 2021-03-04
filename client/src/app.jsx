@@ -4,6 +4,7 @@ import ProductContext from './context.jsx';
 
 import fetchProductDetails from './FetchData/fetchProductDetails.js';
 import fetchRelatedProducts from './FetchData/fetchRelatedProducts.js';
+import fetchRelatedProductThumbnails from './FetchData/fetchRelatedProductThumbnails.js';
 import fetchQA from './FetchData/fetchQA.js';
 import fetchStyles from './FetchData/fetchStyles.js';
 import fetchReviews from './FetchData/fetchReviews.js'
@@ -22,6 +23,7 @@ let App = function(props) {
   // STATE HOOKS
   const [currentProduct, setProduct] = useState("11101"); //using 11101 as the default product
   const [relatedItems, setRelatedItems] = useState([]);
+  const [relatedThumbnails, setRelatedThumbnails] = useState([]);
   const [productQA, setProductQA] = useState([]);
   const [productStyles, setProductStyles] = useState([]);
   const [productReviews, setProductReviews] = useState([]);
@@ -47,17 +49,30 @@ let App = function(props) {
   // RELATED ITEMS STATE
   var fetchRelatedItems = () => {
 
-    var relatedItems = [];
-
     fetchRelatedProducts(currentProduct)
     .then((data) => {
-      //data will contain all of the related items product objects
-      // console.log('all related products', data);
+      console.log('related items: ', data);
 
+      var allRelatedItems = data;
       setRelatedItems(data);
+
+      fetchRelatedProductThumbnails(data)
+      .then((styleData) => {
+        console.log('styles: ', styleData)
+        var allThumbnails = [];
+
+        styleData.forEach((style) => {
+          allThumbnails.push(style[0].photos[0].thumbnail_url);
+        });
+
+        setRelatedThumbnails(allThumbnails);
+
+      })
+
 
     })
   }
+
 
   // QA STATE
   var fetchProductQA = () => {
@@ -103,12 +118,14 @@ let App = function(props) {
     fetchProductStyles()
     fetchProductReviews()
   }, [currentProduct]);
+  //current product above is the variable that hooks is watching before allowing a re-render. Re-render will only occur if change in current product is detected.
 
 
   // PROVIDER AND APP STRUCTURE (CONTAINERS)
   return (
     <ProductContext.Provider value={{
       relatedProducts: relatedItems,
+      relatedThumbnails: relatedThumbnails,
       productQA: productQA,
       updateCurrentProduct: updateCurrentProduct,
       productStyles: productStyles,

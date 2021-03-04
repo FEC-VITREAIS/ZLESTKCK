@@ -1,6 +1,7 @@
 import axios from 'axios';
 import API_KEY from '../../../config.js';
 import fetchProductDetails from './fetchProductDetails.js';
+import fetchStyles from './fetchStyles.js';
 
 
 var fetchRelatedProducts = (productID) => {

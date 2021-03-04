@@ -1,10 +1,11 @@
 import React, {createContext} from 'react';
 
 const ProductContext = React.createContext({
-  currentProduct: 0,
+  currentProduct: 0, //product id
   updateCurrentProduct: (newProductID) => {},
   relatedProducts: [],
   updateRelatedProducts: () => {},
+  relatedThumbnails: [],
   productQA: [],
   updateProductQA: () => {},
   productStyles: [],

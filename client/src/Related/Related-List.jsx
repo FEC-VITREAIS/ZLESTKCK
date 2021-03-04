@@ -7,9 +7,9 @@ var RelatedList = ({className}) => {
 
   return (
     <div className={className}>
-    {context.relatedProducts.map((product) => {
+    {context.relatedProducts.map((product, ind) => {
       return (
-        <RelatedListCard product={product} key={product.id}/>
+        <RelatedListCard product={product} photo={context.relatedThumbnails[ind]} key={product.id}/>
       )
     })}
     </div>

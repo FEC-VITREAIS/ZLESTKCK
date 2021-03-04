@@ -1,12 +1,9 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useContext, useEffect} from 'react';
 import './styles/styles.css';
 import RelatedList from './Related-List.jsx';
 
 
 let RelatedContainer = function(props) {
-  const [currentProduct, updateProduct] = useState([]);
-
-
   return (
     <div className='related-container'>
       Related Products Container
