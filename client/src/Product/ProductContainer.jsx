@@ -2,6 +2,7 @@ import React, { useState, useEffect, useContext } from "react";
 
 import ProductContext from "../context";
 
+import DisplayCurrentProduct from "./components/DisplayCurrentProduct/DisplayCurrentProduct";
 import DisplayProductPreview from "./components/DisplayProductPreview/DisplayProductPreview";
 
 let ProductContainer = function (props) {
@@ -14,23 +15,24 @@ let ProductContainer = function (props) {
 
   const context = useContext(ProductContext);
 
-  useEffect(() => { /* on component mount will update all the current products and will update the current view / product */
+  useEffect(() => {
+    /* on component mount will update all the current products and will update the current view / product */
 
     const currentStyles = context.productStyles;
-  
-    setCurrentProducts(currentStyles);
-    setCurrentProductView( currentStyles[0] );
 
-  }, [CurrentProductView] );
+    setCurrentProducts(currentStyles);
+    setCurrentProductView(currentStyles[0]);
+  }, [context.productStyles]); 
 
   const HandleProductChange = (e, product) => {
+    // console.log("you clicked on a product!", product);
 
-    
-
+    setCurrentProductView(product); 
   };
 
   return (
     <>
+      <DisplayCurrentProduct currentProduct={CurrentProductView} />
       <DisplayProductPreview
         styles={context.productStyles}
         changeView={HandleProductChange}
