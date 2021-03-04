@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useContext } from "react";
 
-import ProductContext from '../context';
+import ProductContext from "../context";
 
-import DisplayProductPreview from './components/DisplayProductPreview/DisplayProductPreview';
+import DisplayProductPreview from "./components/DisplayProductPreview/DisplayProductPreview";
 
 let ProductContainer = function (props) {
   const [CurrentProducts, setCurrentProducts] = useState(
@@ -14,11 +14,22 @@ let ProductContainer = function (props) {
 
   const context = useContext(ProductContext);
 
+  useEffect(() => { /* on component mount will update all the current products and will update the current view / product */
+
+
+
+  }, [CurrentProductView] );
+
   const HandleProductChange = (e) => {};
+
+  const CurrentProductViewHandler = (e) => {};
 
   return (
     <>
-      < DisplayProductPreview styles={context.productStyles} />
+      <DisplayProductPreview
+        styles={context.productStyles}
+        changeView={CurrentProductViewHandler}
+      />
       <div>Product Detail Container</div>
     </>
   );
