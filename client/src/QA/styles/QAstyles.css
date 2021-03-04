@@ -5,19 +5,26 @@
 
 .QAcontainer_header {
   border: solid 2px sienna;
+  display: flex;
+  justify-content: center;
 }
 
 .QAcontainer_subheader {
   border: solid 2px sienna;
+  display: flex;
+  justify-content: center;
 }
 
 /* QA-List Styling */
 .QAlist {
   border: solid 2px blueviolet;
+  display: flex;
+  justify-content: space-evenly;
 }
 
 .QAlist_displayCount {
   border: solid 2px blueviolet;
+  font-size: x-small;
 }
 
 .QAlist_askButton {
@@ -34,20 +41,31 @@
 
 .QAlist_loadMoreQuestions {
   border: solid 2px blueviolet;
+  display: flex;
+  justify-content: center;
 }
 
 
 /* QA-QuestionEntries Styling */
 .QAqentries {
   border: solid 2px green;
+  display: flex;
+  justify-content: space-evenly;
 }
 
 .QAqentries_meta {
   border: solid 2px green;
+  font-size: x-small;
 }
 
 .QAqentries_question {
   border: solid 2px green;
+  font-size:x-large
+}
+
+.QAqentries_questionBody {
+  border: solid 2px green;
+  font-size:medium;
 }
 
 .QAqentries_addButton {
@@ -56,10 +74,13 @@
 
 .QAqentries_loadMore {
   border: solid 2px green;
+  display: flex;
+  justify-content: space-evenly;
 }
 
 .QAqentries_displayCount {
   border: solid 2px green;
+  font-size: x-small;
 }
 
 .QAqentries_loadButton {
@@ -68,6 +89,8 @@
 
 .QAqentries_collapse {
   border: solid 2px green;
+  display: flex;
+  justify-content: space-evenly;
 }
 
 .QAqentries_collapseButton {
@@ -78,19 +101,30 @@
 /* QA-AnswerEntries Styling */
 .QAaentries {
   border: solid 2px darkred;
+  display: flex;
+  justify-content: space-evenly;
 }
 
 .QAaentries_meta {
   border: solid 2px darkred;
+  font-size: x-small;
 }
 
 .QAaentries_answer {
   border: solid 2px darkred;
+  font-size:x-large
+}
+
+.QAaentries_answerBody {
+  border: solid 2px darkred;
+  font-size:medium
 }
 
 /* QA-Search Styling */
 .QAsearch {
   border: solid 2px goldenrod;
+  display: flex;
+  justify-content: center;
 }
 
 .QAsearch_bar {
@@ -124,6 +158,7 @@
 
 .QAqmodal_subscript {
   border: solid 2px mediumblue;
+  font-size: x-small;
 }
 
 .QAqmodal_submitButton {
@@ -162,6 +197,7 @@
 
 .QAamodal_subscript {
   border: solid 2px brown;
+  font-size: x-small;
 }
 
 .QAamodal_submitButton {

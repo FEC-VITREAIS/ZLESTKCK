@@ -8,7 +8,7 @@ let QASearch = function(props) {
         className="QAsearch_bar"
         minlength="3"
         placeholder="Have a question? Search for your answers..."
-        size="100">
+        size="90">
       </input>
     </div>
   )
