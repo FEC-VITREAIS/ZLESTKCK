@@ -10,7 +10,7 @@ var fetchProductDetails = (productID) => {
     }
   })
   .then((data) => {
-    // console.log(data);
+    // console.log(data, 'product');
     return data.data;
   })
   .catch((err) => {

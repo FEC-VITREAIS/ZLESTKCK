@@ -21,6 +21,7 @@ let App = function(props) {
   // console.log('rerender!');
 
   // STATE HOOKS
+  const [currentProductDetails, setCurrentProductDetails] = useState({});
   const [currentProduct, setProduct] = useState("11101"); //using 11101 as the default product
   const [relatedItems, setRelatedItems] = useState([]);
   const [relatedStyleData, setrelatedStyleData] = useState([]);
@@ -35,6 +36,7 @@ let App = function(props) {
 
     fetchProductDetails(currentProduct)
     .then((data) => {
+      setCurrentProductDetails(data);
       console.log('current product: ', data);
     })
 

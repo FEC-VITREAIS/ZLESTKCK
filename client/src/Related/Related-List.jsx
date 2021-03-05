@@ -23,6 +23,7 @@ var RelatedList = ({className}) => {
     })}
     </div>
   )
+
 }
 
 export default RelatedList;
