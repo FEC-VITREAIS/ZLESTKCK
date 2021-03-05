@@ -110,6 +110,7 @@ let App = function(props) {
   // PROVIDER AND APP STRUCTURE (CONTAINERS)
   return (
     <ProductContext.Provider value={{
+      currentProductDetails: currentProductDetails,
       relatedProducts: relatedItems,
       productQA: productQA,
       updateCurrentProduct: updateCurrentProduct,
