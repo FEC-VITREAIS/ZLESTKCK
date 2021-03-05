@@ -12,13 +12,23 @@ let QAContainer = function(props) {
 
   const QAContainerContext = React.useContext(ProductContext);
 
+  const [showQModal, setShowQModal] = useState(false)
+
+  const qModalClickHandler = (e) => {
+    setShowQModal(true)
+  }
+
   return (
     <div className="QAcontainer">
       <h2 className="QAcontainer_header">Customer Questions</h2>
       <h4 className="QAcontainer_subheader">Ask for information about this product from the customers who own it.</h4>
+      <input className="QAlist_askButton" type="button" value="Ask a question" onClick={qModalClickHandler} ></input>
+      {showQModal ?
+      <QModal setShowQModal={setShowQModal} productName={QAContainerContext.productName} />
+      : null
+      }
       <QASearch />
       <QAList />
-      <QModal productName={QAContainerContext.productName} />
     </div>
   )
 }

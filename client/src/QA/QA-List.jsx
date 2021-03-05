@@ -11,7 +11,6 @@ let QAList = function(props) {
     <>
     <div className="QAlist">
       <div className="QAlist_displayCount">Questions 1-4 of {qCount}</div>
-      <input className="QAlist_askButton" type="button" value="Ask a question"></input>
       <input className="QAlist_sortButton" type="button" value="Sort by"></input>
     </div>
 

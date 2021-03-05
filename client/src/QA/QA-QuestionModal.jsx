@@ -1,10 +1,15 @@
-import React from 'react'
+import React, {useState} from 'react'
 import ProductContext from '../context.jsx'
 
-let QuestionModal = function({productName}) {
+let QuestionModal = function({setShowQModal, productName}) {
+
+  const closeQModalClickHandler = (e) => {
+    setShowQModal(false)
+  }
 
   return (
     <div className="QAqmodal">
+      <input className="closeButton" type="button" value="x" onClick={closeQModalClickHandler}></input>
       <h3 className="QAqmodal_title">Ask Your Question</h3>
       <h5 className="QAqmodal_subtitle">About the {productName}</h5>
       <div className="QAqmodal_subscript">* - Indicates a mandatory field</div>
@@ -50,6 +55,7 @@ let QuestionModal = function({productName}) {
           Submit
       </button>
     </div>
+
   )
 }
 
