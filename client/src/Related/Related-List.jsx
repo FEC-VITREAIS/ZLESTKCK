@@ -1,28 +1,20 @@
-import React, {useState, useContext} from 'react';
+import React, {useContext} from 'react';
 import RelatedListCard from './Related-List-Card.jsx';
 import ProductContext from '../context.jsx';
 
-var RelatedList = ({className}) => {
+var RelatedList = () => {
   const context = useContext(ProductContext);
-  console.log('related style data: ', context.relatedStyleData);
-
-  var awaitStyleData = (ind) => {
-    if (context.relatedStyleData.length) {
-      return context.relatedStyleData[ind].photo;
-    } else {
-      return '';
-    }
-  }
 
   return (
-    <div className={className}>
+    <div className={'related-list'}>
     {context.relatedProducts.map((product, ind) => {
       return (
-        <RelatedListCard product={product} photo={''} key={product.id}  photo={awaitStyleData(ind)}/>
+        <RelatedListCard product={product} photo={''} key={product.id}  photo={context.relatedStyleData[ind].photo}/>
       )
     })}
     </div>
   )
+
 
 }
 
