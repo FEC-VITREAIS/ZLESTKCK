@@ -4,21 +4,28 @@ import React, { useState, useEffect } from "react";
 will display the current product being viewed and will display the size of that product
 */
 
-let DisplayProductPreview = (products) => {
+let DisplayProductPreview = ({ styles, changeView }) => {
+  // console.log(styles)
+
+  if (styles.length === undefined || styles.length === 0) {
+    return <div> place holder for when products api called </div>;
+  }
+
   return (
     <>
       <div className="DisplayProductPreviewContainer">
-        {products.map((product) => {
+        {styles.map((product, index) => {
+          const { photos } = product;
 
-          const StylesArr =
-            product.results; /* Objects that have styles and photots theres a go to photo somewhere in here */
-            
-          const { photos } = StylesArr[0];
+          const { thumbnail_url } = photos[0];
 
-          const thumbnail_url = photos[0].thumbnail_url;
-          
-          return <img src={thumbnail_url}></img>
-
+          return (
+            <img
+              style={{ height: "150px", width: "150px" }}
+              src={thumbnail_url}
+              onClick={ (e) => { changeView(e, product)  } }
+            ></img>
+          );
         })}
       </div>
     </>

@@ -20,6 +20,7 @@ let App = function(props) {
   // console.log('rerender!');
 
   // STATE HOOKS
+  const [currentProductDetails, setCurrentProductDetails] = useState({});
   const [currentProduct, setProduct] = useState("11101"); //using 11101 as the default product
   const [relatedItems, setRelatedItems] = useState([]);
   const [productQA, setProductQA] = useState([]);
