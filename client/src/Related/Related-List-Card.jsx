@@ -15,6 +15,7 @@ var RelatedListCard = ({product, photo, price}) => {
 
   return (
     <div className='related-list-card' onClick={handleClick}>
+      <span class="fa fa-star checked"></span>
       <img className='related-list-card-img' src={photo}/>
       <div className='related-card-category'>{product.category}</div>
       <div className='related-card-name'>{product.name}</div>

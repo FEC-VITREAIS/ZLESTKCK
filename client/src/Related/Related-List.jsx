@@ -13,7 +13,7 @@ var RelatedList = () => {
     <div className={'related-list'}>
     {context.relatedProducts.map((product, ind) => {
       return (
-        <RelatedListCard product={product} photo={''} key={product.id}  photo={''} price={100}/>
+        <RelatedListCard product={product} photo={''} key={product.id}  photo={product.styles.photo} price={product.styles.price}/>
       )
     })}
     </div>

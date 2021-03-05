@@ -7,7 +7,6 @@ const ProductContext = React.createContext({
   updateCurrentProduct: (newProductID) => {},
   relatedProducts: [],
   updateRelatedProducts: () => {},
-  relatedStyleData: [],
   productQA: [],
   updateProductQA: () => {},
   productStyles: [],

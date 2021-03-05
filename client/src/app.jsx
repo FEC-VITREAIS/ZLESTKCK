@@ -112,7 +112,6 @@ let App = function(props) {
   return (
     <ProductContext.Provider value={{
       relatedProducts: relatedItems,
-      // relatedStyleData: relatedStyleData,
       productQA: productQA,
       updateCurrentProduct: updateCurrentProduct,
       productStyles: productStyles,
