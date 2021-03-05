@@ -20,9 +20,10 @@ let ProductContainer = function (props) {
 
     const currentStyles = context.productStyles;
 
-    console.log(context)
+    console.log(currentStyles, 'context')
     setCurrentProducts(currentStyles);
     setCurrentProductView(currentStyles[0]);
+
   }, [context.productStyles]); 
 
   const HandleProductChange = (e, product) => {
@@ -35,7 +36,7 @@ let ProductContainer = function (props) {
     <>
       <DisplayCurrentProduct currentProduct={CurrentProductView} />
       <DisplayProductPreview
-        styles={context.productStyles}
+        styles={CurrentProducts}
         changeView={HandleProductChange}
       />
       <div>Product Detail Container</div>

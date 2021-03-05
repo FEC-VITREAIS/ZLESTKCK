@@ -1,15 +1,17 @@
 import React, { useState, useEffect } from "react";
 
-const DisplayCurrentProduct = ({ currentProduct }) => {
-  // console.log(currentProduct, "this is the current product");
+import { defaultProps } from 'recompose';
 
-    if ( currentProduct === undefined ) {
-        return <div> </div>
-    }
+const DisplayCurrentProduct = ({ currentProduct } = {photos: [{thumbnail_url: ''}]}) => {
+  console.log(currentProduct, "this is the current product");
 
-  // let thumbnail_url = currentProduct.photos[0].thumbnail_url;
+  let { thumbnail_url } = currentProduct.photos[0];
 
-  const [CurrentStyle, setStyle] = useState()
+  if (thumbnail_url === '') {
+    return <div> </div>
+  }
+
+  // const [CurrentStyle, setStyle] = useState()
 
   return (
     <div className="DisplayCurrentProductContainer">
