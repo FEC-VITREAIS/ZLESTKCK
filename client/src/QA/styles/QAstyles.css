@@ -1,6 +1,8 @@
 /* QA-Container Styling */
 .QAcontainer {
   border: solid 3px black;
+  max-width: 500px;
+  margin: 2rem auto;
 }
 
 .QAcontainer_header {
@@ -20,6 +22,8 @@
   border: solid 2px blueviolet;
   display: flex;
   justify-content: space-evenly;
+
+
 }
 
 .QAlist_displayCount {
@@ -49,6 +53,14 @@
 /* QA-QuestionEntries Styling */
 .QAqentries {
   border: solid 2px green;
+  background-color: burlywood;
+  margin: 1rem auto;
+  border-radius: 0.3rem;
+  box-shadow: 0 2px 5px 0 rgb(0,0,0,0.5);
+}
+
+.QAqentries_metaContainer {
+  border: solid 2px green;
   display: flex;
   justify-content: space-evenly;
 }
@@ -58,25 +70,64 @@
   font-size: x-small;
 }
 
-.QAqentries_question {
+/* .QAqentries_question {
   border: solid 2px green;
   font-size:x-large
-}
+} */
 
 .QAqentries_questionBody {
   border: solid 2px green;
   font-size:medium;
 }
 
+.QAqentries_answers {
+  border: solid 2px green;
+  display: flex;
+  justify-content: space-evenly;
+}
+
 .QAqentries_addButton {
   border: solid 2px green;
 }
 
+.QAaentries_loadMore {
+  border: solid 2px green;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.QAaentries_displayCount {
+  border: solid 2px green;
+  font-size: x-small;
+}
+
+.QAaentries_loadButton {
+  border: solid 2px green;
+}
+
+.QAaentries_collapse {
+  border: solid 2px green;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.QAaentries_collapseButton {
+  border: solid 2px green;
+}
 
 
 /* QA-AnswerEntries Styling */
 .QAaentries {
   border: solid 2px darkred;
+  background-color: cyan;
+  margin: 1rem 0;
+  border-radius: 0.3rem;
+  box-shadow: 0 2px 5px 0 rgb(0,0,0,0.5);
+}
+
+.QAaentries_metaContainer {
+  border: solid 2px darkred;
+  font-size: x-small;
   display: flex;
   justify-content: space-evenly;
 }
@@ -86,39 +137,14 @@
   font-size: x-small;
 }
 
-.QAaentries_answer {
+/* .QAaentries_answer {
   border: solid 2px darkred;
   font-size:x-large
-}
+} */
 
 .QAaentries_answerBody {
   border: solid 2px darkred;
   font-size:medium
-}
-
-.QAaentries_loadMore {
-  border: solid 2px darkred;
-  display: flex;
-  justify-content: space-evenly;
-}
-
-.QAaentries_displayCount {
-  border: solid 2px darkred;
-  font-size: x-small;
-}
-
-.QAaentries_loadButton {
-  border: solid 2px darkred;
-}
-
-.QAaentries_collapse {
-  border: solid 2px darkred;
-  display: flex;
-  justify-content: space-evenly;
-}
-
-.QAaentries_collapseButton {
-  border: solid 2px darkred;
 }
 
 .QAaentries_images {
