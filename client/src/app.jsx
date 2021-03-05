@@ -34,6 +34,7 @@ let App = function(props) {
 
     fetchProductDetails(currentProduct)
     .then((data) => {
+      setCurrentProductDetails(data);
       console.log('current product: ', data);
     })
 
