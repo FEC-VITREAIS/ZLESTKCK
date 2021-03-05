@@ -5,7 +5,7 @@ will display the current product being viewed and will display the size of that 
 */
 
 let DisplayProductPreview = ({ styles, changeView }) => {
-  // console.log(styles, changeView)
+  // console.log(styles)
 
   if (styles.length === undefined || styles.length === 0) {
     return <div> place holder for when products api called </div>;

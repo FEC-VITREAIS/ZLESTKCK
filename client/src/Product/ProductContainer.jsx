@@ -20,6 +20,7 @@ let ProductContainer = function (props) {
 
     const currentStyles = context.productStyles;
 
+    console.log(context)
     setCurrentProducts(currentStyles);
     setCurrentProductView(currentStyles[0]);
   }, [context.productStyles]); 
@@ -27,7 +28,7 @@ let ProductContainer = function (props) {
   const HandleProductChange = (e, product) => {
     // console.log("you clicked on a product!", product);
 
-    setCurrentProductView(product); 
+    setCurrentProductView(product);
   };
 
   return (
