@@ -37,7 +37,7 @@ let App = function(props) {
     fetchProductDetails(currentProduct)
     .then((data) => {
       setCurrentProductDetails(data);
-      console.log('current product: ', data);
+      // console.log('current product: ', data);
     })
 
   }
@@ -52,35 +52,12 @@ let App = function(props) {
   var fetchRelatedItems = () => {
 
     fetchRelatedProducts(currentProduct)
-    .then((data) => {
-      console.log('related items: ', data);
+    .then((relatedItemsData) => {
 
-      var allRelatedItems = data;
-      setRelatedItems(data);
-
-      fetchRelatedStyleData(data)
-      .then((styleData) => {
-        console.log('styles: ', styleData)
-
-        var relatedStyleData = [];
-
-        styleData.forEach((style) => {
-           //Index 0 is always the 'default' style.
-          relatedStyleData.push({
-            photo: style[0].photos[0].url, //change to .thumbnail_url for thumbnails.
-            price: style[0].original_price,
-            salePrice: style[0].sale_price
-          })
-
-
-        });
-
-        setrelatedStyleData(relatedStyleData);
-
-      })
-
+      setRelatedItems(relatedItemsData);
 
     })
+
   }
 
 
@@ -89,7 +66,7 @@ let App = function(props) {
 
     fetchQA(currentProduct)
     .then((data) => {
-      console.log('all product questions and answers', data);
+      // console.log('all product questions and answers', data);
 
       setProductQA(data)
     })
@@ -135,7 +112,7 @@ let App = function(props) {
   return (
     <ProductContext.Provider value={{
       relatedProducts: relatedItems,
-      relatedStyleData: relatedStyleData,
+      // relatedStyleData: relatedStyleData,
       productQA: productQA,
       updateCurrentProduct: updateCurrentProduct,
       productStyles: productStyles,

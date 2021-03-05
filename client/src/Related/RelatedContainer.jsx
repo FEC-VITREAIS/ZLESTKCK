@@ -8,10 +8,11 @@ import ProductContext from '../context.jsx';
 let RelatedContainer = function(props) {
   const context = useContext(ProductContext);
 
-  useEffect(()=> {}, [context.relatedStyleData])
+  useEffect(()=> {}, [context.relatedProducts])
+  // console.log('related container proudcts: ', context.relatedProducts);
 
   //only renders when related style data is recieved by API
-  if (context.relatedStyleData && context.relatedStyleData.length) {
+  if (context.relatedProducts && context.relatedProducts.length) {
 
     return (
       <div className='related-container'>
