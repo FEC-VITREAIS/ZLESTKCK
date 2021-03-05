@@ -15,6 +15,11 @@ let QuestionEntries = function({body, asker, date, helpfulCount, reported, answe
   const [displayedIndex, setDisplayedIndex] = useState(0)
   const [isFullyLoaded, setIsFullyLoaded] = useState(false)
   const [isCollapsed, setIsCollapsed] = useState(false)
+  const [showAModal, setShowAModal] = useState(false)
+
+  const aModalClickHandler = (e) => {
+    setShowAModal(true)
+  }
 
   const displayedAnswers = (index) => {
       setArrayOfAnswers(orderedAnswers.slice(0, index))
@@ -24,7 +29,7 @@ let QuestionEntries = function({body, asker, date, helpfulCount, reported, answe
   const loadClickHandler = (e) => {
     if (displayedIndex === aCount) {
       displayedAnswers(aCount);
-    } else if (displayedIndex >= aCount-1) {
+    } else if (displayedIndex >= aCount-2) {
       displayedAnswers(aCount)
       setIsFullyLoaded(true);
     } else {
@@ -53,10 +58,10 @@ let QuestionEntries = function({body, asker, date, helpfulCount, reported, answe
         <span className="QAqentries_meta">Report</span>
       </div>
       <div className="QAqentries_questionBody">Q: {body}
-      <button className="accordion">X</button>
+      <button className="accordion">V</button>
       <div className="QAqentries_answers">
         1-{displayedIndex} of {aCount} Answers
-        <button className="QAqentries_addButton" type="button">Add an answer</button>
+        <button className="QAqentries_addButton" type="button" onClick={aModalClickHandler}>Add an answer</button>
       </div>
         {arrayOfAnswers.map((answer) => {
           return (<AnswerEntries
@@ -85,8 +90,10 @@ let QuestionEntries = function({body, asker, date, helpfulCount, reported, answe
       </div>
       }
     </div>
-
-    <AModal productName={QAqentriesContext.productName} body={body}/>
+    {showAModal ?
+    <AModal setShowAModal={setShowAModal} productName={QAqentriesContext.productName} body={body}/>
+    : null
+    }
     </>
   )
 }

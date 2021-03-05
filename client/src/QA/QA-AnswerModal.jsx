@@ -1,9 +1,15 @@
 import React from 'react'
 import ImageContainer from './QA-ImageContainer'
 
-let AnswerModal = function({productName, body}) {
+let AnswerModal = function({setShowAModal, productName, body}) {
+
+  const closeAModalClickHandler = (e) => {
+    setShowAModal(false)
+  }
+
   return (
     <div className="QAamodal">
+      <input className="closeButton" type="button" value="x" onClick={closeAModalClickHandler}></input>
       <h3 className="QAamodal_title">Submit Your Answer</h3>
       <h5 className="QAamodal_subtitle">{productName} : {body}</h5>
       <div className="QAamodal_subscript">* - Indicates a mandatory field</div>
