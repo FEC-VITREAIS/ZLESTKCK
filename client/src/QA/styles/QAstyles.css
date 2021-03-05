@@ -72,30 +72,6 @@
   border: solid 2px green;
 }
 
-.QAqentries_loadMore {
-  border: solid 2px green;
-  display: flex;
-  justify-content: space-evenly;
-}
-
-.QAqentries_displayCount {
-  border: solid 2px green;
-  font-size: x-small;
-}
-
-.QAqentries_loadButton {
-  border: solid 2px green;
-}
-
-.QAqentries_collapse {
-  border: solid 2px green;
-  display: flex;
-  justify-content: space-evenly;
-}
-
-.QAqentries_collapseButton {
-  border: solid 2px green;
-}
 
 
 /* QA-AnswerEntries Styling */
@@ -118,6 +94,43 @@
 .QAaentries_answerBody {
   border: solid 2px darkred;
   font-size:medium
+}
+
+.QAaentries_loadMore {
+  border: solid 2px darkred;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.QAaentries_displayCount {
+  border: solid 2px darkred;
+  font-size: x-small;
+}
+
+.QAaentries_loadButton {
+  border: solid 2px darkred;
+}
+
+.QAaentries_collapse {
+  border: solid 2px darkred;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.QAaentries_collapseButton {
+  border: solid 2px darkred;
+}
+
+.QAaentries_images {
+  border: solid 2px darkred;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.QAaentries_thumbnails {
+  border: solid 2px darkred;
+  height: 50px;
+  width: 50px;
 }
 
 /* QA-Search Styling */
@@ -174,46 +187,46 @@
 
 /* QA-AnswerModal Styling */
 .QAamodal {
-  border: solid 2px brown;
+  border: solid 2px purple;
 }
 
 .QAamodal_title {
-  border: solid 2px brown;
+  border: solid 2px purple;
   display: flex;
   justify-content: center;
 }
 
 .QAamodal_subtitle {
-  border: solid 2px brown;
+  border: solid 2px purple;
   display: flex;
   justify-content: center;
 }
 
 .QAamodal_label {
-  border: solid 2px brown;
+  border: solid 2px purple;
   display: flex;
   justify-content: space-between;
 }
 
 .QAamodal_inputField {
-  border: solid 2px brown;
+  border: solid 2px purple;
 }
 
 .QAamodal_textareaField {
-  border: solid 2px brown;
+  border: solid 2px purple;
 }
 
 .QAamodal_uploadButton {
-  border: solid 2px brown;
+  border: solid 2px purple;
 }
 
 .QAamodal_subscript {
-  border: solid 2px brown;
+  border: solid 2px purple;
   font-size: x-small;
 }
 
 .QAamodal_submitButton {
-  border: solid 2px brown;
+  border: solid 2px purple;
 }
 
 /* QA-ImageContainer Styling */
@@ -225,4 +238,6 @@
 
 .QAimage_thumbnail {
   border: solid 2px rgb(112, 165, 42);
+  height: 50px;
+  width: 50px;
 }

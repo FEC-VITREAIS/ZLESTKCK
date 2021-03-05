@@ -1,16 +1,15 @@
 import React from 'react'
 import ImageContainer from './QA-ImageContainer'
 
-let AnswerModal = function(props) {
+let AnswerModal = function({productName, body}) {
   return (
     <div className="QAamodal">
       <h3 className="QAamodal_title">Submit Your Answer</h3>
-      <h5 className="QAamodal_subtitle">PRODUCT NAME : QUESTION BODY</h5>
+      <h5 className="QAamodal_subtitle">{productName} : {body}</h5>
       <div className="QAamodal_subscript">* - Indicates a mandatory field</div>
       <label className="QAamodal_label">Display name*
         <input
           className="QAamodal_inputfield"
-          id="answererDisplayName"
           type="text"
           size="50"
           maxlenght="60"
@@ -22,10 +21,9 @@ let AnswerModal = function(props) {
       <label className="QAamodal_label">Email*
         <input
           className="QAamodal_inputfield"
-          id="answererEmailAddress"
           type="email"
           size="50"
-          maxlength="60"
+          maxLength="60"
           placeholder="account@email.com"
           required>
         </input>
@@ -34,11 +32,10 @@ let AnswerModal = function(props) {
       <label className="QAamodal_label">Answer*
         <textarea
           className="QAamodal_textareaField"
-          id="newAnswerBody"
           rows="10"
           cols="50"
-          maxlength="1000"
-          minlength="2"
+          maxLength="1000"
+          minLength="2"
           placeholder="Write your answer in here"
           required>
         </textarea>

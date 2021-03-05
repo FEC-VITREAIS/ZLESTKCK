@@ -1,10 +1,12 @@
 import React from 'react'
+import ProductContext from '../context.jsx'
 
-let QuestionModal = function(props) {
+let QuestionModal = function({productName}) {
+
   return (
     <div className="QAqmodal">
       <h3 className="QAqmodal_title">Ask Your Question</h3>
-      <h5 className="QAqmodal_subtitle">About the PRODUCT NAME</h5>
+      <h5 className="QAqmodal_subtitle">About the {productName}</h5>
       <div className="QAqmodal_subscript">* - Indicates a mandatory field</div>
       <label className="QAqmodal_label">Display name*
         <input
@@ -24,7 +26,7 @@ let QuestionModal = function(props) {
           id="questionerEmailAddress"
           type="email"
           size="50"
-          maxlength="60"
+          maxLength="60"
           placeholder="account@email.com"
           required>
         </input>
@@ -36,8 +38,8 @@ let QuestionModal = function(props) {
           id="newQuestionBody"
           rows="10"
           cols="50"
-          maxlength="1000"
-          minlength="2"
+          maxLength="1000"
+          minLength="2"
           required>
         </textarea>
       </label>

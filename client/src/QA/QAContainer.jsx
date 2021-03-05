@@ -1,18 +1,16 @@
-import React from 'react'
+import React, {useState} from 'react'
+import ProductContext from '../context.jsx';
 import QAstyles from './styles/QAstyles.css'
 
-import ProductContext from '../context.jsx'
+import fetchProductDetails from '../FetchData/fetchProductDetails.js'
 
 import QASearch from './QA-Search.jsx'
 import QAList from './QA-List.jsx'
-
-import AModal from './QA-AnswerModal'
 import QModal from './QA-QuestionModal'
 
 let QAContainer = function(props) {
 
-  let context = React.useContext(ProductContext)
-
+  const QAContainerContext = React.useContext(ProductContext);
 
   return (
     <div className="QAcontainer">
@@ -20,8 +18,7 @@ let QAContainer = function(props) {
       <h4 className="QAcontainer_subheader">Ask for information about this product from the customers who own it.</h4>
       <QASearch />
       <QAList />
-      <QModal />
-      <AModal />
+      <QModal productName={QAContainerContext.productName} />
     </div>
   )
 }

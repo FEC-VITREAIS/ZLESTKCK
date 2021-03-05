@@ -1,32 +1,38 @@
-import React from 'react'
-import AnswerEntries from './QA-AnswerEntries'
+import React, {useState} from 'react'
+import ProductContext from '../context.jsx';
+import QAstyles from './styles/QAstyles.css'
+import AnswerEntries from './QA-AnswerEntries.jsx'
+import AModal from './QA-AnswerModal.jsx'
 
-let QuestionEntries = function(props) {
+let QuestionEntries = function({body, asker, date, helpfulCount, reported, answers, qCount}) {
+  const QAqentriesContext = React.useContext(ProductContext);
+  const [arrayOfAnswers, setArrayOfAnswers] = useState(answers)
+
   return (
     <>
     <div className="QAqentries">
       <span className="QAqentries_question">Q:</span>
-      <span className="QAqentries_meta">From: Questioner Display Name</span>
-      <span className="QAqentries_meta">Date and time of question</span>
-      <span className="QAqentries_meta">Mark as Helpful (100)</span>
+      <span className="QAqentries_meta">From: {asker}</span>
+      <span className="QAqentries_meta">{date}</span>
+      <span className="QAqentries_meta">Mark as Helpful ({helpfulCount})</span>
       <span className="QAqentries_meta">Report</span>
     </div>
 
-    <div className="QAqentries_questionBody">What is Question #1?
+    <div className="QAqentries_questionBody">{body}
       <button className="QAqentries_addButton" type="button">Add an answer</button>
-      <AnswerEntries />
-      <AnswerEntries />
+      {arrayOfAnswers.map((answer) => {
+        return (<AnswerEntries
+        responder={answer.answerer_name}
+        body={answer.body}
+        date={answer.date}
+        helpfulCount={answer.helpfulness}
+        images={answer.photos}
+        aCount={arrayOfAnswers.length}
+        key={answer.id} />)
+      })
+      }
     </div>
-
-    <div className="QAqentries_loadMore">
-      <span className="QAqentries_displayCount">Answers 1-2 of 3</span>
-      <button className="QAqentries_loadButton" type="button">Load more answers</button>
-    </div>
-
-    <div className="QAqentries_collapse">
-      <span className="QAqentries_displayCount">Answers 1-3</span>
-      <button className="QAqentries_collapseButton" type="button">Collapse answers</button>
-    </div>
+    <AModal productName={QAqentriesContext.productName} body={body}/>
     </>
   )
 }
