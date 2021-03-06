@@ -1,29 +1,38 @@
 import React, {useState, useEffect} from 'react'
-import ProductContext from '../context.jsx';
+import ProductContext from '../context.jsx'; //ACTION: Delete when refactored
 import QAstyles from './styles/QAstyles.css'
 import AnswerEntries from './QA-AnswerEntries.jsx'
 import AModal from './QA-AnswerModal.jsx'
 
 let QuestionEntries = function({body, asker, date, helpfulCount, reported, answers, qCount}) {
-  const QAqentriesContext = React.useContext(ProductContext);
+  const QAqentriesContext = React.useContext(ProductContext); // ACTION: Delete and pass product name as a prop when refactoring
   let aCount = answers.length;
+
+  //SORT THE ANSWERS BY HELPFULNESS COUNT
   const orderedAnswers =  answers.sort((a, b) => {
     return (a.helpfulness > b.helpfulness) ? -1: 1
   })
 
+  //STATE HOOKS
   const [arrayOfAnswers, setArrayOfAnswers] = useState(orderedAnswers.slice(0,2))
   const [displayedIndex, setDisplayedIndex] = useState(0)
   const [isFullyLoaded, setIsFullyLoaded] = useState(false)
-  const [isCollapsed, setIsCollapsed] = useState(false)
+  const [isHidden, setIsHidden] = useState(false)
   const [showAModal, setShowAModal] = useState(false)
 
-  const aModalClickHandler = (e) => {
-    setShowAModal(true)
-  }
-
+  //DISPLAY HELPER FUNCTION
   const displayedAnswers = (index) => {
       setArrayOfAnswers(orderedAnswers.slice(0, index))
       setDisplayedIndex(index)
+  }
+
+  //CLICK HANDLERS
+  const hideAnswersClickHandler = (e) => {
+    setIsHidden(!isHidden)
+  }
+
+  const aModalClickHandler = (e) => {
+    setShowAModal(true)
   }
 
   const loadClickHandler = (e) => {
@@ -40,12 +49,12 @@ let QuestionEntries = function({body, asker, date, helpfulCount, reported, answe
   const collapseClickHandler = (e) => {
     displayedAnswers(2)
     setIsFullyLoaded(false)
-    setIsCollapsed(true)
   }
 
+  //USE EFFECT HOOK
   useEffect(() => {
     displayedAnswers(2)
-    }, [isCollapsed])
+    }, [])
 
   return (
     <>
@@ -58,25 +67,34 @@ let QuestionEntries = function({body, asker, date, helpfulCount, reported, answe
         <span className="QAqentries_meta">Report</span>
       </div>
       <div className="QAqentries_questionBody">Q: {body}
-      <button className="accordion">V</button>
+      <button className="accordion" onClick={hideAnswersClickHandler}>V</button>
       <div className="QAqentries_answers">
         1-{displayedIndex} of {aCount} Answers
         <button className="QAqentries_addButton" type="button" onClick={aModalClickHandler}>Add an answer</button>
+
+        {/* Conditionally renders the array of answers in the current state */}
       </div>
-        {arrayOfAnswers.map((answer) => {
-          return (<AnswerEntries
-          responder={answer.answerer_name}
-          body={answer.body}
-          date={answer.date}
-          helpfulCount={answer.helpfulness}
-          images={answer.photos}
-          aCount={aCount}
-          key={answer.id} />)
-        })
-        }
+      {isHidden ?
+        null
+        :
+        <div>
+          {arrayOfAnswers.map((answer) => {
+            return (<AnswerEntries
+            responder={answer.answerer_name}
+            body={answer.body}
+            date={answer.date}
+            helpfulCount={answer.helpfulness}
+            images={answer.photos}
+            aCount={aCount}
+            key={answer.id} />)
+          })
+          }
+        </div>
+      }
         </div>
     </div>
 
+    {/* Conditional render of Load more / Collapse buttons */}
     <div>
       {isFullyLoaded ?
       <div className="QAqentries_collapse">
@@ -90,8 +108,10 @@ let QuestionEntries = function({body, asker, date, helpfulCount, reported, answe
       </div>
       }
     </div>
+
+    {/* Conditional rendering of Answer Modal */}
     {showAModal ?
-    <AModal setShowAModal={setShowAModal} productName={QAqentriesContext.productName} body={body}/>
+    <AModal setShowAModal={setShowAModal} productName={QAqentriesContext.productName} body={body}/> //ACTION: pass down prop when refactored
     : null
     }
     </>

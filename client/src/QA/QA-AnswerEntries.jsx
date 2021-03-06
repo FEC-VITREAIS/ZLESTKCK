@@ -20,18 +20,6 @@ let AnswerEntries = ({responder, body, date, helpfulCount, images, aCount}) => {
         })}
       </div>
     </div>
-
-
-
-    {/* <div className="QAaentries_loadMore">
-      <span className="QAaentries_displayCount">Answers 1-2 of {aCount}</span>
-      <button className="QAaentries_loadButton" type="button">Load more answers</button>
-    </div>
-
-    <div className="QAaentries_collapse">
-      <span className="QAaentries_displayCount">Answers 1-{aCount}</span>
-      <button className="QAaentries_collapseButton" type="button">Collapse answers</button>
-    </div> */}
     </>
   )
 }
