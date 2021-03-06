@@ -1,5 +1,6 @@
 import React, {useContext} from 'react';
 import ProductContext from '../context.jsx';
+import RelatedModalWindow from './Related-Modal-Window.jsx';
 
 
 var RelatedListCard = ({product, photo, price}) => {
@@ -20,6 +21,7 @@ var RelatedListCard = ({product, photo, price}) => {
   }
 
   const handleModalClose = (e) => {
+    console.log(e);
     var modal = document.getElementById('comparison-modal');
     modal.style.display = "none";
   }
@@ -34,13 +36,8 @@ var RelatedListCard = ({product, photo, price}) => {
       <div className='related-card-name' onClick={handleProductChange}>{product.name}</div>
       <div className='related-card-price'>{`$${price}`}</div>
       <div className='related-card-div'>Star Rating</div>
-      <div id='comparison-modal' class='comparison-modal'>
-        <div class="modal-content">
-        <span id='close-modal' class='close' onClick={handleModalClose}>&times;</span>
-        <p>Some text in the Modal..</p>
-      </div>
+      <RelatedModalWindow handleModalClose={handleModalClose} product={product}/>
 
-</div>
     </div>
   )
 }

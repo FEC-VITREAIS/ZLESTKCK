@@ -88,8 +88,16 @@
   margin: 15% auto; /* 15% from the top and centered */
   padding: 20px;
   border: 1px solid #888;
-  width: 150px; /* Could be more or less, depending on screen size */
-  height: 150px;
+  width: 250px; /* Could be more or less, depending on screen size */
+  height: auto;
+}
+
+.related-modal-table {
+  text-align: center;
+}
+
+.related-modal-table-title {
+  text-align: center;
 }
 
 /* The Close Button */
