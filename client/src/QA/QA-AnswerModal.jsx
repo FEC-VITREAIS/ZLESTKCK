@@ -1,11 +1,42 @@
-import React from 'react'
+import React, {useState} from 'react'
 import ImageContainer from './QA-ImageContainer'
 
-let AnswerModal = function({setShowAModal, productName, body}) {
+let AnswerModal = function({arrayOfAnswers, setArrayOfAnswers, setShowAModal, productName, body}) {
+  const defaultThumbnail = "https://user-images.githubusercontent.com/101482/29592647-40da86ca-875a-11e7-8bc3-941700b0a323.png"
+  const [arrayOfFiles, setArrayOfFiles] = useState([ defaultThumbnail, defaultThumbnail, defaultThumbnail, defaultThumbnail, defaultThumbnail ])
 
+  const imgURL = []
+  const newAnswerObj = (name, body, photos) => {
+    return ({
+      answerer_name: "",
+      body: "",
+      date: new Date().toISOString(),
+      helpfulness: 0,
+      id: Math.floor(Math.random() * 1000000) + 1000000,
+      photos: []
+    })
+  };
+
+  //CLICK HANDLERS
   const closeAModalClickHandler = (e) => {
-    setShowAModal(false)
+    setShowAModal(false);
   }
+
+  const updateAnswerArrayClickHandler = (e) => {
+    setArrayOfAnswers([...arrayOfAnswers, e.target.value])
+  }
+
+
+  //CREATE ARRAY OF FILES HELPER FUNCTION
+  const onInputChanged = (e) => {
+    const files = e.currentTarget.files;
+    Array.from(files).forEach(file => {
+      imgURL.push(URL.createObjectURL(file))
+    })
+    setArrayOfFiles(imgURL)
+  }
+
+
 
   return (
     <div className="QAamodal">
@@ -46,13 +77,14 @@ let AnswerModal = function({setShowAModal, productName, body}) {
           required>
         </textarea>
       </label>
-      <ImageContainer />
+      <ImageContainer arrayOfFiles={arrayOfFiles} defaultThumbnail={defaultThumbnail} />
       <label className="QAamodal_label">Upload images
         <input
           className="QAamodal_uploadButton"
           type="file"
           id="uploadImagesButton"
           accept="image/*,.pdf"
+          onChange={onInputChanged}
           multiple>
         </input>
       </label>

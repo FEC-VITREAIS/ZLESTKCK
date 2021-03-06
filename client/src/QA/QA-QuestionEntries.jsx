@@ -32,7 +32,7 @@ let QuestionEntries = function({body, asker, date, helpfulCount, reported, answe
   }
 
   const aModalClickHandler = (e) => {
-    setShowAModal(true)
+    setShowAModal(!showAModal)
   }
 
   const loadClickHandler = (e) => {
@@ -111,7 +111,12 @@ let QuestionEntries = function({body, asker, date, helpfulCount, reported, answe
 
     {/* Conditional rendering of Answer Modal */}
     {showAModal ?
-    <AModal setShowAModal={setShowAModal} productName={QAqentriesContext.productName} body={body}/> //ACTION: pass down prop when refactored
+    <AModal
+      setShowAModal={setShowAModal}
+      productName={QAqentriesContext.productName} //ACTION: pass down prop when refactored
+      arrayOfAnswers={arrayOfAnswers}
+      setArrayOfAnswers={setArrayOfAnswers}
+      body={body}/>
     : null
     }
     </>
