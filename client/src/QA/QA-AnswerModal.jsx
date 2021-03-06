@@ -1,8 +1,13 @@
 import React, {useState} from 'react'
 import ImageContainer from './QA-ImageContainer'
 
-let AnswerModal = function({arrayOfAnswers, setArrayOfAnswers, setShowAModal, productName, body}) {
+let AnswerModal = function({answers, displayedAnswers, setDisplayedAnswers, setShowAModal, productName, body}) {
+  //STATE HOOKS
+  const [arrayOfFiles, setArrayOfFiles] = useState([])
+  const [newAnswerName, setNewAnswerName] = useState("name")
+  const [newAnswerBody, setNewAnswerBody] = useState("body")
 
+  //VARIABLES
   const imgURL = []
   const newAnswerObj = (name, body) => {
     return {
@@ -15,21 +20,26 @@ let AnswerModal = function({arrayOfAnswers, setArrayOfAnswers, setShowAModal, pr
     }
   };
 
-  //STATE HOOKS
-  const [arrayOfFiles, setArrayOfFiles] = useState([])
-
-
-
   //CLICK HANDLERS
   const closeAModalClickHandler = (e) => {
     setShowAModal(false);
   }
 
   const updateAnswerArrayClickHandler = (e) => {
-    console.log(e.target)
-    // setArrayOfAnswers([...arrayOfAnswers, e.target.value])
+    console.log('before', answers)
+    console.log(newAnswerObj(newAnswerName, newAnswerBody))
+    setDisplayedAnswers(answers.concat(newAnswerObj(newAnswerName, newAnswerBody)))
+    console.log('after', answers)
   }
 
+  //CHANGE HANDLERS
+  const updateAnswererChangeHandler = (e) => {
+    setNewAnswerName(e.target.value)
+  }
+
+  const updateAnswerBodyChangeHandler = (e) => {
+    setNewAnswerBody(e.target.value)
+  }
 
   //CREATE ARRAY OF FILES HELPER FUNCTION
   const onInputChanged = (e) => {
@@ -39,8 +49,6 @@ let AnswerModal = function({arrayOfAnswers, setArrayOfAnswers, setShowAModal, pr
     })
     setArrayOfFiles(imgURL)
   }
-
-
 
   return (
     <div className="QAamodal">
@@ -55,6 +63,7 @@ let AnswerModal = function({arrayOfAnswers, setArrayOfAnswers, setShowAModal, pr
           size="50"
           maxlenght="60"
           placeholder="username123"
+          updateAnswererChangeHandler={updateAnswererChangeHandler}
           required>
         </input>
       </label>
@@ -78,6 +87,7 @@ let AnswerModal = function({arrayOfAnswers, setArrayOfAnswers, setShowAModal, pr
           maxLength="1000"
           minLength="2"
           placeholder="Write your answer in here"
+          updateAnswerBodyChangeHandler={updateAnswerBodyChangeHandler}
           required>
         </textarea>
       </label>

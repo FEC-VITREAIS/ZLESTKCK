@@ -14,15 +14,15 @@ let QuestionEntries = function({body, asker, date, helpfulCount, reported, answe
   })
 
   //STATE HOOKS
-  const [arrayOfAnswers, setArrayOfAnswers] = useState(orderedAnswers.slice(0,2))
+  const [displayedAnswers, setDisplayedAnswers] = useState(orderedAnswers.slice(0,2))
   const [displayedIndex, setDisplayedIndex] = useState(0)
   const [isFullyLoaded, setIsFullyLoaded] = useState(false)
   const [isHidden, setIsHidden] = useState(false)
   const [showAModal, setShowAModal] = useState(false)
 
   //DISPLAY HELPER FUNCTION
-  const displayedAnswers = (index) => {
-      setArrayOfAnswers(orderedAnswers.slice(0, index))
+  const renderAnswers = (index) => {
+      setDisplayedAnswers(orderedAnswers.slice(0, index))
       setDisplayedIndex(index)
   }
 
@@ -37,23 +37,23 @@ let QuestionEntries = function({body, asker, date, helpfulCount, reported, answe
 
   const loadClickHandler = (e) => {
     if (displayedIndex === aCount) {
-      displayedAnswers(aCount);
+      renderAnswers(aCount);
     } else if (displayedIndex >= aCount-2) {
-      displayedAnswers(aCount)
+      renderAnswers(aCount)
       setIsFullyLoaded(true);
     } else {
-      displayedAnswers(displayedIndex+2)
+      renderAnswers(displayedIndex+2)
     }
   }
 
   const collapseClickHandler = (e) => {
-    displayedAnswers(2)
+    renderAnswers(2)
     setIsFullyLoaded(false)
   }
 
   //USE EFFECT HOOK
   useEffect(() => {
-    displayedAnswers(2)
+    renderAnswers(2)
     }, [])
 
   return (
@@ -78,7 +78,7 @@ let QuestionEntries = function({body, asker, date, helpfulCount, reported, answe
         null
         :
         <div>
-          {arrayOfAnswers.map((answer) => {
+          {displayedAnswers.map((answer) => {
             return (<AnswerEntries
             responder={answer.answerer_name}
             body={answer.body}
@@ -92,30 +92,31 @@ let QuestionEntries = function({body, asker, date, helpfulCount, reported, answe
         </div>
       }
         </div>
+      {/* Conditional render of Load more / Collapse buttons */}
+      <div>
+        {isFullyLoaded ?
+        <div className="QAqentries_collapse">
+          <span className="QAqentries_displayCount">Answers 1-{aCount}</span>
+          <button className="QAqentries_collapseButton" type="button" onClick={collapseClickHandler}>Collapse answers</button>
+        </div>
+        :
+        <div className="QAqentries_loadMore">
+          <span className="QAqentries_displayCount">Answers 1-{displayedIndex} of {aCount}</span>
+          <button className="QAqentries_loadButton" type="button" value={displayedIndex} onClick={loadClickHandler}>Load more answers</button>
+        </div>
+        }
+      </div>
     </div>
 
-    {/* Conditional render of Load more / Collapse buttons */}
-    <div>
-      {isFullyLoaded ?
-      <div className="QAqentries_collapse">
-        <span className="QAqentries_displayCount">Answers 1-{aCount}</span>
-        <button className="QAqentries_collapseButton" type="button" onClick={collapseClickHandler}>Collapse answers</button>
-      </div>
-      :
-      <div className="QAqentries_loadMore">
-        <span className="QAqentries_displayCount">Answers 1-{displayedIndex} of {aCount}</span>
-        <button className="QAqentries_loadButton" type="button" value={displayedIndex} onClick={loadClickHandler}>Load more answers</button>
-      </div>
-      }
-    </div>
 
     {/* Conditional rendering of Answer Modal */}
     {showAModal ?
     <AModal
+      answers={answers}
       setShowAModal={setShowAModal}
       productName={QAqentriesContext.productName} //ACTION: pass down prop when refactored
-      arrayOfAnswers={arrayOfAnswers}
-      setArrayOfAnswers={setArrayOfAnswers}
+      displayedAnswers={displayedAnswers}
+      setDisplayedAnswers={setDisplayedAnswers}
       body={body}/>
     : null
     }
