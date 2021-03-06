@@ -3,8 +3,12 @@ import React from 'react'
 let QASearch = function(props) {
   return (
     <div>
-      Q&A Search
-      <input type="text"></input>
+      <input
+        type="search"
+        minlength="3"
+        placeholder="Have a question? Search for your answers..."
+        size="100">
+      </input>
     </div>
   )
 }

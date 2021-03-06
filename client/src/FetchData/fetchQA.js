@@ -11,10 +11,8 @@ var fetchQA = (productID) => {
     }
   })
   .then((payload) => {
-    // console.log(payload);
-    // var allProductQA = {};
+    console.log('payload', payload);
     var allQuestions = [];
-    var allProductQA = [];
 
     payload.data.results.forEach((question) => {
       // console.log('question: ', question);
@@ -32,22 +30,22 @@ var fetchQA = (productID) => {
 
 }
 
-var fetchAnswers = (questionID) => {
+// var fetchAnswers = (questionID) => {
 
-    return axios.get(`https://app-hrsei-api.herokuapp.com/api/fec2/hrnyc/qa/questions/${questionID}/answers?count=10`, // ACTION: revisit the count parameter to get all answers in a single fetch
-    {
-      headers: {
-        Authorization: API_KEY
-      }
-    })
-    .then((data) => {
-      // console.log('fetch answers data:', data)
-      // return data.data.results
-      return {
-        question_id: questionID,
-        answers: data.data.results
-      }
-    })
-}
+//     return axios.get(`https://app-hrsei-api.herokuapp.com/api/fec2/hrnyc/qa/questions/${questionID}/answers?count=10`, // ACTION: revisit the count parameter to get all answers in a single fetch
+//     {
+//       headers: {
+//         Authorization: API_KEY
+//       }
+//     })
+//     .then((payload) => {
+//       // console.log('fetch answers data:', data)
+//       // return data.data.results
+//       return {
+//         question_id: questionID,
+//         answers: payload.data.results
+//       }
+//     })
+// }
 
 export default fetchQA;
