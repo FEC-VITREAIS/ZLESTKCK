@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 
-const ImageContainer = function ({arrayOfFiles, defaultThumbnail}) {
+const ImageContainer = function ({arrayOfFiles}) {
+  const defaultThumbnail = "https://user-images.githubusercontent.com/101482/29592647-40da86ca-875a-11e7-8bc3-941700b0a323.png"
 
   return (
     <div className="QAimage">

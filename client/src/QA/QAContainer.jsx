@@ -15,7 +15,7 @@ let QAContainer = function(props) {
   const [showQModal, setShowQModal] = useState(false)
 
   const qModalClickHandler = (e) => {
-    setShowQModal(true)
+    setShowQModal(!showQModal)
   }
 
   return (

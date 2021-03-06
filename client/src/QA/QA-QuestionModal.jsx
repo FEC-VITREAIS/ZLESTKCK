@@ -2,10 +2,24 @@ import React, {useState} from 'react'
 import ProductContext from '../context.jsx'
 
 let QuestionModal = function({setShowQModal, productName}) {
+  //VARIABLES
+  const newQuestionObj = (name, body) => {
+    return {
+      answers: [],
+      asker_name: name,
+      question_body: body,
+      question_date: new Date().toISOString(),
+      question_helpfulness: 0,
+      question_id: Math.floor(Math.random() * 1000000) + 2000000,
+      reported: false
+    }
+  };
 
+  //CLICK HANDLERS
   const closeQModalClickHandler = (e) => {
     setShowQModal(false)
   }
+
 
   return (
     <div className="QAqmodal">
