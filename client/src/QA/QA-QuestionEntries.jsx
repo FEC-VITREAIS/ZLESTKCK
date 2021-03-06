@@ -6,10 +6,11 @@ import AModal from './QA-AnswerModal.jsx'
 
 let QuestionEntries = function({body, asker, date, helpfulCount, reported, answers, qCount}) {
   const QAqentriesContext = React.useContext(ProductContext); // ACTION: Delete and pass product name as a prop when refactoring
-  let aCount = answers.length;
+  const [arrayOfAnswers, setArrayOfAnswers] = useState(answers)
+  let aCount = arrayOfAnswers.length;
 
   //SORT THE ANSWERS BY HELPFULNESS COUNT
-  const orderedAnswers =  answers.sort((a, b) => {
+  const orderedAnswers =  arrayOfAnswers.sort((a, b) => {
     return (a.helpfulness > b.helpfulness) ? -1: 1
   })
 
@@ -89,34 +90,35 @@ let QuestionEntries = function({body, asker, date, helpfulCount, reported, answe
             key={answer.id} />)
           })
           }
+          <div>
+            {isFullyLoaded ?
+            <div className="QAqentries_collapse">
+              <span className="QAqentries_displayCount">Answers 1-{aCount}</span>
+              <button className="QAqentries_collapseButton" type="button" onClick={collapseClickHandler}>Collapse answers</button>
+            </div>
+            :
+            <div className="QAqentries_loadMore">
+              <span className="QAqentries_displayCount">Answers 1-{displayedIndex} of {aCount}</span>
+              <button className="QAqentries_loadButton" type="button" value={displayedIndex} onClick={loadClickHandler}>Load more answers</button>
+            </div>
+            }
+          </div>
         </div>
       }
         </div>
       {/* Conditional render of Load more / Collapse buttons */}
-      <div>
-        {isFullyLoaded ?
-        <div className="QAqentries_collapse">
-          <span className="QAqentries_displayCount">Answers 1-{aCount}</span>
-          <button className="QAqentries_collapseButton" type="button" onClick={collapseClickHandler}>Collapse answers</button>
-        </div>
-        :
-        <div className="QAqentries_loadMore">
-          <span className="QAqentries_displayCount">Answers 1-{displayedIndex} of {aCount}</span>
-          <button className="QAqentries_loadButton" type="button" value={displayedIndex} onClick={loadClickHandler}>Load more answers</button>
-        </div>
-        }
-      </div>
+
     </div>
 
 
     {/* Conditional rendering of Answer Modal */}
     {showAModal ?
     <AModal
-      answers={answers}
+      arrayOfAnswers={arrayOfAnswers}
+      setArrayOfAnswers={setArrayOfAnswers}
       setShowAModal={setShowAModal}
       productName={QAqentriesContext.productName} //ACTION: pass down prop when refactored
       displayedAnswers={displayedAnswers}
-      setDisplayedAnswers={setDisplayedAnswers}
       body={body}/>
     : null
     }

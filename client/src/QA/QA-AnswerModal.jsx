@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import ImageContainer from './QA-ImageContainer'
 
-let AnswerModal = function({answers, displayedAnswers, setDisplayedAnswers, setShowAModal, productName, body}) {
+let AnswerModal = function({arrayOfAnswers, setArrayOfAnswers, setShowAModal, productName, body}) {
   //STATE HOOKS
   const [arrayOfFiles, setArrayOfFiles] = useState([])
   const [newAnswerName, setNewAnswerName] = useState("name")
@@ -26,10 +26,10 @@ let AnswerModal = function({answers, displayedAnswers, setDisplayedAnswers, setS
   }
 
   const updateAnswerArrayClickHandler = (e) => {
-    console.log('before', answers)
-    console.log(newAnswerObj(newAnswerName, newAnswerBody))
-    setDisplayedAnswers(answers.concat(newAnswerObj(newAnswerName, newAnswerBody)))
-    console.log('after', answers)
+    // console.log('before', answers)
+    // console.log(newAnswerObj(newAnswerName, newAnswerBody))
+    setArrayOfAnswers(arrayOfAnswers.concat(newAnswerObj(newAnswerName, newAnswerBody)))
+    // console.log('after', answers)
   }
 
   //CHANGE HANDLERS
@@ -63,7 +63,7 @@ let AnswerModal = function({answers, displayedAnswers, setDisplayedAnswers, setS
           size="50"
           maxlenght="60"
           placeholder="username123"
-          updateAnswererChangeHandler={updateAnswererChangeHandler}
+          onChange={updateAnswererChangeHandler}
           required>
         </input>
       </label>
@@ -87,7 +87,7 @@ let AnswerModal = function({answers, displayedAnswers, setDisplayedAnswers, setS
           maxLength="1000"
           minLength="2"
           placeholder="Write your answer in here"
-          updateAnswerBodyChangeHandler={updateAnswerBodyChangeHandler}
+          onChange={updateAnswerBodyChangeHandler}
           required>
         </textarea>
       </label>
