@@ -8,13 +8,15 @@ const CurrentProductDetails = ({ CurrentProductInfo, CurrentProductView }) => {
   }
 
   let product = CurrentProductInfo;
+  console.log(product , 'PRODUCT')
   let productStyle = CurrentProductView;
+  console.log(productStyle, 'PRODUCT STYLE')
 
   return (
     <>
       <div className='readAllReviewsContainer'>
 
-        <a href=".related-container" > Read All Reviews!  </a>
+        <a href="related-container" > Read All Reviews!  </a>
 
       </div>
 
@@ -23,14 +25,14 @@ const CurrentProductDetails = ({ CurrentProductInfo, CurrentProductView }) => {
         current product details
         <div></div>
         <div className="priceText">
-          {product.sale_price === 0 ||
-          product.sale_price === undefined ||
-          product.sale_price === null ? (
-            <div> ${product.default_price || product.original_price} </div>
+          {productStyle.sale_price === 0 ||
+          productStyle.sale_price === undefined ||
+          productStyle.sale_price === null ? (
+            <div> ${productStyle.default_price || productStyle.original_price} </div>
           ) : (
             <div>
               {" "}
-              {sale_price} {product.original_price || product.default_price}{" "}
+              {sale_price} {productStyle.original_price || productStyle.default_price}{" "}
             </div>
           )}
         </div>

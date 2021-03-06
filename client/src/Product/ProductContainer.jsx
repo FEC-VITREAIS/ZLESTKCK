@@ -26,7 +26,7 @@ let ProductContainer = function (props) {
     const currentStyles = context.productStyles;
     const currentProductInfo = context.currentProductDetails;
 
-    // console.log(currentStyles, 'context')
+    // console.log(currentProductInfo, 'product details')
 
     setCurrentProducts(currentStyles);
     setCurrentProductView(currentStyles[0]);
