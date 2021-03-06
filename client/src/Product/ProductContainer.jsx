@@ -5,12 +5,17 @@ import ProductContext from "../context";
 import DisplayCurrentProduct from "./components/DisplayCurrentProduct/DisplayCurrentProduct";
 import DisplayProductPreview from "./components/DisplayProductPreview/DisplayProductPreview";
 
+import CurrentProductDetails from "./components/CurrentProductDetails/CurrentProductDetails";
+import SelectStyle from "./components/SelectStyle/SelectStyle";
+
 let ProductContainer = function (props) {
+  const [CurrentProductInfo, setCurrentProductInfo] = useState({});
+
   const [CurrentProducts, setCurrentProducts] = useState(
     []
   ); /* all the list of products for display */
   const [CurrentProductView, setCurrentProductView] = useState(
-    {}
+    undefined
   ); /* Current product when clicked on in CurrentProducts */
 
   const context = useContext(ProductContext);
@@ -19,11 +24,15 @@ let ProductContainer = function (props) {
     /* on component mount will update all the current products and will update the current view / product */
 
     const currentStyles = context.productStyles;
+    const currentProductInfo = context.currentProductDetails;
 
-    console.log(context)
+    // console.log(currentStyles, 'context')
+
     setCurrentProducts(currentStyles);
     setCurrentProductView(currentStyles[0]);
-  }, [context.productStyles]); 
+
+    setCurrentProductInfo(currentProductInfo);
+  }, [context.productStyles, context.currentProductDetails]);
 
   const HandleProductChange = (e, product) => {
     // console.log("you clicked on a product!", product);
@@ -33,11 +42,33 @@ let ProductContainer = function (props) {
 
   return (
     <>
-      <DisplayCurrentProduct currentProduct={CurrentProductView} />
-      <DisplayProductPreview
-        styles={context.productStyles}
-        changeView={HandleProductChange}
+      <div>
+        <DisplayCurrentProduct
+          currentProduct={
+            CurrentProductView || { photos: [{ thumbnail_url: "" }] }
+          }
+        />
+        <DisplayProductPreview
+          styles={CurrentProducts}
+          changeView={HandleProductChange}
+        />
+      </div>
+
+      <CurrentProductDetails
+        CurrentProductInfo={
+          CurrentProductInfo || {
+            original_price: undefined,
+            sale_price: undefined,
+            default_price: undefined,
+            defaultProp: true,
+          }
+        }
+
+        CurrentProductView={CurrentProductView || {name: ''}}
       />
+
+      <SelectStyle styles={CurrentProducts} changeView={HandleProductChange} />
+
       <div>Product Detail Container</div>
     </>
   );
