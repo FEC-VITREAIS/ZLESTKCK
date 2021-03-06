@@ -4,10 +4,6 @@ import ProductContext from '../context.jsx';
 
 var RelatedList = () => {
   const context = useContext(ProductContext);
-  console.log('related list: ', context.relatedProducts)
-  console.log('product: ', Object.keys(context.relatedProducts[0]))
-  console.log('style list: ', context.relatedProducts[0].styles)
-
 
   return (
     <div className={'related-list'}>
