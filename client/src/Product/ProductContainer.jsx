@@ -9,6 +9,8 @@ import CurrentProductDetails from "./components/CurrentProductDetails/CurrentPro
 import SelectStyle from "./components/SelectStyle/SelectStyle";
 
 let ProductContainer = function (props) {
+  const [CurrentProductInfo, setCurrentProductInfo] = useState({});
+
   const [CurrentProducts, setCurrentProducts] = useState(
     []
   ); /* all the list of products for display */
@@ -22,11 +24,14 @@ let ProductContainer = function (props) {
     /* on component mount will update all the current products and will update the current view / product */
 
     const currentStyles = context.productStyles;
+    const currentProductInfo = context.currentProductDetails;
 
     // console.log(currentStyles, 'context')
 
     setCurrentProducts(currentStyles);
     setCurrentProductView(currentStyles[0]);
+
+    setCurrentProductInfo(currentProductInfo);
   }, [context.productStyles]);
 
   const HandleProductChange = (e, product) => {
@@ -49,12 +54,19 @@ let ProductContainer = function (props) {
         />
       </div>
 
-      <CurrentProductDetails />
-
-      <SelectStyle styles={CurrentProducts} 
-      changeView={HandleProductChange} 
+      <CurrentProductDetails
+        CurrentProductInfo={
+          CurrentProductInfo || {
+            original_price: undefined,
+            sale_price: undefined,
+            default_price: undefined,
+            defaultProp: true,
+          }
+        }
       />
-      
+
+      <SelectStyle styles={CurrentProducts} changeView={HandleProductChange} />
+
       <div>Product Detail Container</div>
     </>
   );
