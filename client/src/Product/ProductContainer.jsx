@@ -32,7 +32,7 @@ let ProductContainer = function (props) {
     setCurrentProductView(currentStyles[0]);
 
     setCurrentProductInfo(currentProductInfo);
-  }, [context.productStyles]);
+  }, [context.productStyles, context.currentProductDetails]);
 
   const HandleProductChange = (e, product) => {
     // console.log("you clicked on a product!", product);
@@ -63,6 +63,8 @@ let ProductContainer = function (props) {
             defaultProp: true,
           }
         }
+
+        CurrentProductView={CurrentProductView || {name: ''}}
       />
 
       <SelectStyle styles={CurrentProducts} changeView={HandleProductChange} />
