@@ -5,11 +5,16 @@ var ModalWindowTable = ({product, sharedFeatures}) => {
   const context = useContext(ProductContext);
 
   var displayComparedFeatures = (feature) => {
+      console.log('product 1 features: ', product.features);
+      console.log('current product features: ', context.currentProductDetails.features);
+      console.log('shared features: ', sharedFeatures);
+
+
       return (
         <tr>
-          <th>1 has feature?</th>
+          <th>{sharedFeatures[feature].currentProductValue}</th>
           <th>{feature}</th>
-          <th>2 has feature?</th>
+          <th>{sharedFeatures[feature].comparedProductValue}</th>
         </tr>
       )
   }
@@ -18,9 +23,9 @@ var ModalWindowTable = ({product, sharedFeatures}) => {
     <table className='related-modal-table'>
     <tbody>
       <tr>
-        <th className='related-modal-table-title'>1</th>
+        <th className='related-modal-table-title'>Current Product Value</th>
         <th className='related-modal-table-title'>Features</th>
-        <th className='related-modal-table-title'>2</th>
+        <th className='related-modal-table-title'>Compared Product Value</th>
       </tr>
       {Object.keys(sharedFeatures).map((feature) => {
         return (

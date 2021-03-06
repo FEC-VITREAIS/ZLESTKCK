@@ -5,13 +5,7 @@ import ModalWindowTable from './Modal-Window-Table.jsx';
 
 var RelatedModalWindow = ({handleModalClose, product, sharedFeatures}) => {
   const context = useContext(ProductContext);
-  // console.log('product id: ', product.id);
-  // console.log('current product id: ', context.currentProductDetails)
 
-
-
-//   console.log(sharedFeatures);
-//
   var compareProductName = () => {
 
     console.log(`${product.name} vs ${context.currentProductDetails.name}`)

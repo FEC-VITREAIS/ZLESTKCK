@@ -21,25 +21,51 @@ var RelatedListCard = ({product, photo, price}) => {
   var compareProductFeatures = () => {
     var sharedFeatures = {};
 
-    product.features.forEach((feature) => {
-      sharedFeatures[feature.feature] = {
-        firstItemVal: feature.value,
-        secondItemVal: null
-      };
-    });
+    // product.features.forEach((feature) => {
+    //   sharedFeatures[feature.feature] = {
+    //     firstItemVal: feature.value,
+    //     secondItemVal: null
+    //   };
+    // });
 
-    context.currentProductDetails.features.forEach((feature) => {
-      if (!sharedFeatures[feature.feature.firstItemVal]) {
+    product.features.forEach((feature) => {
+      if (feature.value === true) {
         sharedFeatures[feature.feature] = {
-          firstItemVal: null,
-          secondItemVal: feature.value
+          comparedProductValue: 'checked'
         }
       } else {
         sharedFeatures[feature.feature] = {
-          secondItemVal: feature.value
+          comparedProductValue: feature.value,
+        };
+      }
+    });
+
+    context.currentProductDetails.features.forEach((feature) => {
+      if (feature.value === true) {
+        sharedFeatures[feature.feature] = {
+          currentProductValue: '✓'
         }
+      } else {
+        sharedFeatures[feature.feature] = {
+          secondItemVal: feature.value,
+        };
       }
     })
+
+
+
+    // context.currentProductDetails.features.forEach((feature) => {
+    //   if (!sharedFeatures[feature.feature.firstItemVal]) {
+    //     sharedFeatures[feature.feature] = {
+    //       firstItemVal: null,
+    //       secondItemVal: feature.value
+    //     }
+    //   } else {
+    //     sharedFeatures[feature.feature] = {
+    //       secondItemVal: feature.value
+    //     }
+    //   }
+    // })
     setSharedFeatures(sharedFeatures);
   }
 
@@ -56,7 +82,7 @@ var RelatedListCard = ({product, photo, price}) => {
 
   return (
     <div className='related-list-card'>
-      <span classnAME="fa fa-star checked" onClick={() => {
+      <span className="fa fa-star checked" onClick={() => {
         compareProductFeatures();
         setDisplayModal(true)
       } }></span>
