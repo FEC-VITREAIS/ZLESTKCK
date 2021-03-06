@@ -21,13 +21,6 @@ var RelatedListCard = ({product, photo, price}) => {
   var compareProductFeatures = () => {
     var sharedFeatures = {};
 
-    // product.features.forEach((feature) => {
-    //   sharedFeatures[feature.feature] = {
-    //     firstItemVal: feature.value,
-    //     secondItemVal: null
-    //   };
-    // });
-
     product.features.forEach((feature) => {
       if (feature.value === true) {
         sharedFeatures[feature.feature] = {
@@ -52,20 +45,6 @@ var RelatedListCard = ({product, photo, price}) => {
       }
     })
 
-
-
-    // context.currentProductDetails.features.forEach((feature) => {
-    //   if (!sharedFeatures[feature.feature.firstItemVal]) {
-    //     sharedFeatures[feature.feature] = {
-    //       firstItemVal: null,
-    //       secondItemVal: feature.value
-    //     }
-    //   } else {
-    //     sharedFeatures[feature.feature] = {
-    //       secondItemVal: feature.value
-    //     }
-    //   }
-    // })
     setSharedFeatures(sharedFeatures);
   }
 
@@ -91,9 +70,7 @@ var RelatedListCard = ({product, photo, price}) => {
       <div className='related-card-name' onClick={handleProductChange}>{product.name}</div>
       <div className='related-card-price'>{`$${price}`}</div>
       <div className='related-card-div'>Star Rating</div>
-      {/* <RelatedModalWindow handleModalClose={handleModalClose} product={product} sharedFeatures={sharedFeatures}/> */}
       {displayModalWindow(isModalDisplayed)}
-
     </div>
   )
 }
