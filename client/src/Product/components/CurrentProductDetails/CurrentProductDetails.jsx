@@ -16,8 +16,9 @@ const CurrentProductDetails = ({ CurrentProductInfo, CurrentProductView }) => {
         </div>
 
         <div>
-          {" "}
-          current product details
+          <div className="categoryText">
+            <h3> Category:</h3> {product.category}
+          </div>
           <div> Product Name: {product.name} </div>
           <div className="priceText">
             {productStyle.sale_price === 0 ||

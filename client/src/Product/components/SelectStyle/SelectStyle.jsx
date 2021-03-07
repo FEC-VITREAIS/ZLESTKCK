@@ -1,5 +1,10 @@
 import React, { useState, useEffect } from "react";
 
+import { Swiper, SwiperSlide } from 'swiper/react';
+
+// Import Swiper styles
+import 'swiper/swiper.scss';
+
 let SelectStyle = ({ styles, changeView }) => {
 
   if (styles.length === undefined || styles.length === 0) {
