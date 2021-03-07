@@ -1,7 +1,7 @@
 /* QA-Container Styling */
 .QAcontainer {
   border: solid 3px black;
-  background-color:  rgb(77, 241, 112);
+  background-color:  rgb(252, 168, 168);
   max-width: 700px;
   max-height: 700px;
   margin: 2rem auto;
@@ -56,7 +56,7 @@
 /* QA-QuestionEntries Styling */
 .QAqentries {
   border: solid 2px green;
-  background-color: rgb(243, 178, 94);
+  background-color: rgb(119, 250, 195);
   margin: 1rem auto;
   border-radius: 0.3rem;
   box-shadow: 0 2px 5px 0 rgb(0,0,0,0.5);
@@ -128,7 +128,7 @@
 /* QA-AnswerEntries Styling */
 .QAaentries {
   border: solid 2px darkred;
-  background-color:rgb(78, 132, 248);
+  background-color:rgb(247, 149, 149);
   margin: 1rem 0;
   border-radius: 0.3rem;
   box-shadow: 0 2px 5px 0 rgb(0,0,0,0.5);
@@ -171,6 +171,7 @@
 /* QA-Search Styling */
 .QAsearch {
   border: solid 2px goldenrod;
+  background-color: rgb(247, 248, 164);
   display: flex;
   justify-content: center;
 }
@@ -182,7 +183,7 @@
 /* QA-QuestionModal Styling */
 .QAqmodal {
   border: solid 2px mediumblue;
-  background-color: rgb(109, 199, 235);
+  background-color: rgb(136, 152, 245);
 }
 
 .QAqmodal_title {
@@ -224,7 +225,7 @@
 /* QA-AnswerModal Styling */
 .QAamodal {
   border: solid 2px purple;
-  background-color: rgb(109, 199, 235);
+  background-color: rgb(220, 167, 245);
 }
 
 .QAamodal_title {

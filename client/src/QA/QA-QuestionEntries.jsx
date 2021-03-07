@@ -82,7 +82,7 @@ let QuestionEntries = function({body, asker, date, helpfulCount, reported, answe
       <div className="QAqentries_metaContainer">
         {/* <span className="QAqentries_question">Q:</span> */}
         <span className="QAqentries_meta">From: {asker}</span>
-        <span className="QAqentries_meta">{date}</span>
+        <span className="QAqentries_meta">{new Date(date).toLocaleString('default', {month: 'short', day:'numeric', year:'numeric'})}</span>
         <span className="QAqentries_meta">Mark as Helpful ({helpfulCount})</span>
         <span className="QAqentries_meta">Report</span>
       </div>

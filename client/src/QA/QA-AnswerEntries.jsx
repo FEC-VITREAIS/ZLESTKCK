@@ -24,7 +24,7 @@ let AnswerEntries = ({responder, body, date, helpfulCount, images, aCount}) => {
         :
         <span className="QAaentries_meta">From: {responder}</span>
         }
-        <span className="QAaentries_meta">{date}</span>
+        <span className="QAaentries_meta">{new Date(date).toLocaleString('default', {month: 'short', day:'numeric', year:'numeric'})}</span>
         {markedAHelpful ?
           <a className="QAaentries_meta" href="javascript:void(0);" onClick={toggleAHelpfulClickHandler}>Mark as Helpful ({helpfulCount+1})</a>
           :
