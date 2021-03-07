@@ -1,7 +1,7 @@
 /* QA-Container Styling */
 .QAcontainer {
   border: solid 3px black;
-  background-color:  rgb(252, 168, 168);
+  background-color:  rgb(252, 206, 168);
   max-width: 700px;
   max-height: 700px;
   margin: 2rem auto;
@@ -171,7 +171,7 @@
 /* QA-Search Styling */
 .QAsearch {
   border: solid 2px goldenrod;
-  background-color: rgb(247, 248, 164);
+  background-color: rgb(240, 241, 145);
   display: flex;
   justify-content: center;
 }
