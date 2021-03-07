@@ -1,36 +1,37 @@
-import React, {useContext} from 'react';
-import RelatedListCard from './Related-List-Card.jsx';
+import React, { useContext, useState } from "react";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import ProductContext from '../context.jsx';
+import RelatedListCard from './Related-List-Card.jsx';
 
 var RelatedList = () => {
   const context = useContext(ProductContext);
 
+  const [sliderSettings, setSliderSettings] = useState({
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 3,
+    arrows: true
+  })
+
+
   return (
-    <div className='related-list'>
-    {context.relatedProducts.map((product, ind) => {
-      return (
-        <RelatedListCard product={product} photo={''} key={product.id}  photo={product.styles.photo} price={product.styles.price}/>
-      )
-    })}
+    <div className='img-carousel'>
+      <h2> Multiple items </h2>
+      <Slider {...sliderSettings}>
+        {context.relatedProducts.map((p) => {
+          return (
+            <div>
+              <RelatedListCard product={p} photo={''} key={p.id}  photo={p.styles.photo} price={p.styles.price}/>
+            </div>
+          )
+        })}
+      </Slider>
     </div>
-  )
-
-
-  // return (
-  //   <div class="gallery js-flickity">
-  //     <div class="gallery-cell"></div>
-  //     <div class="gallery-cell"></div>
-  //     <div class="gallery-cell"></div>
-  //     <div class="gallery-cell"></div>
-  //     <div class="gallery-cell"></div>
-  //     <div class="gallery-cell"></div>
-  //     <div class="gallery-cell"></div>
-  //  </div>
-  // )
-
-
+  );
 }
 
 export default RelatedList;
-
-//context.relatedStyleData[ind].photo

@@ -3,7 +3,7 @@ import './styles/styles.css';
 import RelatedList from './Related-List.jsx';
 import YourOutfitsList from './Your-Outfits-List.jsx';
 import ProductContext from '../context.jsx';
-import Carousel from './Carousel-Test.jsx';
+// import Carousel from './Carousel-Test.jsx';
 
 
 let RelatedContainer = function(props) {
@@ -18,7 +18,6 @@ let RelatedContainer = function(props) {
     return (
       <div className='related-container'>
         Related Products Container
-        <Carousel />
         <RelatedList />
         <YourOutfitsList />
       </div>
