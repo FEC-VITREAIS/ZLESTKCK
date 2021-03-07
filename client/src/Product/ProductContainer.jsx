@@ -8,7 +8,7 @@ import DisplayProductPreview from "./components/DisplayProductPreview/DisplayPro
 import CurrentProductDetails from "./components/CurrentProductDetails/CurrentProductDetails";
 import SelectStyle from "./components/SelectStyle/SelectStyle";
 
-// import './styles/'
+import './styles/styles.css';
 
 let ProductContainer = function (props) {
   const [CurrentProductInfo, setCurrentProductInfo] = useState({});
@@ -73,8 +73,6 @@ let ProductContainer = function (props) {
           styles={CurrentProducts}
           changeView={HandleProductChange}
         />
-
-        <div>Product Detail Container</div>
       </div>
     </>
   );

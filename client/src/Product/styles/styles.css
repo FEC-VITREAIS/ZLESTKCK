@@ -1,6 +1,16 @@
-#ProductContainer{
-    display: grid;
+#ProductContainer {
+  display: grid;
+
+  grid-template-columns: 60% 40%;
+  /* grid-template-rows: 20% ; */
 }
 
+/* .ProductDetailContainer {
+    grid-area: right;
+} */
 
 /* .carouselContainer  */
+
+.styleWidgetimgs {
+  border-radius: 50%;
+}

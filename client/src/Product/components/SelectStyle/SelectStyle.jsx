@@ -19,6 +19,7 @@ let SelectStyle = ({ styles, changeView }) => {
               style={{ height: "100px", width: "100px" }}
               src={thumbnail_url}
               onClick={ (e) => { changeView(e, product)  } }
+              className="styleWidgetimgs"
             ></img>
           );
         })}
