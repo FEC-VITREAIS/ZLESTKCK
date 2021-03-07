@@ -6,7 +6,11 @@ let AnswerEntries = ({responder, body, date, helpfulCount, images, aCount}) => {
     <div className="QAaentries">
       {/* <span className="QAaentries_answer">A:</span> */}
       <div className="QAaentries_metaContainer">
+        {responder === 'Seller' ?
+        <span className="QAaentries_meta">From: <b>{responder}</b></span>
+        :
         <span className="QAaentries_meta">From: {responder}</span>
+        }
         <span className="QAaentries_meta">{date}</span>
         <span className="QAaentries_meta">Mark as Helpful ({helpfulCount})</span>
         <span className="QAaentries_meta">Report</span>
