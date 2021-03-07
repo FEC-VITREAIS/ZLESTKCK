@@ -3,34 +3,34 @@
 }
 .related-container {
   border: 2px solid black;
-  width: 90%;
   height: 750px;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   text-align: center;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  overflow: hidden
+  overflow: hidden;
 }
 
 .related-list,
 .outfits-list {
   width: 100%;
   border: 1px solid blue;
-  height: 250px;
+  /* height: 250px; */
   margin: 10px;
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
   flex-wrap: nowrap;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 .related-list-card {
-  border: 1px solid black;
-  height: 200px;
-  width: 150px;
-  min-width: 150px;
+  border: 2px solid black;
+  border-radius: 10px;
+  height: 275px;
+  width: 200px;
+  min-width: 200px;
   margin: 10px;
   position: relative;
 }
@@ -42,16 +42,20 @@
 
 
 .related-card-category {
-  font-size: 10px;
+  font-size: .8em;
+  line-height: .1em;
 }
 
 .related-card-price {
-  font-size: 8px;
+  font-size: .7em;
+  line-height: 1em;
 }
 
 .related-card-name {
-  font-size: 10px;
+  font-size: 1.1em;
+  line-height: .4em;
   font-weight: bold;
+  cursor: pointer;
 }
 
 .related-card-name:hover {
@@ -59,11 +63,13 @@
 }
 
 .checked {
-  color: orange;
+  color: gold;
   float: right;
   position: absolute;
   left: 85%;
   top: 3%;
+  font-size: 1.5em;
+  cursor: pointer;
 }
 
 .checked:hover {
@@ -71,41 +77,65 @@
 }
 
 /* The Modal (background) */
-.comparison-modal {
-  display: block; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
+/* .comparison-modal {
+  display: block;
+  position: fixed;
+  z-index: 1;
   left: 30%;
   top: 0%;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
+  width: 100%;
+  height: 100%;
   overflow: auto;
+} */
+
+
+.comparison-modal {
+  display: block;
+  position: fixed;
+  z-index: 1;
+  left: 17%;
+  top: -27%;
+  width: 38%;
+  height: 100%;
 }
+
 
 /* Modal Content/Box */
 .modal-content {
   background-color: #fefefe;
-  margin: 15% auto; /* 15% from the top and centered */
-  padding: 20px;
-  border: 1px solid #888;
-  width: 250px; /* Could be more or less, depending on screen size */
-  height: auto;
+  margin: 15% auto;
+  padding: 0;
+  border: 5px solid rgb(37, 37, 37);
+  height: 90%;
+}
+
+.modal-window-comparing {
+  font-size: 1em;
+  line-height: 0em;
 }
 
 .related-modal-table {
   text-align: center;
+  width: 100%;
 }
 
 .related-modal-table-title {
   text-align: center;
+  font-size: 1.2em;
 }
 
-/* The Close Button */
-#close {
-  color: #aaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
+.related-modal-items {
+  font-size: 1.3em;
+  line-height: 0.8em;
+}
+
+.modal-table-feature {
+  font-weight: normal;
+}
+
+/* Modal Close Button */
+#close-modal {
+  font-size: 3em;
 }
 
 .close:hover,
@@ -118,6 +148,8 @@
 .fa-plus {
   color: black;
   font-size: 6em;
+  cursor: pointer;
+  margin-top: 34%;
 }
 
 .fa-plus:hover {
@@ -125,9 +157,9 @@
 }
 
 .slick-prev, .slick-next {
-  color: green !important;
-  border: 1px solid black !important;
   background: black !important;
+  width: 25px;
+  height: 25px;
 }
 
 .img-carousel {
@@ -136,4 +168,11 @@
 
 .slick-slider {
   margin-left: 58px !important;
+}
+
+.slick-div {
+  max-width: 100%;
+  height: auto;
+  position: relative;
+  overflow: hidden;
 }

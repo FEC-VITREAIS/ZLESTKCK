@@ -54,7 +54,6 @@ var YourOutfitsList = () => {
     setOutfitsList(updatedOutfitList);
   }
 
-
   return (
     <>
       <h2>Your outfits: </h2>

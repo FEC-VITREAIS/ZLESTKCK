@@ -3,7 +3,7 @@ import ProductContext from '../context.jsx';
 import RelatedModalWindow from './Related-Modal-Window.jsx';
 
 
-var RelatedListCard = ({product, photo, price}) => {
+var RelatedListCard = ({product}) => {
   const context = useContext(ProductContext);
   const [sharedFeatures, setSharedFeatures] = useState({})
   const [isModalDisplayed, setDisplayModal] = useState(false);
@@ -24,11 +24,11 @@ var RelatedListCard = ({product, photo, price}) => {
     product.features.forEach((feature) => {
       if (feature.value === true) {
         sharedFeatures[feature.feature] = {
-          comparedProductValue: 'checked'
+          comparedProductValue: '✓'
         }
       } else {
         sharedFeatures[feature.feature] = {
-          comparedProductValue: feature.value,
+          comparedProductValue: JSON.parse(feature.value),
         };
       }
     });
@@ -40,7 +40,7 @@ var RelatedListCard = ({product, photo, price}) => {
         }
       } else {
         sharedFeatures[feature.feature] = {
-          secondItemVal: feature.value,
+          currentProductValue: JSON.parse(feature.value),
         };
       }
     })
@@ -65,10 +65,10 @@ var RelatedListCard = ({product, photo, price}) => {
         compareProductFeatures();
         setDisplayModal(true)
       } }></span>
-      <img className='related-list-card-img' src={photo}/>
-      <div className='related-card-category'>{product.category}</div>
-      <div className='related-card-name' onClick={handleProductChange}>{product.name}</div>
-      <div className='related-card-price'>{`$${price}`}</div>
+      <img className='related-list-card-img' src={product.styles.photo}/>
+      <h3 className='related-card-category'>{product.category}</h3>
+      <h2 className='related-card-name' onClick={handleProductChange}>{product.name}</h2>
+      <div className='related-card-price'>{`$${product.styles.price}`}</div>
       <div className='related-card-div'>Star Rating</div>
       {displayModalWindow(isModalDisplayed)}
     </div>

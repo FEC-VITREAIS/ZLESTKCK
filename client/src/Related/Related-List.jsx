@@ -9,23 +9,23 @@ var RelatedList = () => {
   const context = useContext(ProductContext);
 
   const [sliderSettings, setSliderSettings] = useState({
-    dots: true,
-    infinite: true,
+    infinite: false,
     speed: 500,
-    slidesToShow: 3,
-    slidesToScroll: 3,
-    arrows: true
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    arrows: true,
+    accessibility: true,
   })
 
 
   return (
     <div className='img-carousel'>
-      <h2> Multiple items </h2>
+      <h2> Related Items </h2>
       <Slider {...sliderSettings}>
         {context.relatedProducts.map((p) => {
           return (
-            <div>
-              <RelatedListCard product={p} photo={''} key={p.id}  photo={p.styles.photo} price={p.styles.price}/>
+            <div className='slick-div'>
+              <RelatedListCard product={p} key={p.id}/>
             </div>
           )
         })}
@@ -33,5 +33,6 @@ var RelatedList = () => {
     </div>
   );
 }
+
 
 export default RelatedList;
