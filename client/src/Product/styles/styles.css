@@ -1,1 +1,6 @@
-.carouselContainer 
+#ProductContainer{
+    display: grid;
+}
+
+
+/* .carouselContainer  */

@@ -8,6 +8,8 @@ import DisplayProductPreview from "./components/DisplayProductPreview/DisplayPro
 import CurrentProductDetails from "./components/CurrentProductDetails/CurrentProductDetails";
 import SelectStyle from "./components/SelectStyle/SelectStyle";
 
+// import './styles/'
+
 let ProductContainer = function (props) {
   const [CurrentProductInfo, setCurrentProductInfo] = useState({});
 
@@ -42,7 +44,7 @@ let ProductContainer = function (props) {
 
   return (
     <>
-      <div className="ProductContainer">
+      <div id="ProductContainer">
         <div className="carouselContainer">
           <DisplayCurrentProduct
             currentProduct={
