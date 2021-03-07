@@ -9,10 +9,29 @@ let QuestionEntries = function({body, asker, date, helpfulCount, reported, answe
   const [arrayOfAnswers, setArrayOfAnswers] = useState(answers)
   let aCount = arrayOfAnswers.length;
 
-  //SORT THE ANSWERS BY HELPFULNESS COUNT
-  const orderedAnswers =  arrayOfAnswers.sort((a, b) => {
-    return (a.helpfulness > b.helpfulness) ? -1: 1
-  })
+  //SORT THE ANSWERS BY SELLER AND HELPFULNESS COUNT
+  const arrangeAnswers = (array) => {
+    let sellerAnswers = [];
+    let restOfAnswers = [];
+    for (let i = 0; i < array.length; i++) {
+      if (array[i].answerer_name === 'Seller') {
+        sellerAnswers.push(array[i])
+      } else {
+        restOfAnswers.push(array[i])
+      }
+    }
+    sellerAnswers.sort((a, b) => {
+      return (a.helpfulness > b.helpfulness) ? -1: 1
+    })
+
+    restOfAnswers.sort((a, b) => {
+      return (a.helpfulness > b.helpfulness) ? -1: 1
+    })
+
+    return sellerAnswers.concat(restOfAnswers)
+  }
+
+  let orderedAnswers = arrangeAnswers(arrayOfAnswers)
 
   //STATE HOOKS
   const [displayedAnswers, setDisplayedAnswers] = useState(orderedAnswers.slice(0,2))
