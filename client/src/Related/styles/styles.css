@@ -4,7 +4,7 @@
 .related-container {
   border: 2px solid black;
   width: 90%;
-  height: 500px;
+  height: 750px;
   font-family: Arial, Helvetica, sans-serif;
   text-align: center;
   display: flex;
@@ -17,7 +17,7 @@
 .outfits-list {
   width: 100%;
   border: 1px solid blue;
-  height: 200px;
+  height: 250px;
   margin: 10px;
   display: flex;
   flex-direction: row;
@@ -28,7 +28,7 @@
 
 .related-list-card {
   border: 1px solid black;
-  height: auto;
+  height: 200px;
   width: 150px;
   min-width: 150px;
   margin: 10px;
@@ -113,4 +113,27 @@
   color: black;
   text-decoration: none;
   cursor: pointer;
+}
+
+.fa-plus {
+  color: black;
+  font-size: 6em;
+}
+
+.fa-plus:hover {
+  color: grey;
+}
+
+.slick-prev, .slick-next {
+  color: green !important;
+  border: 1px solid black !important;
+  background: black !important;
+}
+
+.img-carousel {
+  width: 90%;
+}
+
+.slick-slider {
+  margin-left: 58px !important;
 }

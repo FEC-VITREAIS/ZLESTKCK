@@ -6,7 +6,7 @@ var RelatedList = () => {
   const context = useContext(ProductContext);
 
   return (
-    <div className={'related-list'}>
+    <div className='related-list'>
     {context.relatedProducts.map((product, ind) => {
       return (
         <RelatedListCard product={product} photo={''} key={product.id}  photo={product.styles.photo} price={product.styles.price}/>
@@ -14,6 +14,19 @@ var RelatedList = () => {
     })}
     </div>
   )
+
+
+  // return (
+  //   <div class="gallery js-flickity">
+  //     <div class="gallery-cell"></div>
+  //     <div class="gallery-cell"></div>
+  //     <div class="gallery-cell"></div>
+  //     <div class="gallery-cell"></div>
+  //     <div class="gallery-cell"></div>
+  //     <div class="gallery-cell"></div>
+  //     <div class="gallery-cell"></div>
+  //  </div>
+  // )
 
 
 }

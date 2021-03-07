@@ -54,7 +54,7 @@ var RelatedListCard = ({product, photo, price}) => {
         <RelatedModalWindow handleModalClose={handleModalClose} product={product} sharedFeatures={sharedFeatures}/>
       )
     } else {
-      return <div></div>
+      return <></>
     }
 
   }

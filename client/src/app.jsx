@@ -14,8 +14,6 @@ import QAContainer from './QA/QAContainer.jsx'
 import RelatedContainer from './Related/RelatedContainer.jsx'
 import ReviewContainer from './Reviews/ReviewContainer.jsx'
 
-
-
 let App = function(props) {
 
   // console.log('rerender!');
