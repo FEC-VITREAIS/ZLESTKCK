@@ -26,7 +26,7 @@ let ProductContainer = function (props) {
     const currentStyles = context.productStyles;
     const currentProductInfo = context.currentProductDetails;
 
-    // console.log(currentProductInfo, 'product details')
+    console.log(currentStyles, "product details");
 
     setCurrentProducts(currentStyles);
     setCurrentProductView(currentStyles[0]);
@@ -42,34 +42,38 @@ let ProductContainer = function (props) {
 
   return (
     <>
-      <div>
-        <DisplayCurrentProduct
-          currentProduct={
-            CurrentProductView || { photos: [{ thumbnail_url: "" }] }
+      <div className="ProductContainer">
+        <div className="carouselContainer">
+          <DisplayCurrentProduct
+            currentProduct={
+              CurrentProductView || { photos: [{ thumbnail_url: "" }] }
+            }
+          />
+          <DisplayProductPreview
+            styles={CurrentProducts}
+            changeView={HandleProductChange}
+          />
+        </div>
+
+        <CurrentProductDetails
+          CurrentProductInfo={
+            CurrentProductInfo || {
+              original_price: undefined,
+              sale_price: undefined,
+              default_price: undefined,
+              defaultProp: true,
+            }
           }
+          CurrentProductView={CurrentProductView || { name: "" }}
         />
-        <DisplayProductPreview
+
+        <SelectStyle
           styles={CurrentProducts}
           changeView={HandleProductChange}
         />
+
+        <div>Product Detail Container</div>
       </div>
-
-      <CurrentProductDetails
-        CurrentProductInfo={
-          CurrentProductInfo || {
-            original_price: undefined,
-            sale_price: undefined,
-            default_price: undefined,
-            defaultProp: true,
-          }
-        }
-
-        CurrentProductView={CurrentProductView || {name: ''}}
-      />
-
-      <SelectStyle styles={CurrentProducts} changeView={HandleProductChange} />
-
-      <div>Product Detail Container</div>
     </>
   );
 };
