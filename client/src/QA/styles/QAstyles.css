@@ -1,8 +1,11 @@
 /* QA-Container Styling */
 .QAcontainer {
   border: solid 3px black;
-  max-width: 500px;
+  background-color:  rgb(77, 241, 112);
+  max-width: 700px;
+  max-height: 700px;
   margin: 2rem auto;
+  overflow: auto;
 }
 
 .QAcontainer_header {
@@ -53,10 +56,12 @@
 /* QA-QuestionEntries Styling */
 .QAqentries {
   border: solid 2px green;
-  background-color: burlywood;
+  background-color: rgb(243, 178, 94);
   margin: 1rem auto;
   border-radius: 0.3rem;
   box-shadow: 0 2px 5px 0 rgb(0,0,0,0.5);
+  max-height: 400px;
+  overflow: auto;
 }
 
 .QAqentries_metaContainer {
@@ -84,6 +89,10 @@
   border: solid 2px green;
   display: flex;
   justify-content: space-evenly;
+}
+
+.QAqentries_displayedAnswers {
+  border: solid 2px green;
 }
 
 .QAqentries_addButton {
@@ -119,7 +128,7 @@
 /* QA-AnswerEntries Styling */
 .QAaentries {
   border: solid 2px darkred;
-  background-color: cyan;
+  background-color:rgb(78, 132, 248);
   margin: 1rem 0;
   border-radius: 0.3rem;
   box-shadow: 0 2px 5px 0 rgb(0,0,0,0.5);
@@ -173,6 +182,7 @@
 /* QA-QuestionModal Styling */
 .QAqmodal {
   border: solid 2px mediumblue;
+  background-color: rgb(109, 199, 235);
 }
 
 .QAqmodal_title {
@@ -214,6 +224,7 @@
 /* QA-AnswerModal Styling */
 .QAamodal {
   border: solid 2px purple;
+  background-color: rgb(109, 199, 235);
 }
 
 .QAamodal_title {
