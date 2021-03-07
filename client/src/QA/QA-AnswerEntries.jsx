@@ -1,6 +1,19 @@
-import React from 'react'
+import React, {useState} from 'react'
 
 let AnswerEntries = ({responder, body, date, helpfulCount, images, aCount}) => {
+  //USE STATE HOOK
+  const [markedAHelpful, setMarkedAHelpful] = useState(false)
+  const [markedAReported, setMarkedAReported] = useState(false)
+
+  //CLICK HANDLERS
+  const toggleAHelpfulClickHandler = (e) => {
+    setMarkedAHelpful(!markedAHelpful)
+  }
+
+  const toggleAReportedClickHandler = (e) => { // ACTION: Add functionality to hide reported answers
+    setMarkedAReported(!markedAReported)
+  }
+
   return (
     <>
     <div className="QAaentries">
@@ -12,8 +25,16 @@ let AnswerEntries = ({responder, body, date, helpfulCount, images, aCount}) => {
         <span className="QAaentries_meta">From: {responder}</span>
         }
         <span className="QAaentries_meta">{date}</span>
-        <span className="QAaentries_meta">Mark as Helpful ({helpfulCount})</span>
-        <span className="QAaentries_meta">Report</span>
+        {markedAHelpful ?
+          <a className="QAaentries_meta" href="javascript:void(0);" onClick={toggleAHelpfulClickHandler}>Mark as Helpful ({helpfulCount+1})</a>
+          :
+          <a className="QAaentries_meta" href="javascript:void(0);" onClick={toggleAHelpfulClickHandler}>Mark as Helpful ({helpfulCount})</a>
+        }
+        {markedAReported ?
+          <a className="QAaentries_meta" href="javascript:void(0);" onClick={toggleAReportedClickHandler}>Reported</a>
+          :
+          <a className="QAaentries_meta" href="javascript:void(0);" onClick={toggleAReportedClickHandler}>Report</a>
+        }
       </div>
       <div className="QAaentries_answerBody">A: {body}</div>
       <div className="QAaentries_images">
