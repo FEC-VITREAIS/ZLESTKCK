@@ -1,12 +1,27 @@
 import React, {useState, useContext, useEffect} from 'react';
 import ProductContext from '../context.jsx';
 import OutfitsCard from './Outfits-Card.jsx';
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 
 var YourOutfitsList = () => {
   const [outfitsList, setOutfitsList] = useState([]);
   const [outfitsListCache, setOutfitsListCache] = useState({});
   const context = useContext(ProductContext);
+
+
+
+  const [sliderSettings, setSliderSettings] = useState({
+    infinite: false,
+    speed: 500,
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    arrows: true,
+    accessibility: true,
+  })
+
 
   const currentProduct = context.currentProductDetails;
   const currentProductStyles = context.productStyles;
@@ -53,6 +68,28 @@ var YourOutfitsList = () => {
 
     setOutfitsList(updatedOutfitList);
   }
+
+
+  // return (
+  //   <>
+  //     <h2>Your outfits: </h2>
+  //     <div className='outfits-list'>
+  //       <div className='related-list-card'>
+  //         Add New Outfit<br></br>
+  //         <span className="fa fa-plus" onClick={addNewOutfit}></span><br></br>
+  //       </div>
+  //       <Slider {...sliderSettings}>
+  //         {outfitsList.map((outfit) => {
+  //           return (
+  //             <div className='slick-div'>
+  //               {<OutfitsCard key={outfit.id} product={outfit} removeOutfit={removeOutfit} />}
+  //             </div>
+  //           )
+  //         })}
+  //       </Slider>
+  //     </div>
+  //   </>
+  // )
 
   return (
     <>

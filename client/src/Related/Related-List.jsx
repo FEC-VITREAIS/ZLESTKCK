@@ -20,7 +20,7 @@ var RelatedList = () => {
 
   return (
     <div className='img-carousel'>
-      <h2> Related Items </h2>
+      <h2 className='related-items-title'> Related Items </h2>
       <Slider {...sliderSettings}>
         {context.relatedProducts.map((p) => {
           return (

@@ -54,10 +54,23 @@ var RelatedListCard = ({product}) => {
         <RelatedModalWindow handleModalClose={handleModalClose} product={product} sharedFeatures={sharedFeatures}/>
       )
     } else {
-      return <></>
+      return (
+        <></>
+      )
     }
+  };
 
-  }
+  const calculateSalePrice = () => {
+    if (product.styles.salePrice) {
+      return (
+        <span className='related-card-sale-price'><strike>{`$${product.styles.price}`}</strike>{`$${product.styles.salePrice}`}</span>
+      )
+    } else {
+      return (
+        <span className='related-card-price'>{`$${product.styles.price}`}</span>
+      )
+    }
+  };
 
   return (
     <div className='related-list-card'>
@@ -68,7 +81,7 @@ var RelatedListCard = ({product}) => {
       <img className='related-list-card-img' src={product.styles.photo}/>
       <h3 className='related-card-category'>{product.category}</h3>
       <h2 className='related-card-name' onClick={handleProductChange}>{product.name}</h2>
-      <div className='related-card-price'>{`$${product.styles.price}`}</div>
+      {calculateSalePrice()}
       <div className='related-card-div'>Star Rating</div>
       {displayModalWindow(isModalDisplayed)}
     </div>
