@@ -9,14 +9,14 @@ let AnswerModal = function({arrayOfAnswers, setArrayOfAnswers, setShowAModal, pr
 
   //VARIABLES
   const imgURL = []
-  const newAnswerObj = (name, body) => {
+  const newAnswerObj = (name, body, photos) => {
     return {
       answerer_name: name,
       body: body,
       date: new Date().toISOString(),
       helpfulness: 0,
       id: Math.floor(Math.random() * 1000000) + 1000000,
-      photos: []
+      photos: photos
     }
   };
 
@@ -28,7 +28,7 @@ let AnswerModal = function({arrayOfAnswers, setArrayOfAnswers, setShowAModal, pr
   const updateAnswerArrayClickHandler = (e) => {
     // console.log('before', answers)
     // console.log(newAnswerObj(newAnswerName, newAnswerBody))
-    setArrayOfAnswers(arrayOfAnswers.concat(newAnswerObj(newAnswerName, newAnswerBody)))
+    setArrayOfAnswers(arrayOfAnswers.concat(newAnswerObj(newAnswerName, newAnswerBody, arrayOfFiles)))
     // console.log('after', answers)
   }
 

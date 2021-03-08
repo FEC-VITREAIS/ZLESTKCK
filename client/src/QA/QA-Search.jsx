@@ -41,7 +41,7 @@ let QASearch = function({questions}) {
         {results.map((result) => {
           return (
             <div className="QAsearchResults">
-              <div>Match Found: {result.item.question_body}</div>
+              <div><b>Match Found:</b> {result.item.question_body}</div>
             </div>
           )
         })}

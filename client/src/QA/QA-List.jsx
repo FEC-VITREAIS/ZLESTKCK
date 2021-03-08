@@ -10,12 +10,12 @@ let QAList = function(props) {
   return (
     <>
     <div className="QAlist">
-      <div className="QAlist_displayCount">Questions 1-4 of {qCount}</div>
+      <div className="QAlist_displayCount">Questions 1-2 of {qCount}</div>
       <input className="QAlist_sortButton" type="button" value="Sort by"></input>
     </div>
 
     <div className="QAlist_container">
-      {QAListContext.productQA.map((question) => {
+      {QAListContext.productQA.slice(1, 2).map((question) => {
         return (
           <QuestionEntries
             body={question.question_body}
