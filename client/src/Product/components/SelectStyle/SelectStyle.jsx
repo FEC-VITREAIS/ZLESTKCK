@@ -26,11 +26,9 @@ let SelectStyle = ({ styles, changeView }) => {
             ></img>
           );
         })}
-        ;
       </div>
     </>
   );
 };
-
 
 export default SelectStyle;
