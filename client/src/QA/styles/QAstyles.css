@@ -180,6 +180,13 @@
   border: solid 2px goldenrod;
 }
 
+.QAsearchResults {
+  border: solid 2px goldenrod;
+  background-color: rgb(240, 241, 145);
+  display: flex;
+  justify-content: center;
+}
+
 /* QA-QuestionModal Styling */
 .QAqmodal {
   border: solid 2px mediumblue;

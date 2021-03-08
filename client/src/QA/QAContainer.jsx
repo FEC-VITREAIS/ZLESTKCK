@@ -11,7 +11,6 @@ import QModal from './QA-QuestionModal'
 let QAContainer = function(props) {
 
   const QAContainerContext = React.useContext(ProductContext);
-
   const [showQModal, setShowQModal] = useState(false)
 
   const qModalClickHandler = (e) => {
@@ -27,7 +26,7 @@ let QAContainer = function(props) {
       <QModal setShowQModal={setShowQModal} productName={QAContainerContext.productName} />
       : null
       }
-      <QASearch />
+      <QASearch questions={QAContainerContext.productQA} />
       <QAList />
     </div>
   )
