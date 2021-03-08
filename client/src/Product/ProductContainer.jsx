@@ -8,7 +8,7 @@ import DisplayProductPreview from "./components/DisplayProductPreview/DisplayPro
 import CurrentProductDetails from "./components/CurrentProductDetails/CurrentProductDetails";
 import SelectStyle from "./components/SelectStyle/SelectStyle";
 
-import './styles/styles.css';
+import "./styles/styles.css";
 
 let ProductContainer = function (props) {
   const [CurrentProductInfo, setCurrentProductInfo] = useState({});
@@ -46,14 +46,17 @@ let ProductContainer = function (props) {
     <>
       <div id="ProductContainer">
         <div className="carouselContainer">
-          <DisplayCurrentProduct
+          {/* <DisplayCurrentProduct
             currentProduct={
               CurrentProductView || { photos: [{ thumbnail_url: "" }] }
             }
-          />
+          /> */}
           <DisplayProductPreview
             styles={CurrentProducts}
             changeView={HandleProductChange}
+            currentProduct={
+              CurrentProductView || { photos: [{ thumbnail_url: "" }] }
+            }
           />
         </div>
 

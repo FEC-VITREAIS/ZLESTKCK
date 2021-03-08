@@ -9,7 +9,11 @@
     grid-area: right;
 } */
 
-/* .carouselContainer  */
+.carouselContainer{
+  border-width: thin;
+  border-style: solid;
+  background: #e6e6e6;
+}
 
 .styleWidgetimgs {
   border-radius: 50%;
