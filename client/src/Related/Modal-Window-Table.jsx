@@ -12,9 +12,9 @@ var ModalWindowTable = ({product, sharedFeatures}) => {
 
       return (
         <tr>
-          <th className='modal-table-feature'>{sharedFeatures[feature].currentProductValue}</th>
-          <th>{feature}</th>
-          <th className='modal-table-feature'>{sharedFeatures[feature].comparedProductValue}</th>
+          <th className='modal-table-feature-value'>{sharedFeatures[feature].currentProductValue}</th>
+          <th className='modal-table-feature-name'>{feature}</th>
+          <th className='modal-table-feature-value'>{sharedFeatures[feature].comparedProductValue}</th>
         </tr>
       )
   }

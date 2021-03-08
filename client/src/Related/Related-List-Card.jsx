@@ -63,7 +63,7 @@ var RelatedListCard = ({product}) => {
   const calculateSalePrice = () => {
     if (product.styles.salePrice) {
       return (
-        <span className='related-card-sale-price'><strike>{`$${product.styles.price}`}</strike>{`$${product.styles.salePrice}`}</span>
+        <span className='related-card-sale-price'><strike>{`$${product.styles.price}`}</strike> {`$${product.styles.salePrice}`}</span>
       )
     } else {
       return (

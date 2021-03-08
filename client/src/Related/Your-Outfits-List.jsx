@@ -16,9 +16,10 @@ var YourOutfitsList = () => {
   const [sliderSettings, setSliderSettings] = useState({
     infinite: false,
     speed: 500,
-    slidesToShow: 4,
+    slidesToShow: 3,
     slidesToScroll: 1,
-    arrows: true,
+    // arrows: true,
+    dots: true,
     accessibility: true,
   })
 
@@ -70,27 +71,6 @@ var YourOutfitsList = () => {
   }
 
 
-  // return (
-  //   <>
-  //     <h2>Your outfits: </h2>
-  //     <div className='outfits-list'>
-  //       <div className='related-list-card'>
-  //         Add New Outfit<br></br>
-  //         <span className="fa fa-plus" onClick={addNewOutfit}></span><br></br>
-  //       </div>
-  //       <Slider {...sliderSettings}>
-  //         {outfitsList.map((outfit) => {
-  //           return (
-  //             <div className='slick-div'>
-  //               {<OutfitsCard key={outfit.id} product={outfit} removeOutfit={removeOutfit} />}
-  //             </div>
-  //           )
-  //         })}
-  //       </Slider>
-  //     </div>
-  //   </>
-  // )
-
   return (
     <>
       <h2>Your outfits: </h2>
@@ -99,13 +79,35 @@ var YourOutfitsList = () => {
           Add New Outfit<br></br>
           <span className="fa fa-plus" onClick={addNewOutfit}></span><br></br>
         </div>
-        {/* {renderOutfits(outfitsList)} */}
-        {outfitsList.map((outfit) => {
-          return (<OutfitsCard key={outfit.id} product={outfit} removeOutfit={removeOutfit} />)
-        })}
+        <Slider {...sliderSettings}>
+          {outfitsList.map((outfit) => {
+            return (
+              // <div className='slick-div'>
+              <div>
+                {<OutfitsCard key={outfit.id} product={outfit} removeOutfit={removeOutfit} />}
+              </div>
+            )
+          })}
+        </Slider>
       </div>
     </>
   )
+
+  // return (
+  //   <>
+  //     <h2>Your outfits: </h2>
+  //     <div className='outfits-list'>
+  //       <div className='outfits-list-card'>
+  //         Add New Outfit<br></br>
+  //         <span className="fa fa-plus" onClick={addNewOutfit}></span><br></br>
+  //       </div>
+  //       {/* {renderOutfits(outfitsList)} */}
+  //       {outfitsList.map((outfit) => {
+  //         return (<OutfitsCard key={outfit.id} product={outfit} removeOutfit={removeOutfit} />)
+  //       })}
+  //     </div>
+  //   </>
+  // )
 
 }
 

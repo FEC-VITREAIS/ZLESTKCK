@@ -1,3 +1,20 @@
+* {
+  outline: none !important;
+}
+
+[class ^= slick] {
+  outline: none !important;
+  overflow: visible;
+}
+
+h1, h2 {
+  font-family: 'Sigmar One', cursive;
+}
+
+div, span {
+  font-family: 'Raleway', sans-serif;
+}
+
 .related-card-div, .outfits-card-rating {
   font-size: 5px;
 }
@@ -10,11 +27,12 @@
   flex-direction: column;
   justify-content: space-around;
   overflow: hidden;
+  background-color: #F2E1CB;
 }
 
 .related-list,
 .outfits-list {
-  width: 100%;
+  width: 90%;
   /* height: 250px; */
   margin: 10px;
   display: flex;
@@ -24,14 +42,20 @@
   /* overflow: hidden; */
 }
 
+
 .related-list-card, .outfits-list-card {
-  border: 2px solid black;
+  border: 3px solid #D97455;
   border-radius: 10px;
   height: 275px;
   width: 200px;
   min-width: 200px;
   margin: 10px;
   position: relative;
+}
+
+.outfits-list-card {
+  overflow: auto;
+  left: 4%;
 }
 
 .related-list-card-img, .outfits-list-card-img {
@@ -104,8 +128,8 @@
   position: fixed;
   z-index: 1;
   left: 17%;
-  top: -27%;
-  width: 38%;
+  top: -21%;
+  width: 28%;
   height: 100%;
 }
 
@@ -117,7 +141,7 @@
   padding: 0;
   border: 5px solid rgb(37, 37, 37);
   height: 90%;
-  overflow: scroll;
+  overflow: auto;
 }
 
 .modal-window-comparing {
@@ -140,8 +164,13 @@
   line-height: 0.8em;
 }
 
-.modal-table-feature {
+.modal-table-feature-value {
   font-weight: normal;
+
+}
+
+.modal-table-feature-name {
+  /* border: 1px solid black; */
 }
 
 /* Modal Close Button */
@@ -179,6 +208,7 @@
 
 .slick-slider {
   margin-left: 58px !important;
+  min-width: 90%;
 }
 
 .slick-div {
@@ -188,6 +218,23 @@
   overflow: hidden;
 }
 
-.slack-div:focus {
+.slick-track {
+  margin-left: 0 !important;
+}
+
+.slick-div:focus {
   border: none !important;
+}
+
+.slick-slide {
+  outline: none !important;
+}
+
+.slick-slide, .slick-active {
+  margin-left: 0;
+}
+
+
+[class ^= slick-arrow] {
+  display: none !important;
 }
