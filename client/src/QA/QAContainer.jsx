@@ -11,25 +11,29 @@ import QModal from './QA-QuestionModal'
 let QAContainer = function(props) {
 
   const QAContainerContext = React.useContext(ProductContext);
-  const [showQModal, setShowQModal] = useState(false)
+  const [showQModal, setShowQModal] = useState(false);
+  const questions = QAContainerContext.productQA;
 
   const qModalClickHandler = (e) => {
     setShowQModal(!showQModal)
   }
-
-  return (
-    <div className="QAcontainer">
-      <h2 className="QAcontainer_header">Customer Questions</h2>
-      <h4 className="QAcontainer_subheader">Ask for information about this product from the customers who own it.</h4>
-      <input className="QAlist_askButton" type="button" value="Ask a question" onClick={qModalClickHandler} ></input>
-      {showQModal ?
-      <QModal setShowQModal={setShowQModal} productName={QAContainerContext.productName} />
-      : null
-      }
-      <QASearch questions={QAContainerContext.productQA} />
-      <QAList />
-    </div>
-  )
+  if (questions.length) {
+    return (
+      <div className="QAcontainer">
+        <h2 className="QAcontainer_header">Customer Questions</h2>
+        <h4 className="QAcontainer_subheader">Ask for information about this product from the customers who own it.</h4>
+        <input className="QAlist_askButton" type="button" value="Ask a question" onClick={qModalClickHandler} ></input>
+        {showQModal ?
+        <QModal setShowQModal={setShowQModal} productName={QAContainerContext.productName} />
+        : null
+        }
+        <QASearch questions={questions} />
+        <QAList questions={questions} />
+      </div>
+    )
+  } else {
+    return (<div> </div>)
+  }
 }
 
 export default QAContainer

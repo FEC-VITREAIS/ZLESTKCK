@@ -14,8 +14,7 @@ let QASearch = function({questions}) {
   }
   const fuse = new Fuse(questions, options);
   const results = fuse.search(query)
-  console.log(results)
-  const sayHello = () => console.log('ready to search')
+  const sayHello = () => {}
   const searchChangeHandler = (e) => {
     setQuery(e.target.value)
   }

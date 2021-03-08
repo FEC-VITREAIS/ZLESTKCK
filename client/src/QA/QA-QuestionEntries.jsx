@@ -97,7 +97,7 @@ let QuestionEntries = function({body, asker, date, helpfulCount, reported, answe
       {isHidden ?
         null
         :
-        <div classNAme="QAqentries_displayedAnswers">
+        <div className="QAqentries_displayedAnswers">
           {displayedAnswers.map((answer) => {
             return (<AnswerEntries
             responder={answer.answerer_name}
