@@ -7,6 +7,7 @@ import fetchRelatedProducts from './FetchData/fetchRelatedProducts.js';
 import fetchQA from './FetchData/fetchQA.js';
 import fetchStyles from './FetchData/fetchStyles.js';
 import fetchReviews from './FetchData/fetchReviews.js'
+import fetchReviewsMetaData from './FetchData/fetchReviewsMetaData.js'
 
 import ProductContainer from './Product/ProductContainer.jsx'
 import QAContainer from './QA/QAContainer.jsx'
@@ -26,6 +27,7 @@ let App = function(props) {
   const [productQA, setProductQA] = useState([]);
   const [productStyles, setProductStyles] = useState([]);
   const [productReviews, setProductReviews] = useState([]);
+  const [productReviewsMetaData, setProductReviewsMetaData] = useState({});
   const [reviewsSortBy, setReviewsSortBy] = useState('newest'); //set the default reviews to sort by newest
 
 
@@ -35,7 +37,7 @@ let App = function(props) {
     fetchProductDetails(currentProduct)
     .then((data) => {
       setCurrentProductDetails(data);
-      console.log('current product: ', data);
+      //console.log('current product: ', data);
     })
 
   }
@@ -66,7 +68,7 @@ let App = function(props) {
 
     fetchQA(currentProduct)
     .then((data) => {
-      console.log('all product questions and answers', data);
+      //console.log('all product questions and answers', data);
 
       setProductQA(data)
     })
@@ -84,10 +86,19 @@ let App = function(props) {
 
     fetchReviews(currentProduct, reviewsSortBy)
     .then((data) => {
-      // console.log('product review data: ', data);
+      console.log('product review data: ', data);
       setProductReviews(data);
     })
 
+  }
+
+  var fetchProductReviewsMetaData = () => {
+
+    fetchReviewsMetaData(currentProduct)
+    .then((data) => {
+      console.log('product review meta data: ', data);
+      setProductReviewsMetaData(data);
+    })
   }
 
   var changeReviewSortBy = (sortBy) => {
@@ -104,6 +115,7 @@ let App = function(props) {
     fetchProductQA()
     fetchProductStyles()
     fetchProductReviews()
+    fetchProductReviewsMetaData()
   }, [currentProduct]);
 
 
@@ -116,7 +128,8 @@ let App = function(props) {
       updateCurrentProduct: updateCurrentProduct,
       productStyles: productStyles,
       productReviews: productReviews,
-      changeReviewSortBy: changeReviewSortBy
+      changeReviewSortBy: changeReviewSortBy,
+      productReviewsMetaData: productReviewsMetaData
     }}>
       <div>
         <ProductContainer />
