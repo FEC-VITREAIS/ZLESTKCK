@@ -29,6 +29,12 @@ let QAList = function({questions}) {
     }
   }
 
+  const hideQClickHandler = (e) => {
+    if (displayedQIndex > 4) {
+      renderQuestions(displayedQIndex-2);
+    }
+  }
+
   const collapseQClickHandler = (e) => {
     renderQuestions(4)
     setIsQFullyLoaded(false)
@@ -70,7 +76,8 @@ let QAList = function({questions}) {
           </div>
           :
           <div className="QAlist_loadMoreQuestions">
-            <button type="button" onClick={loadQClickHandler}>Load more questions</button>
+            <button type="button" onClick={loadQClickHandler}>Show more questions</button>
+            <button type="button" onClick={hideQClickHandler}>Show less questions</button>
           </div>
         }
       </div>

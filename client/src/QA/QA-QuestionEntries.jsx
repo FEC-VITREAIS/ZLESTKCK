@@ -39,6 +39,8 @@ let QuestionEntries = function({body, asker, date, helpfulCount, reported, answe
   const [isFullyLoaded, setIsFullyLoaded] = useState(false)
   const [isHidden, setIsHidden] = useState(false)
   const [showAModal, setShowAModal] = useState(false)
+  const [markedQHelpful, setMarkedQHelpful] = useState(false)
+  const [markedQReported, setMarkedQReported] = useState(false)
 
   //DISPLAY HELPER FUNCTION
   const renderAnswers = (index) => {
@@ -66,9 +68,23 @@ let QuestionEntries = function({body, asker, date, helpfulCount, reported, answe
     }
   }
 
+  const hideClickHandler = (e) => {
+    if (displayedIndex > 2) {
+      renderAnswers(displayedIndex-2);
+    }
+  }
+
   const collapseClickHandler = (e) => {
     renderAnswers(2)
     setIsFullyLoaded(false)
+  }
+
+  const toggleQHelpfulClickHandler = (e) => {
+    setMarkedQHelpful(!markedQHelpful)
+  }
+
+  const toggleQReportedClickHandler = (e) => {
+    setMarkedQReported(!markedQReported)
   }
 
   //USE EFFECT HOOK
@@ -83,8 +99,16 @@ let QuestionEntries = function({body, asker, date, helpfulCount, reported, answe
         {/* <span className="QAqentries_question">Q:</span> */}
         <span className="QAqentries_meta">From: {asker}</span>
         <span className="QAqentries_meta">{new Date(date).toLocaleString('default', {month: 'short', day:'numeric', year:'numeric'})}</span>
-        <span className="QAqentries_meta">Mark as Helpful ({helpfulCount})</span>
-        <span className="QAqentries_meta">Report</span>
+        {markedQHelpful ?
+          <a className="QAqentries_meta" href="javascript:void();" onClick={toggleQHelpfulClickHandler}>Mark as Helpful ({helpfulCount+1})</a>
+          :
+          <a className="QAqentries_meta" href="javascript:void();" onClick={toggleQHelpfulClickHandler}>Mark as Helpful ({helpfulCount})</a>
+        }
+        {markedQReported ?
+          <a className="QAqentries_meta" href="javascrip:void();" onClick={toggleQReportedClickHandler}>Reported</a>
+          :
+          <a className="QAqentries_meta" href="javascrip:void();" onClick={toggleQReportedClickHandler}>Report</a>
+        }
       </div>
       <div className="QAqentries_questionBody">Q: {body}
       <button className="accordion" onClick={hideAnswersClickHandler}>V</button>
@@ -118,7 +142,8 @@ let QuestionEntries = function({body, asker, date, helpfulCount, reported, answe
             :
             <div className="QAqentries_loadMore">
               <span className="QAqentries_displayCount">Answers 1-{displayedIndex} of {aCount}</span>
-              <button className="QAqentries_loadButton" type="button" value={displayedIndex} onClick={loadClickHandler}>Load more answers</button>
+              <button className="QAqentries_loadButton" type="button" value={displayedIndex} onClick={loadClickHandler}>Show more answers</button>
+              <button className="QAqentries_loadButton" type="button" value={displayedIndex} onClick={hideClickHandler}>Show less answers</button>
             </div>
             }
           </div>

@@ -44,6 +44,8 @@
 
 .QAlist_container {
   border: solid 2px blueviolet;
+  max-height: 500px;
+  overflow: auto;
 }
 
 .QAlist_loadMoreQuestions {

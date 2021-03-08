@@ -26,14 +26,14 @@ let AnswerEntries = ({responder, body, date, helpfulCount, images, aCount}) => {
         }
         <span className="QAaentries_meta">{new Date(date).toLocaleString('default', {month: 'short', day:'numeric', year:'numeric'})}</span>
         {markedAHelpful ?
-          <a className="QAaentries_meta" href="javascript:void(0);" onClick={toggleAHelpfulClickHandler}>Mark as Helpful ({helpfulCount+1})</a>
+          <a className="QAaentries_meta" href="javascript:void();" onClick={toggleAHelpfulClickHandler}>Mark as Helpful ({helpfulCount+1})</a>
           :
-          <a className="QAaentries_meta" href="javascript:void(0);" onClick={toggleAHelpfulClickHandler}>Mark as Helpful ({helpfulCount})</a>
+          <a className="QAaentries_meta" href="javascript:void();" onClick={toggleAHelpfulClickHandler}>Mark as Helpful ({helpfulCount})</a>
         }
         {markedAReported ?
-          <a className="QAaentries_meta" href="javascript:void(0);" onClick={toggleAReportedClickHandler}>Reported</a>
+          <a className="QAaentries_meta" href="javascript:void();" onClick={toggleAReportedClickHandler}>Reported</a>
           :
-          <a className="QAaentries_meta" href="javascript:void(0);" onClick={toggleAReportedClickHandler}>Report</a>
+          <a className="QAaentries_meta" href="javascript:void();" onClick={toggleAReportedClickHandler}>Report</a>
         }
       </div>
       <div className="QAaentries_answerBody">A: {body}</div>
