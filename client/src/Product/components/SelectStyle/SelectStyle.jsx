@@ -17,6 +17,7 @@ let SelectStyle = ({ styles, changeView }) => {
 
           return (
             <img
+              key={index}
               style={{ height: "100px", width: "100px" }}
               src={thumbnail_url}
               onClick={(e) => {

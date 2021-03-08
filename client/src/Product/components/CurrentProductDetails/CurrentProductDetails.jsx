@@ -8,6 +8,12 @@ const CurrentProductDetails = ({ CurrentProductInfo, CurrentProductView }) => {
   let product = CurrentProductInfo;
   let productStyle = CurrentProductView;
 
+  if (productStyle.sale_price === undefined ) {
+    productStyle.sale_price = 0;
+  }
+
+
+
   return (
     <>
       <div className="ProductDetailContainer">
@@ -32,13 +38,13 @@ const CurrentProductDetails = ({ CurrentProductInfo, CurrentProductView }) => {
             ) : (
               <div>
                 {" "}
-                (<div className="saleNumber"> {sale_price} </div> ) (
+                <div className="saleNumber"> {productStyle.sale_price} </div>  
                 <div className="crossedOutOriginalPrice">
                   {" "}
                   {productStyle.original_price ||
                     productStyle.default_price}{" "}
                 </div>
-                )
+                
               </div>
             )}
           </div>

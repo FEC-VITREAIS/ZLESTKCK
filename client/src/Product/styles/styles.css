@@ -13,8 +13,22 @@
   border-width: thin;
   border-style: solid;
   background: #e6e6e6;
+  height: 120%;
 }
 
 .styleWidgetimgs {
   border-radius: 50%;
+}
+
+.prev {
+  color: black;
+}
+
+.next {
+  color: black;
+}
+
+.crossedOutOriginalPrice {
+  text-decoration-line: line-through;
+  text-decoration-line:red;
 }
