@@ -1,26 +1,12 @@
 import React, {useState, useEffect} from 'react'
 import ProductContext from '../context.jsx';
 import QuestionEntries from './QA-QuestionEntries.jsx'
+import sortingFunction from './QA-HelperFunctions.js'
 
 let QAList = function({questions}) {
   const [currentSort, setCurrentSort] = useState('helpful')
-  console.log(currentSort)
-  const sortingFunction= (array) => {
-    if (currentSort === 'helpful') {
-      array.sort((a, b) => (a.helpfulness > b.helpfulness) ? -1: 1)
-    } else if (currentSort === 'recent') {
-      array.sort((a, b) => (a.date > b.date) ? -1: 1)
-    } else if (currentSort === 'oldest') {
-      console.log(array[0].date)
-      array.sort((a, b) => (a.date > b.date) ? 1: -1)
-    } else if (currentSort === 'userA') {
-      array.sort((a, b) => (a.date > b.date) ? -1: 1)
-    } else if (currentSort === 'userZ') {
-      array.sort((a, b) => (a.date > b.date) ? 1: -1)
-    }
-  }
 
-  const [arrayOfQuestions, setArrayOfQuestions] = useState(sortingFunction(questions))
+  const [arrayOfQuestions, setArrayOfQuestions] = useState(sortingFunction(questions, currentSort))
   const qCount = questions.length;
 
   //STATE HOOKS
