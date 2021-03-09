@@ -176,6 +176,12 @@
   width: 50px;
 }
 
+.QAaentries_imageModal {
+  border: solid 2px darkred;
+  height: 500px;
+  width: 300px;
+}
+
 /* QA-Search Styling */
 .QAsearch {
   border: solid 2px goldenrod;

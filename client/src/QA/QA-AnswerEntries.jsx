@@ -1,9 +1,11 @@
 import React, {useState} from 'react'
+import ReactModal from 'react-modal';
 
 let AnswerEntries = ({responder, body, date, helpfulCount, images, aCount}) => {
   //USE STATE HOOK
   const [markedAHelpful, setMarkedAHelpful] = useState(false)
   const [markedAReported, setMarkedAReported] = useState(false)
+  const [showImageModal, setShowImageModal] = useState(false)
 
   //CLICK HANDLERS
   const toggleAHelpfulClickHandler = (e) => {
@@ -12,6 +14,10 @@ let AnswerEntries = ({responder, body, date, helpfulCount, images, aCount}) => {
 
   const toggleAReportedClickHandler = (e) => { // ACTION: Add functionality to hide reported answers
     setMarkedAReported(!markedAReported)
+  }
+
+  const toggleImageClickHandler = (e) => {
+    setShowImageModal(!showImageModal)
   }
 
   return (
@@ -40,7 +46,16 @@ let AnswerEntries = ({responder, body, date, helpfulCount, images, aCount}) => {
       <div className="QAaentries_images">
         {images.map((image) => {
           return (
-            <img className="QAaentries_thumbnails" src={image} key={image.length}></img>
+            <>
+            {showImageModal ?
+              <ReactModal isOpen={showImageModal}>
+                <button onClick={toggleImageClickHandler}>X</button>
+                <img className="QAaentries_imageModal" src={image} onClick={toggleImageClickHandler} key={image.length}></img>
+              </ReactModal>
+              :
+              <img className="QAaentries_thumbnails" src={image} onClick={toggleImageClickHandler} key={image.length}></img>
+            }
+            </>
           )
         })}
       </div>
