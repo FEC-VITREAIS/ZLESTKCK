@@ -125,7 +125,7 @@ let DisplayProductPreview = ({ styles, changeView, currentProduct }) => {
           <Swiper
             thumbs={{ swiper: thumbsSwiper }}
             spaceBetween={0}
-            onSlideChange={() => console.log("slide change")}
+            onSlideChange={() => {}}
             slidesPerView={1}
             // Pagination
             // Navigation
@@ -141,7 +141,7 @@ let DisplayProductPreview = ({ styles, changeView, currentProduct }) => {
         <Swiper
           id="thumbs"
           onSlideChange={(e) => {
-            console.log(e.target);
+            
           }}
           onSwiper={setThumbsSwiper}
           spaceBetween={5}

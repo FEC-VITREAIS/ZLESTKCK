@@ -30,5 +30,12 @@
 
 .crossedOutOriginalPrice {
   text-decoration-line: line-through;
-  text-decoration-line:red;
 }
+
+.swiper-slide-thumb-active {
+  border-bottom: 1px solid grey;
+}
+
+/* .swiper-slide-thumb-active {
+  border-bottom: 1px solid grey;
+} */

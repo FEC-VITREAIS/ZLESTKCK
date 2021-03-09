@@ -28,7 +28,7 @@ let ProductContainer = function (props) {
     const currentStyles = context.productStyles;
     const currentProductInfo = context.currentProductDetails;
 
-    // console.log(currentStyles, "product details");
+    console.log(currentStyles, "product details");
 
     setCurrentProducts(currentStyles);
     setCurrentProductView(currentStyles[0]);
@@ -69,7 +69,7 @@ let ProductContainer = function (props) {
               defaultProp: true,
             }
           }
-          CurrentProductView={CurrentProductView || { name: "" }}
+          CurrentProductView={CurrentProductView || { name: "", skus: [] }}
         />
 
         <SelectStyle

@@ -1,4 +1,41 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+
+const CheckSize = ( sizes  ) => {
+
+  if ( sizes.length === 0 ) {
+    sizes = [{ defaultProp:true, size: "defaultProp" }]
+  }
+
+  let { defaultProp } = sizes;
+
+  if ( defaultProp ) {
+    return;
+  }
+
+  let oneSize = sizes[0].size;
+
+  if ( oneSize === 'One Size' ) {
+    return;
+  }
+
+  return (
+    <select className="selectSizeButton">
+      {sizes.map((style, index) => {
+        // console.log(style, "styles ");
+        let size = style.size;
+
+        if (size === "One Size") {
+          return;
+        }
+        return (
+          <option className="SizeDropDownElement" key={index}>
+            Size: {size}
+          </option>
+        );
+      })}
+    </select>
+  );
+};
 
 const CurrentProductDetails = ({ CurrentProductInfo, CurrentProductView }) => {
   if (CurrentProductInfo.defaultProp === true) {
@@ -8,11 +45,18 @@ const CurrentProductDetails = ({ CurrentProductInfo, CurrentProductView }) => {
   let product = CurrentProductInfo;
   let productStyle = CurrentProductView;
 
-  if (productStyle.sale_price === undefined ) {
+  if (productStyle.sale_price === undefined) {
     productStyle.sale_price = 0;
   }
 
+  let sizes = [];
 
+  if (productStyle.skus !== undefined) {
+    for (let key in productStyle.skus) {
+      sizes.push(productStyle.skus[key]);
+      // console.log(productStyle.skus[key],'key!')
+    }
+  }
 
   return (
     <>
@@ -38,18 +82,19 @@ const CurrentProductDetails = ({ CurrentProductInfo, CurrentProductView }) => {
             ) : (
               <div>
                 {" "}
-                <div className="saleNumber"> {productStyle.sale_price} </div>  
+                <div className="saleNumber"> {productStyle.sale_price} </div>
                 <div className="crossedOutOriginalPrice">
                   {" "}
                   {productStyle.original_price ||
                     productStyle.default_price}{" "}
                 </div>
-                
               </div>
             )}
           </div>
           <div className="styleText">STYLE > {productStyle.name}</div>
         </div>
+
+        <div className="styleButtonsContainer">{CheckSize(sizes)}</div>
       </div>
     </>
   );
