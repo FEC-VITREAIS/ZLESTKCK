@@ -34,7 +34,7 @@ let ReviewContainer = function(props) {
     <ProductContext.Provider>
       <div>Product Reviews Container</div>
       <div>{value}</div>
-      <StarRating />
+      <StarRating ratingsList={{2: '2', 5: '1'}} className={'something'}/>
     </ProductContext.Provider>
   )
 }

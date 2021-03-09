@@ -2,6 +2,7 @@ import axios from 'axios';
 import API_KEY from '../../../config.js';
 import fetchProductDetails from './fetchProductDetails.js';
 import fetchStyles from './fetchStyles.js';
+import fetchReviewsMetaData from './fetchReviewsMetaData.js';
 
 
 var fetchRelatedProducts = (productID) => {
@@ -13,21 +14,15 @@ var fetchRelatedProducts = (productID) => {
     }
   })
   .then((data) => {
-    // console.log(data);
     var allRelatedItems = [];
 
     data.data.forEach((item) => {
-      // console.log(item);
       allRelatedItems.push(fetchProductDetails(item))
     })
-
-    // console.log(allRelatedItems);
 
     return Promise.all(allRelatedItems);
   })
   .then((allRelatedItems) => {
-    // console.log('all related styles: ', allRelatedItems);
-
     var itemsWithStyle = [];
 
     allRelatedItems.forEach((product) => {
@@ -46,16 +41,30 @@ var fetchRelatedProducts = (productID) => {
       itemsWithStyle.push(p);
     })
 
-    //console.log('new list: ', itemsWithStyle);
-
     return Promise.all(itemsWithStyle);
 
   })
+  .then((allRelatedWithStyle) => {
+
+    var relatedItemsWithRatings = [];
+
+    allRelatedWithStyle.forEach((product) => {
+      var p = new Promise((resolve, reject) => {
+        fetchReviewsMetaData(product.id)
+        .then((metaReviewList) => {
+          product.ratings = metaReviewList.ratings
+          resolve(product);
+        })
+      })
+      relatedItemsWithRatings.push(p);
+    })
+    return Promise.all(relatedItemsWithRatings);
+
+  })
   .catch((err) => {
-    // console.log(err);
+    console.warn(err);
     return err;
   })
-  //TODO: grab the review data here
 
 }
 

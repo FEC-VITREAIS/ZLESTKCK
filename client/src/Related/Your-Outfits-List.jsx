@@ -9,6 +9,7 @@ import "slick-carousel/slick/slick-theme.css";
 var YourOutfitsList = () => {
   const [outfitsList, setOutfitsList] = useState([]);
   const [outfitsListCache, setOutfitsListCache] = useState({});
+  const [currentProductDetails, setCurrentProductDetails] = useState({});
   const context = useContext(ProductContext);
 
 
@@ -23,30 +24,56 @@ var YourOutfitsList = () => {
     accessibility: true,
   })
 
+  useEffect(()=> {
+    const currentProduct = context.currentProductDetails;
+    const currentProductStyles = context.productStyles;
+    const currentRatings = context.productReviewsMetaData.ratings;
 
-  const currentProduct = context.currentProductDetails;
-  const currentProductStyles = context.productStyles;
+    currentProduct.styles = {
+      photo: currentProductStyles[0].photos[0].thumbnail_url,
+      price: currentProductStyles[0].original_price,
+      salePrice: currentProductStyles[0].sale_price,
+    }
 
-  currentProduct.styles = {
-    photo: currentProductStyles[0].photos[0].thumbnail_url,
-    price: currentProductStyles[0].original_price,
-    salePrice: currentProductStyles[0].sale_price,
-  }
+    currentProduct.ratings = currentRatings;
+    setCurrentProductDetails(currentProduct);
+  }, [outfitsListCache])
+
+  // console.warn('CURRENT PRODUCT: ', currentProductDetails)
+
+
+  // const currentProduct = context.currentProductDetails;
+  // const currentProductStyles = context.productStyles;
+  // const currentRatings = context.productReviewsMetaData.ratings;
+
+  // currentProduct.styles = {
+  //   photo: currentProductStyles[0].photos[0].thumbnail_url,
+  //   price: currentProductStyles[0].original_price,
+  //   salePrice: currentProductStyles[0].sale_price,
+  // }
+
+  // currentProduct.ratings = currentRatings;
 
   const addNewOutfit = (e) => {
     // e.preventDefault();
-    // console.log('adding new outfit');
 
 
     //add new product id to cache
     const newOutfitCache = Object.assign({}, outfitsListCache);
-    newOutfitCache[currentProduct.id] = true;
+    // newOutfitCache[currentProduct.id] = true;
+    newOutfitCache[currentProductDetails.id] = true;
+
     setOutfitsListCache(newOutfitCache);
 
+    console.log('adding new outfit:', currentProductDetails);
+
     //only display outfit if product id not in cache
-    if (!outfitsListCache[currentProduct.id]) {
-      setOutfitsList([...outfitsList, currentProduct])
+    if (!outfitsListCache[currentProductDetails.id]) {
+      setOutfitsList([...outfitsList, currentProductDetails])
     }
+    // if (!outfitsListCache[currentProduct.id]) {
+    //   setOutfitsList([...outfitsList, currentProduct])
+    // }
 
   };
 
@@ -92,22 +119,6 @@ var YourOutfitsList = () => {
       </div>
     </>
   )
-
-  // return (
-  //   <>
-  //     <h2>Your outfits: </h2>
-  //     <div className='outfits-list'>
-  //       <div className='outfits-list-card'>
-  //         Add New Outfit<br></br>
-  //         <span className="fa fa-plus" onClick={addNewOutfit}></span><br></br>
-  //       </div>
-  //       {/* {renderOutfits(outfitsList)} */}
-  //       {outfitsList.map((outfit) => {
-  //         return (<OutfitsCard key={outfit.id} product={outfit} removeOutfit={removeOutfit} />)
-  //       })}
-  //     </div>
-  //   </>
-  // )
 
 }
 

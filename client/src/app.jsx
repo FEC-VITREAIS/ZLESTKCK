@@ -53,6 +53,7 @@ let App = function(props) {
 
     fetchRelatedProducts(currentProduct)
     .then((relatedItemsData) => {
+      // console.log('related items with rating: ', relatedItemsData);
 
       setRelatedItems(relatedItemsData);
 
@@ -75,7 +76,6 @@ let App = function(props) {
   var fetchProductStyles = () => {
     fetchStyles(currentProduct)
     .then((data) => {
-      // console.log('current product styles: ', data)
       setProductStyles(data)
     })
   }
@@ -95,6 +95,7 @@ let App = function(props) {
     fetchReviewsMetaData(currentProduct)
     .then((data) => {
       console.log('product review meta data: ', data);
+
       setProductReviewsMetaData(data);
     })
   }

@@ -1,4 +1,4 @@
-import React, {useState, useContext} from 'react';
+import React, {useContext} from 'react';
 import './styles/styles.css';
 import RelatedList from './Related-List.jsx';
 import YourOutfitsList from './Your-Outfits-List.jsx';
@@ -9,6 +9,7 @@ let RelatedContainer = function(props) {
 
   //only renders when related style data is recieved by API
   if (context.relatedProducts && context.relatedProducts.length) {
+
     return (
       <div className='related-container'>
         <RelatedList />

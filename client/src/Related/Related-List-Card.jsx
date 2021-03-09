@@ -1,6 +1,7 @@
 import React, {useContext, useState, useEffect} from 'react';
 import ProductContext from '../context.jsx';
 import RelatedModalWindow from './Related-Modal-Window.jsx';
+import StarRating from '../Reviews/Star-Rating.jsx';
 
 
 var RelatedListCard = ({product}) => {
@@ -82,7 +83,11 @@ var RelatedListCard = ({product}) => {
       <h3 className='related-card-category'>{product.category}</h3>
       <h2 className='related-card-name' onClick={handleProductChange}>{product.name}</h2>
       {calculateSalePrice()}
-      <div className='related-card-div'>Star Rating</div>
+      <StarRating
+      ratingsList={product.ratings}
+      class={'related-card-ratings'}
+      dimension={'20px'}
+      />
       {displayModalWindow(isModalDisplayed)}
     </div>
   )

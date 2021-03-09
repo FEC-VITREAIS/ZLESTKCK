@@ -12,7 +12,7 @@ var fetchReviewsMetaData = (productID) => {
     }
   })
   .then((data) => {
-    console.log('review Metadata: ', data);
+    // console.log('review Metadata: ', data);
     return data.data
   })
   .catch((err) => {

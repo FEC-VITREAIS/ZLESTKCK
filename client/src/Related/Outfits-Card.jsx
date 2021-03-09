@@ -1,4 +1,5 @@
-import React, {useContext} from 'react';
+import React from 'react';
+import StarRating from '../Reviews/Star-Rating.jsx';
 
 var OutfitsCard = ({product, removeOutfit}) => {
 
@@ -11,7 +12,11 @@ var OutfitsCard = ({product, removeOutfit}) => {
       <h3 className='outfits-card-category'>{product.category}</h3>
       <h2 className='outfits-card-name'>{product.name}</h2>
       <div className='outfits-card-price'>{`$100`}</div>
-      <div className='outfits-card-rating'>Star Rating</div>
+      <StarRating
+      ratingsList={product.ratings}
+      class={'outfit-card-ratings'}
+      dimension={'20px'}
+      />
     </div>
   )
 
