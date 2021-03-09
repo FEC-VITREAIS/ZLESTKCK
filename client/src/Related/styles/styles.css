@@ -7,9 +7,15 @@
   overflow: visible;
 }
 
+#app {
+  background-color: #F2F2F2;
+}
+
 h1, h2, h3, .related-modal-table-title {
-  font-family: 'Sigmar One', cursive;
-  color: #D97455;
+  /* font-family: 'Sigmar One', cursive; */
+  font-family: 'Luckiest Guy', cursive;
+  /* color: #D97455; */
+  color: #D9A05B;
   -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: #39393C;
 }
@@ -29,7 +35,8 @@ div, span {
   flex-direction: column;
   justify-content: space-around;
   overflow: hidden;
-  background-color: white;
+  background-color: #F2F2F2;
+  ;
 }
 
 .related-list,
@@ -53,6 +60,7 @@ div, span {
   min-width: 200px;
   margin: 10px;
   position: relative;
+  background-color: #F2E0D0;
 }
 
 .outfits-list-title {
