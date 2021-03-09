@@ -39,28 +39,12 @@ var YourOutfitsList = () => {
     setCurrentProductDetails(currentProduct);
   }, [outfitsListCache])
 
-  // console.warn('CURRENT PRODUCT: ', currentProductDetails)
-
-
-  // const currentProduct = context.currentProductDetails;
-  // const currentProductStyles = context.productStyles;
-  // const currentRatings = context.productReviewsMetaData.ratings;
-
-  // currentProduct.styles = {
-  //   photo: currentProductStyles[0].photos[0].thumbnail_url,
-  //   price: currentProductStyles[0].original_price,
-  //   salePrice: currentProductStyles[0].sale_price,
-  // }
-
-  // currentProduct.ratings = currentRatings;
 
   const addNewOutfit = (e) => {
     // e.preventDefault();
 
-
     //add new product id to cache
     const newOutfitCache = Object.assign({}, outfitsListCache);
-    // newOutfitCache[currentProduct.id] = true;
     newOutfitCache[currentProductDetails.id] = true;
 
     setOutfitsListCache(newOutfitCache);
@@ -70,10 +54,7 @@ var YourOutfitsList = () => {
     //only display outfit if product id not in cache
     if (!outfitsListCache[currentProductDetails.id]) {
       setOutfitsList([...outfitsList, currentProductDetails])
-    }
-    // if (!outfitsListCache[currentProduct.id]) {
-    //   setOutfitsList([...outfitsList, currentProduct])
-    // }
+    };
 
   };
 
@@ -100,7 +81,7 @@ var YourOutfitsList = () => {
 
   return (
     <>
-      <h2 className='outfits-list-title'>Your outfits: </h2>
+      <h2 className='outfits-list-title'>Your Outfits</h2>
       <div className='outfits-list'>
         <div className='outfits-list-card'>
           <h2>Add New Outfit</h2>

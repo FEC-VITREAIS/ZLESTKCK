@@ -5,7 +5,7 @@ import "slick-carousel/slick/slick-theme.css";
 import ProductContext from '../context.jsx';
 import RelatedListCard from './Related-List-Card.jsx';
 
-var RelatedList = () => {
+var RelatedList = ({setSharedFeatures, setModalProduct, setDisplayModal}) => {
   const context = useContext(ProductContext);
 
   const [sliderSettings, setSliderSettings] = useState({
@@ -26,7 +26,7 @@ var RelatedList = () => {
         {context.relatedProducts.map((p) => {
           return (
             <div className='slick-div'>
-              <RelatedListCard product={p} key={p.id}/>
+              <RelatedListCard product={p} key={p.id} setSharedFeatures={setSharedFeatures} setModalProduct={setModalProduct} setDisplayModal={setDisplayModal}/>
             </div>
           )
         })}

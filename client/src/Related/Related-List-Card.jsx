@@ -4,10 +4,10 @@ import RelatedModalWindow from './Related-Modal-Window.jsx';
 import StarRating from '../Reviews/Star-Rating.jsx';
 
 
-var RelatedListCard = ({product}) => {
+var RelatedListCard = ({product, setDisplayModal, setSharedFeatures, setModalProduct}) => {
   const context = useContext(ProductContext);
-  const [sharedFeatures, setSharedFeatures] = useState({})
-  const [isModalDisplayed, setDisplayModal] = useState(false);
+  // const [sharedFeatures, setSharedFeatures] = useState({})
+  // const [isModalDisplayed, setDisplayModal] = useState(false);
 
   const handleProductChange = (e) => {
     // console.log(product.id);
@@ -47,19 +47,21 @@ var RelatedListCard = ({product}) => {
     })
 
     setSharedFeatures(sharedFeatures);
+    setModalProduct(product);
+    setDisplayModal(true);
   }
 
-  const displayModalWindow = (bool) => {
-    if (bool) {
-      return (
-        <RelatedModalWindow handleModalClose={handleModalClose} product={product} sharedFeatures={sharedFeatures}/>
-      )
-    } else {
-      return (
-        <></>
-      )
-    }
-  };
+  // const displayModalWindow = (bool) => {
+  //   if (bool) {
+  //     return (
+  //       <RelatedModalWindow handleModalClose={handleModalClose} product={product} sharedFeatures={sharedFeatures}/>
+  //     )
+  //   } else {
+  //     return (
+  //       <></>
+  //     )
+  //   }
+  // };
 
   const calculateSalePrice = () => {
     if (product.styles.salePrice) {
@@ -77,7 +79,6 @@ var RelatedListCard = ({product}) => {
     <div className='related-list-card'>
       <span className="fa fa-star checked" onClick={() => {
         compareProductFeatures();
-        setDisplayModal(true)
       } }></span>
       <img className='related-list-card-img' src={product.styles.photo}/>
       <h3 className='related-card-category'>{product.category}</h3>
@@ -88,7 +89,7 @@ var RelatedListCard = ({product}) => {
       class={'related-card-ratings'}
       dimension={'20px'}
       />
-      {displayModalWindow(isModalDisplayed)}
+      {/* {displayModalWindow(isModalDisplayed)} */}
     </div>
   )
 }

@@ -1,26 +1,67 @@
-import React, {useContext} from 'react';
+import React, {useContext, useState, useEffect} from 'react';
 import './styles/styles.css';
 import RelatedList from './Related-List.jsx';
 import YourOutfitsList from './Your-Outfits-List.jsx';
 import ProductContext from '../context.jsx';
+import RelatedModalWindow from './Related-Modal-Window.jsx';
+
 
 let RelatedContainer = function(props) {
   const context = useContext(ProductContext);
 
-  //only renders when related style data is recieved by API
-  if (context.relatedProducts && context.relatedProducts.length) {
+  const [displayModal, setDisplayModal] = useState(false);
+  const [sharedFeatures, setSharedFeatures] = useState({});
+  const [modalProduct, setModalProduct] = useState({});
 
+  const displayModalWindow = (bool) => {
+    if (bool) {
+      return (
+        <RelatedModalWindow handleModalClose={handleModalClose} product={modalProduct} sharedFeatures={sharedFeatures}/>
+      )
+    } else {
+      return (
+        <></>
+      )
+    }
+  };
+
+  const handleModalClose = (e) => {
+    setDisplayModal(false);
+    setSharedFeatures({});
+  }
+
+  useEffect(()=>{}, [sharedFeatures])
+
+
+  if (context.relatedProducts && context.relatedProducts.length) {
     return (
-      <div className='related-container'>
-        <RelatedList />
-        <YourOutfitsList />
+      <div className='related-modal'>
+        {displayModalWindow(displayModal)}
+        <div className='related-container'>
+          <RelatedList setSharedFeatures={setSharedFeatures} setModalProduct={setModalProduct} setDisplayModal={setDisplayModal}/>
+          <YourOutfitsList />
+        </div>
       </div>
     )
   } else {
     return (
-      <div></div>
+      <div className='related-container'></div>
     )
   }
+
+  //only renders when related style data is recieved by API
+  // if (context.relatedProducts && context.relatedProducts.length) {
+  //   return (
+  //     <div className='related-container'>
+  //       <RelatedList />
+  //       <YourOutfitsList />
+  //     </div>
+  //   )
+  // } else {
+  //   return (
+  //     <div className='related-container'></div>
+  //   )
+  // }
 }
 
 

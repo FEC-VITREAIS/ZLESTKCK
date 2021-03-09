@@ -21,7 +21,7 @@ var StarRating = ({ratingsList, className, dimension}) => {
   return (
     <StarRatings
       rating={calculateAverageRating(ratingsList)}
-      starRatedColor="gold"
+      starRatedColor="#735050"
       numberOfStars={5}
       starDimension={dimension}
       name={className}
