@@ -16,10 +16,10 @@ var YourOutfitsList = () => {
   const [sliderSettings, setSliderSettings] = useState({
     infinite: false,
     speed: 500,
-    slidesToShow: 2,
+    slidesToShow: 4,
     slidesToScroll: 1,
-    // arrows: true,
     dots: true,
+    // arrows: true,
     accessibility: true,
   })
 
@@ -73,10 +73,10 @@ var YourOutfitsList = () => {
 
   return (
     <>
-      <h2>Your outfits: </h2>
+      <h2 className='outfits-list-title'>Your outfits: </h2>
       <div className='outfits-list'>
-        <div className='related-list-card'>
-          Add New Outfit<br></br>
+        <div className='outfits-list-card'>
+          <h2>Add New Outfit</h2>
           <span className="fa fa-plus" onClick={addNewOutfit}></span><br></br>
         </div>
         <Slider {...sliderSettings}>

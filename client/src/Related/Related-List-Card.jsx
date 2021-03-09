@@ -67,7 +67,7 @@ var RelatedListCard = ({product}) => {
       )
     } else {
       return (
-        <span className='related-card-price'>{`$${product.styles.price}`}</span>
+        <div className='related-card-price'>{`$${product.styles.price}`}</div>
       )
     }
   };

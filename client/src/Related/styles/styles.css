@@ -7,7 +7,7 @@
   overflow: visible;
 }
 
-h1, h2 {
+h1, h2, h3, .related-modal-table-title {
   font-family: 'Sigmar One', cursive;
   color: #D97455;
   -webkit-text-stroke-width: 1px;
@@ -22,7 +22,6 @@ div, span {
   font-size: 5px;
 }
 .related-container {
-  border: 2px solid black;
   height: 750px;
   font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   text-align: center;
@@ -56,8 +55,12 @@ div, span {
   position: relative;
 }
 
+.outfits-list-title {
+  text-align: left;
+  margin: 0 0 0 3em;
+}
+
 .outfits-list-card {
-  overflow: auto;
   left: 4%;
 }
 
@@ -67,8 +70,8 @@ div, span {
 }
 
 .related-items-title {
-  margin-left: 3em;
   text-align: left;
+  margin: 0 0 0 3em;
 }
 
 .related-card-category, .outfits-card-category {
@@ -77,20 +80,23 @@ div, span {
 }
 
 .related-card-sale-price {
-  font-size: .8em;
+  font-size: 1em;
   line-height: 1em;
   color: red;
 }
 
 .related-card-price, .outfits-card-price {
-  font-size: .8em;
-  line-height: 1em;
+  font-size: 1em;
 }
 
 .related-card-name, .outfits-card-name  {
-  font-size: 1.1em;
+  font-size: 1.3em;
   line-height: 1em;
   font-weight: bold;
+  margin: 0;
+}
+
+.related-card-name {
   cursor: pointer;
 }
 
@@ -100,7 +106,7 @@ div, span {
 }
 
 .checked {
-  color: #D97455;
+  color: gold;
   float: right;
   position: absolute;
   left: 85%;
@@ -110,7 +116,7 @@ div, span {
 }
 
 .checked:hover {
-  color: white;
+  color: #D97455;
 }
 
 /* The Modal (background) */
@@ -192,7 +198,6 @@ div, span {
   color: #D97455;
   font-size: 6em;
   cursor: pointer;
-  margin-top: 34%;
 }
 
 .fa-plus:hover {
@@ -225,13 +230,6 @@ div, span {
   margin-left: 0 !important;
 }
 
-/* .slick-div:focus {
-  border: none !important;
-}
-
-.slick-slide {
-  outline: none !important;
-} */
 
 .slick-slide, .slick-active, .slick-current{
   margin-left: 0;
