@@ -124,16 +124,17 @@ let QuestionEntries = function({body, asker, date, helpfulCount, reported, answe
         <div className="QAqentries_displayedAnswers">
           {displayedAnswers.map((answer) => {
             return (<AnswerEntries
-            responder={answer.answerer_name}
-            body={answer.body}
-            date={answer.date}
-            helpfulCount={answer.helpfulness}
-            images={answer.photos}
-            aCount={aCount}
-            key={answer.id} />)
-          })
+              responder={answer.answerer_name}
+              body={answer.body}
+              date={answer.date}
+              helpfulCount={answer.helpfulness}
+              images={answer.photos}
+              aCount={aCount}
+              key={answer.id} />)
+            })
           }
           <div>
+            {/* Conditional render of Load more / Collapse buttons */}
             {isFullyLoaded ?
             <div className="QAqentries_collapse">
               <span className="QAqentries_displayCount">Answers 1-{aCount}</span>
@@ -150,8 +151,6 @@ let QuestionEntries = function({body, asker, date, helpfulCount, reported, answe
         </div>
       }
         </div>
-      {/* Conditional render of Load more / Collapse buttons */}
-
     </div>
 
 
