@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import ProductContext from '../context.jsx'
+import ReactModal from 'react-modal';
 
 let QuestionModal = function({setShowQModal, productName}) {
   //VARIABLES

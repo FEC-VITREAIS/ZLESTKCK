@@ -7,6 +7,7 @@ import fetchProductDetails from '../FetchData/fetchProductDetails.js'
 import QASearch from './QA-Search.jsx'
 import QAList from './QA-List.jsx'
 import QModal from './QA-QuestionModal'
+import ReactModal from 'react-modal';
 
 let QAContainer = function(props) {
 
@@ -14,9 +15,11 @@ let QAContainer = function(props) {
   const [showQModal, setShowQModal] = useState(false);
   const questions = QAContainerContext.productQA;
 
+
   const qModalClickHandler = (e) => {
     setShowQModal(!showQModal)
   }
+
   if (questions.length) {
     return (
       <div className="QAcontainer">
@@ -24,7 +27,9 @@ let QAContainer = function(props) {
         <h4 className="QAcontainer_subheader">Ask for information about this product from the customers who own it.</h4>
         <input className="QAlist_askButton" type="button" value="Ask a question" onClick={qModalClickHandler} ></input>
         {showQModal ?
-        <QModal setShowQModal={setShowQModal} productName={QAContainerContext.productName} />
+        <ReactModal isOpen={showQModal}>
+          <QModal setShowQModal={setShowQModal} productName={QAContainerContext.productName} />
+        </ReactModal>
         : null
         }
         <QASearch questions={questions} />
