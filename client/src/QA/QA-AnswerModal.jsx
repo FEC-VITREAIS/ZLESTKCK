@@ -29,6 +29,7 @@ let AnswerModal = function({arrayOfAnswers, setArrayOfAnswers, setShowAModal, pr
     // console.log('before', answers)
     // console.log(newAnswerObj(newAnswerName, newAnswerBody))
     setArrayOfAnswers(arrayOfAnswers.concat(newAnswerObj(newAnswerName, newAnswerBody, arrayOfFiles)))
+    setShowAModal(false)
     // console.log('after', answers)
   }
 

@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import ProductContext from '../context.jsx'
 import ReactModal from 'react-modal';
 
-let QuestionModal = function({setShowQModal, productName}) {
+let QuestionModal = function({showQModal, setShowQModal, productName}) {
   //VARIABLES
   const newQuestionObj = (name, body) => {
     return {
@@ -66,6 +66,7 @@ let QuestionModal = function({setShowQModal, productName}) {
       <button
         className="QAqmodal_submitButton"
         type="button"
+        onClick={closeQModalClickHandler}
         id="questionModalSubmitButton">
           Submit
       </button>

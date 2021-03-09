@@ -3,6 +3,7 @@ import ProductContext from '../context.jsx'; //ACTION: Delete when refactored
 import QAstyles from './styles/QAstyles.css'
 import AnswerEntries from './QA-AnswerEntries.jsx'
 import AModal from './QA-AnswerModal.jsx'
+import ReactModal from 'react-modal';
 
 let QuestionEntries = function({body, asker, date, helpfulCount, reported, answers, qCount}) {
   const QAqentriesContext = React.useContext(ProductContext); // ACTION: Delete and pass product name as a prop when refactoring
@@ -156,13 +157,15 @@ let QuestionEntries = function({body, asker, date, helpfulCount, reported, answe
 
     {/* Conditional rendering of Answer Modal */}
     {showAModal ?
-    <AModal
-      arrayOfAnswers={arrayOfAnswers}
-      setArrayOfAnswers={setArrayOfAnswers}
-      setShowAModal={setShowAModal}
-      productName={QAqentriesContext.productName} //ACTION: pass down prop when refactored
-      displayedAnswers={displayedAnswers}
-      body={body}/>
+    <ReactModal isOpen={showAModal}>
+      <AModal
+        arrayOfAnswers={arrayOfAnswers}
+        setArrayOfAnswers={setArrayOfAnswers}
+        setShowAModal={setShowAModal}
+        productName={QAqentriesContext.productName} //ACTION: pass down prop when refactored
+        displayedAnswers={displayedAnswers}
+        body={body}/>
+      </ReactModal>
     : null
     }
     </>

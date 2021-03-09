@@ -69,9 +69,7 @@ let QAList = function({questions}) {
               <button className="QAlist_sortButton" type="button" onClick={dropdownMenuClickHandler}>Sort by</button>
               <button className="QAlist_sortLinks" type="button" value="helpful" onClick={sortClickHandler}>Most Helpful</button>
               <button className="QAlist_sortLinks" type="button" value="recent" onClick={sortClickHandler}>Most Recent</button>
-              <button className="QAlist_sortLinks" type="button" value="oldest" onClick={sortClickHandler}>Least Recent</button>
               <button className="QAlist_sortLinks" type="button" value="userA" onClick={sortClickHandler}>Username: Ascending</button>
-              <button className="QAlist_sortLinks" type="button" value="userZ" onClick={sortClickHandler}>Username: Descending</button>
             </div>
           </>
           :
