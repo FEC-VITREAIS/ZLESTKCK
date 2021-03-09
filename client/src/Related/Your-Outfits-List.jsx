@@ -16,7 +16,7 @@ var YourOutfitsList = () => {
   const [sliderSettings, setSliderSettings] = useState({
     infinite: false,
     speed: 500,
-    slidesToShow: 3,
+    slidesToShow: 2,
     slidesToScroll: 1,
     // arrows: true,
     dots: true,
@@ -83,7 +83,7 @@ var YourOutfitsList = () => {
           {outfitsList.map((outfit) => {
             return (
               // <div className='slick-div'>
-              <div>
+              <div className='slick-outfits'>
                 {<OutfitsCard key={outfit.id} product={outfit} removeOutfit={removeOutfit} />}
               </div>
             )

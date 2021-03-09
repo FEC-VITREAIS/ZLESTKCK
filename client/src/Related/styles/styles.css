@@ -9,6 +9,9 @@
 
 h1, h2 {
   font-family: 'Sigmar One', cursive;
+  color: #D97455;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: #39393C;
 }
 
 div, span {
@@ -27,7 +30,7 @@ div, span {
   flex-direction: column;
   justify-content: space-around;
   overflow: hidden;
-  background-color: #F2E1CB;
+  background-color: white;
 }
 
 .related-list,
@@ -44,7 +47,7 @@ div, span {
 
 
 .related-list-card, .outfits-list-card {
-  border: 3px solid #D97455;
+  border: 3px solid #39393C;
   border-radius: 10px;
   height: 275px;
   width: 200px;
@@ -97,7 +100,7 @@ div, span {
 }
 
 .checked {
-  color: gold;
+  color: #D97455;
   float: right;
   position: absolute;
   left: 85%;
@@ -186,7 +189,7 @@ div, span {
 }
 
 .fa-plus {
-  color: black;
+  color: #D97455;
   font-size: 6em;
   cursor: pointer;
   margin-top: 34%;
@@ -212,7 +215,7 @@ div, span {
 }
 
 .slick-div {
-  max-width: 100%;
+  /* max-width: 75%; */
   height: auto;
   position: relative;
   overflow: hidden;
@@ -222,16 +225,22 @@ div, span {
   margin-left: 0 !important;
 }
 
-.slick-div:focus {
+/* .slick-div:focus {
   border: none !important;
 }
 
 .slick-slide {
   outline: none !important;
+} */
+
+.slick-slide, .slick-active, .slick-current{
+  margin-left: 0;
+  width: auto !important;
 }
 
-.slick-slide, .slick-active {
-  margin-left: 0;
+.slick-outfits {
+  width: 75% !important;
+  margin: 0;
 }
 
 
