@@ -13,7 +13,6 @@ const DisplayCurrentProduct = ({ currentProduct }) => {
 
   return (
     <div className="DisplayCurrentProductContainer">
-      <div className="photo-list"> </div>
       <div className="mainSlider">
         <img src={thumbnail_url}/> 
       </div>
