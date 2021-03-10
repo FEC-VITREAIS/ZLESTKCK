@@ -1,5 +1,5 @@
 import React, {useContext, useState, useEffect} from 'react';
-import './styles/styles.css';
+// import './styles/styles.css';
 import RelatedList from './Related-List.jsx';
 import YourOutfitsList from './Your-Outfits-List.jsx';
 import ProductContext from '../context.jsx';

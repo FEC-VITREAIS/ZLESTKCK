@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import ProductContext from '../context.jsx';
-import QAstyles from './styles/QAstyles.css'
+// import QAstyles from './styles/QAstyles.css'
 
 import fetchProductDetails from '../FetchData/fetchProductDetails.js'
 
