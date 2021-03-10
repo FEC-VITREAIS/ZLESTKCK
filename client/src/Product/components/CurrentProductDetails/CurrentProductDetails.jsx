@@ -1,7 +1,7 @@
 import React from "react";
 
 const CurrentProductDetails = ({ CurrentProductInfo, CurrentProductView }) => {
-  console.log(CurrentProductView, "product view");
+  // console.log(CurrentProductView, "product view");
 
   if (CurrentProductInfo.defaultProp === true) {
     return <div></div>;

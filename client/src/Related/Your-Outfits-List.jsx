@@ -49,7 +49,7 @@ var YourOutfitsList = () => {
 
     setOutfitsListCache(newOutfitCache);
 
-    console.log('adding new outfit:', currentProductDetails);
+    // console.log('adding new outfit:', currentProductDetails);
 
     //only display outfit if product id not in cache
     if (!outfitsListCache[currentProductDetails.id]) {
@@ -59,7 +59,7 @@ var YourOutfitsList = () => {
   };
 
 
-  console.warn('outfit list: ', outfitsList);
+  // console.warn('outfit list: ', outfitsList);
 
   const removeOutfit = (product) => {
 

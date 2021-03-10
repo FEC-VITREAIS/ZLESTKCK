@@ -84,7 +84,7 @@ let App = function(props) {
 
     fetchReviews(currentProduct, reviewsSortBy)
     .then((data) => {
-      console.log('product review data: ', data);
+      // console.log('product review data: ', data);
       setProductReviews(data);
     })
 
@@ -94,7 +94,7 @@ let App = function(props) {
 
     fetchReviewsMetaData(currentProduct)
     .then((data) => {
-      console.log('product review meta data: ', data);
+      // console.log('product review meta data: ', data);
 
       setProductReviewsMetaData(data);
     })

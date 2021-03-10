@@ -62,7 +62,7 @@ var fetchRelatedProducts = (productID) => {
 
   })
   .catch((err) => {
-    console.warn(err);
+    // console.warn(err);
     return err;
   })
 

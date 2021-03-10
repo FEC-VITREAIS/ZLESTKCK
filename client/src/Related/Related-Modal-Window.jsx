@@ -14,7 +14,7 @@ var RelatedModalWindow = ({handleModalClose, product, sharedFeatures}) => {
   //   )
   // }
 
-  console.log('modal window product: ', product.name);
+  // console.log('modal window product: ', product.name);
 
   return (
     <div class="modal-content">

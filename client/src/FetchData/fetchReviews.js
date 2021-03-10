@@ -12,7 +12,7 @@ var fetchReviews = (productID, sortBy) => {
     }
   })
   .then((data) => {
-    console.log('review data: ', data);
+    // console.log('review data: ', data);
     return data.data.results
   })
   .catch((err) => {
