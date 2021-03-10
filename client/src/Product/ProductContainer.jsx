@@ -8,6 +8,8 @@ import DisplayProductPreview from "./components/DisplayProductPreview/DisplayPro
 import CurrentProductDetails from "./components/CurrentProductDetails/CurrentProductDetails";
 import SelectStyle from "./components/SelectStyle/SelectStyle";
 
+import "./styles/styles.css";
+
 let ProductContainer = function (props) {
   const [CurrentProductInfo, setCurrentProductInfo] = useState({});
 
@@ -26,7 +28,7 @@ let ProductContainer = function (props) {
     const currentStyles = context.productStyles;
     const currentProductInfo = context.currentProductDetails;
 
-    // console.log(currentStyles, 'context')
+    // console.log(currentStyles, "product details");
 
     setCurrentProducts(currentStyles);
     setCurrentProductView(currentStyles[0]);
@@ -42,34 +44,27 @@ let ProductContainer = function (props) {
 
   return (
     <>
-      <div>
-        <DisplayCurrentProduct
+      <div id="ProductContainer">
+        <DisplayProductPreview
+          styles={CurrentProducts}
+          changeView={HandleProductChange}
           currentProduct={
             CurrentProductView || { photos: [{ thumbnail_url: "" }] }
           }
         />
-        <DisplayProductPreview
-          styles={CurrentProducts}
-          changeView={HandleProductChange}
+
+        <CurrentProductDetails
+          CurrentProductInfo={
+            CurrentProductInfo || {
+              original_price: undefined,
+              sale_price: undefined,
+              default_price: undefined,
+              defaultProp: true,
+            }
+          }
+          CurrentProductView={CurrentProductView || { name: "", skus: [] }}
         />
       </div>
-
-      <CurrentProductDetails
-        CurrentProductInfo={
-          CurrentProductInfo || {
-            original_price: undefined,
-            sale_price: undefined,
-            default_price: undefined,
-            defaultProp: true,
-          }
-        }
-
-        CurrentProductView={CurrentProductView || {name: ''}}
-      />
-
-      <SelectStyle styles={CurrentProducts} changeView={HandleProductChange} />
-
-      <div>Product Detail Container</div>
     </>
   );
 };
