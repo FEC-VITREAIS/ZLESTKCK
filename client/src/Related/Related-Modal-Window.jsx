@@ -17,15 +17,24 @@ var RelatedModalWindow = ({handleModalClose, product, sharedFeatures}) => {
   console.log('modal window product: ', product.name);
 
   return (
-    <div id='comparison-modal' class='comparison-modal'>
-      <div class="modal-content">
+    <div class="modal-content">
       <span id='close-modal' class='close' onClick={handleModalClose}>&times;</span>
       <h3 className='modal-window-comparing'>Comparing</h3>
       {/* {compareProductName()} */}
       <ModalWindowTable product={product} sharedFeatures={sharedFeatures} key={product.id}/>
-      </div>
     </div>
   )
+
+  // return (
+  //   <div id='comparison-modal' class='comparison-modal'>
+  //     <div class="modal-content">
+  //     <span id='close-modal' class='close' onClick={handleModalClose}>&times;</span>
+  //     <h3 className='modal-window-comparing'>Comparing</h3>
+  //     {/* {compareProductName()} */}
+  //     <ModalWindowTable product={product} sharedFeatures={sharedFeatures} key={product.id}/>
+  //     </div>
+  //   </div>
+  // )
 
 }
 

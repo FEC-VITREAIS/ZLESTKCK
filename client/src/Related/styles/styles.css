@@ -54,7 +54,7 @@ div, span {
 
 .related-list-card, .outfits-list-card {
   border: 1px solid #39393C;
-  border-radius: 5px;
+  /* border-radius: 5px; */
   height: 275px;
   width: 200px;
   min-width: 200px;
@@ -161,7 +161,8 @@ div, span {
   margin: 15% auto;
   padding: 0;
   border: 5px solid #735050;
-  height: 90%;
+  height: 400px;
+  width: 650px;
   overflow: auto;
   display: flex;
   flex-direction: column;
