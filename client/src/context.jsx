@@ -1,6 +1,8 @@
 import React, {createContext} from 'react';
 
 const ProductContext = React.createContext({
+  currentProductDetails: {},
+  updateCurrentProductDetails: (currentProductDetail) => {},
   currentProduct: 0,
   updateCurrentProduct: (newProductID) => {},
   relatedProducts: [],
@@ -10,7 +12,8 @@ const ProductContext = React.createContext({
   productStyles: [],
   productReviews: [],
   changeReviewSortBy: (sortby) => {},
-  productName: ""
+  productName: "",
+  productReviewsMetaData: {}
 });
 
 export default ProductContext;

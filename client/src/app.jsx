@@ -4,27 +4,30 @@ import ProductContext from './context.jsx';
 
 import fetchProductDetails from './FetchData/fetchProductDetails.js';
 import fetchRelatedProducts from './FetchData/fetchRelatedProducts.js';
+import fetchRelatedStyleData from './FetchData/fetchRelatedStyleData.js';
 import fetchQA from './FetchData/fetchQA.js';
 import fetchStyles from './FetchData/fetchStyles.js';
 import fetchReviews from './FetchData/fetchReviews.js'
+import fetchReviewsMetaData from './FetchData/fetchReviewsMetaData.js'
 
 import ProductContainer from './Product/ProductContainer.jsx'
 import QAContainer from './QA/QAContainer.jsx'
 import RelatedContainer from './Related/RelatedContainer.jsx'
 import ReviewContainer from './Reviews/ReviewContainer.jsx'
 
-
-
 let App = function(props) {
 
   // console.log('rerender!');
 
   // STATE HOOKS
+  const [currentProductDetails, setCurrentProductDetails] = useState({});
   const [currentProduct, setProduct] = useState("11101"); //using 11101 as the default product
   const [relatedItems, setRelatedItems] = useState([]);
+  const [relatedStyleData, setrelatedStyleData] = useState([]);
   const [productQA, setProductQA] = useState([]);
   const [productStyles, setProductStyles] = useState([]);
   const [productReviews, setProductReviews] = useState([]);
+  const [productReviewsMetaData, setProductReviewsMetaData] = useState({});
   const [reviewsSortBy, setReviewsSortBy] = useState('newest'); //set the default reviews to sort by newest
   const [productName, setProductName] = useState("Product Name")
 
@@ -34,8 +37,10 @@ let App = function(props) {
 
     fetchProductDetails(currentProduct)
     .then((data) => {
-      console.log('current product: ', data);
+      // console.log('current product: ', data);
       setProductName(data.name)
+      setCurrentProductDetails(data);
+      //console.log('current product: ', data);
     })
 
   }
@@ -49,24 +54,23 @@ let App = function(props) {
   // RELATED ITEMS STATE
   var fetchRelatedItems = () => {
 
-    var relatedItems = [];
-
     fetchRelatedProducts(currentProduct)
-    .then((data) => {
-      //data will contain all of the related items product objects
-      // console.log('all related products', data);
+    .then((relatedItemsData) => {
+      // console.log('related items with rating: ', relatedItemsData);
 
-      setRelatedItems(data);
+      setRelatedItems(relatedItemsData);
 
     })
+
   }
+
 
   // QA STATE
   var fetchProductQA = () => {
 
     fetchQA(currentProduct)
     .then((data) => {
-      console.log('all product questions and answers', data);
+      //console.log('all product questions and answers', data);
 
       setProductQA(data)
     })
@@ -75,7 +79,6 @@ let App = function(props) {
   var fetchProductStyles = () => {
     fetchStyles(currentProduct)
     .then((data) => {
-      // console.log('current product styles: ', data)
       setProductStyles(data)
     })
   }
@@ -88,6 +91,16 @@ let App = function(props) {
       setProductReviews(data);
     })
 
+  }
+
+  var fetchProductReviewsMetaData = () => {
+
+    fetchReviewsMetaData(currentProduct)
+    .then((data) => {
+      // console.log('product review meta data: ', data);
+
+      setProductReviewsMetaData(data);
+    })
   }
 
   var changeReviewSortBy = (sortBy) => {
@@ -104,20 +117,24 @@ let App = function(props) {
     fetchProductQA()
     fetchProductStyles()
     fetchProductReviews()
+    fetchProductReviewsMetaData()
   }, [currentProduct]);
+  //current product above is the variable that hooks is watching before allowing a re-render. Re-render will only occur if change in current product is detected.
 
 
   // PROVIDER AND APP STRUCTURE (CONTAINERS)
   return (
     <ProductContext.Provider value={{
       currentProduct: currentProduct,
+      currentProductDetails: currentProductDetails,
       relatedProducts: relatedItems,
       productQA: productQA,
       updateCurrentProduct: updateCurrentProduct,
       productStyles: productStyles,
       productReviews: productReviews,
       changeReviewSortBy: changeReviewSortBy,
-      productName: productName
+      productName: productName,
+      productReviewsMetaData: productReviewsMetaData
     }}>
       <div>
         <ProductContainer />
