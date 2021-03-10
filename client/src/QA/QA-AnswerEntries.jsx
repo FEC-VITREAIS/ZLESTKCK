@@ -48,7 +48,7 @@ let AnswerEntries = ({responder, body, date, helpfulCount, images, aCount}) => {
           return (
             <>
             {showImageModal ?
-              <ReactModal isOpen={showImageModal}>
+              <ReactModal isOpen={showImageModal} onRequestClose={toggleImageClickHandler}>
                 <button onClick={toggleImageClickHandler}>X</button>
                 <img className="QAaentries_imageModal" src={image} onClick={toggleImageClickHandler} key={image.length}></img>
               </ReactModal>

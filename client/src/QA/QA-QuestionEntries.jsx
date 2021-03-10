@@ -157,7 +157,7 @@ let QuestionEntries = function({body, asker, date, helpfulCount, reported, answe
 
     {/* Conditional rendering of Answer Modal */}
     {showAModal ?
-    <ReactModal isOpen={showAModal}>
+    <ReactModal isOpen={showAModal} onRequestClose={aModalClickHandler} >
       <AModal
         arrayOfAnswers={arrayOfAnswers}
         setArrayOfAnswers={setArrayOfAnswers}
