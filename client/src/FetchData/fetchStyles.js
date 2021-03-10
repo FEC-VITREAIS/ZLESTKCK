@@ -13,6 +13,7 @@ var fetchStyles = (productID) => {
   })
   .then((data) => {
     // console.log('style data: ', data);
+    //return data.data to confirm that style product id matches current product id
     return data.data.results
   })
   .catch((err) => {

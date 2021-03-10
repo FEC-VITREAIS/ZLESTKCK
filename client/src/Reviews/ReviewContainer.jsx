@@ -1,6 +1,7 @@
 import React, {useContext, useEffect} from 'react'
 import axios from 'axios';
 import API_KEY from '../../../config.js';
+import StarRating from './Star-Rating.jsx';
 
 const ProductContext = React.createContext(0);
 
@@ -16,10 +17,10 @@ let ReviewContainer = function(props) {
       }
     })
     .then((data) => {
-      console.log(data);
+      // console.log(data);
     })
     .catch((err) => {
-      console.log(err);
+      // console.log(err);
     })
   }
 
@@ -33,6 +34,7 @@ let ReviewContainer = function(props) {
     <ProductContext.Provider>
       <div>Product Reviews Container</div>
       <div>{value}</div>
+      <StarRating ratingsList={{2: '2', 5: '1'}} className={'something'}/>
     </ProductContext.Provider>
   )
 }
