@@ -11,7 +11,7 @@ var fetchQA = (productID) => {
     }
   })
   .then((payload) => {
-    //console.log('payload', payload);
+    // console.log('payload', payload);
     var allQuestions = [];
 
     payload.data.results.forEach((question) => {

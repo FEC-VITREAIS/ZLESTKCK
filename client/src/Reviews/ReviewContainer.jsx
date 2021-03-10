@@ -5,6 +5,9 @@ import ProductContext from '../context.jsx';
 import ReviewBreakdown from './ReviewBreakdown.jsx';
 import ReviewModal from './ReviewModal'
 //Import Breakdown and SubmitForm and Sort
+import StarRating from './Star-Rating.jsx';
+
+
 
 
 
@@ -29,6 +32,7 @@ let ReviewContainer = function(props) {
   }
 
   return (
+
     <div className='review-container'>
       Reviews Container
       <h3>RATINGS & REVIEWS</h3>
@@ -37,6 +41,7 @@ let ReviewContainer = function(props) {
       <ReviewModal open={showReviewForm} closeForm={closeForm}/>
       <div>Did it get here?</div>
     </div>
+
   )
 }
 

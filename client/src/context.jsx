@@ -12,6 +12,7 @@ const ProductContext = React.createContext({
   productStyles: [],
   productReviews: [],
   changeReviewSortBy: (sortby) => {},
+  productName: "",
   productReviewsMetaData: {}
 });
 
