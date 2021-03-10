@@ -1,12 +1,36 @@
-import React from 'react'
+import React, {useState} from 'react'
+import ProductContext from '../context.jsx'
+import ReactModal from 'react-modal';
 
-let QuestionModal = function(props) {
+let QuestionModal = function({showQModal, setShowQModal, productName}) {
+  //VARIABLES
+  const newQuestionObj = (name, body) => {
+    return {
+      answers: [],
+      asker_name: name,
+      question_body: body,
+      question_date: new Date().toISOString(),
+      question_helpfulness: 0,
+      question_id: Math.floor(Math.random() * 1000000) + 2000000,
+      reported: false
+    }
+  };
+
+  //CLICK HANDLERS
+  const closeQModalClickHandler = (e) => {
+    setShowQModal(false)
+  }
+
+
   return (
-    <div>
-      <h3>Ask Your Question</h3>
-      <h5>About the PRODUCT NAME</h5>
-      <label>Display name*
+    <div className="QAqmodal">
+      <input className="closeButton" type="button" value="x" onClick={closeQModalClickHandler}></input>
+      <h3 className="QAqmodal_title">Ask Your Question</h3>
+      <h5 className="QAqmodal_subtitle">About the {productName}</h5>
+      <div className="QAqmodal_subscript">* - Indicates a mandatory field</div>
+      <label className="QAqmodal_label">Display name*
         <input
+          className="QAqmodal_inputField"
           id="questionerDisplayName"
           type="text"
           size="50"
@@ -15,37 +39,39 @@ let QuestionModal = function(props) {
           required>
         </input>
       </label>
-      <div>For privacy reasons, do not use your full name or email address.</div>
-      <label>Email*
+      <div className="QAqmodal_subscript">For privacy reasons, do not use your full name or email address.</div>
+      <label className="QAqmodal_label">Email*
         <input
+          className="QAqmodal_inputField"
           id="questionerEmailAddress"
           type="email"
           size="50"
-          maxlength="60"
+          maxLength="60"
           placeholder="account@email.com"
           required>
         </input>
       </label>
-      <div>For authentication reasons, you will not be emailed.</div>
-      <label>Question*
+      <div className="QAqmodal_subscript">For authentication reasons, you will not be emailed.</div>
+      <label className="QAqmodal_label">Question*
         <textarea
-          className="questionModalBody"
+          className="QAqmodal_textareaField"
           id="newQuestionBody"
           rows="10"
           cols="50"
-          maxlength="1000"
-          minlength="2"
+          maxLength="1000"
+          minLength="2"
           required>
         </textarea>
       </label>
-      <div>* - Indicates a mandatory field</div>
       <button
-        className="questionModalSubmitButton"
-        type="button"
+        className="QAqmodal_submitButton"
+        type="submit"
+        onClick={closeQModalClickHandler}
         id="questionModalSubmitButton">
           Submit
       </button>
     </div>
+
   )
 }
 

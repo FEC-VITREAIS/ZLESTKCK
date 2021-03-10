@@ -41,19 +41,17 @@
   },
   "dependencies": {
     "axios": "^0.21.1",
+    "fuse.js": "^6.4.6",
     "lodash": "^4.17.21",
     "path": "^0.12.7",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
-<<<<<<< HEAD
+    "react-modal": "^3.12.1",
     "react-slick": "^0.28.0",
     "react-star-ratings": "^2.3.0",
     "recompose": "^0.30.0",
-    "slick-carousel": "^1.8.1"
-=======
-    "recompose": "^0.30.0",
+    "slick-carousel": "^1.8.1",
     "sass": "^1.32.8",
     "swiper": "^6.5.0"
->>>>>>> 2a2e08a16ba22c0ffde5c83a39ac9075e60d7d2c
   }
 }
