@@ -8,6 +8,7 @@ import RelatedListCard from './Related-List-Card.jsx';
 var RelatedList = ({setSharedFeatures, setModalProduct, setDisplayModal}) => {
   const context = useContext(ProductContext);
 
+
   const [sliderSettings, setSliderSettings] = useState({
     infinite: false,
     speed: 500,

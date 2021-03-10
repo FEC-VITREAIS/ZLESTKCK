@@ -33,6 +33,7 @@ div, span {
   background-color: #F2F2F2;
   overflow: hidden;
   position: relative;
+  margin-left: 8%;
 }
 
 /* .related-list-container {
@@ -229,6 +230,7 @@ div, span {
 
 .img-carousel {
   width: 90%;
+  margin-left: 1%;
 }
 
 .slick-slider {
