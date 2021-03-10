@@ -65,7 +65,7 @@ let QuestionModal = function({showQModal, setShowQModal, productName}) {
       </label>
       <button
         className="QAqmodal_submitButton"
-        type="button"
+        type="submit"
         onClick={closeQModalClickHandler}
         id="questionModalSubmitButton">
           Submit
