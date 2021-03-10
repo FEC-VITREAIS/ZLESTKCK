@@ -1,9 +1,5 @@
 import React, { useState, useEffect } from "react";
 
-<<<<<<< HEAD
-const CurrentProductDetails = ({ CurrentProductInfo, CurrentProductView }) => {
-  // console.log(CurrentProductView, "product view");
-=======
 const CheckSize = (sizes) => {
   if (sizes.length === 0) {
     sizes = [{ defaultProp: true, size: "defaultProp" }];
@@ -29,7 +25,7 @@ const CheckSize = (sizes) => {
         {sizes.map((style, index) => {
           // console.log(style, "styles ");
           let size = style.size;
->>>>>>> 2a2e08a16ba22c0ffde5c83a39ac9075e60d7d2c
+
 
           if (size === "One Size") {
             return;
@@ -46,6 +42,7 @@ const CheckSize = (sizes) => {
     </>
   );
 };
+
 
 const CurrentProductDetails = ({ CurrentProductInfo, CurrentProductView }) => {
   if (CurrentProductInfo.defaultProp === true) {
