@@ -26,7 +26,7 @@
     "babel": "^6.23.0",
     "babel-loader": "^8.2.2",
     "chai": "^4.3.0",
-    "css-loader": "^5.1.0",
+    "css-loader": "^5.1.2",
     "eslint": "^7.20.0",
     "install": "^0.13.0",
     "jest": "^26.6.3",
@@ -41,6 +41,7 @@
   },
   "dependencies": {
     "axios": "^0.21.1",
+    "file-loader": "^6.2.0",
     "fuse.js": "^6.4.6",
     "lodash": "^4.17.21",
     "path": "^0.12.7",
@@ -50,8 +51,9 @@
     "react-slick": "^0.28.0",
     "react-star-ratings": "^2.3.0",
     "recompose": "^0.30.0",
-    "slick-carousel": "^1.8.1",
     "sass": "^1.32.8",
-    "swiper": "^6.5.0"
+    "slick-carousel": "^1.8.1",
+    "swiper": "^6.5.0",
+    "url-loader": "^4.1.1"
   }
 }
