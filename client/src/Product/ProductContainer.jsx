@@ -8,7 +8,7 @@ import DisplayProductPreview from "./components/DisplayProductPreview/DisplayPro
 import CurrentProductDetails from "./components/CurrentProductDetails/CurrentProductDetails";
 import SelectStyle from "./components/SelectStyle/SelectStyle";
 
-import './styles/styles.css';
+import "./styles/styles.css";
 
 let ProductContainer = function (props) {
   const [CurrentProductInfo, setCurrentProductInfo] = useState({});
@@ -28,7 +28,7 @@ let ProductContainer = function (props) {
     const currentStyles = context.productStyles;
     const currentProductInfo = context.currentProductDetails;
 
-    console.log(currentStyles, "product details");
+    // console.log(currentStyles, "product details");
 
     setCurrentProducts(currentStyles);
     setCurrentProductView(currentStyles[0]);
@@ -45,17 +45,13 @@ let ProductContainer = function (props) {
   return (
     <>
       <div id="ProductContainer">
-        <div className="carouselContainer">
-          <DisplayCurrentProduct
-            currentProduct={
-              CurrentProductView || { photos: [{ thumbnail_url: "" }] }
-            }
-          />
-          <DisplayProductPreview
-            styles={CurrentProducts}
-            changeView={HandleProductChange}
-          />
-        </div>
+        <DisplayProductPreview
+          styles={CurrentProducts}
+          changeView={HandleProductChange}
+          currentProduct={
+            CurrentProductView || { photos: [{ thumbnail_url: "" }] }
+          }
+        />
 
         <CurrentProductDetails
           CurrentProductInfo={
@@ -66,12 +62,7 @@ let ProductContainer = function (props) {
               defaultProp: true,
             }
           }
-          CurrentProductView={CurrentProductView || { name: "" }}
-        />
-
-        <SelectStyle
-          styles={CurrentProducts}
-          changeView={HandleProductChange}
+          CurrentProductView={CurrentProductView || { name: "", skus: [] }}
         />
       </div>
     </>
