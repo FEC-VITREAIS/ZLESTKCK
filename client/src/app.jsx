@@ -29,6 +29,7 @@ let App = function(props) {
   const [productReviews, setProductReviews] = useState([]);
   const [productReviewsMetaData, setProductReviewsMetaData] = useState({});
   const [reviewsSortBy, setReviewsSortBy] = useState('newest'); //set the default reviews to sort by newest
+  const [productName, setProductName] = useState("Product Name")
 
 
   // CURRENT PRODUCT STATE
@@ -36,6 +37,8 @@ let App = function(props) {
 
     fetchProductDetails(currentProduct)
     .then((data) => {
+      // console.log('current product: ', data);
+      setProductName(data.name)
       setCurrentProductDetails(data);
       //console.log('current product: ', data);
     })
@@ -95,7 +98,6 @@ let App = function(props) {
     fetchReviewsMetaData(currentProduct)
     .then((data) => {
       // console.log('product review meta data: ', data);
-
       setProductReviewsMetaData(data);
     })
   }
@@ -122,6 +124,7 @@ let App = function(props) {
   // PROVIDER AND APP STRUCTURE (CONTAINERS)
   return (
     <ProductContext.Provider value={{
+      currentProduct: currentProduct,
       currentProductDetails: currentProductDetails,
       relatedProducts: relatedItems,
       productQA: productQA,
@@ -129,12 +132,13 @@ let App = function(props) {
       productStyles: productStyles,
       productReviews: productReviews,
       changeReviewSortBy: changeReviewSortBy,
+      productName: productName,
       productReviewsMetaData: productReviewsMetaData
     }}>
       <div>
         <ProductContainer />
         <RelatedContainer />
-        <QAContainer />
+        <QAContainer currentProductId={currentProduct} />
         <ReviewContainer />
       </div>
     </ProductContext.Provider>

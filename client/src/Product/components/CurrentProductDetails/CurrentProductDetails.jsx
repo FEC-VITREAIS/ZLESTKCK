@@ -42,6 +42,7 @@ const CheckSize = (sizes) => {
   );
 };
 
+
 const CurrentProductDetails = ({ CurrentProductInfo, CurrentProductView }) => {
   if (CurrentProductInfo.defaultProp === true) {
     return <div></div>;
