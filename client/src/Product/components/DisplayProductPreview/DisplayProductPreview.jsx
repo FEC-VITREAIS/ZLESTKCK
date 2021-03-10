@@ -84,6 +84,76 @@ SwiperCore.use([Navigation, Pagination, Thumbs]);
 //   );
 // };
 
+// let DisplayProductPreview = ({ styles, changeView, currentProduct }) => {
+//   // console.log(styles)
+
+//   if (styles.length === undefined || styles.length === 0) {
+//     return <div> place holder for when products api called </div>;
+//   }
+
+//   let { url } = currentProduct.photos[0];
+
+//   const [thumbsSwiper, setThumbsSwiper] = useState(null);
+//   const [currentStyle, setCurrentStyle] = useState({});
+
+//   let slides = [];
+
+//   styles.map((product, index) => {
+//     // note - this can be transformed into a helper func its repetitive
+//     const { photos } = product;
+
+//     const { url } = photos[0];
+
+//     slides.push(
+//       <SwiperSlide>
+//         <img
+//           key={index}
+//           style={{ height: "150px", width: "150px" }}
+//           src={url}
+//           onClick={(e) => {
+//             changeView(e, product);
+//           }}
+//         ></img>
+//       </SwiperSlide>
+//     );
+//   });
+
+//   return (
+//     <>
+//       <div className="DisplayCurrentProductContainer">
+//         <div className="mainSlider">
+//           <Swiper
+//             thumbs={{ swiper: thumbsSwiper }}
+//             spaceBetween={0}
+//             onSlideChange={() => {}}
+//             slidesPerView={1}
+//             // Pagination
+//             // Navigation
+//           >
+//             {slides}
+//             <div className="prev">arrow right </div>
+//             <div className="next"> arrow left </div>
+//           </Swiper>
+//         </div>
+//       </div>
+
+//       <div className="DisplayProductPreviewContainer">
+//         <Swiper
+//           id="thumbs"
+//           onSlideChange={(e) => {
+
+//           }}
+//           onSwiper={setThumbsSwiper}
+//           spaceBetween={5}
+//           slidesPerView={4}
+//         >
+//           {slides}
+//         </Swiper>
+//       </div>
+//     </>
+//   );
+// };
+
 let DisplayProductPreview = ({ styles, changeView, currentProduct }) => {
   // console.log(styles)
 
@@ -97,6 +167,7 @@ let DisplayProductPreview = ({ styles, changeView, currentProduct }) => {
   const [currentStyle, setCurrentStyle] = useState({});
 
   let slides = [];
+  let thumbs = [];
 
   styles.map((product, index) => {
     // note - this can be transformed into a helper func its repetitive
@@ -108,7 +179,27 @@ let DisplayProductPreview = ({ styles, changeView, currentProduct }) => {
       <SwiperSlide>
         <img
           key={index}
-          style={{ height: "150px", width: "150px" }}
+          className="MainSliderImg"
+          src={thumbnail_url}
+          onClick={(e) => {
+            changeView(e, product);
+          }}
+        ></img>
+      </SwiperSlide>
+    );
+  });
+
+  styles.map((product, index) => {
+    const { photos } = product;
+
+    const { thumbnail_url } = photos[0];
+
+    thumbs.push(
+      <SwiperSlide>
+        <img
+          key={index}
+          // style={{ height: "150px", width: "150px" }}
+          className="thumbsImg"
           src={thumbnail_url}
           onClick={(e) => {
             changeView(e, product);
@@ -120,7 +211,7 @@ let DisplayProductPreview = ({ styles, changeView, currentProduct }) => {
 
   return (
     <>
-      <div className="DisplayCurrentProductContainer">
+      <div className="carouselContainer">
         <div className="mainSlider">
           <Swiper
             thumbs={{ swiper: thumbsSwiper }}
@@ -137,17 +228,15 @@ let DisplayProductPreview = ({ styles, changeView, currentProduct }) => {
         </div>
       </div>
 
-      <div className="DisplayProductPreviewContainer">
+      <div className="StylesContainer">
         <Swiper
           id="thumbs"
-          onSlideChange={(e) => {
-            
-          }}
+          onSlideChange={(e) => {}}
           onSwiper={setThumbsSwiper}
           spaceBetween={5}
           slidesPerView={4}
         >
-          {slides}
+          {thumbs}
         </Swiper>
       </div>
     </>

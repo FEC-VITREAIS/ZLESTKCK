@@ -45,20 +45,13 @@ let ProductContainer = function (props) {
   return (
     <>
       <div id="ProductContainer">
-        <div className="carouselContainer">
-          {/* <DisplayCurrentProduct
-            currentProduct={
-              CurrentProductView || { photos: [{ thumbnail_url: "" }] }
-            }
-          /> */}
-          <DisplayProductPreview
-            styles={CurrentProducts}
-            changeView={HandleProductChange}
-            currentProduct={
-              CurrentProductView || { photos: [{ thumbnail_url: "" }] }
-            }
-          />
-        </div>
+        <DisplayProductPreview
+          styles={CurrentProducts}
+          changeView={HandleProductChange}
+          currentProduct={
+            CurrentProductView || { photos: [{ thumbnail_url: "" }] }
+          }
+        />
 
         <CurrentProductDetails
           CurrentProductInfo={
@@ -70,11 +63,6 @@ let ProductContainer = function (props) {
             }
           }
           CurrentProductView={CurrentProductView || { name: "", skus: [] }}
-        />
-
-        <SelectStyle
-          styles={CurrentProducts}
-          changeView={HandleProductChange}
         />
       </div>
     </>

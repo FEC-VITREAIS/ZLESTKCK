@@ -1,39 +1,44 @@
 import React, { useState, useEffect } from "react";
 
-const CheckSize = ( sizes  ) => {
-
-  if ( sizes.length === 0 ) {
-    sizes = [{ defaultProp:true, size: "defaultProp" }]
+const CheckSize = (sizes) => {
+  if (sizes.length === 0) {
+    sizes = [{ defaultProp: true, size: "defaultProp" }];
   }
 
   let { defaultProp } = sizes;
 
-  if ( defaultProp ) {
+  if (defaultProp) {
     return;
   }
 
   let oneSize = sizes[0].size;
 
-  if ( oneSize === 'One Size' ) {
+  if (oneSize === "One Size") {
     return;
   }
 
-  return (
-    <select className="selectSizeButton">
-      {sizes.map((style, index) => {
-        // console.log(style, "styles ");
-        let size = style.size;
+  // const [  ] useState()
 
-        if (size === "One Size") {
-          return;
-        }
-        return (
-          <option className="SizeDropDownElement" key={index}>
-            Size: {size}
-          </option>
-        );
-      })}
-    </select>
+  return (
+    <>
+      <select className="selectSizeButton">
+        {sizes.map((style, index) => {
+          // console.log(style, "styles ");
+          let size = style.size;
+
+          if (size === "One Size") {
+            return;
+          }
+          return (
+            <option className="SizeDropDownElement" key={index}>
+              Size: {size}
+            </option>
+          );
+        })}
+      </select>
+
+      <div className="quantityTextContainer"> Quantity </div>
+    </>
   );
 };
 
@@ -99,5 +104,8 @@ const CurrentProductDetails = ({ CurrentProductInfo, CurrentProductView }) => {
     </>
   );
 };
+
+
+
 
 export default CurrentProductDetails;
