@@ -1,5 +1,5 @@
 import React, {useContext, useState, useEffect} from 'react';
-import './styles/styles.css';
+// import './styles/styles.css';
 import RelatedList from './Related-List.jsx';
 import YourOutfitsList from './Your-Outfits-List.jsx';
 import ProductContext from '../context.jsx';
@@ -14,29 +14,6 @@ let RelatedContainer = function(props) {
   const [sharedFeatures, setSharedFeatures] = useState({});
   const [modalProduct, setModalProduct] = useState({});
 
-  // const displayModalWindow = (bool) => {
-  //   if (bool) {
-  //     return (
-  //       <RelatedModalWindow handleModalClose={handleModalClose} product={modalProduct} sharedFeatures={sharedFeatures}/>
-  //     )
-  //   } else {
-  //     return (
-  //       <></>
-  //     )
-  //   }
-  // };
-
-
-
-  // const displayModalWindow = (bool) => {
-
-  //   return (
-  //     <RelatedModalWindow handleModalClose={handleModalClose} product={modalProduct} sharedFeatures={sharedFeatures}/>
-  //   )
-
-  // };
-
-
   const handleModalClose = (e) => {
     setDisplayModal(false);
     setSharedFeatures({});
@@ -44,29 +21,13 @@ let RelatedContainer = function(props) {
 
   useEffect(()=>{}, [sharedFeatures])
 
-
-  // if (context.relatedProducts && context.relatedProducts.length) {
-  //   return (
-  //     <div className='related-modal'>
-  //       {displayModalWindow(displayModal)}
-  //       <div className='related-container'>
-  //         <RelatedList setSharedFeatures={setSharedFeatures} setModalProduct={setModalProduct} setDisplayModal={setDisplayModal}/>
-  //         <YourOutfitsList />
-  //       </div>
-  //     </div>
-  //   )
-  // } else {
-  //   return (
-  //     <div className='related-container'></div>
-  //   )
-  // }
-
   if (context.relatedProducts && context.relatedProducts.length) {
     return (
       <>
       <ReactModal
         isOpen={displayModal}
-        onRequestClose={handleModalClose}>
+        onRequestClose={handleModalClose}
+        shouldCloseOnEsc={true}>
            <RelatedModalWindow
            handleModalClose={handleModalClose}
            product={modalProduct}
@@ -75,7 +36,10 @@ let RelatedContainer = function(props) {
       </ReactModal>
 
         <div className='related-container'>
-          <RelatedList setSharedFeatures={setSharedFeatures} setModalProduct={setModalProduct} setDisplayModal={setDisplayModal}/>
+          <RelatedList
+          setSharedFeatures={setSharedFeatures}
+          setModalProduct={setModalProduct}
+          setDisplayModal={setDisplayModal}/>
           <YourOutfitsList />
         </div>
       </>

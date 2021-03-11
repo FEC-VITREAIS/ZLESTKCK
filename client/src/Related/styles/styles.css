@@ -169,11 +169,9 @@ div, span {
 /* Modal Content/Box */
 .modal-content {
   background-color: #fefefe;
-  margin: 15% auto;
+  /* margin: 15% auto; */
   padding: 0;
-  border: 5px solid #735050;
-  height: 400px;
-  width: 650px;
+  width: 100%;
   overflow: auto;
   display: flex;
   flex-direction: column;
@@ -183,12 +181,11 @@ div, span {
 .modal-window-comparing {
   font-size: 1em;
   line-height: 0em;
-  text-align: center;
 }
 
 .related-modal-table {
   text-align: center;
-  width: 100%;
+  width: 90%;
 }
 
 .related-modal-table-title {
