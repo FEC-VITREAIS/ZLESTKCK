@@ -33,7 +33,7 @@ let ReviewContainer = function(props) {
 
   return (
 
-    <div className='review-container'>
+    <div className='ReviewsContainer'>
       Reviews Container
       <h3>RATINGS & REVIEWS</h3>
       <ReviewList setShowReviewForm={setShowReviewForm} showReview={showReviewForm}/>

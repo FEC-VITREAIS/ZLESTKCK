@@ -8,6 +8,8 @@ import DisplayProductPreview from "./components/DisplayProductPreview/DisplayPro
 import CurrentProductDetails from "./components/CurrentProductDetails/CurrentProductDetails";
 import SelectStyle from "./components/SelectStyle/SelectStyle";
 
+import NavBar from "./components/NavBar/NavBar";
+
 // import "./styles/styles.css";
 
 let ProductContainer = function (props) {
@@ -44,27 +46,28 @@ let ProductContainer = function (props) {
 
   return (
     <>
-      <div id="ProductContainer">
-        <DisplayProductPreview
-          styles={CurrentProducts}
-          changeView={HandleProductChange}
-          currentProduct={
-            CurrentProductView || { photos: [{ thumbnail_url: "" }] }
-          }
-        />
+      <NavBar />
 
-        <CurrentProductDetails
-          CurrentProductInfo={
-            CurrentProductInfo || {
-              original_price: undefined,
-              sale_price: undefined,
-              default_price: undefined,
-              defaultProp: true,
-            }
+      <DisplayProductPreview
+        styles={CurrentProducts}
+        changeView={HandleProductChange}
+        currentProduct={
+          CurrentProductView || { photos: [{ thumbnail_url: "" }] }
+        }
+      />
+
+      <CurrentProductDetails
+        CurrentProductInfo={
+          CurrentProductInfo || {
+            original_price: undefined,
+            sale_price: undefined,
+            default_price: undefined,
+            defaultProp: true,
           }
-          CurrentProductView={CurrentProductView || { name: "", skus: [] }}
-        />
-      </div>
+        }
+        CurrentProductView={CurrentProductView || { name: "", skus: [] }}
+      />
+
     </>
   );
 };

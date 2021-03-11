@@ -22,7 +22,7 @@ let QAContainer = function(props) {
 
   if (questions.length) {
     return (
-      <div className="QAcontainer">
+      <div className="QAContainer">
         <h2 className="QAcontainer_header">Customer Questions</h2>
         <h4 className="QAcontainer_subheader">Ask for information about this product from the customers who love it.</h4>
         <input className="QAlist_askButton" type="button" value="Ask a question" onClick={qModalClickHandler} ></input>

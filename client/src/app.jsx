@@ -15,7 +15,7 @@ import QAContainer from './QA/QAContainer.jsx'
 import RelatedContainer from './Related/RelatedContainer.jsx'
 import ReviewContainer from './Reviews/ReviewContainer.jsx'
 
-import './styles'
+import './styles/styles';
 
 let App = function(props) {
 
@@ -137,7 +137,7 @@ let App = function(props) {
       productName: productName,
       productReviewsMetaData: productReviewsMetaData
     }}>
-      <div>
+      <div id="AppContainer">
         <ProductContainer />
         <RelatedContainer />
         <QAContainer currentProductId={currentProduct} />

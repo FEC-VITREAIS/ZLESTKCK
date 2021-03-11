@@ -98,14 +98,10 @@ const CurrentProductDetails = ({ CurrentProductInfo, CurrentProductView }) => {
           </div>
           <div className="styleText">STYLE > {productStyle.name}</div>
         </div>
-
-        <div className="styleButtonsContainer">{CheckSize(sizes)}</div>
       </div>
+      <div className="StylesButtonContainer">{CheckSize(sizes)}</div>
     </>
   );
 };
-
-
-
 
 export default CurrentProductDetails;
