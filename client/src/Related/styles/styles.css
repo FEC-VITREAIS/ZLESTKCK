@@ -1,6 +1,14 @@
 * {
   outline: none !important;
 }
+#header-logo {
+  /* width: auto; */
+  height: 160px;
+}
+#header {
+  background-color: #F2F2F2;
+  margin-bottom: 10px;
+}
 
 [class ^= slick] {
   outline: none !important;
@@ -120,7 +128,7 @@ div, span {
 }
 
 .checked {
-  color: #735050;
+  color: #F4ABAB;
   float: right;
   position: absolute;
   left: 85%;
@@ -214,7 +222,7 @@ div, span {
 }
 
 .fa-plus {
-  color: #735050;
+  color: #F4ABAB;
   font-size: 6em;
   cursor: pointer;
 }

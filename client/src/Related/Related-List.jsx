@@ -19,7 +19,6 @@ var RelatedList = ({setSharedFeatures, setModalProduct, setDisplayModal}) => {
     accessibility: true,
   })
 
-  console.warn(context.relatedProducts);
   return (
     <div className='img-carousel'>
       <h2 className='related-items-title'> Related Items </h2>

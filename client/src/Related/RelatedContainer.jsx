@@ -4,6 +4,7 @@ import RelatedList from './Related-List.jsx';
 import YourOutfitsList from './Your-Outfits-List.jsx';
 import ProductContext from '../context.jsx';
 import RelatedModalWindow from './Related-Modal-Window.jsx';
+import ReactModal from 'react-modal';
 
 
 let RelatedContainer = function(props) {
@@ -24,6 +25,7 @@ let RelatedContainer = function(props) {
       )
     }
   };
+
 
   const handleModalClose = (e) => {
     setDisplayModal(false);
