@@ -1,0 +1,730 @@
+/* --------------- GLOBAL STYLES --------------------*/
+
+* {
+  outline: none !important;
+}
+#header-logo {
+  /* width: auto; */
+  height: 160px;
+}
+#header {
+  background-color: #F2F2F2;
+  margin-bottom: 10px;
+  border-bottom: solid;
+}
+
+[class ^= slick] {
+  outline: none !important;
+  overflow: visible;
+}
+
+#app {
+  background-color: #F2F2F2;
+}
+
+h1, h2, h3, .related-modal-table-title {
+  font-family: 'Oswald', sans-serif;
+  color: black;
+}
+
+div, span {
+  /* font-family: 'Raleway', sans-serif; */
+  font-family: 'Oswald', sans-serif;
+}
+
+/* --------------- END OF REVIEWS STYLES --------------------*/
+
+
+/* --------------- PRODUCT OVERVIEW PAGE STYLES --------------------*/
+
+#ProductContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  flex-direction: row;
+  justify-content: center;
+  flex-flow: column wrap;
+  height: 1000px;
+  overflow: hidden;
+  width: 75%;
+  margin: auto;
+}
+
+.carouselContainer {
+  border-width: thin;
+  border-style: solid;
+  background: #e6e6e6;
+  height: 100%;
+  width: 50%;
+  margin-bottom: 2%;
+}
+
+.ProductDetailContainer {
+  width: 30%;
+  margin-bottom: 2%;
+}
+
+.MainSliderImg {
+  width: 100%;
+
+}
+
+.StylesContainer,
+.swiper-container {
+  max-width: 100%;
+  max-height: 100%;
+  /* display: block; remove extra space below image */
+}
+
+.thumbsImg {
+  height: 100px;
+  width: 100px;
+}
+
+.swiper-slide {
+  width: 100%;
+  margin: 1%;
+}
+
+.swiper-wrapper {
+  border: 1px solid black;
+}
+
+.crossedOutOriginalPrice {
+  text-decoration-line: line-through;
+}
+.swiper-slide-thumb-active {
+  border-bottom: 3px solid grey;
+}
+
+/* --------------- END OF PRODUCT OVERVIEW STYLES --------------------*/
+
+
+/* --------------- RELATED ITEMS STYLES --------------------*/
+
+.related-card-div, .outfits-card-rating {
+  font-size: 5px;
+}
+.related-container {
+  height: 1000px;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  background-color: #F2F2F2;
+  overflow: hidden;
+  position: relative;
+  margin-left: 8%;
+}
+
+.related-list,
+.outfits-list {
+  width: 90%;
+  margin: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  flex-wrap: nowrap;
+}
+
+
+.related-list-card, .outfits-list-card {
+  border: 1px solid #39393C;
+  height: 275px;
+  width: 200px;
+  min-width: 200px;
+  margin: 10px;
+  position: relative;
+  background-color: white;
+}
+
+.related-list-card:hover, .outfits-list-card:hover {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.outfits-list-title {
+  text-align: left;
+  margin: 0 0 -1em 3.3em;
+}
+
+.outfits-list-card {
+  left: 4%;
+}
+
+.related-list-card-img, .outfits-list-card-img {
+  width: 100%;
+  height: 66%;
+}
+
+.related-items-title {
+  text-align: left;
+  margin: 0 0 0 3em;
+}
+
+.related-card-category, .outfits-card-category {
+  font-size: .8em;
+  line-height: .1em;
+}
+
+.related-card-sale-price {
+  font-size: 1em;
+  line-height: 1em;
+  color: red;
+}
+
+.related-card-price, .outfits-card-price {
+  font-size: 1em;
+}
+
+.related-card-name, .outfits-card-name  {
+  font-size: 1.3em;
+  line-height: 1em;
+  font-weight: bold;
+  margin: 0;
+}
+
+.related-card-name {
+  cursor: pointer;
+}
+
+
+.related-card-name:hover {
+  text-decoration: underline;
+}
+
+.checked {
+  color: #F4ABAB;
+  float: right;
+  position: absolute;
+  left: 85%;
+  top: 3%;
+  font-size: 1.5em;
+  cursor: pointer;
+}
+
+.checked:hover {
+  color: #F2F2F2;
+}
+
+.comparison-modal {
+  display: block;
+  position: fixed;
+  z-index: 1;
+  left: 17%;
+  top: -6%;
+  height: 50%;
+  width: 50%;
+}
+
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  padding: 0;
+  width: 100%;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.modal-window-comparing {
+  font-size: 1em;
+  line-height: 0em;
+}
+
+.related-modal-table {
+  text-align: center;
+  width: 90%;
+}
+
+.related-modal-table-title {
+  text-align: center;
+  font-size: 1.2em;
+}
+
+.related-modal-items {
+  font-size: 1.3em;
+  line-height: 0.8em;
+}
+
+.modal-table-feature-value {
+  font-weight: normal;
+  border-bottom: 1px solid black;
+}
+
+/* Modal Close Button */
+#close-modal {
+  font-size: 3em;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.fa-plus {
+  color: #F4ABAB;
+  font-size: 6em;
+  cursor: pointer;
+}
+
+.fa-plus:hover {
+  color: grey;
+}
+
+.slick-prev, .slick-next {
+  background: black !important;
+  width: 25px;
+  height: 25px;
+}
+
+.img-carousel {
+  width: 90%;
+  margin-left: 1%;
+}
+
+.slick-slider {
+  margin-left: 58px !important;
+  min-width: 100%;
+}
+
+.slick-div {
+  height: auto;
+  position: relative;
+  overflow: hidden;
+}
+
+.slick-track {
+  margin-left: 0 !important;
+}
+
+
+.slick-slide, .slick-active, .slick-current{
+  margin-left: 0;
+  width: auto !important;
+}
+
+.slick-outfits {
+  width: 75% !important;
+  margin: 0;
+}
+
+.slick-list {
+  width: 90% !important;
+}
+
+/* ---------------END OF RELATED ITEMS STYLES --------------------*/
+
+/* --------------- QUESTIONS AND ANSWERS STYLES --------------------*/
+
+/* QA-Container Styling */
+.QAcontainer {
+  border: solid 3px black;
+  width: 75%;
+  max-height: 1200px;
+  margin: 2rem auto;
+  overflow: auto;
+}
+
+.QAcontainer_header {
+  display: flex;
+  justify-content: center;
+}
+
+.QAcontainer_subheader {
+  display: flex;
+  justify-content: center;
+}
+
+/* QA-List Styling */
+.QAlist {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.QAlist_displayCount {
+  font-size: 1em;
+}
+
+.ask-button-div {
+  margin: auto;
+  width: 50%;
+}
+
+.QAlist_askButton {
+  width: 100%;
+  font-size: 1em;
+  padding: 2%;
+}
+
+.QAlist_sortButton {
+  width: 150px;
+}
+
+.QAlist_sortLinks {
+  display:block;
+  width: 150px;
+}
+
+.QAlist_container {
+  max-height: 500px;
+  overflow: auto;
+}
+
+.QAlist_loadMoreQuestions {
+  display: flex;
+  justify-content: center;
+}
+
+
+/* QA-QuestionEntries Styling */
+.QAqentries {
+  margin: 1rem auto;
+  border-radius: 0.3rem;
+  box-shadow: 0 2px 5px 0 rgb(0,0,0,0.5);
+  max-height: 1200px;
+}
+
+.QAqentries_metaContainer {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.QAqentries_meta {
+  font-size: 1em;
+}
+
+.QAqentries_questionBody {
+  font-size:medium;
+  padding: 0px 1%;
+  border: 1px solid black;
+  border-radius: 30px;
+  width: 90%;
+  margin: auto;
+}
+
+.QAqentries_answers {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.QAqentries_displayedAnswers {
+  max-height: 400px;
+  overflow: auto;
+  margin: auto;
+  width: 50%;
+}
+
+.QAaentries_loadMore {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.QAaentries_displayCount {
+  font-size: 1em;
+}
+
+.QAaentries_collapse {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+/* QA-AnswerEntries Styling */
+.QAaentries {
+  margin: 1rem 0;
+  box-shadow: 0 2px 5px 0 rgb(0,0,0,0.5);
+  border: 1px solid black;;
+}
+
+.QAaentries_metaContainer {
+  font-size: 1em;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.QAaentries_meta {
+  font-size: 1em;
+}
+
+.QAaentries_answerBody {
+  font-size: medium;
+  margin: auto;
+  width: 50%;
+  padding: 2% 0;
+}
+
+.QAaentries_images {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.QAaentries_thumbnails {
+  border: solid 1px black;
+  height: 50px;
+  width: 50px;
+}
+
+.QAaentries_imageModal {
+  background-color: #F2F2F2;
+  ;
+  height: 500px;
+  width: 300px;
+}
+
+/* QA-Search Styling */
+.QAsearch {
+  display: flex;
+  justify-content: center;
+}
+
+.QAsearch_bar {
+  height: 50px;
+}
+
+.QAsearchResults {
+  background-color: rgb(240, 241, 145);
+  display: flex;
+  justify-content: center;
+}
+
+/* QA-QuestionModal Styling */
+.QAqmodal {
+  background-color: rgb(136, 152, 245);
+}
+
+.QAqmodal_title {
+  display: flex;
+  justify-content: center;
+  padding: 2%;
+  border: 2px solid black;
+  border-radius: 30px;
+}
+
+.QAqmodal_subtitle {
+  display: flex;
+  justify-content: center;
+  font-size: 1.5em;
+}
+
+.QAqmodal_label {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.QAqmodal_subscript {
+  font-size: 1em;
+}
+
+.QAamodal {
+  background-color: rgb(220, 167, 245);
+}
+
+.QAamodal_title {
+  display: flex;
+  justify-content: center;
+}
+
+.QAamodal_subtitle {
+  display: flex;
+  justify-content: center;
+}
+
+.QAamodal_label {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.QAamodal_subscript {
+  font-size: 1em;
+}
+
+/* QA-ImageContainer Styling */
+.QAimage {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.QAimage_thumbnail {
+  height: 50px;
+  width: 50px;
+}
+
+
+[class ^= ReactModal] {
+  width: 70% !important;
+  margin: auto !important;
+}
+
+/* ---------------END OF QUESTIONS AND ANSWERS STYLES --------------------*/
+
+/* --------------- REVIEWS STYLES --------------------*/
+.review-container {
+  display: grid;
+  grid-template-columns: 25% 75%;
+  grid-template-rows: 50px 600px;
+  column-gap: 20px;
+  width: 75%;
+  margin: auto;
+
+}
+
+.ReviewList {
+  grid-column-start: 2;
+  grid-row-start: 2;
+  overflow: auto;
+}
+
+.ReviewBreakdown {
+  grid-column-start: 1;
+  grid-row-start: 2;
+  display: grid;
+  grid-template-rows: 10% 5% 30% 20px 55%;
+}
+
+.ReviewListTile {
+  display: grid;
+  height: 300px;
+  width: 75%;
+  border-bottom: 2px solid black;
+  grid-template-rows: 20% 70% 10%;
+  margin: 20px;
+  justify-self: left;
+}
+
+.BreakdownHeader {
+  grid-row-start: 1;
+  display: grid;
+  grid-template-columns: 20% 80%;
+}
+
+.BreakdownPercent {
+  grid-row-start: 2;
+}
+
+.BreakdownBars {
+  grid-row-start: 3;
+  display: grid;
+  grid-template-rows: 20% 20% 20% 20% 20%;
+}
+
+.starbar5 {
+  grid-row-start: 1;
+}
+
+.starbar4 {
+  grid-row-start: 2;
+}
+
+.starbar3 {
+  grid-row-start: 3;
+}
+
+.starbar2 {
+  grid-row-start: 4;
+}
+
+.starbar1 {
+  grid-row-start: 5;
+}
+
+.starbar {
+  display: grid;
+  grid-template-columns: 20% 60% 5px 20%;
+}
+
+.starText {
+  grid-column-start: 1;
+  align-self: center;
+}
+
+.RevProgress {
+  background-color: gray;
+  grid-column-start: 2;
+  height: 10px;
+  align-self: center;
+}
+
+.progressbar-progress {
+  background-color: #F4ABAB !important;
+}
+
+.reviewCount {
+  grid-column-start: 4;
+  align-self: center;
+}
+
+.BreakdownCharacteristics {
+  grid-row-start: 5;
+}
+
+.CharachContainer {
+  width: 100%;
+  height: 10px;
+  position: relative;
+}
+
+.CharachBar {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: gray;
+  z-index:-1;
+}
+
+.RevHeader {
+  grid-row-start: 1;
+  display: grid;
+  grid-template-columns: 15% auto 60% 5px;
+  grid-template-rows: auto;
+}
+
+.BreakdownStar {
+  grid-column-start: 2;
+  grid-row-start: 1;
+}
+
+.revRating {
+  grid-column-start: 1;
+  grid-row-start: 1;
+  font-size: 45px;
+  font-weight: bold;
+}
+
+.RevMiddle {
+  grid-row-start: 2;
+  align-self: center;
+  display: grid;
+}
+
+.RevFooter {
+  grid-row-start: 3;
+  display: grid;
+}
+
+.Revstar {
+  grid-column-start: 1;
+  justify-self: left;
+  font-size: 15px;
+}
+
+.Revdate {
+  grid-column-start: 3;
+  justify-self: right;
+  font-size: 15px;
+}
+
+.Revsummary {
+  font-weight: bold;
+}
+
+.Revresponse {
+  background-color: gray;
+}
+
+/* --------------- END OF REVIEWS STYLES --------------------*/

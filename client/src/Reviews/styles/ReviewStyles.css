@@ -3,6 +3,8 @@
   grid-template-columns: 25% 75%;
   grid-template-rows: 50px 600px;
   column-gap: 20px;
+  width: 75%;
+  margin: auto;
 
 }
 
@@ -96,6 +98,10 @@
   grid-column-start: 2;
   height: 10px;
   align-self: center;
+}
+
+.progressbar-progress {
+  background-color: #F4ABAB !important;
 }
 
 .reviewCount {

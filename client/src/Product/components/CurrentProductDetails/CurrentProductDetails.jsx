@@ -26,7 +26,6 @@ const CheckSize = (sizes) => {
           // console.log(style, "styles ");
           let size = style.size;
 
-
           if (size === "One Size") {
             return;
           }
@@ -76,8 +75,8 @@ const CurrentProductDetails = ({ CurrentProductInfo, CurrentProductView }) => {
           <div className="categoryText">
             <h3> Category:</h3> {product.category}
           </div>
-          <div> Product Name: {product.name} </div>
-          <div className="priceText">
+          <h1> Product Name: {product.name} </h1>
+          <h2 className="priceText">
             {productStyle.sale_price === 0 ||
             productStyle.sale_price === undefined ||
             productStyle.sale_price === null ? (
@@ -97,8 +96,8 @@ const CurrentProductDetails = ({ CurrentProductInfo, CurrentProductView }) => {
                 </div>
               </div>
             )}
-          </div>
-          <div className="styleText">STYLE > {productStyle.name}</div>
+          </h2>
+          <h2 className="styleText">STYLE > {productStyle.name}</h2>
         </div>
 
         <div className="styleButtonsContainer">{CheckSize(sizes)}</div>
