@@ -9,7 +9,7 @@ let ReviewListTile = (props) => {
 
   //const [exampleData, setExampleData] = useState(context.productReviews);
 
-  console.log('ReviewTile Props: ', props);
+  // console.log('ReviewTile Props: ', props);
 
 
   if (props.review) {

@@ -80,7 +80,7 @@ var RelatedListCard = ({product, setDisplayModal, setSharedFeatures, setModalPro
       <span className="fa fa-star checked" onClick={() => {
         compareProductFeatures();
       } }></span>
-      <img className='related-list-card-img' src={product.styles.photo}/>
+      <img className='related-list-card-img' alt='related-image' src={product.styles.photo}/>
       <h3 className='related-card-category'>{product.category}</h3>
       <h2 className='related-card-name' onClick={handleProductChange}>{product.name}</h2>
       {calculateSalePrice()}
