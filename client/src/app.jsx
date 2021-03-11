@@ -137,7 +137,7 @@ let App = function(props) {
       productReviewsMetaData: productReviewsMetaData
     }}>
       <div>
-        <div id='header'><img id='header-logo'src='https://i.imgur.com/BU7F5k7.png'/></div>
+        <div id='header'><img alt='header-logo' id='header-logo'src='https://i.imgur.com/BU7F5k7.png'/></div>
         <ProductContainer />
         <RelatedContainer />
         <QAContainer currentProductId={currentProduct} />
