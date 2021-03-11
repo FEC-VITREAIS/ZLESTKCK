@@ -229,6 +229,7 @@ let DisplayProductPreview = ({ styles, changeView, currentProduct }) => {
       </div>
 
       <div className="StylesContainer">
+        <h2>Select A Style</h2>
         <Swiper
           id="thumbs"
           onSlideChange={(e) => {}}

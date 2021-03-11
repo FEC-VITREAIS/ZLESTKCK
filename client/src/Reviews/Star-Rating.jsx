@@ -20,8 +20,9 @@ var StarRating = ({ratingsList, className, dimension}) => {
 
   return (
     <StarRatings
-      rating={calculateAverageRating(ratingsList)}
-      starRatedColor="#735050"
+      rating={calculateAverageRating(ratingsList) || 0}
+      // starRatedColor="#735050"
+      starRatedColor="#F4ABAB"
       numberOfStars={5}
       starDimension={dimension}
       name={className}

@@ -1,5 +1,5 @@
 import React, {useContext, useEffect, useState} from 'react'
-import './styles/ReviewStyles.css';
+// import './styles/ReviewStyles.css';
 import ReviewList from './ReviewList.jsx';
 import ProductContext from '../context.jsx';
 import ReviewBreakdown from './ReviewBreakdown.jsx';

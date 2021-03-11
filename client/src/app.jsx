@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import ReactDOM from "react-dom";
 import ProductContext from './context.jsx';
+import './styles/styles.css';
 
 import fetchProductDetails from './FetchData/fetchProductDetails.js';
 import fetchRelatedProducts from './FetchData/fetchRelatedProducts.js';
@@ -136,6 +137,7 @@ let App = function(props) {
       productReviewsMetaData: productReviewsMetaData
     }}>
       <div>
+        <div id='header'><img id='header-logo'src='https://i.imgur.com/BU7F5k7.png'/></div>
         <ProductContainer />
         <RelatedContainer />
         <QAContainer currentProductId={currentProduct} />

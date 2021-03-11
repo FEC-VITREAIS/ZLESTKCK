@@ -1,60 +1,71 @@
 /* QA-Container Styling */
 .QAcontainer {
   border: solid 3px black;
-  background-color:  rgb(252, 206, 168);
-  max-width: 700px;
+  /* background-color:  rgb(252, 206, 168); */
+  /* max-width: 700px; */
+  width: 75%;
   max-height: 1200px;
   margin: 2rem auto;
   overflow: auto;
 }
 
+
+
 .QAcontainer_header {
-  border: solid 2px sienna;
+  /* border: solid 2px sienna; */
   display: flex;
   justify-content: center;
 }
 
 .QAcontainer_subheader {
-  border: solid 2px sienna;
+  /* border: solid 2px sienna; */
   display: flex;
   justify-content: center;
 }
 
 /* QA-List Styling */
 .QAlist {
-  border: solid 2px blueviolet;
+  /* border: solid 2px blueviolet; */
   display: flex;
   justify-content: space-evenly;
 }
 
 .QAlist_displayCount {
-  border: solid 2px blueviolet;
-  font-size: x-small;
+  /* border: solid 2px blueviolet; */
+  font-size: 1em;
+}
+
+.ask-button-div {
+  margin: auto;
+  width: 50%;
 }
 
 .QAlist_askButton {
-  border: solid 2px blueviolet;
+  /* border: solid 2px blueviolet; */
+  width: 100%;
+  font-size: 1em;
+  padding: 2%;
 }
 
 .QAlist_sortButton {
-  border: solid 2px blueviolet;
+  /* border: solid 2px blueviolet; */
   width: 150px;
 }
 
 .QAlist_sortLinks {
-  border: solid 2px blueviolet;
+  /* border: solid 2px blueviolet; */
   display:block;
   width: 150px;
 }
 
 .QAlist_container {
-  border: solid 2px blueviolet;
+  /* border: solid 2px blueviolet; */
   max-height: 500px;
   overflow: auto;
 }
 
 .QAlist_loadMoreQuestions {
-  border: solid 2px blueviolet;
+  /* border: solid 2px blueviolet; */
   display: flex;
   justify-content: center;
 }
@@ -62,8 +73,8 @@
 
 /* QA-QuestionEntries Styling */
 .QAqentries {
-  border: solid 2px green;
-  background-color: rgb(119, 250, 195);
+  /* border: solid 2px green; */
+  /* background-color: rgb(119, 250, 195); */
   margin: 1rem auto;
   border-radius: 0.3rem;
   box-shadow: 0 2px 5px 0 rgb(0,0,0,0.5);
@@ -71,14 +82,14 @@
 }
 
 .QAqentries_metaContainer {
-  border: solid 2px green;
+  /* border: solid 2px green; */
   display: flex;
   justify-content: space-evenly;
 }
 
 .QAqentries_meta {
-  border: solid 2px green;
-  font-size: x-small;
+  /* border: solid 2px green; */
+  font-size: 1em;
 }
 
 /* .QAqentries_question {
@@ -87,71 +98,79 @@
 } */
 
 .QAqentries_questionBody {
-  border: solid 2px green;
+  /* border: solid 2px green; */
   font-size:medium;
+  padding: 0px 1%;
+  border: 1px solid black;
+  border-radius: 30px;
+  width: 90%;
+  margin: auto;
 }
 
 .QAqentries_answers {
-  border: solid 2px green;
+  /* border: solid 2px green; */
   display: flex;
   justify-content: space-evenly;
 }
 
 .QAqentries_displayedAnswers {
-  border: solid 5px black;
+  /* border: solid 5px black; */
   max-height: 400px;
   overflow: auto;
+  margin: auto;
+  width: 50%;
 }
 
 .QAqentries_addButton {
-  border: solid 2px green;
+  /* border: solid 2px green; */
 }
 
 .QAaentries_loadMore {
-  border: solid 2px green;
+  /* border: solid 2px green; */
   display: flex;
   justify-content: space-evenly;
 }
 
 .QAaentries_displayCount {
-  border: solid 2px green;
-  font-size: x-small;
+  /* border: solid 2px green; */
+  font-size: 1em;
 }
 
 .QAaentries_loadButton {
-  border: solid 2px green;
+  /* border: solid 2px green; */
 }
 
 .QAaentries_collapse {
-  border: solid 2px green;
+  /* border: solid 2px green; */
   display: flex;
   justify-content: space-evenly;
 }
 
 .QAaentries_collapseButton {
-  border: solid 2px green;
+  /* border: solid 2px green; */
 }
 
 
 /* QA-AnswerEntries Styling */
 .QAaentries {
-  border: solid 2px darkred;
-  background-color:rgb(247, 192, 192);
+  /* border: solid 2px darkred; */
+  /* background-color:rgb(247, 192, 192); */
   margin: 1rem 0;
-  border-radius: 0.3rem;
+  /* border-radius: 0.3rem; */
   box-shadow: 0 2px 5px 0 rgb(0,0,0,0.5);
+  border: 1px solid black;;
 }
 
 .QAaentries_metaContainer {
-  border: solid 2px darkred;
-  font-size: x-small;
+  /* border: solid 2px darkred; */
+  font-size: 1em;
   display: flex;
   justify-content: space-evenly;
 }
 
 .QAaentries_meta {
-  border: solid 2px darkred;
-  font-size: x-small;
+  /* border: solid 2px darkred; */
+  font-size: 1em;
 }
 
 /* .QAaentries_answer {
@@ -160,143 +179,163 @@
 } */
 
 .QAaentries_answerBody {
-  border: solid 2px darkred;
-  font-size:medium
+  /* border: solid 2px darkred; */
+  font-size: medium;
+  margin: auto;
+  width: 50%;
+  padding: 2% 0;
 }
 
 .QAaentries_images {
-  border: solid 2px darkred;
+  /* border: solid 2px darkred; */
   display: flex;
   justify-content: space-evenly;
 }
 
 .QAaentries_thumbnails {
-  border: solid 2px darkred;
+  border: solid 1px black;
   height: 50px;
   width: 50px;
 }
 
 .QAaentries_imageModal {
-  border: solid 2px darkred;
+  /* border: solid 2px darkred; */
+  background-color: #F2F2F2;
+  ;
   height: 500px;
   width: 300px;
 }
 
 /* QA-Search Styling */
 .QAsearch {
-  border: solid 2px goldenrod;
-  background-color: rgb(240, 241, 145);
+  /* border: solid 2px goldenrod;
+  background-color: rgb(240, 241, 145); */
   display: flex;
   justify-content: center;
 }
 
 .QAsearch_bar {
-  border: solid 2px goldenrod;
+  /* border: solid 2px goldenrod; */
+  height: 50px;
 }
 
 .QAsearchResults {
-  border: solid 2px goldenrod;
-  background-color: rgb(240, 241, 145);
+  /* border: solid 2px goldenrod;
+  background-color: rgb(240, 241, 145); */
   display: flex;
   justify-content: center;
 }
 
 /* QA-QuestionModal Styling */
 .QAqmodal {
-  border: solid 2px mediumblue;
-  background-color: rgb(136, 152, 245);
+  /* border: solid 2px mediumblue;
+  background-color: rgb(136, 152, 245); */
 }
 
 .QAqmodal_title {
-  border: solid 2px mediumblue;
+  /* border: solid 2px mediumblue; */
   display: flex;
   justify-content: center;
+  padding: 2%;
+  border: 2px solid black;
+  border-radius: 30px;
 }
 
 .QAqmodal_subtitle {
-  border: solid 2px mediumblue;
+  /* border: solid 2px mediumblue; */
   display: flex;
   justify-content: center;
+  font-size: 1.5em;
 }
 
 .QAqmodal_label {
-  border: solid 2px mediumblue;
+  /* border: solid 2px mediumblue; */
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
 }
 
 .QAqmodal_inputField {
-  border: solid 2px mediumblue;
+  /* border: solid 2px mediumblue; */
 }
 
 .QAqmodal_textareaField {
-  border: solid 2px mediumblue;
+  /* border: solid 2px mediumblue; */
 }
 
 .QAqmodal_subscript {
-  border: solid 2px mediumblue;
-  font-size: x-small;
+  /* border: solid 2px mediumblue; */
+  font-size: 1em;
 }
 
 .QAqmodal_submitButton {
-  border: solid 2px mediumblue;
+  /* border: solid 2px mediumblue; */
 }
 
 
 /* QA-AnswerModal Styling */
 .QAamodal {
-  border: solid 2px purple;
-  background-color: rgb(220, 167, 245);
+  /* border: solid 2px purple;
+  background-color: rgb(220, 167, 245); */
 }
 
 .QAamodal_title {
-  border: solid 2px purple;
+  /* border: solid 2px purple; */
   display: flex;
   justify-content: center;
 }
 
 .QAamodal_subtitle {
-  border: solid 2px purple;
+  /* border: solid 2px purple; */
   display: flex;
   justify-content: center;
 }
 
 .QAamodal_label {
-  border: solid 2px purple;
+  /* border: solid 2px purple; */
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
 }
 
 .QAamodal_inputField {
-  border: solid 2px purple;
+  /* border: solid 2px purple; */
 }
 
 .QAamodal_textareaField {
-  border: solid 2px purple;
+  /* border: solid 2px purple; */
 }
 
 .QAamodal_uploadButton {
-  border: solid 2px purple;
+  /* border: solid 2px purple; */
 }
 
 .QAamodal_subscript {
-  border: solid 2px purple;
-  font-size: x-small;
+  /* border: solid 2px purple; */
+  font-size: 1em;
 }
 
 .QAamodal_submitButton {
-  border: solid 2px purple;
+  /* border: solid 2px purple; */
 }
 
 /* QA-ImageContainer Styling */
 .QAimage {
-  border: solid 2px rgb(112, 165, 42);
+  /* border: solid 2px rgb(112, 165, 42); */
   display: flex;
   justify-content: space-evenly;
 }
 
 .QAimage_thumbnail {
-  border: solid 2px rgb(112, 165, 42);
+  /* border: solid 2px rgb(112, 165, 42); */
   height: 50px;
   width: 50px;
 }
+
+
+[class ^= ReactModal] {
+  width: 70% !important;
+  margin: auto !important;
+}
+/*
+.ReactModal_Content--after-open {
+  width: 50% !important;
+} */

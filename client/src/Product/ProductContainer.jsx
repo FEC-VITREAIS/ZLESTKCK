@@ -8,7 +8,7 @@ import DisplayProductPreview from "./components/DisplayProductPreview/DisplayPro
 import CurrentProductDetails from "./components/CurrentProductDetails/CurrentProductDetails";
 import SelectStyle from "./components/SelectStyle/SelectStyle";
 
-import "./styles/styles.css";
+// import "./styles/styles.css";
 
 let ProductContainer = function (props) {
   const [CurrentProductInfo, setCurrentProductInfo] = useState({});
