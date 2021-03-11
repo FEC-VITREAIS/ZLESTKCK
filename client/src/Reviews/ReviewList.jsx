@@ -35,11 +35,13 @@ let ReviewList = (props) => {
 
           <div className='RevListHeaderSort'>sorted by:</div>
 
-          <select className='ReviewListSort'>
-            <option value='Newest'>Newest</option>
-            <option value='Helpful'>Helpful</option>
-            <option value='Relevant'>Relevant</option>
-          </select>
+          <label className='ReviewListSort'>
+            <select>
+              <option value='Newest'>Newest</option>
+              <option value='Helpful'>Helpful</option>
+              <option value='Relevant'>Relevant</option>
+            </select>
+          </label>
 
         </div>
 
