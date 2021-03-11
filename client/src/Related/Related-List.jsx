@@ -9,7 +9,7 @@ var RelatedList = ({setSharedFeatures, setModalProduct, setDisplayModal}) => {
   const context = useContext(ProductContext);
 
 
-  const [sliderSettings, setSliderSettings] = useState({
+  const sliderSettings = {
     infinite: false,
     speed: 500,
     slidesToShow: 4,
@@ -17,7 +17,7 @@ var RelatedList = ({setSharedFeatures, setModalProduct, setDisplayModal}) => {
     dots: true,
     arrows: true,
     accessibility: true,
-  })
+  }
 
   return (
     <div className='img-carousel'>
