@@ -1,7 +1,8 @@
 import React, { useContext, useState, useEffect } from 'react';
 import ProductContext from '../context.jsx';
 import Progress from 'react-progressbar';
-import Characteristic from './Characteristic.jsx'
+import Characteristic from './Characteristic.jsx';
+import StarRatings from 'react-star-ratings';
 
 let ReviewBreakdown = (props) => {
   const context = useContext(ProductContext);
@@ -68,6 +69,7 @@ let ReviewBreakdown = (props) => {
   // console.log('Overall Rating: ', overallRating)
   // console.log('Overall Calc: ', ((1 * OneRatings) + (2 * TwoRatings) + (3 * ThreeRatings) + (4 * FourRatings) + (5 * FiveRatings))/((numTrue+numFalse)) * 10);
 
+  const overallRating = (Math.round(((1 * OneRatings) + (2 * TwoRatings) + (3 * ThreeRatings) + (4 * FourRatings) + (5 * FiveRatings))/(numTrue + numFalse) * 10) / 10).toFixed(1);
 
 
   if (ReviewMeta.ratings) {
@@ -75,8 +77,10 @@ let ReviewBreakdown = (props) => {
       <div className='ReviewBreakdown'>
 
         <div className='BreakdownHeader'>
-          <div className='BreakdownStar'>StarComponent</div>
-          <div className='revRating'>{(Math.round(((1 * OneRatings) + (2 * TwoRatings) + (3 * ThreeRatings) + (4 * FourRatings) + (5 * FiveRatings))/(numTrue + numFalse) * 10) / 10).toFixed(1)}</div>
+          <div className='BreakdownStar'>
+            <StarRatings rating={Number(overallRating)} starDimension='30px' starSpacing='3px' numberOfStars={5} starRatedColor='orange'/>
+          </div>
+          <div className='revRating'>{overallRating}</div>
 
 
 

@@ -1,5 +1,5 @@
 import React, {useContext, useEffect, useState} from 'react'
-import './styles/ReviewStyles.css';
+// import './styles/ReviewStyles.css';
 import ReviewList from './ReviewList.jsx';
 import ProductContext from '../context.jsx';
 import ReviewBreakdown from './ReviewBreakdown.jsx';
@@ -28,18 +28,19 @@ let ReviewContainer = function(props) {
   }, [context.productReviewsMetaData]);
 
   const closeForm = () => {
-    setShowReviewForm(false);
+    setShowReviewForm(!showReviewForm);
   }
+
+  console.log('METADATA: ', context.productReviewsMetaData);
+  console.log('Check if true: ', context.productReviewsMetaData.characteristics)
 
   return (
 
     <div className='review-container'>
-      Reviews Container
       <h3>RATINGS & REVIEWS</h3>
-      <ReviewList setShowReviewForm={setShowReviewForm} showReview={showReviewForm}/>
+      <ReviewList setShowReviewForm={setShowReviewForm} showReview={showReviewForm} currentSort={props.reviewsSortBy}/>
       {ReviewMeta && ReviewMeta.ratings && <ReviewBreakdown data={ReviewMeta}/> }
       <ReviewModal open={showReviewForm} closeForm={closeForm}/>
-      <div>Did it get here?</div>
     </div>
 
   )
