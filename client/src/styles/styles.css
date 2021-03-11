@@ -572,10 +572,45 @@ div, span {
 
 }
 
-.ReviewList {
+
+
+.ReviewListContainer {
   grid-column-start: 2;
   grid-row-start: 2;
+  display: grid;
+  grid-template-rows: 50px auto 30px;
+  grid-template-columns: 100%
+
+}
+
+.ReviewListHeader {
+  grid-row-start: 1;
+  display: grid;
+  grid-template-columns: 87px 90px 100px auto;
+}
+
+.numReviews {
+  grid-column-start:1
+}
+
+.RevListHeaderSort {
+  display: inline;
+  grid-column-start: 2
+}
+
+.ReviewListSort {
+  display: inline;
+  grid-column-start: 3;
+}
+
+
+.ReviewList {
+  grid-row-start: 2;
   overflow: auto;
+}
+
+.ReviewListFooter {
+  grid-row-start: 3;
 }
 
 .ReviewBreakdown {
@@ -586,14 +621,28 @@ div, span {
 }
 
 .ReviewListTile {
+  /* grid-column-start: 2; */
   display: grid;
   height: 300px;
   width: 75%;
   border-bottom: 2px solid black;
+  /* grid-template-columns: 10% auto 10% 10%; */
   grid-template-rows: 20% 70% 10%;
   margin: 20px;
   justify-self: left;
+
 }
+
+/* .Revdate {
+  grid-column-start: 4;
+  grid-row-start: 1;
+  background-color: blue;
+  font-size: 10px;
+} */
+
+
+
+
 
 .BreakdownHeader {
   grid-row-start: 1;
@@ -657,6 +706,8 @@ div, span {
   align-self: center;
 }
 
+
+
 .BreakdownCharacteristics {
   grid-row-start: 5;
 }
@@ -674,13 +725,21 @@ div, span {
   top: 0;
   left: 0;
   background-color: gray;
-  z-index:-1;
 }
+
+/* .BarPointer {
+  z-index: 10;
+  position: absolute;
+  left: 50%;
+  height: 12px;
+  width: 3px;
+  background-color: orange;
+} */
 
 .RevHeader {
   grid-row-start: 1;
   display: grid;
-  grid-template-columns: 15% auto 60% 5px;
+  grid-template-columns: 30% auto 60% 5px;
   grid-template-rows: auto;
 }
 
@@ -713,6 +772,12 @@ div, span {
   font-size: 15px;
 }
 
+/* .reviewer-name {
+  grid-column-start: 3;
+  justify-self: right;
+  font-size: 15px;
+} */
+
 .Revdate {
   grid-column-start: 3;
   justify-self: right;
@@ -725,6 +790,22 @@ div, span {
 
 .Revresponse {
   background-color: gray;
+}
+
+.RevModalForm {
+
+}
+
+.RevModalTitle {
+  left: 50%;
+}
+
+.RevModalSub {
+  left: 50%;
+}
+
+.RevModalStar {
+  left: 50%
 }
 
 /* --------------- END OF REVIEWS STYLES --------------------*/
