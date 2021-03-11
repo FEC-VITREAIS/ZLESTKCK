@@ -9,6 +9,7 @@ var RelatedList = ({setSharedFeatures, setModalProduct, setDisplayModal}) => {
   const context = useContext(ProductContext);
 
 
+  //settings for React-Slick Image Carousel
   const sliderSettings = {
     infinite: false,
     speed: 500,
@@ -26,7 +27,12 @@ var RelatedList = ({setSharedFeatures, setModalProduct, setDisplayModal}) => {
         {context.relatedProducts.map((p) => {
           return (
             <div className='slick-div'>
-              <RelatedListCard product={p} key={p.id} setSharedFeatures={setSharedFeatures} setModalProduct={setModalProduct} setDisplayModal={setDisplayModal}/>
+              <RelatedListCard
+              product={p}
+              key={p.id}
+              setSharedFeatures={setSharedFeatures}
+              setModalProduct={setModalProduct}
+              setDisplayModal={setDisplayModal}/>
             </div>
           )
         })}

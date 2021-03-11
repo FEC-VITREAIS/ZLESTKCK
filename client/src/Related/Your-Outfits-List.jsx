@@ -7,14 +7,13 @@ import "slick-carousel/slick/slick-theme.css";
 
 
 var YourOutfitsList = () => {
-  const [outfitsList, setOutfitsList] = useState([]);
-  const [outfitsListCache, setOutfitsListCache] = useState({});
-  const [currentProductDetails, setCurrentProductDetails] = useState({});
+  const [outfitsList, setOutfitsList] = useState([]); //array containing all outfits selected by user
+  const [outfitsListCache, setOutfitsListCache] = useState({}); //outfits cache object used to check for duplicate entries when adding to outfits list
+  const [currentProductDetails, setCurrentProductDetails] = useState({}); //object storing the details of the currently displayed product
   const context = useContext(ProductContext);
 
-
-
-  const [sliderSettings, setSliderSettings] = useState({
+  //settings for React-Slick Image Carousel
+  const sliderSettings = {
     infinite: false,
     speed: 500,
     slidesToShow: 4,
@@ -22,8 +21,11 @@ var YourOutfitsList = () => {
     dots: true,
     arrows: true,
     accessibility: true,
-  })
+  }
 
+  //Combines the appropriate API data into a single object that is stored in local state
+  //The results of three API calls for the current product are needed to create a single product object
+  //that contains the details, styles, and ratings.
   useEffect(()=> {
     const currentProduct = context.currentProductDetails;
     const currentProductStyles = context.productStyles;
@@ -40,8 +42,7 @@ var YourOutfitsList = () => {
   }, [outfitsListCache])
 
 
-  const addNewOutfit = (e) => {
-    // e.preventDefault();
+  const addNewOutfit = () => {
 
     //add new product id to cache
     const newOutfitCache = Object.assign({}, outfitsListCache);
@@ -49,21 +50,16 @@ var YourOutfitsList = () => {
 
     setOutfitsListCache(newOutfitCache);
 
-    // console.log('adding new outfit:', currentProductDetails);
-
-    //only display outfit if product id not in cache
+    //only update the outfits list if product id not in cache
     if (!outfitsListCache[currentProductDetails.id]) {
       setOutfitsList([...outfitsList, currentProductDetails])
     };
 
   };
 
-
-  // console.warn('outfit list: ', outfitsList);
-
   const removeOutfit = (product) => {
 
-    //switch the cache for product id to false so it will display on click
+    //switch the cache value for product id to false so it can be added to the outfits list again later
     const newOutfitCache = Object.assign({}, outfitsListCache);
     newOutfitCache[product.id] = false;
     setOutfitsListCache(newOutfitCache);
@@ -90,9 +86,11 @@ var YourOutfitsList = () => {
         <Slider {...sliderSettings}>
           {outfitsList.map((outfit) => {
             return (
-              // <div className='slick-div'>
               <div className='slick-outfits'>
-                {<OutfitsCard key={outfit.id} product={outfit} removeOutfit={removeOutfit} />}
+                {<OutfitsCard
+                key={outfit.id}
+                product={outfit}
+                removeOutfit={removeOutfit} />}
               </div>
             )
           })}
