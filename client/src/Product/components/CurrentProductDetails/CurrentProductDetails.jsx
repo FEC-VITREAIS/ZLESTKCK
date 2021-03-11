@@ -26,7 +26,6 @@ const CheckSize = (sizes) => {
           // console.log(style, "styles ");
           let size = style.size;
 
-
           if (size === "One Size") {
             return;
           }

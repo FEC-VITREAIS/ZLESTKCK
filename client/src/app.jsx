@@ -139,7 +139,7 @@ let App = function(props) {
         <ProductContainer />
         <RelatedContainer />
         <QAContainer currentProductId={currentProduct} />
-        <ReviewContainer />
+        <ReviewContainer currentSort={reviewsSortBy}/>
       </div>
     </ProductContext.Provider>
   )
