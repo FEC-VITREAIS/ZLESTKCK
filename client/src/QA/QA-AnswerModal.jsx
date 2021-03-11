@@ -28,7 +28,6 @@ let AnswerModal = function({arrayOfAnswers, setArrayOfAnswers, setShowAModal, pr
 
   const updateAnswerArrayClickHandler = (e) => {
     const pattern = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    console.log(newEmail)
     if (pattern.test(newEmail)) {
       setArrayOfAnswers(arrayOfAnswers.concat(newAnswerObj(newAnswerName, newAnswerBody, arrayOfFiles)))
       setShowAModal(false)
@@ -43,7 +42,6 @@ let AnswerModal = function({arrayOfAnswers, setArrayOfAnswers, setShowAModal, pr
   }
 
   const updateEmailChangeHandler = (e) => {
-    console.log(e.target.value)
     setNewEmail(e.target.value)
   }
 

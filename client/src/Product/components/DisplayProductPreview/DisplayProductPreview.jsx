@@ -179,6 +179,7 @@ let DisplayProductPreview = ({ styles, changeView, currentProduct }) => {
       <SwiperSlide>
         <img
           key={index}
+          alt='slides-image'
           className="MainSliderImg"
           src={thumbnail_url}
           onClick={(e) => {
@@ -198,6 +199,7 @@ let DisplayProductPreview = ({ styles, changeView, currentProduct }) => {
       <SwiperSlide>
         <img
           key={index}
+          alt='thumbs-image'
           // style={{ height: "150px", width: "150px" }}
           className="thumbsImg"
           src={thumbnail_url}
