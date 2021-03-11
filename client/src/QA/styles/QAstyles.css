@@ -1,7 +1,7 @@
 /* QA-Container Styling */
 .QAcontainer {
   border: solid 3px black;
-  background-color: #F2F2F2;
+  /* background-color:  rgb(252, 206, 168); */
   /* max-width: 700px; */
   width: 75%;
   max-height: 1200px;
@@ -9,20 +9,23 @@
   overflow: auto;
 }
 
+
+
 .QAcontainer_header {
+  /* border: solid 2px sienna; */
   display: flex;
   justify-content: center;
 }
 
 .QAcontainer_subheader {
+  /* border: solid 2px sienna; */
   display: flex;
   justify-content: center;
 }
 
 /* QA-List Styling */
 .QAlist {
-  border-top: 2px solid black;
-  border-bottom: 2px solid black;
+  /* border: solid 2px blueviolet; */
   display: flex;
   justify-content: space-evenly;
 }
@@ -30,27 +33,22 @@
 .QAlist_displayCount {
   /* border: solid 2px blueviolet; */
   font-size: 1em;
-  margin: 1%;
 }
 
 .ask-button-div {
-  padding: 26px;
-  width: 50%;
   margin: auto;
+  width: 50%;
 }
 
 .QAlist_askButton {
   /* border: solid 2px blueviolet; */
+  width: 100%;
   font-size: 1em;
   padding: 2%;
-  font-family: 'Raleway', sans-serif;
-  width: 100%;
-  text-align: center;
 }
 
 .QAlist_sortButton {
   /* border: solid 2px blueviolet; */
-  margin: 1%;
   width: 150px;
 }
 
@@ -75,21 +73,16 @@
 
 /* QA-QuestionEntries Styling */
 .QAqentries {
-  border: solid 1px black;
-  background-color: #F9E8E0;
+  /* border: solid 2px green; */
+  /* background-color: rgb(119, 250, 195); */
   margin: 1rem auto;
   border-radius: 0.3rem;
   box-shadow: 0 2px 5px 0 rgb(0,0,0,0.5);
   max-height: 1200px;
 }
 
-.QAqentries:hover {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  /* border: 1px solid black; */
-}
-
 .QAqentries_metaContainer {
-  border: solid 1px black;
+  /* border: solid 2px green; */
   display: flex;
   justify-content: space-evenly;
 }
@@ -107,6 +100,11 @@
 .QAqentries_questionBody {
   /* border: solid 2px green; */
   font-size:medium;
+  padding: 0px 1%;
+  border: 1px solid black;
+  border-radius: 30px;
+  width: 90%;
+  margin: auto;
 }
 
 .QAqentries_answers {
@@ -116,14 +114,15 @@
 }
 
 .QAqentries_displayedAnswers {
-  border: solid 3px #735050;
-  ;
+  /* border: solid 5px black; */
   max-height: 400px;
   overflow: auto;
+  margin: auto;
+  width: 50%;
 }
 
 .QAqentries_addButton {
-  border: solid 1px black;
+  /* border: solid 2px green; */
 }
 
 .QAaentries_loadMore {
@@ -134,7 +133,7 @@
 
 .QAaentries_displayCount {
   /* border: solid 2px green; */
-  font-size: x-small;
+  font-size: 1em;
 }
 
 .QAaentries_loadButton {
@@ -156,24 +155,22 @@
 .QAaentries {
   /* border: solid 2px darkred; */
   /* background-color:rgb(247, 192, 192); */
-  background-color: #DBC5D0;
-  border-top: 2px solid #735050;
   margin: 1rem 0;
-  border-radius: 0.3rem;
+  /* border-radius: 0.3rem; */
   box-shadow: 0 2px 5px 0 rgb(0,0,0,0.5);
+  border: 1px solid black;;
 }
 
 .QAaentries_metaContainer {
-  border-top: solid 1px black;
-  border-bottom: solid 1px black;
-  font-size: x-small;
+  /* border: solid 2px darkred; */
+  font-size: 1em;
   display: flex;
   justify-content: space-evenly;
 }
 
 .QAaentries_meta {
   /* border: solid 2px darkred; */
-  font-size: 15px;
+  font-size: 1em;
 }
 
 /* .QAaentries_answer {
@@ -183,7 +180,10 @@
 
 .QAaentries_answerBody {
   /* border: solid 2px darkred; */
-  font-size:medium
+  font-size: medium;
+  margin: auto;
+  width: 50%;
+  padding: 2% 0;
 }
 
 .QAaentries_images {
@@ -193,58 +193,65 @@
 }
 
 .QAaentries_thumbnails {
-  /* border: solid 2px darkred; */
+  border: solid 1px black;
   height: 50px;
   width: 50px;
 }
 
 .QAaentries_imageModal {
   /* border: solid 2px darkred; */
+  background-color: #F2F2F2;
+  ;
   height: 500px;
   width: 300px;
 }
 
 /* QA-Search Styling */
 .QAsearch {
-  /* background-color: rgb(240, 241, 145); */
-  height: 3em;
+  /* border: solid 2px goldenrod;
+  background-color: rgb(240, 241, 145); */
   display: flex;
   justify-content: center;
 }
 
 .QAsearch_bar {
-  border: solid 2px black;
+  /* border: solid 2px goldenrod; */
+  height: 50px;
 }
 
 .QAsearchResults {
-  border: solid 2px goldenrod;
-  background-color: rgb(240, 241, 145);
+  /* border: solid 2px goldenrod;
+  background-color: rgb(240, 241, 145); */
   display: flex;
   justify-content: center;
 }
 
 /* QA-QuestionModal Styling */
 .QAqmodal {
-  /* border: solid 2px mediumblue; */
-  background-color: rgb(136, 152, 245);
+  /* border: solid 2px mediumblue;
+  background-color: rgb(136, 152, 245); */
 }
 
 .QAqmodal_title {
   /* border: solid 2px mediumblue; */
   display: flex;
   justify-content: center;
+  padding: 2%;
+  border: 2px solid black;
+  border-radius: 30px;
 }
 
 .QAqmodal_subtitle {
   /* border: solid 2px mediumblue; */
   display: flex;
   justify-content: center;
+  font-size: 1.5em;
 }
 
 .QAqmodal_label {
   /* border: solid 2px mediumblue; */
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
 }
 
 .QAqmodal_inputField {
@@ -257,7 +264,7 @@
 
 .QAqmodal_subscript {
   /* border: solid 2px mediumblue; */
-  font-size: x-small;
+  font-size: 1em;
 }
 
 .QAqmodal_submitButton {
@@ -267,8 +274,8 @@
 
 /* QA-AnswerModal Styling */
 .QAamodal {
-  /* border: solid 2px purple; */
-  background-color: rgb(220, 167, 245);
+  /* border: solid 2px purple;
+  background-color: rgb(220, 167, 245); */
 }
 
 .QAamodal_title {
@@ -286,7 +293,7 @@
 .QAamodal_label {
   /* border: solid 2px purple; */
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
 }
 
 .QAamodal_inputField {
@@ -303,7 +310,7 @@
 
 .QAamodal_subscript {
   /* border: solid 2px purple; */
-  font-size: x-small;
+  font-size: 1em;
 }
 
 .QAamodal_submitButton {
@@ -322,3 +329,13 @@
   height: 50px;
   width: 50px;
 }
+
+
+[class ^= ReactModal] {
+  width: 70% !important;
+  margin: auto !important;
+}
+/*
+.ReactModal_Content--after-open {
+  width: 50% !important;
+} */

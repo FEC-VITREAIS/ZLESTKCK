@@ -15,11 +15,11 @@ var RelatedList = ({setSharedFeatures, setModalProduct, setDisplayModal}) => {
     slidesToShow: 4,
     slidesToScroll: 1,
     dots: true,
-    // arrows: true,
+    arrows: true,
     accessibility: true,
   })
 
-
+  console.warn(context.relatedProducts);
   return (
     <div className='img-carousel'>
       <h2 className='related-items-title'> Related Items </h2>

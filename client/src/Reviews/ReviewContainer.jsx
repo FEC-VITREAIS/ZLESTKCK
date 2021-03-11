@@ -34,12 +34,10 @@ let ReviewContainer = function(props) {
   return (
 
     <div className='review-container'>
-      Reviews Container
-      <h3>RATINGS & REVIEWS</h3>
+      <h2>RATINGS & REVIEWS</h2>
       <ReviewList setShowReviewForm={setShowReviewForm} showReview={showReviewForm}/>
       {ReviewMeta && ReviewMeta.ratings && <ReviewBreakdown data={ReviewMeta}/> }
       <ReviewModal open={showReviewForm} closeForm={closeForm}/>
-      <div>Did it get here?</div>
     </div>
 
   )

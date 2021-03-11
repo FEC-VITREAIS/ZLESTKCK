@@ -17,7 +17,8 @@ h1, h2, h3, .related-modal-table-title {
 }
 
 div, span {
-  font-family: 'Raleway', sans-serif;
+  /* font-family: 'Raleway', sans-serif; */
+  font-family: 'Oswald', sans-serif;
 }
 
 .related-card-div, .outfits-card-rating {
@@ -70,7 +71,7 @@ div, span {
 
 .outfits-list-title {
   text-align: left;
-  margin: 0 0 -1em 3em;
+  margin: 0 0 -1em 3.3em;
 }
 
 .outfits-list-card {
@@ -261,7 +262,15 @@ div, span {
   margin: 0;
 }
 
+.slick-list {
+  width: 90% !important;
+}
 
+/* .slick-next {
+  right: 10% !important;
+} */
+
+/*
 [class ^= slick-arrow] {
   display: none !important;
-}
+} */

@@ -20,7 +20,7 @@ var YourOutfitsList = () => {
     slidesToShow: 4,
     slidesToScroll: 1,
     dots: true,
-    // arrows: true,
+    arrows: true,
     accessibility: true,
   })
 
