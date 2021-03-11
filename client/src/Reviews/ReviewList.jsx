@@ -7,6 +7,7 @@ let ReviewList = (props) => {
 
   const [reviews, setReviews] = useState([]);
   const [numReviews, setnumReviews] = useState(2);
+  const [sort, setSort] = useState('Relevant');
 
   //console.log(props);
   //console.log(props.reviews[0]);
@@ -27,15 +28,30 @@ let ReviewList = (props) => {
 
   if (reviews) {
     return (
-      <div className='ReviewList'>
-        {numReviews < reviews.length && <div>Reviews 1-{numReviews} of {reviews.length}</div>
-        }
-        {numReviews >= reviews.length && <div>Reviews 1-{reviews.length} of {reviews.length}</div>}
-        <div>Sort By:</div>
-        {/* <ReviewListTile review={props.reviews[0]}/> */}
-        {reviews.slice(0, numReviews).map((review) => <ReviewListTile className='ReviewListTile' review={review} id={review.id}/>)}
-        {numReviews < reviews.length && <button onClick={HandleClick}>More Reviews</button>}
-        <button className='addReview' onClick={HandleReviewClick}>Write Review</button>
+      <div className='ReviewListContainer'>
+
+        <div className='ReviewListHeader'>
+          <div className='numReviews'>{reviews.length} reviews, </div>
+
+          <div className='RevListHeaderSort'>sorted by:</div>
+
+          <select className='ReviewListSort'>
+            <option value='Newest'>Newest</option>
+            <option value='Helpful'>Helpful</option>
+            <option value='Relevant'>Relevant</option>
+          </select>
+
+        </div>
+
+        <div className='ReviewList'>
+          {reviews.slice(0, numReviews).map((review) => <ReviewListTile className='ReviewListTile' review={review} id={review.id}/>)}
+        </div>
+
+        <div className='ReviewListFooter'>
+          {numReviews < reviews.length && <button onClick={HandleClick}>More Reviews</button>}
+          <button className='addReview' onClick={HandleReviewClick}>Write Review</button>
+        </div>
+
       </div>
     )
 

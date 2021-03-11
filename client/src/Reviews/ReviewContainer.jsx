@@ -28,14 +28,17 @@ let ReviewContainer = function(props) {
   }, [context.productReviewsMetaData]);
 
   const closeForm = () => {
-    setShowReviewForm(false);
+    setShowReviewForm(!showReviewForm);
   }
+
+  console.log('METADATA: ', context.productReviewsMetaData);
+  console.log('Check if true: ', context.productReviewsMetaData.characteristics)
 
   return (
 
     <div className='review-container'>
-      <h2>RATINGS & REVIEWS</h2>
-      <ReviewList setShowReviewForm={setShowReviewForm} showReview={showReviewForm}/>
+      <h3>RATINGS & REVIEWS</h3>
+      <ReviewList setShowReviewForm={setShowReviewForm} showReview={showReviewForm} currentSort={props.reviewsSortBy}/>
       {ReviewMeta && ReviewMeta.ratings && <ReviewBreakdown data={ReviewMeta}/> }
       <ReviewModal open={showReviewForm} closeForm={closeForm}/>
     </div>

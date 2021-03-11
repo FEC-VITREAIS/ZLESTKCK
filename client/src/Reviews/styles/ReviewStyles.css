@@ -10,10 +10,43 @@
 
 
 
-.ReviewList {
+.ReviewListContainer {
   grid-column-start: 2;
   grid-row-start: 2;
+  display: grid;
+  grid-template-rows: 50px auto 30px;
+  grid-template-columns: 100%
+
+}
+
+.ReviewListHeader {
+  grid-row-start: 1;
+  display: grid;
+  grid-template-columns: 87px 90px 100px auto;
+}
+
+.numReviews {
+  grid-column-start:1
+}
+
+.RevListHeaderSort {
+  display: inline;
+  grid-column-start: 2
+}
+
+.ReviewListSort {
+  display: inline;
+  grid-column-start: 3;
+}
+
+
+.ReviewList {
+  grid-row-start: 2;
   overflow: auto;
+}
+
+.ReviewListFooter {
+  grid-row-start: 3;
 }
 
 .ReviewBreakdown {
@@ -128,7 +161,6 @@
   top: 0;
   left: 0;
   background-color: gray;
-  z-index:-1;
 }
 
 /* .BarPointer {
@@ -143,7 +175,7 @@
 .RevHeader {
   grid-row-start: 1;
   display: grid;
-  grid-template-columns: 15% auto 60% 5px;
+  grid-template-columns: 30% auto 60% 5px;
   grid-template-rows: auto;
 }
 
@@ -194,4 +226,20 @@
 
 .Revresponse {
   background-color: gray;
+}
+
+.RevModalForm {
+
+}
+
+.RevModalTitle {
+  left: 50%;
+}
+
+.RevModalSub {
+  left: 50%;
+}
+
+.RevModalStar {
+  left: 50%
 }
