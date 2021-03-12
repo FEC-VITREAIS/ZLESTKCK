@@ -128,7 +128,7 @@ div, span, select {
   flex-direction: row;
   justify-content: flex-start;
   flex-wrap: nowrap;
-  overflow: scroll;
+  /* overflow: scroll; */
 }
 
 .related-list-card, .outfits-list-card {
