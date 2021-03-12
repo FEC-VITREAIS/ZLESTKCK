@@ -142,12 +142,13 @@ div, span, select {
 }
 
 .related-list-card:hover, .outfits-list-card:hover {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
+  box-shadow: 0 4px 8px 0 rgba(244, 171, 171, 0.96), 0 6px 20px 0 rgba(244, 171, 171, 0.96);
 }
 
 .outfits-list-title {
   text-align: left;
-  margin: 0 0 -5vw 4vw;
+  margin: 0 0 -10vw 4.5vw;
 }
 
 .outfits-list-card {
@@ -295,6 +296,10 @@ div, span, select {
   font-size: 0px;
 }
 
+/* .slick-next {
+  margin-top: -9%;
+} */
+
 .img-carousel {
   width: 90%;
   margin-left: 1%;
@@ -313,6 +318,7 @@ div, span, select {
 
 .slick-track {
   margin-left: 0 !important;
+  /* height: 85%; */
 }
 
 
@@ -328,6 +334,7 @@ div, span, select {
 
 .slick-list {
   width: 90% !important;
+  margin-bottom: -4% !important;
 }
 
 /* ---------------END OF RELATED ITEMS STYLES --------------------*/
