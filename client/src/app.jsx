@@ -39,8 +39,13 @@ let App = function(props) {
   var changeReviewSortBy = (sortBy) => {
     //sortBy should be a string containing
     //'newest', 'helpful', or 'relevant'
-    setReviewsSortBy(sortBy)
-  };
+    //console.log('sortBy: ', sortBy)
+    fetchReviews(currentProduct, sortBy)
+    .then((data) => {
+      setProductReviews(data);
+    });
+  }
+
 
   var fetchAPIData = () => {
 

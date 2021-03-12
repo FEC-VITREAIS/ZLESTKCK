@@ -301,9 +301,11 @@ let ReviewModal = (props) => {
           </form>
 
           <button onClick={checkSubmit}>Submit Review</button>
-          {failedSubmit && <div>Make Sure all fields are filled out</div>}
+
 
           <button onClick={props.closeForm}>Close</button>
+
+          {failedSubmit && <label className='FailedSubmit'>{'\t'}Make Sure all fields are filled out</label>}
 
         </div>
       </Modal>
