@@ -3,8 +3,6 @@ import StarRating from '../Reviews/Star-Rating.jsx';
 
 var OutfitsCard = ({product, removeOutfit}) => {
 
-  // console.log('product: ', product);
-
   const calculateSalePrice = () => {
     if (product.styles.salePrice) {
       return (

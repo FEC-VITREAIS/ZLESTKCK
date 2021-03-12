@@ -16,11 +16,11 @@ var YourOutfitsList = () => {
   const sliderSettings = {
     infinite: false,
     speed: 500,
-    slidesToShow: 4,
+    slidesToShow: 1,
     slidesToScroll: 1,
-    adaptiveHeight: true,
-    arrows: true,
-    accessibility: true,
+    // adaptiveHeight: true,
+    arrows: false,
+    // accessibility: true,
     draggable: true
   }
 

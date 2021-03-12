@@ -4,17 +4,21 @@ import StarRatings from 'react-star-ratings';
 var StarRating = ({ratingsList, className, dimension}) => {
 
   //ratings list will be an object that looks like this: {2: '2', 5: '1'}
-  //the keys represent the reviewer id and the value represents the rating
+  //the keys represent the number of reviews of that key's value
 
   var calculateAverageRating = () => {
     var total = 0;
+    var length = 0;
     var allRatings = Object.values(ratingsList);
 
-    allRatings.forEach((rating) => {
-      total += Number(rating);
-    })
+    for (var v in ratingsList) {
+      total += (Number(v) * Number(ratingsList[v]));
+      length += Number(v);
+    };
 
-    var average = (total / allRatings.length);
+    
+
+    var average = (total / length);
     return average
   }
 
