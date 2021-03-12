@@ -55,7 +55,7 @@ const SelectStyle = ({ CurrentStyles, CurrentStyle, HandleStyleChange }) => {
                 HandleStyleChange(e, Style, index);
               }}
             >
-              <img className="StyleImg" src={url} />
+              <img className="StyleImg" src={url} alt="style image" />
             </div>
           );
         })}

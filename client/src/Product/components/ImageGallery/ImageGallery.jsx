@@ -28,7 +28,7 @@ const ImageGallery = ({ CurrentStyle, IncrementStyleIndex , DecrementStyleIndex 
         >left arrow</div>
 
         <div className="MainStyleImg" >
-          <img src={url} />
+          <img src={url} alt="main style image"/>
         </div>
 
         <div
