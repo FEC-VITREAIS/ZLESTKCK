@@ -15,14 +15,14 @@ var RelatedList = ({setSharedFeatures, setModalProduct, setDisplayModal}) => {
     speed: 500,
     slidesToShow: 4,
     slidesToScroll: 1,
-    dots: true,
+    adaptiveHeight: true,
     arrows: true,
     accessibility: true,
   }
 
   return (
     <div className='img-carousel'>
-      <h2 className='related-items-title'> Related Items </h2>
+      <h1 className='related-items-title'> Related Items </h1>
       <Slider {...sliderSettings}>
         {context.relatedProducts.map((p) => {
           return (
