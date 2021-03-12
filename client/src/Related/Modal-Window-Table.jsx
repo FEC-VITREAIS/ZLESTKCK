@@ -4,12 +4,9 @@ import ProductContext from '../context.jsx';
 var ModalWindowTable = ({product, sharedFeatures}) => {
   const context = useContext(ProductContext);
 
+  //recieves the sharedFeatures object from it's parent 
+  //and renders each feature as table rows for the modal window
   var displayComparedFeatures = (feature) => {
-      console.log('product 1 features: ', product.features);
-      console.log('current product features: ', context.currentProductDetails.features);
-      console.log('shared features: ', sharedFeatures);
-
-
       return (
         <tr>
           <th className='modal-table-feature-value'>{sharedFeatures[feature].currentProductValue}</th>

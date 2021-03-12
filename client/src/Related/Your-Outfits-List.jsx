@@ -8,9 +8,13 @@ import "slick-carousel/slick/slick-theme.css";
 
 var YourOutfitsList = () => {
   const [outfitsList, setOutfitsList] = useState([]); //array containing all outfits selected by user
-  const [outfitsListCache, setOutfitsListCache] = useState({}); //outfits cache object used to check for duplicate entries when adding to outfits list
+  const [outfitsListCache, setOutfitsListCache] = useState({11101: false}); //outfits cache object used to check for duplicate entries when adding to outfits list
   const [currentProductDetails, setCurrentProductDetails] = useState({}); //object storing the details of the currently displayed product
   const context = useContext(ProductContext);
+
+  console.log('outfits list cache: ', outfitsListCache);
+  console.log('current product: ', context.currentProductDetails);
+  // console.warn('current product: ', currentProduct);
 
   //settings for React-Slick Image Carousel
   const sliderSettings = {
@@ -44,7 +48,7 @@ var YourOutfitsList = () => {
 
 
   const addNewOutfit = () => {
-
+        
     //add new product id to cache
     const newOutfitCache = Object.assign({}, outfitsListCache);
     newOutfitCache[currentProductDetails.id] = true;
@@ -56,6 +60,7 @@ var YourOutfitsList = () => {
       setOutfitsList([...outfitsList, currentProductDetails])
     };
 
+
   };
 
   const removeOutfit = (product) => {
@@ -64,6 +69,7 @@ var YourOutfitsList = () => {
     const newOutfitCache = Object.assign({}, outfitsListCache);
     newOutfitCache[product.id] = false;
     setOutfitsListCache(newOutfitCache);
+    console.warn(outfitsList);
 
     //find the matching product id and remove it
     const updatedOutfitList = outfitsList.filter((o) => {
@@ -86,14 +92,17 @@ var YourOutfitsList = () => {
         </div>
         <Slider {...sliderSettings}>
           {outfitsList.map((outfit) => {
-            return (
-              <div className='slick-outfits'>
-                {<OutfitsCard
-                key={outfit.id}
-                product={outfit}
-                removeOutfit={removeOutfit} />}
-              </div>
-            )
+            if (outfit.id !== 11101) {
+
+              return (
+                <div className='slick-outfits'>
+                  {<OutfitsCard
+                  key={outfit.id}
+                  product={outfit}
+                  removeOutfit={removeOutfit} />}
+                </div>
+              )
+            }
           })}
         </Slider>
       </div>
