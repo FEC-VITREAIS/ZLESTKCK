@@ -18,8 +18,6 @@ import ReviewContainer from './Reviews/ReviewContainer.jsx'
 
 let App = function(props) {
 
-  // console.log('rerender!');
-
   // STATE HOOKS
   const [currentProductDetails, setCurrentProductDetails] = useState({});
   const [currentProduct, setProduct] = useState("11101"); //using 11101 as the default product
@@ -33,75 +31,11 @@ let App = function(props) {
   const [productName, setProductName] = useState("Product Name")
 
 
-  // CURRENT PRODUCT STATE
-  var fetchCurrentProduct = () => {
-
-    fetchProductDetails(currentProduct)
-    .then((data) => {
-      // console.log('current product: ', data);
-      setProductName(data.name)
-      setCurrentProductDetails(data);
-      //console.log('current product: ', data);
-    })
-
-  }
-
   var updateCurrentProduct = (newProductID) => {
     //this works and updates the current product
     setProduct(newProductID)
   }
 
-
-  // RELATED ITEMS STATE
-  var fetchRelatedItems = () => {
-
-    fetchRelatedProducts(currentProduct)
-    .then((relatedItemsData) => {
-      // console.log('related items with rating: ', relatedItemsData);
-
-      setRelatedItems(relatedItemsData);
-
-    })
-
-  }
-
-
-  // QA STATE
-  var fetchProductQA = () => {
-
-    fetchQA(currentProduct)
-    .then((data) => {
-      //console.log('all product questions and answers', data);
-
-      setProductQA(data)
-    })
-  };
-
-  var fetchProductStyles = () => {
-    fetchStyles(currentProduct)
-    .then((data) => {
-      setProductStyles(data)
-    })
-  }
-
-  var fetchProductReviews = () => {
-
-    fetchReviews(currentProduct, reviewsSortBy)
-    .then((data) => {
-      // console.log('product review data: ', data);
-      setProductReviews(data);
-    })
-
-  }
-
-  var fetchProductReviewsMetaData = () => {
-
-    fetchReviewsMetaData(currentProduct)
-    .then((data) => {
-      // console.log('product review meta data: ', data);
-      setProductReviewsMetaData(data);
-    })
-  }
 
   var changeReviewSortBy = (sortBy) => {
     //sortBy should be a string containing
@@ -109,17 +43,65 @@ let App = function(props) {
     setReviewsSortBy(sortBy)
   }
 
+  var fetchAPIData = () => {
+    
+    //current product details
+    fetchProductDetails(currentProduct)
+    .then((data) => {
+      setProductName(data.name)
+      setCurrentProductDetails(data);
+    });
+
+    //related products
+    fetchRelatedProducts(currentProduct)
+    .then((relatedItemsData) => {
+      setRelatedItems(relatedItemsData);
+    });
+
+    //Questions and Answers
+    fetchQA(currentProduct)
+    .then((data) => {
+      setProductQA(data)
+    });
+
+    //Product Styles
+    fetchStyles(currentProduct)
+    .then((data) => {
+      setProductStyles(data)
+    });
+
+    //Product Reviews
+    fetchReviews(currentProduct, reviewsSortBy)
+    .then((data) => {
+      setProductReviews(data);
+    });
+
+    //Product Reviews Meta Data
+    fetchReviewsMetaData(currentProduct)
+    .then((data) => {
+      // console.log('product review meta data: ', data);
+      setProductReviewsMetaData(data);
+    });
+
+
+  }
+
 
   // EFFECT HOOKS
-  useEffect(() => {
-    fetchRelatedItems()
-    fetchCurrentProduct()
-    fetchProductQA()
-    fetchProductStyles()
-    fetchProductReviews()
-    fetchProductReviewsMetaData()
-  }, [currentProduct]);
+  // useEffect(() => {
+  //   fetchRelatedItems()
+  //   fetchCurrentProduct()
+  //   fetchProductQA()
+  //   fetchProductStyles()
+  //   fetchProductReviews()
+  //   fetchProductReviewsMetaData()
+  // }, [currentProduct]);
   //current product above is the variable that hooks is watching before allowing a re-render. Re-render will only occur if change in current product is detected.
+
+
+  useEffect(() => {
+    fetchAPIData();
+  }, [currentProduct]);
 
 
   // PROVIDER AND APP STRUCTURE (CONTAINERS)
@@ -137,7 +119,7 @@ let App = function(props) {
       productReviewsMetaData: productReviewsMetaData
     }}>
       <div>
-        <div id='header'><img id='header-logo'src='https://i.imgur.com/BU7F5k7.png'/></div>
+        <div id='header'><img alt='header-logo' id='header-logo'src='https://i.imgur.com/BU7F5k7.png'/></div>
         <ProductContainer />
         <RelatedContainer />
         <QAContainer currentProductId={currentProduct} />

@@ -50,10 +50,10 @@ let AnswerEntries = ({responder, body, date, helpfulCount, images, aCount}) => {
             {showImageModal ?
               <ReactModal isOpen={showImageModal} onRequestClose={toggleImageClickHandler}>
                 <button onClick={toggleImageClickHandler}>X</button>
-                <img className="QAaentries_imageModal" src={image} onClick={toggleImageClickHandler} key={image.length}></img>
+                <img className="QAaentries_imageModal" alt='answer-image' src={image} onClick={toggleImageClickHandler} key={image.length}></img>
               </ReactModal>
               :
-              <img className="QAaentries_thumbnails" src={image} onClick={toggleImageClickHandler} key={image.length}></img>
+              <img className="QAaentries_thumbnails" alt='answer-image-thumbnail' src={image} onClick={toggleImageClickHandler} key={image.length}></img>
             }
             </>
           )

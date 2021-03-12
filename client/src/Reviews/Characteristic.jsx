@@ -3,7 +3,7 @@ import ProductContext from '../context.jsx';
 
 let Characteristic = (props) => {
 
-  console.log('CHARACTERISTIC PROPS: ', props);
+  // console.log('CHARACTERISTIC PROPS: ', props);
 
   if (props.charach) {
     return (
