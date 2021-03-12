@@ -9,7 +9,10 @@ var RelatedList = () => {
     <div className='related-list'>
     {context.relatedProducts.map((product, ind) => {
       return (
-        <RelatedListCard product={product} photo={''} key={product.id}  photo={product.styles.photo} price={product.styles.price}/>
+        <RelatedListCard product={product} 
+        photo={''} key={product.id}  
+        photo={product.styles.photo} 
+        price={product.styles.price}/>
       )
     })}
     </div>
@@ -18,5 +21,3 @@ var RelatedList = () => {
 }
 
 export default RelatedList;
-
-//context.relatedStyleData[ind].photo
