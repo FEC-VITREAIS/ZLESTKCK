@@ -30,15 +30,17 @@ let ReviewListTile = (props) => {
 
         <div className='RevMiddle'>
           <div className='Revsummary'>{props.review.summary}</div>
-          <br></br>
+
           <div className='Revbody'>{props.review.body}</div>
-          <br></br>
+
+
           {props.review.recommend &&
           <div>
             <span>&#10003; I recommend this product</span>
           </div>
           }
           <br></br>
+
           {props.review.response &&
           <div className='Revresponse'>Response:
             <br></br>
