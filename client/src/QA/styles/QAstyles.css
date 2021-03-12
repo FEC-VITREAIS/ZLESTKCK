@@ -45,30 +45,27 @@ a:link {
   width: 100%;
   font-size: 1em;
   padding: 2%;
-  background-color: #F4ABAB;
+  background-color: #F2F2F2;
   box-shadow: 0 2px 5px 0 rgb(0,0,0,0.5);
   font-weight: bold;
 }
 
-
-.QAlist_sortButton {
-  /* border: solid 2px blueviolet; */
-  width: 200px;
-  transition-duration: 0.4s;
-  background-color: #F2F2F2;
-  border: 0px;
-  outline: 0px;
-  text-align: center;
-  padding: 10px 20px;
+.QAlist_askButton:hover {
+  background-color: #F4ABAB;
+  color: white;
 }
 
 .QAlist_sortButton {
-  background-color: #F4ABAB;
-  height: 20px;
+  background-color:  #F2F2F2;
+  height: 25px;
   font-size: 0.8em;
   padding: 0;
   box-shadow: 0 2px 5px 0 rgb(0,0,0,0.5);
+}
 
+.QAlist_sortButton:hover {
+  background-color: #F4ABAB;
+  color: white;
 }
 
 .QAlist_container {
@@ -84,8 +81,13 @@ a:link {
 }
 
 .QAlist_loadMoreQuestionsButton {
-  background-color: #F4ABAB;
+  background-color:  #F2F2F2;
   box-shadow: 0 2px 5px 0 rgb(0,0,0,0.5);
+}
+
+.QAlist_loadMoreQuestionsButton:hover {
+  background-color: #F4ABAB;
+  color: white;
 }
 
 
@@ -145,7 +147,12 @@ a:link {
 }
 
 .QAqentries_loadButton {
+  background-color: #F2F2F2;
+}
+
+.QAqentries_loadButton:hover {
   background-color: #F4ABAB;
+  color: white;
 }
 
 .QAqentries_displayButtons {
@@ -155,14 +162,19 @@ a:link {
 
 .QAqentries_addButton {
   /* border: solid 2px green; */
+  background-color:  #F2F2F2;
+}
+
+.QAqentries_addButton:hover {
   background-color: #F4ABAB;
+  color: white;
 }
 
 .QAaentries_loadMore {
   /* border: solid 2px green; */
   display: flex;
   justify-content: space-evenly;
-  background-color: #F4ABAB;
+  background-color:  #F2F2F2;
 }
 
 .QAaentries_displayCount {
@@ -172,9 +184,14 @@ a:link {
 
 .QAaentries_loadButton {
   /* border: solid 2px green; */
-  background-color: #F4ABAB;
+  background-color:  #F2F2F2;
   display: flex;
   justify-content:space-evenly;
+}
+
+.QAaentries_loadButton:hover {
+  background-color: #F4ABAB;
+  color: white;
 }
 
 .QAaentries_collapse {
@@ -185,9 +202,13 @@ a:link {
 
 .QAaentries_collapseButton {
   /* border: solid 2px green; */
-  background-color: #F4ABAB;
+  background-color:  #F2F2F2;
 }
 
+.QAaentries_collapseButton:hover {
+  background-color: #F4ABAB;
+  color: white;
+}
 
 /* QA-AnswerEntries Styling */
 .QAaentries {
@@ -242,7 +263,7 @@ a:link {
 
 .QAaentries_imageModal {
   /* border: solid 2px darkred; */
-  background-color: #F2F2F2;
+  background-color: #F4ABAB;
   display:block;
   margin-left: auto;
   margin-right: auto;
@@ -318,6 +339,7 @@ a:link {
 .QAamodal {
   /* border: solid 2px purple;
   background-color: rgb(220, 167, 245); */
+  background-color: #F4ABAB;
 }
 
 .QAamodal_title {
