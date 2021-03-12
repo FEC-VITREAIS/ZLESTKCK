@@ -18,9 +18,10 @@ var YourOutfitsList = () => {
     speed: 500,
     slidesToShow: 4,
     slidesToScroll: 1,
-    dots: true,
+    adaptiveHeight: true,
     arrows: true,
     accessibility: true,
+    draggable: true
   }
 
   //Combines the appropriate API data into a single object that is stored in local state
@@ -77,7 +78,7 @@ var YourOutfitsList = () => {
 
   return (
     <>
-      <h2 className='outfits-list-title'>Your Outfits</h2>
+      <h1 className='outfits-list-title'>Your Outfits</h1>
       <div className='outfits-list'>
         <div className='outfits-list-card'>
           <h2>Add New Outfit</h2>

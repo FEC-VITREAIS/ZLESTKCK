@@ -2,7 +2,9 @@
 
 * {
   outline: none !important;
+  font-family: 'Oswald', sans-serif;
 }
+
 #header-logo {
   /* width: auto; */
   height: 160px;
@@ -27,7 +29,7 @@ h1, h2, h3, .related-modal-table-title {
   color: black;
 }
 
-div, span {
+div, span, select {
   /* font-family: 'Raleway', sans-serif; */
   font-family: 'Oswald', sans-serif;
 }
@@ -44,7 +46,7 @@ div, span {
   flex-direction: row;
   justify-content: center;
   flex-flow: column wrap;
-  height: 1000px;
+  height: 625px;
   overflow: hidden;
   width: 75%;
   margin: auto;
@@ -126,8 +128,8 @@ div, span {
   flex-direction: row;
   justify-content: flex-start;
   flex-wrap: nowrap;
+  overflow: scroll;
 }
-
 
 .related-list-card, .outfits-list-card {
   border: 1px solid #39393C;
@@ -145,11 +147,12 @@ div, span {
 
 .outfits-list-title {
   text-align: left;
-  margin: 0 0 -1em 3.3em;
+  margin: 0 0 -5vw 4vw;
 }
 
 .outfits-list-card {
   left: 4%;
+  /* margin: 10px; */
 }
 
 .related-list-card-img, .outfits-list-card-img {
@@ -159,7 +162,7 @@ div, span {
 
 .related-items-title {
   text-align: left;
-  margin: 0 0 0 3em;
+  margin: 0 0 10px 2em;
 }
 
 .related-card-category, .outfits-card-category {
@@ -187,7 +190,6 @@ div, span {
 .related-card-name {
   cursor: pointer;
 }
-
 
 .related-card-name:hover {
   text-decoration: underline;
@@ -217,6 +219,10 @@ div, span {
   width: 50%;
 }
 
+.fa-times {
+  font-size: 2em;
+  text-align: right;
+}
 
 /* Modal Content/Box */
 .modal-content {
@@ -237,11 +243,12 @@ div, span {
 .related-modal-table {
   text-align: center;
   width: 90%;
+  margin: auto;
 }
 
 .related-modal-table-title {
   text-align: center;
-  font-size: 1.2em;
+  font-size: 1.5em;
 }
 
 .related-modal-items {
@@ -252,6 +259,11 @@ div, span {
 .modal-table-feature-value {
   font-weight: normal;
   border-bottom: 1px solid black;
+  font-size: 1.1em;
+}
+
+.modal-table-feature-name {
+  font-size: 1.1em;
 }
 
 /* Modal Close Button */
@@ -277,9 +289,10 @@ div, span {
 }
 
 .slick-prev, .slick-next {
-  background: black !important;
-  width: 25px;
+  background: #F4ABAB !important;
+  width: 40px;
   height: 25px;
+  font-size: 0px;
 }
 
 .img-carousel {
@@ -323,7 +336,7 @@ div, span {
 
 /* QA-Container Styling */
 .QAcontainer {
-  border: solid 3px black;
+  /* border: solid 3px black; */
   width: 75%;
   max-height: 1200px;
   margin: 2rem auto;
@@ -332,18 +345,19 @@ div, span {
 
 .QAcontainer_header {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
 }
 
 .QAcontainer_subheader {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
 }
 
 /* QA-List Styling */
 .QAlist {
   display: flex;
-  justify-content: space-evenly;
+  flex-direction: column;
+  justify-content: flex-start;
 }
 
 .QAlist_displayCount {
@@ -351,18 +365,21 @@ div, span {
 }
 
 .ask-button-div {
-  margin: auto;
-  width: 50%;
+  /* margin: auto;
+  width: 50%; */
+  width: 35.5%;
+  padding-bottom: 1%;
 }
 
 .QAlist_askButton {
   width: 100%;
-  font-size: 1em;
+  font-size: 1.2em;
   padding: 2%;
 }
 
 .QAlist_sortButton {
   width: 150px;
+  font-size: 1.3em;
 }
 
 .QAlist_sortLinks {
@@ -384,7 +401,6 @@ div, span {
 /* QA-QuestionEntries Styling */
 .QAqentries {
   margin: 1rem auto;
-  border-radius: 0.3rem;
   box-shadow: 0 2px 5px 0 rgb(0,0,0,0.5);
   max-height: 1200px;
 }
@@ -395,16 +411,16 @@ div, span {
 }
 
 .QAqentries_meta {
-  font-size: 1em;
+  font-size: 1.1em;
 }
 
 .QAqentries_questionBody {
-  font-size:medium;
-  padding: 0px 1%;
-  border: 1px solid black;
-  border-radius: 30px;
+  font-size: 1.5em;
+  /* padding: 0px 1%; */
+  /* border: 1px solid black; */
+  /* border-radius: 30px; */
   width: 90%;
-  margin: auto;
+  /* margin: auto; */
 }
 
 .QAqentries_answers {
@@ -451,7 +467,7 @@ div, span {
 }
 
 .QAaentries_answerBody {
-  font-size: medium;
+  font-size: 1em;
   margin: auto;
   width: 50%;
   padding: 2% 0;
@@ -478,7 +494,8 @@ div, span {
 /* QA-Search Styling */
 .QAsearch {
   display: flex;
-  justify-content: center;
+  justify-content: left;
+  padding-bottom: 3%;
 }
 
 .QAsearch_bar {
@@ -486,14 +503,14 @@ div, span {
 }
 
 .QAsearchResults {
-  background-color: rgb(240, 241, 145);
+  background-color:#F2F2F2;
   display: flex;
   justify-content: center;
 }
 
 /* QA-QuestionModal Styling */
 .QAqmodal {
-  background-color: rgb(136, 152, 245);
+  background-color: #F2F2F2;
 }
 
 .QAqmodal_title {
@@ -501,7 +518,7 @@ div, span {
   justify-content: center;
   padding: 2%;
   border: 2px solid black;
-  border-radius: 30px;
+  /* border-radius: 30px; */
 }
 
 .QAqmodal_subtitle {
@@ -520,7 +537,7 @@ div, span {
 }
 
 .QAamodal {
-  background-color: rgb(220, 167, 245);
+  background-color: #F2F2F2;
 }
 
 .QAamodal_title {
@@ -556,6 +573,7 @@ div, span {
 
 [class ^= ReactModal] {
   width: 70% !important;
+  max-height: 75%;
   margin: auto !important;
 }
 
@@ -578,15 +596,16 @@ div, span {
   grid-column-start: 2;
   grid-row-start: 2;
   display: grid;
-  grid-template-rows: 50px auto 30px;
-  grid-template-columns: 100%
+  grid-template-rows: 30px 570px;
+  grid-template-columns: 100%;
+  overflow: none;
 
 }
 
 .ReviewListHeader {
   grid-row-start: 1;
   display: grid;
-  grid-template-columns: 87px 90px 100px auto;
+  grid-template-columns: 150px 100px auto;
 }
 
 .numReviews {
@@ -600,17 +619,36 @@ div, span {
 
 .ReviewListSort {
   display: inline;
-  grid-column-start: 3;
+  grid-column-start: 2;
+}
+
+
+
+.ReviewListContainerElm {
+  display: grid;
+  grid-column-start: 1;
+  grid-row-start: 2;
+  grid-template-columns: 100%;
+  grid-template-rows: 100%;
+}
+
+.ReviewListandFooter {
+  display: grid;
+  grid-column-start: 1;
+  grid-row-start: 1;
+  grid-template-columns: 100%;
+  grid-template-rows: 90% 10%;
+
 }
 
 
 .ReviewList {
-  grid-row-start: 2;
+  grid-row-start: 1;
   overflow: auto;
 }
 
 .ReviewListFooter {
-  grid-row-start: 3;
+  grid-row-start: 2;
 }
 
 .ReviewBreakdown {
@@ -623,12 +661,12 @@ div, span {
 .ReviewListTile {
   /* grid-column-start: 2; */
   display: grid;
-  height: 300px;
-  width: 75%;
+  height: 240px;
+  width: 95%;
   border-bottom: 2px solid black;
   /* grid-template-columns: 10% auto 10% 10%; */
-  grid-template-rows: 20% 70% 10%;
-  margin: 20px;
+  grid-template-rows: 12% 78% 10%;
+  margin: 15px;
   justify-self: left;
 
 }
@@ -691,7 +729,7 @@ div, span {
 }
 
 .RevProgress {
-  background-color: gray;
+  background-color: #F4ABAB;
   grid-column-start: 2;
   height: 10px;
   align-self: center;
@@ -727,15 +765,6 @@ div, span {
   background-color: gray;
 }
 
-/* .BarPointer {
-  z-index: 10;
-  position: absolute;
-  left: 50%;
-  height: 12px;
-  width: 3px;
-  background-color: orange;
-} */
-
 .RevHeader {
   grid-row-start: 1;
   display: grid;
@@ -757,8 +786,22 @@ div, span {
 
 .RevMiddle {
   grid-row-start: 2;
+  height: 100%;
   align-self: center;
-  display: grid;
+}
+
+.Revbody{
+  font-size: 15px;
+  font-weight: lighter;
+  margin-bottom: 12px;
+}
+
+.RevMiddle span {
+  font-size: 12px;
+}
+
+.RevMiddle br {
+  margin: 3px;
 }
 
 .RevFooter {
@@ -781,19 +824,104 @@ div, span {
 .Revdate {
   grid-column-start: 3;
   justify-self: right;
-  font-size: 15px;
+  font-size: 12px;
 }
 
 .Revsummary {
   font-weight: bold;
+  margin-bottom: 5px;
+  height: 30px;
 }
 
 .Revresponse {
   background-color: gray;
+  font-size: 12px
+}
+
+.labelContainer {
+  width: 100%;
+  height: 15px;
+  display: grid;
+  grid-template-rows: 100%;
+  grid-template-columns: 33% 33% 33%;
+}
+
+.LeftLabel {
+  grid-column-start: 1;
+  align-self: left;
+  font-size: 12px;
+}
+
+.MiddleLabel {
+  grid-column-start: 2;
+  justify-self: center;
+  font-size: 12px;
+}
+
+.RightLabel {
+  grid-column-start: 3;
+  justify-self: right;
+  font-size: 12px
+}
+
+.CharachBarContainer {
+  margin-bottom: 10px;
 }
 
 .RevModalForm {
 
+}
+
+.RevSelectFilter {
+  transition-duration: 0.4s;
+  background-color: #F2F2F2;
+  color: black;
+  border: 0px;
+  outline: 0px;
+  text-align: center;
+  display: inline-block;
+  padding: 10px 20px;
+}
+
+.RevSelectFilter:hover {
+  background-color: #F4ABAB;
+  color: white;
+}
+
+.review-container button {
+  transition-duration: 0.4s;
+  background-color: #F2F2F2;
+  color: black;
+  border: 2px solid black;
+  text-align: center;
+  display: inline-block;
+  padding: 10px 20px;
+  margin-right: 5px;
+}
+
+.review-container button:hover {
+  background-color: #F4ABAB;
+  color: white;
+}
+
+.RevModalContainer button {
+  transition-duration: 0.4s;
+  background-color: #F2F2F2;
+  color: black;
+  border: 2px solid black;
+  text-align: center;
+  display: inline-block;
+  padding: 10px 20px;
+  margin-right: 5px;
+}
+
+.RevModalContainer button:hover {
+  background-color: #F4ABAB;
+  color: white;
+}
+
+.FailedSubmit {
+  color: red;
 }
 
 .RevModalTitle {

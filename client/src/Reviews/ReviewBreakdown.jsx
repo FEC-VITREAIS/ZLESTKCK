@@ -39,14 +39,6 @@ let ReviewBreakdown = (props) => {
     if (metaData.recommended.false === undefined) {setNumFalse(0)};
   }
 
-  const calcOverall = (metaData) => {
-    // console.log('HAS STATE UPDATED: ', OneRatings, numTrue);
-
-
-
-    //setOverallRating(overall);
-  }
-
   useEffect(() => {
     const data = context.productReviewsMetaData;
     setReviewMeta(data)
@@ -54,22 +46,9 @@ let ReviewBreakdown = (props) => {
     correctTotals(data)
   }, [context.productReviewsMetaData])
 
-  //set(numTrue+numFalse)(numTrue+numFalse);
-
-  // console.log('All ratings: ', ReviewMeta.ratings)
-
-  // console.log('One :', OneRatings);
-  // console.log('Two :', TwoRatings);
-  // console.log('Three :', ThreeRatings);
-  // console.log('Four :', FourRatings);
-  // console.log('Five :', FiveRatings);
-  // console.log('True: ', numTrue);
-
-
-  // console.log('Overall Rating: ', overallRating)
-  // console.log('Overall Calc: ', ((1 * OneRatings) + (2 * TwoRatings) + (3 * ThreeRatings) + (4 * FourRatings) + (5 * FiveRatings))/((numTrue+numFalse)) * 10);
-
   const overallRating = (Math.round(((1 * OneRatings) + (2 * TwoRatings) + (3 * ThreeRatings) + (4 * FourRatings) + (5 * FiveRatings))/(numTrue + numFalse) * 10) / 10).toFixed(1);
+
+
 
 
   if (ReviewMeta.ratings) {
@@ -78,7 +57,7 @@ let ReviewBreakdown = (props) => {
 
         <div className='BreakdownHeader'>
           <div className='BreakdownStar'>
-            <StarRatings rating={Number(overallRating)} starDimension='30px' starSpacing='3px' numberOfStars={5} starRatedColor='orange'/>
+            <StarRatings rating={Number(overallRating)} starDimension='30px' starSpacing='3px' numberOfStars={5} starRatedColor='#F4ABAB'/>
           </div>
           <div className='revRating'>{overallRating}</div>
 
