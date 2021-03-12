@@ -34,17 +34,17 @@ let App = function(props) {
 
 
   // CURRENT PRODUCT STATE
-  var fetchCurrentProduct = () => {
+  // var fetchCurrentProduct = () => {
 
-    fetchProductDetails(currentProduct)
-    .then((data) => {
-      // console.log('current product: ', data);
-      setProductName(data.name)
-      setCurrentProductDetails(data);
-      //console.log('current product: ', data);
-    })
+    // fetchProductDetails(currentProduct)
+    // .then((data) => {
+    //   // console.log('current product: ', data);
+    //   setProductName(data.name)
+    //   setCurrentProductDetails(data);
+    //   //console.log('current product: ', data);
+    // })
 
-  }
+  // }
 
   var updateCurrentProduct = (newProductID) => {
     //this works and updates the current product
@@ -52,56 +52,56 @@ let App = function(props) {
   }
 
 
-  // RELATED ITEMS STATE
-  var fetchRelatedItems = () => {
+  // // RELATED ITEMS STATE
+  // var fetchRelatedItems = () => {
 
-    fetchRelatedProducts(currentProduct)
-    .then((relatedItemsData) => {
-      // console.log('related items with rating: ', relatedItemsData);
+  //   fetchRelatedProducts(currentProduct)
+  //   .then((relatedItemsData) => {
+  //     // console.log('related items with rating: ', relatedItemsData);
 
-      setRelatedItems(relatedItemsData);
+  //     setRelatedItems(relatedItemsData);
 
-    })
+  //   })
 
-  }
+  // }
 
 
-  // QA STATE
-  var fetchProductQA = () => {
+  // // QA STATE
+  // var fetchProductQA = () => {
 
-    fetchQA(currentProduct)
-    .then((data) => {
-      //console.log('all product questions and answers', data);
+  //   fetchQA(currentProduct)
+  //   .then((data) => {
+  //     //console.log('all product questions and answers', data);
 
-      setProductQA(data)
-    })
-  };
+  //     setProductQA(data)
+  //   })
+  // };
 
-  var fetchProductStyles = () => {
-    fetchStyles(currentProduct)
-    .then((data) => {
-      setProductStyles(data)
-    })
-  }
+  // var fetchProductStyles = () => {
+  //   fetchStyles(currentProduct)
+  //   .then((data) => {
+  //     setProductStyles(data)
+  //   })
+  // }
 
-  var fetchProductReviews = () => {
+  // var fetchProductReviews = () => {
 
-    fetchReviews(currentProduct, reviewsSortBy)
-    .then((data) => {
-      // console.log('product review data: ', data);
-      setProductReviews(data);
-    })
+  //   fetchReviews(currentProduct, reviewsSortBy)
+  //   .then((data) => {
+  //     // console.log('product review data: ', data);
+  //     setProductReviews(data);
+  //   })
 
-  }
+  // }
 
-  var fetchProductReviewsMetaData = () => {
+  // var fetchProductReviewsMetaData = () => {
 
-    fetchReviewsMetaData(currentProduct)
-    .then((data) => {
-      // console.log('product review meta data: ', data);
-      setProductReviewsMetaData(data);
-    })
-  }
+  //   fetchReviewsMetaData(currentProduct)
+  //   .then((data) => {
+  //     // console.log('product review meta data: ', data);
+  //     setProductReviewsMetaData(data);
+  //   })
+  // }
 
   var changeReviewSortBy = (sortBy) => {
     //sortBy should be a string containing
@@ -109,17 +109,64 @@ let App = function(props) {
     setReviewsSortBy(sortBy)
   }
 
+  var fetchAPIData = () => {
+    //current product details
+    fetchProductDetails(currentProduct)
+    .then((data) => {
+      setProductName(data.name)
+      setCurrentProductDetails(data);
+    });
+
+    //related products
+    fetchRelatedProducts(currentProduct)
+    .then((relatedItemsData) => {
+      setRelatedItems(relatedItemsData);
+    });
+
+    //Questions and Answers
+    fetchQA(currentProduct)
+    .then((data) => {
+      setProductQA(data)
+    });
+
+    //Product Styles
+    fetchStyles(currentProduct)
+    .then((data) => {
+      setProductStyles(data)
+    });
+
+    //Product Reviews
+    fetchReviews(currentProduct, reviewsSortBy)
+    .then((data) => {
+      setProductReviews(data);
+    });
+
+    //Product Reviews Meta Data
+    fetchReviewsMetaData(currentProduct)
+    .then((data) => {
+      // console.log('product review meta data: ', data);
+      setProductReviewsMetaData(data);
+    });
+
+
+  }
+
 
   // EFFECT HOOKS
-  useEffect(() => {
-    fetchRelatedItems()
-    fetchCurrentProduct()
-    fetchProductQA()
-    fetchProductStyles()
-    fetchProductReviews()
-    fetchProductReviewsMetaData()
-  }, [currentProduct]);
+  // useEffect(() => {
+  //   fetchRelatedItems()
+  //   fetchCurrentProduct()
+  //   fetchProductQA()
+  //   fetchProductStyles()
+  //   fetchProductReviews()
+  //   fetchProductReviewsMetaData()
+  // }, [currentProduct]);
   //current product above is the variable that hooks is watching before allowing a re-render. Re-render will only occur if change in current product is detected.
+
+
+  useEffect(() => {
+    fetchAPIData();
+  }, [currentProduct]);
 
 
   // PROVIDER AND APP STRUCTURE (CONTAINERS)
