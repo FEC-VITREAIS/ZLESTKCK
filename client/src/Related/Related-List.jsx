@@ -17,7 +17,6 @@ var RelatedList = ({setSharedFeatures, setModalProduct, setDisplayModal}) => {
     slidesToScroll: 1,
     adaptiveHeight: false,
     arrows: true,
-    // accessibility: true,
   }
 
   return (
