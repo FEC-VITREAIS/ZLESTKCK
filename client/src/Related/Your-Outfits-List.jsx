@@ -69,6 +69,7 @@ var YourOutfitsList = () => {
     const newOutfitCache = Object.assign({}, outfitsListCache);
     newOutfitCache[product.id] = false;
     setOutfitsListCache(newOutfitCache);
+    console.warn(outfitsList);
 
     //find the matching product id and remove it
     const updatedOutfitList = outfitsList.filter((o) => {
