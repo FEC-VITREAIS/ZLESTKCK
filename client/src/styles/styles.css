@@ -2,7 +2,9 @@
 
 * {
   outline: none !important;
+  font-family: 'Oswald', sans-serif;
 }
+
 #header-logo {
   /* width: auto; */
   height: 160px;
@@ -44,7 +46,7 @@ div, span, select {
   flex-direction: row;
   justify-content: center;
   flex-flow: column wrap;
-  height: 1000px;
+  height: 625px;
   overflow: hidden;
   width: 75%;
   margin: auto;
@@ -126,8 +128,8 @@ div, span, select {
   flex-direction: row;
   justify-content: flex-start;
   flex-wrap: nowrap;
+  overflow: scroll;
 }
-
 
 .related-list-card, .outfits-list-card {
   border: 1px solid #39393C;
@@ -145,11 +147,12 @@ div, span, select {
 
 .outfits-list-title {
   text-align: left;
-  margin: 0 0 -1em 3.3em;
+  margin: 0 0 -5vw 4vw;
 }
 
 .outfits-list-card {
   left: 4%;
+  /* margin: 10px; */
 }
 
 .related-list-card-img, .outfits-list-card-img {
@@ -159,7 +162,7 @@ div, span, select {
 
 .related-items-title {
   text-align: left;
-  margin: 0 0 0 3em;
+  margin: 0 0 10px 2em;
 }
 
 .related-card-category, .outfits-card-category {
@@ -187,7 +190,6 @@ div, span, select {
 .related-card-name {
   cursor: pointer;
 }
-
 
 .related-card-name:hover {
   text-decoration: underline;
@@ -217,6 +219,10 @@ div, span, select {
   width: 50%;
 }
 
+.fa-times {
+  font-size: 2em;
+  text-align: right;
+}
 
 /* Modal Content/Box */
 .modal-content {
@@ -237,11 +243,12 @@ div, span, select {
 .related-modal-table {
   text-align: center;
   width: 90%;
+  margin: auto;
 }
 
 .related-modal-table-title {
   text-align: center;
-  font-size: 1.2em;
+  font-size: 1.5em;
 }
 
 .related-modal-items {
@@ -252,6 +259,11 @@ div, span, select {
 .modal-table-feature-value {
   font-weight: normal;
   border-bottom: 1px solid black;
+  font-size: 1.1em;
+}
+
+.modal-table-feature-name {
+  font-size: 1.1em;
 }
 
 /* Modal Close Button */
@@ -277,9 +289,10 @@ div, span, select {
 }
 
 .slick-prev, .slick-next {
-  background: black !important;
-  width: 25px;
+  background: #F4ABAB !important;
+  width: 40px;
   height: 25px;
+  font-size: 0px;
 }
 
 .img-carousel {
@@ -323,7 +336,7 @@ div, span, select {
 
 /* QA-Container Styling */
 .QAcontainer {
-  border: solid 3px black;
+  /* border: solid 3px black; */
   width: 75%;
   max-height: 1200px;
   margin: 2rem auto;
@@ -332,18 +345,19 @@ div, span, select {
 
 .QAcontainer_header {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
 }
 
 .QAcontainer_subheader {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
 }
 
 /* QA-List Styling */
 .QAlist {
   display: flex;
-  justify-content: space-evenly;
+  flex-direction: column;
+  justify-content: flex-start;
 }
 
 .QAlist_displayCount {
@@ -351,18 +365,21 @@ div, span, select {
 }
 
 .ask-button-div {
-  margin: auto;
-  width: 50%;
+  /* margin: auto;
+  width: 50%; */
+  width: 35.5%;
+  padding-bottom: 1%;
 }
 
 .QAlist_askButton {
   width: 100%;
-  font-size: 1em;
+  font-size: 1.2em;
   padding: 2%;
 }
 
 .QAlist_sortButton {
   width: 150px;
+  font-size: 1.3em;
 }
 
 .QAlist_sortLinks {
@@ -384,7 +401,6 @@ div, span, select {
 /* QA-QuestionEntries Styling */
 .QAqentries {
   margin: 1rem auto;
-  border-radius: 0.3rem;
   box-shadow: 0 2px 5px 0 rgb(0,0,0,0.5);
   max-height: 1200px;
 }
@@ -395,16 +411,16 @@ div, span, select {
 }
 
 .QAqentries_meta {
-  font-size: 1em;
+  font-size: 1.1em;
 }
 
 .QAqentries_questionBody {
-  font-size:medium;
-  padding: 0px 1%;
-  border: 1px solid black;
-  border-radius: 30px;
+  font-size: 1.5em;
+  /* padding: 0px 1%; */
+  /* border: 1px solid black; */
+  /* border-radius: 30px; */
   width: 90%;
-  margin: auto;
+  /* margin: auto; */
 }
 
 .QAqentries_answers {
@@ -451,7 +467,7 @@ div, span, select {
 }
 
 .QAaentries_answerBody {
-  font-size: medium;
+  font-size: 1em;
   margin: auto;
   width: 50%;
   padding: 2% 0;
@@ -478,7 +494,8 @@ div, span, select {
 /* QA-Search Styling */
 .QAsearch {
   display: flex;
-  justify-content: center;
+  justify-content: left;
+  padding-bottom: 3%;
 }
 
 .QAsearch_bar {
@@ -486,14 +503,14 @@ div, span, select {
 }
 
 .QAsearchResults {
-  background-color: rgb(240, 241, 145);
+  background-color:#F2F2F2;
   display: flex;
   justify-content: center;
 }
 
 /* QA-QuestionModal Styling */
 .QAqmodal {
-  background-color: rgb(136, 152, 245);
+  background-color: #F2F2F2;
 }
 
 .QAqmodal_title {
@@ -501,7 +518,7 @@ div, span, select {
   justify-content: center;
   padding: 2%;
   border: 2px solid black;
-  border-radius: 30px;
+  /* border-radius: 30px; */
 }
 
 .QAqmodal_subtitle {
@@ -520,7 +537,7 @@ div, span, select {
 }
 
 .QAamodal {
-  background-color: rgb(220, 167, 245);
+  background-color: #F2F2F2;
 }
 
 .QAamodal_title {
@@ -556,6 +573,7 @@ div, span, select {
 
 [class ^= ReactModal] {
   width: 70% !important;
+  max-height: 75%;
   margin: auto !important;
 }
 
@@ -711,7 +729,7 @@ div, span, select {
 }
 
 .RevProgress {
-  background-color: gray;
+  background-color: #F4ABAB;
   grid-column-start: 2;
   height: 10px;
   align-self: center;
@@ -746,15 +764,6 @@ div, span, select {
   left: 0;
   background-color: gray;
 }
-
-/* .BarPointer {
-  z-index: 10;
-  position: absolute;
-  left: 50%;
-  height: 12px;
-  width: 3px;
-  background-color: orange;
-} */
 
 .RevHeader {
   grid-row-start: 1;
@@ -872,7 +881,6 @@ div, span, select {
   text-align: center;
   display: inline-block;
   padding: 10px 20px;
-  font-style:
 }
 
 .RevSelectFilter:hover {

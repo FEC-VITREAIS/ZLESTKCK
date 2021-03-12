@@ -57,7 +57,7 @@ let ReviewBreakdown = (props) => {
 
         <div className='BreakdownHeader'>
           <div className='BreakdownStar'>
-            <StarRatings rating={Number(overallRating)} starDimension='30px' starSpacing='3px' numberOfStars={5} starRatedColor='orange'/>
+            <StarRatings rating={Number(overallRating)} starDimension='30px' starSpacing='3px' numberOfStars={5} starRatedColor='#F4ABAB'/>
           </div>
           <div className='revRating'>{overallRating}</div>
 

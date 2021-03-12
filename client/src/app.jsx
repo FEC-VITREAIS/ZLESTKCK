@@ -32,7 +32,6 @@ let App = function(props) {
 
 
   var updateCurrentProduct = (newProductID) => {
-    //this works and updates the current product
     setProduct(newProductID)
   }
 
@@ -46,6 +45,7 @@ let App = function(props) {
       setProductReviews(data);
     });
   }
+
 
   var fetchAPIData = () => {
 
@@ -87,20 +87,7 @@ let App = function(props) {
       setProductReviewsMetaData(data);
     });
 
-
-  }
-
-
-  // EFFECT HOOKS
-  // useEffect(() => {
-  //   fetchRelatedItems()
-  //   fetchCurrentProduct()
-  //   fetchProductQA()
-  //   fetchProductStyles()
-  //   fetchProductReviews()
-  //   fetchProductReviewsMetaData()
-  // }, [currentProduct]);
-  //current product above is the variable that hooks is watching before allowing a re-render. Re-render will only occur if change in current product is detected.
+  };
 
 
   useEffect(() => {
@@ -123,7 +110,7 @@ let App = function(props) {
       productReviewsMetaData: productReviewsMetaData
     }}>
       <div>
-        <div id='header'><img alt='header-logo' id='header-logo'src='https://i.imgur.com/BU7F5k7.png'/></div>
+        <div id='header'><img id='header-logo'src='https://i.imgur.com/g8hJeOQ.png' alt='cream company logo'/></div>
         <ProductContainer />
         <RelatedContainer />
         <QAContainer currentProductId={currentProduct} />

@@ -7,7 +7,8 @@ var RelatedModalWindow = ({handleModalClose, product, sharedFeatures}) => {
   const context = useContext(ProductContext);
 
   return (
-    <div class="modal-content">
+    <div className="modal-content">
+      <span className="fa fa-times" onClick={handleModalClose}></span>
       <h2 className='modal-window-comparing'>Comparing</h2>
       <ModalWindowTable
       product={product}
