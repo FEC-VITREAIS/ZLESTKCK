@@ -158,7 +158,7 @@ let ReviewModal = (props) => {
 
 
           <div className='RevModalStar'>
-            <StarRatings rating={starRating} starRatedColor='orange' changeRating={onStarPress} numberOfStars={5} rame='starRating' />
+            <StarRatings rating={starRating} starRatedColor='#F4ABAB' changeRating={onStarPress} numberOfStars={5} rame='starRating' />
             {isStarClicked && <label>{RatingText}</label>}
           </div>
 

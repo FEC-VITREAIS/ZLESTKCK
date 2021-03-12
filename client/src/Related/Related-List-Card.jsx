@@ -23,7 +23,7 @@ var RelatedListCard = ({product, setDisplayModal, setSharedFeatures, setModalPro
     var sharedFeatures = {};
 
     product.features.forEach((feature) => {
-      if (feature.value === true) {
+      if (feature.value === null) {
         sharedFeatures[feature.feature] = {
           comparedProductValue: '✓'
         }
@@ -35,7 +35,7 @@ var RelatedListCard = ({product, setDisplayModal, setSharedFeatures, setModalPro
     });
 
     context.currentProductDetails.features.forEach((feature) => {
-      if (feature.value === true) {
+      if (feature.value === null) {
         sharedFeatures[feature.feature] = {
           currentProductValue: '✓'
         }

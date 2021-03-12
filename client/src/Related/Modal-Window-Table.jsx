@@ -5,8 +5,8 @@ var ModalWindowTable = ({product, sharedFeatures}) => {
   const context = useContext(ProductContext);
 
   var displayComparedFeatures = (feature) => {
-      // console.log('product 1 features: ', product.features);
-      // console.log('current product features: ', context.currentProductDetails.features);
+      console.log('product 1 features: ', product.features);
+      console.log('current product features: ', context.currentProductDetails.features);
       console.log('shared features: ', sharedFeatures);
 
 
