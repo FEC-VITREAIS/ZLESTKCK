@@ -24,7 +24,7 @@ let QAContainer = function(props) {
     return (
       <div className="QAcontainer">
         <h1 className="QAcontainer_header">Customer Questions</h1>
-        <h3 className="QAcontainer_subheader">{`Ask for information about the ${QAContainerContext.currentProductDetails.name} from the customers who love it.`}</h3>
+        <h3 className="QAcontainer_subheader">{`Ask for information about ${QAContainerContext.currentProductDetails.name} from the customers who love it.`}</h3>
         <div className='ask-button-div'><input className="QAlist_askButton" type="button" value="Ask a question" onClick={qModalClickHandler} ></input></div>
         {showQModal ?
         <ReactModal isOpen={showQModal} onRequestClose={qModalClickHandler}>

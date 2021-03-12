@@ -60,7 +60,7 @@ let AnswerModal = function({arrayOfAnswers, setArrayOfAnswers, setShowAModal, pr
 
   return (
     <div className="QAamodal">
-      <input className="closeButton" type="button" value="x" onClick={closeAModalClickHandler}></input>
+      <span className="closeButton" onClick={closeAModalClickHandler}>x</span>
       <h3 className="QAamodal_title">Submit Your Answer</h3>
       <h5 className="QAamodal_subtitle">{productName} : {body}</h5>
       <div className="QAamodal_subscript">* - Indicates a mandatory field</div>
@@ -101,8 +101,9 @@ let AnswerModal = function({arrayOfAnswers, setArrayOfAnswers, setShowAModal, pr
             required>
           </textarea>
         </label>
-        <ImageContainer arrayOfFiles={arrayOfFiles} />
         <label className="QAamodal_label">Upload images
+        <div>
+        <ImageContainer arrayOfFiles={arrayOfFiles} />
           <input
             className="QAamodal_uploadButton"
             type="file"
@@ -111,6 +112,7 @@ let AnswerModal = function({arrayOfAnswers, setArrayOfAnswers, setShowAModal, pr
             onChange={onInputChanged}
             multiple>
           </input>
+        </div>
         </label>
           <button
             className="QAamodal_submitButton"

@@ -6,22 +6,26 @@ import StarRating from '../Reviews/Star-Rating.jsx';
 
 var RelatedListCard = ({product, setDisplayModal, setSharedFeatures, setModalProduct}) => {
   const context = useContext(ProductContext);
-  // const [sharedFeatures, setSharedFeatures] = useState({})
-  // const [isModalDisplayed, setDisplayModal] = useState(false);
 
-  const handleProductChange = (e) => {
-    // console.log(product.id);
+  const handleProductChange = () => {
     context.updateCurrentProduct(product.id)
   };
 
+  //click handler for x in modal window
+  //sets display modal to false and resets the shared features object.
   const handleModalClose = (e) => {
     setDisplayModal(false);
     setSharedFeatures({});
   }
 
+  //creates an object that compares the current product
+  //features to the former product features
   var compareProductFeatures = () => {
     var sharedFeatures = {};
 
+    //looks through the features array of the product object (the related item)
+    //the API data was incorrect - a value of null for the feature was implied to mean
+    //the feature did have a true value
     product.features.forEach((feature) => {
       if (feature.value === null) {
         sharedFeatures[feature.feature] = {
@@ -29,11 +33,14 @@ var RelatedListCard = ({product, setDisplayModal, setSharedFeatures, setModalPro
         }
       } else {
         sharedFeatures[feature.feature] = {
+          //comparedProduct = related product.
+          //JSON parse use to remove the quotes around the string.
           comparedProductValue: JSON.parse(feature.value),
         };
       }
     });
 
+    //looks through the feature array of the product currently displayed
     context.currentProductDetails.features.forEach((feature) => {
       if (feature.value === null) {
         sharedFeatures[feature.feature] = {
@@ -50,18 +57,6 @@ var RelatedListCard = ({product, setDisplayModal, setSharedFeatures, setModalPro
     setModalProduct(product);
     setDisplayModal(true);
   }
-
-  // const displayModalWindow = (bool) => {
-  //   if (bool) {
-  //     return (
-  //       <RelatedModalWindow handleModalClose={handleModalClose} product={product} sharedFeatures={sharedFeatures}/>
-  //     )
-  //   } else {
-  //     return (
-  //       <></>
-  //     )
-  //   }
-  // };
 
   const calculateSalePrice = () => {
     if (product.styles.salePrice) {
@@ -89,7 +84,6 @@ var RelatedListCard = ({product, setDisplayModal, setSharedFeatures, setModalPro
       class={'related-card-ratings'}
       dimension={'20px'}
       />
-      {/* {displayModalWindow(isModalDisplayed)} */}
     </div>
   )
 }
