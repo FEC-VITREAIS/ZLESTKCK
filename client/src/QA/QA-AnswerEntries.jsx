@@ -42,14 +42,16 @@ let AnswerEntries = ({responder, body, date, helpfulCount, images, aCount}) => {
           <a className="QAaentries_meta" href="javascript:void();" onClick={toggleAReportedClickHandler}>Report</a>
         }
       </div>
-      <div className="QAaentries_answerBody">A: {body}</div>
-      <div className="QAaentries_images">
+      <div className="QAaentries_answerBody">
+        <div> <b>Answer:</b></div>
+        <div className="QAaentries_answer">{body}</div>
+        <div> <b>Images:</b></div>
+        <div className="QAaentries_images">
         {images.map((image) => {
           return (
             <>
             {showImageModal ?
-              <ReactModal isOpen={showImageModal} onRequestClose={toggleImageClickHandler}>
-                <button onClick={toggleImageClickHandler}>X</button>
+              <ReactModal bodyOpenClassName="imageModal" isOpen={showImageModal} onRequestClose={toggleImageClickHandler}>
                 <img className="QAaentries_imageModal" alt='answer-image' src={image} onClick={toggleImageClickHandler} key={image.length}></img>
               </ReactModal>
               :
@@ -58,6 +60,7 @@ let AnswerEntries = ({responder, body, date, helpfulCount, images, aCount}) => {
             </>
           )
         })}
+      </div>
       </div>
     </div>
     </>

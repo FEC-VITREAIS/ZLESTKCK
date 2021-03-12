@@ -24,7 +24,7 @@ let QuestionModal = function({showQModal, setShowQModal, productName}) {
 
   return (
     <div className="QAqmodal">
-      <input className="closeButton" type="button" value="x" onClick={closeQModalClickHandler}></input>
+      <span className="closeButton" onClick={closeQModalClickHandler}></span>
       <h3 className="QAqmodal_title">Ask Your Question</h3>
       <h5 className="QAqmodal_subtitle">About the {productName}</h5>
       <div className="QAqmodal_subscript">* - Indicates a mandatory field</div>
