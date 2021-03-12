@@ -390,13 +390,11 @@ a:link {
 
 /* QA-ImageContainer Styling */
 .QAimage {
-  /* border: solid 2px rgb(112, 165, 42); */
   display: flex;
   justify-content: space-evenly;
 }
 
 .QAimage_thumbnail {
-  /* border: solid 2px rgb(112, 165, 42); */
   height: 50px;
   width: 50px;
 }
@@ -410,7 +408,3 @@ a:link {
   width: 70% !important;
   margin: auto !important;
 }
-/*
-.ReactModal_Content--after-open {
-  width: 50% !important;
-} */
