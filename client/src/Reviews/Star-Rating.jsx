@@ -9,14 +9,11 @@ var StarRating = ({ratingsList, className, dimension}) => {
   var calculateAverageRating = () => {
     var total = 0;
     var length = 0;
-    var allRatings = Object.values(ratingsList);
 
     for (var v in ratingsList) {
       total += (Number(v) * Number(ratingsList[v]));
-      length += Number(v);
+      length += Number(ratingsList[v]);
     };
-
-    
 
     var average = (total / length);
     return average
