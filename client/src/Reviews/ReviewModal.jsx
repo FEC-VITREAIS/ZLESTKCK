@@ -158,7 +158,7 @@ let ReviewModal = (props) => {
 
 
           <div className='RevModalStar'>
-            <StarRatings rating={starRating} starRatedColor='orange' changeRating={onStarPress} numberOfStars={5} rame='starRating' />
+            <StarRatings rating={starRating} starRatedColor='#F4ABAB' changeRating={onStarPress} numberOfStars={5} rame='starRating' />
             {isStarClicked && <label>{RatingText}</label>}
           </div>
 
@@ -301,9 +301,11 @@ let ReviewModal = (props) => {
           </form>
 
           <button onClick={checkSubmit}>Submit Review</button>
-          {failedSubmit && <div>Make Sure all fields are filled out</div>}
+
 
           <button onClick={props.closeForm}>Close</button>
+
+          {failedSubmit && <label className='FailedSubmit'>{'\t'}Make Sure all fields are filled out</label>}
 
         </div>
       </Modal>

@@ -18,7 +18,7 @@ let ReviewListTile = (props) => {
 
         <div className='RevHeader'>
           <div className='Revstar'>
-            <StarRatings rating={props.review.rating} starDimension='15px' starSpacing='3px' numberOfStars={5} starRatedColor='orange'/>
+            <StarRatings rating={props.review.rating} starDimension='15px' starSpacing='3px' numberOfStars={5} starRatedColor='#F4ABAB'/>
           </div>
           {/* <div className='reviewer-name'>{props.review.reviewer_name},</div> */}
           <div className='Revdate'> {props.review.reviewer_name},
@@ -30,15 +30,17 @@ let ReviewListTile = (props) => {
 
         <div className='RevMiddle'>
           <div className='Revsummary'>{props.review.summary}</div>
-          <br></br>
+
           <div className='Revbody'>{props.review.body}</div>
-          <br></br>
+
+
           {props.review.recommend &&
           <div>
             <span>&#10003; I recommend this product</span>
           </div>
           }
           <br></br>
+
           {props.review.response &&
           <div className='Revresponse'>Response:
             <br></br>

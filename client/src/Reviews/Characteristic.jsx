@@ -13,77 +13,95 @@ let Characteristic = (props) => {
 
 
         {(props.charach === 'Size') &&
-          <div>
+          <div className='CharachBarContainer'>
             <div>{props.charach}</div>
             <div className='CharachContainer'>
               <div className='CharachBar'></div>
               <div  style={{zIndex: '3', height: '15px', width: `${props.value/5*100}%`, borderRight: '5px solid navy'}}></div>
             </div>
-            <label>Too Small</label>
-            <label>Perfect</label>
-            <label>Too Big</label>
+            <div className='labelContainer'>
+              <label className='LeftLabel'>Too Small</label>
+              <label className='MiddleLabel'>Perfect</label>
+              <label className='RightLabel'>Too Big</label>
+            </div>
+
           </div>}
 
 
         {(props.charach === 'Width') &&
-          <div>
+          <div className='CharachBarContainer'>
             <div>{props.charach}</div>
             <div className='CharachContainer'>
               <div className='CharachBar'></div>
               <div  style={{zIndex: '3', height: '15px', width: `${props.value/5*100}%`, borderRight: '5px solid navy'}}></div>
             </div>
-            <label>Too narrow</label>
-            <label>Perfect</label>
-            <label>Too wide</label>
+            <div className='labelContainer'>
+              <label className='LeftLabel'>Too narrow</label>
+              <label className='MiddleLabel'>Perfect</label>
+              <label className='RightLabel'>Too wide</label>
+            </div>
+
           </div>}
 
         {(props.charach === 'Comfort') &&
-          <div>
+          <div className='CharachBarContainer'>
             <div>{props.charach}</div>
             <div className='CharachContainer'>
               <div className='CharachBar'></div>
               <div  style={{zIndex: '3', height: '15px', width: `${props.value/5*100}%`, borderRight: '5px solid navy'}}></div>
             </div>
-            <label>Uncomfortable</label>
-            <label>Perfect</label>
+            <div className='labelContainer'>
+              <label className='LeftLabel'>Uncomfortable</label>
+              <label className='RightLabel'>Perfect</label>
+            </div>
+
           </div>}
 
         {(props.charach === 'Quality') &&
-          <div>
+          <div className='CharachBarContainer'>
             <div>{props.charach}</div>
             <div className='CharachContainer'>
               <div className='CharachBar'></div>
               <div  style={{zIndex: '3', height: '15px', width: `${props.value/5*100}%`, borderRight: '5px solid navy'}}></div>
             </div>
-            <label>Poor</label>
-            <label>Perfect</label>
+            <div className='labelContainer'>
+              <label className='LeftLabel'>Poor</label>
+              <label className='RightLabel'>Perfect</label>
+            </div>
+
           </div>
 
         }
 
 
         {(props.charach === 'Length') &&
-          <div>
+          <div className='CharachBarContainer'>
             <div>{props.charach}</div>
             <div className='CharachContainer'>
               <div className='CharachBar'></div>
               <div  style={{zIndex: '3', height: '15px', width: `${props.value/5*100}%`, borderRight: '5px solid navy'}}></div>
             </div>
-            <label>Runs Short</label>
-            <label>Perfect</label>
-            <label>Runs Long</label>
+            <div className='labelContainer'>
+              <label className='LeftLabel'>Runs Short</label>
+              <label className='MiddleLabel'>Perfect</label>
+              <label className='RightLabel'>Runs Long</label>
+            </div>
+
           </div>}
 
         {(props.charach === 'Fit') &&
-          <div>
+          <div className='CharachBarContainer'>
             <div>{props.charach}</div>
             <div className='CharachContainer'>
               <div className='CharachBar'></div>
               <div  style={{zIndex: '3', height: '15px', width: `${props.value/5*100}%`, borderRight: '5px solid navy'}}></div>
             </div>
-            <label>Runs tight</label>
-            <label>Perfect</label>
-            <label>Runs long</label>
+            <div className='labelContainer'>
+              <label className='LeftLabel'>Runs tight</label>
+              <label className='MiddleLabel'>Perfect</label>
+              <label className='RightLabel'>Runs long</label>
+            </div>
+
           </div>}
 
 
