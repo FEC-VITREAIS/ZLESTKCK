@@ -5,6 +5,7 @@ import ProductContext from "../context";
 import DisplayCurrentProduct from "./components/DisplayCurrentProduct/DisplayCurrentProduct";
 import DisplayProductPreview from "./components/DisplayProductPreview/DisplayProductPreview";
 
+import ImageGallery from './components/ImageGallery/ImageGallery';
 import CurrentProductDetails from "./components/CurrentProductDetails/CurrentProductDetails";
 import SelectStyle from "./components/SelectStyle/SelectStyle";
 
@@ -13,12 +14,18 @@ import SelectStyle from "./components/SelectStyle/SelectStyle";
 let ProductContainer = function (props) {
   const [CurrentProductInfo, setCurrentProductInfo] = useState({});
 
-  const [CurrentProducts, setCurrentProducts] = useState(
-    []
+  const [CurrentStyles, setCurrentStyles] = useState(
+    [{}]
   ); /* all the list of products for display */
-  const [CurrentProductView, setCurrentProductView] = useState(
+  const [CurrentStyle, setCurrentStyle] = useState(
     undefined
   ); /* Current product when clicked on in CurrentProducts */
+
+  const [CurrentStyleIndex, setCurrentStyleIndex] = useState(
+    0
+  ); /* always defaults to the first item/style */
+
+
 
   const context = useContext(ProductContext);
 
@@ -28,30 +35,55 @@ let ProductContainer = function (props) {
     const currentStyles = context.productStyles;
     const currentProductInfo = context.currentProductDetails;
 
-    // console.log(currentStyles, "product details");
+    console.log(currentStyles, "product details");
 
-    setCurrentProducts(currentStyles);
-    setCurrentProductView(currentStyles[0]);
+    setCurrentStyles(currentStyles);
+    setCurrentStyle(currentStyles[0]);
 
     setCurrentProductInfo(currentProductInfo);
   }, [context.productStyles, context.currentProductDetails]);
 
-  const HandleProductChange = (e, product) => {
-    // console.log("you clicked on a product!", product);
+  const HandleStyleChange = (e, style, index) => {
+    // console.log("you clicked on a style!", style);
 
-    setCurrentProductView(product);
+    setCurrentStyleIndex(index);
+    setCurrentStyle(style);
   };
+
+  const IncrementStyleIndex = (  ) => {
+
+    let Index_Is_Greater_Than_Styles = CurrentStyleIndex === CurrentStyles.length-1 
+
+    if ( Index_Is_Greater_Than_Styles ) {
+      return;
+    }
+
+    setCurrentStyle( context.productStyles[CurrentStyleIndex += 1] )
+    setCurrentStyleIndex( CurrentStyleIndex += 1 );
+  }
+
+  const DecrementStyleIndex = () => {
+
+    if (  CurrentStyleIndex === 0 ) {
+      return;
+    }
+
+    setCurrentStyle( context.productStyles[CurrentStyleIndex -= 1] )
+    setCurrentStyleIndex( CurrentStyleIndex -= 1 );
+  }
 
   return (
     <>
       <div id="ProductContainer">
-        <DisplayProductPreview
+        {/* <DisplayProductPreview
           styles={CurrentProducts}
           changeView={HandleProductChange}
           currentProduct={
             CurrentProductView || { photos: [{ thumbnail_url: "" }] }
           }
-        />
+        /> */}
+
+        <ImageGallery CurrentStyle={CurrentStyle || {defaultProp: true}} IncrementStyleIndex={IncrementStyleIndex} DecrementStyleIndex={DecrementStyleIndex} indexOfCurrentStyle={CurrentStyleIndex} />
 
         <CurrentProductDetails
           CurrentProductInfo={
@@ -62,8 +94,10 @@ let ProductContainer = function (props) {
               defaultProp: true,
             }
           }
-          CurrentProductView={CurrentProductView || { name: "", skus: [] }}
+          CurrentProductView={CurrentStyle || { name: "", skus: [] }}
         />
+
+        <SelectStyle CurrentStyles={ CurrentStyles || [{defaultProp: true}] } CurrentStyle={CurrentStyle} HandleStyleChange={HandleStyleChange}/>
       </div>
     </>
   );

@@ -1,36 +1,64 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 
-let SelectStyle = ({ styles, changeView }) => {
-  if (styles.length === undefined || styles.length === 0) {
-    return <div> place holder for when products api called </div>;
-  }
+// let SelectStyle = ({ styles, changeView }) => {
+//   if (styles.length === undefined || styles.length === 0) {
+//     return <div> place holder for when products api called </div>;
+//   }
 
-  let slider = [];
+//   let slider = [];
 
-  return (
+//   return (
+//     <>
+//       <div className="SelectStyleContainer">
+//         {styles.map((product, index) => {
+//           const { photos } = product;
+
+//           const { thumbnail_url } = photos[0];
+
+//           return (
+//             <img
+//               key={index}
+//               alt='style-image'
+//               style={{ height: "100px", width: "100px" }}
+//               src={thumbnail_url}
+//               onClick={(e) => {
+//                 changeView(e, product);
+//               }}
+//               className="styleWidgetimgs"
+//             ></img>
+//           );
+//         })}
+//       </div>
+//     </>
+//   );
+// };
+
+const SelectStyle = ({ CurrentStyles, CurrentStyle, HandleStyleChange }) => {
+
+    const prop = CurrentStyle[1].defaultProp;
+
+    if (prop) {
+        return <div></div>
+    }
+
+    return (
     <>
-      <div className="SelectStyleContainer">
-        {styles.map((product, index) => {
-          const { photos } = product;
+     <div className="StylesContainer" >
 
-          const { thumbnail_url } = photos[0];
+        {CurrentStyles.map( ( Style, index ) => {
 
-          return (
-            <img
-              key={index}
-              alt='style-image'
-              style={{ height: "100px", width: "100px" }}
-              src={thumbnail_url}
-              onClick={(e) => {
-                changeView(e, product);
-              }}
-              className="styleWidgetimgs"
-            ></img>
-          );
+            const { url } = Style.photos[1];
+
+            return <div className="Style" onClick={ (e) => { HandleStyleChange(e, Style, index) } } >  
+
+                <img src={url} />
+
+             </div>
         })}
-      </div>
+
+    </div>
     </>
-  );
-};
+    )
+}
 
 export default SelectStyle;
