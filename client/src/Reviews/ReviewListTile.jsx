@@ -49,7 +49,7 @@ let ReviewListTile = (props) => {
         }
         </div>
         <div className='RevFooter'>
-          <div className='Revhelpfulness'>Helpful? Yes ({props.review.helpfulness}) No</div>
+          <span className='Revhelpfulness'>Helpful? Yes ({props.review.helpfulness})</span>
         </div>
 
 
