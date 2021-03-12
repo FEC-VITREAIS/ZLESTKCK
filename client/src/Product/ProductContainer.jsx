@@ -59,8 +59,12 @@ let ProductContainer = function (props) {
       return;
     }
 
-    setCurrentStyle( context.productStyles[CurrentStyleIndex += 1] )
-    setCurrentStyleIndex( CurrentStyleIndex += 1 );
+    const styleIndex = JSON.stringify(CurrentStyleIndex)
+
+    const styleIndexNum = 1 + JSON.parse(styleIndex);
+
+    setCurrentStyle( context.productStyles[  styleIndexNum ] )
+    setCurrentStyleIndex( styleIndexNum );
   }
 
   const DecrementStyleIndex = () => {
@@ -69,8 +73,12 @@ let ProductContainer = function (props) {
       return;
     }
 
-    setCurrentStyle( context.productStyles[CurrentStyleIndex -= 1] )
-    setCurrentStyleIndex( CurrentStyleIndex -= 1 );
+    const styleIndex = JSON.stringify(CurrentStyleIndex)
+
+    const styleIndexNum = 1 - JSON.parse(styleIndex);
+
+    setCurrentStyle( context.productStyles[  styleIndexNum ] )
+    setCurrentStyleIndex( styleIndexNum );
   }
 
   return (

@@ -1,6 +1,11 @@
 import React, { useState, useEffect } from "react";
 
-const ImageGallery = ({ CurrentStyle, IncrementStyleIndex , DecrementStyleIndex , indexOfCurrentStyle }) => {
+const ImageGallery = ({
+  CurrentStyle,
+  IncrementStyleIndex,
+  DecrementStyleIndex,
+  indexOfCurrentStyle,
+}) => {
   // have a state for pop up modal
 
   // have some arrows to scroll through the other styles
@@ -13,7 +18,7 @@ const ImageGallery = ({ CurrentStyle, IncrementStyleIndex , DecrementStyleIndex 
     return <div> </div>;
   }
 
-  const { url } = CurrentStyle.photos[0]; // url not thumbnail! 
+  const { url } = CurrentStyle.photos[0]; // url not thumbnail!
 
   return (
     <>
@@ -24,10 +29,11 @@ const ImageGallery = ({ CurrentStyle, IncrementStyleIndex , DecrementStyleIndex 
             /* decrement index  */
             DecrementStyleIndex();
           }}
-          
-        >left arrow</div>
+        >
+          left arrow
+        </div>
 
-        <div className="MainStyleImg" >
+        <div className="MainStyleImg">
           <img src={url} />
         </div>
 
