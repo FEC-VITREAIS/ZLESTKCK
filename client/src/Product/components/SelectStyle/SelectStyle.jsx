@@ -34,9 +34,9 @@ import React from "react";
 // };
 
 const SelectStyle = ({ CurrentStyles, CurrentStyle, HandleStyleChange }) => {
-  console.log(CurrentStyles, 'styles');
+  // console.log(CurrentStyles, 'styles');
   const prop = CurrentStyles[1].defaultProp;
-    console.log(prop,'prop')
+    // console.log(prop,'prop')
   if (prop) {
     return <div></div>;
   }
@@ -45,7 +45,7 @@ const SelectStyle = ({ CurrentStyles, CurrentStyle, HandleStyleChange }) => {
     <>
       <div className="StylesContainer">
         {CurrentStyles.map((Style, index) => {
-            console.log(Style,'url??')
+            // console.log(Style,'url??')
           const { url } = Style.photos[0];
 
           return (
