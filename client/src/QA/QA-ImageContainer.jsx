@@ -8,23 +8,23 @@ const ImageContainer = function ({arrayOfFiles}) {
       <img
       className="QAimage_thumbnail"
       src={arrayOfFiles[0] || defaultThumbnail}
-      alt="Thumbnail answer image 1" />
+      alt="answer-image-1" />
       <img
       className="QAimage_thumbnail"
       src={arrayOfFiles[1] || defaultThumbnail}
-      alt="Thumbnail answer image 2" />
+      alt="answer-image-2" />
       <img
       className="QAimage_thumbnail"
       src={arrayOfFiles[2] || defaultThumbnail}
-      alt="Thumbnail answer image 3" />
+      alt="answer-image-3" />
       <img
       className="QAimage_thumbnail"
       src={arrayOfFiles[3] || defaultThumbnail}
-      alt="Thumbnail answer image 4" />
+      alt="answer-image-4" />
       <img
       className="QAimage_thumbnail"
       src={arrayOfFiles[4] || defaultThumbnail}
-      alt="Thumbnail answer image 5" />
+      alt="answer-image-5" />
 
     </div>
   )

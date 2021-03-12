@@ -14,7 +14,7 @@ const DisplayCurrentProduct = ({ currentProduct }) => {
   return (
     <div className="DisplayCurrentProductContainer">
       <div className="mainSlider">
-        <img src={thumbnail_url}/> 
+        <img alt='current-product-thumbnail' src={thumbnail_url}/>
       </div>
     </div>
   );

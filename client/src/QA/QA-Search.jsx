@@ -26,14 +26,16 @@ let QASearch = function({questions}) {
   return (
     <>
     <div className="QAsearch">
-      <input
-        type="search"
-        className="QAsearch_bar"
-        value={query}
-        onChange={searchChangeHandler}
-        placeholder="Have a question? Search for your answers..."
-        size="70">
-      </input>
+      <label>
+        <input
+          type="search"
+          className="QAsearch_bar"
+          value={query}
+          onChange={searchChangeHandler}
+          placeholder="Have a question? Search for your answers..."
+          size="70">
+        </input>
+      </label>
     </div>
     {results ?
         <>

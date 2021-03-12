@@ -31,8 +31,8 @@ let ReviewContainer = function(props) {
     setShowReviewForm(!showReviewForm);
   }
 
-  console.log('METADATA: ', context.productReviewsMetaData);
-  console.log('Check if true: ', context.productReviewsMetaData.characteristics)
+  // console.log('METADATA: ', context.productReviewsMetaData);
+  // console.log('Check if true: ', context.productReviewsMetaData.characteristics)
 
   return (
 
