@@ -106,9 +106,9 @@ let QuestionEntries = function({body, asker, date, helpfulCount, reported, answe
           <a className="QAqentries_meta" href="javascript:void();" onClick={toggleQHelpfulClickHandler}>Mark as Helpful ({helpfulCount})</a>
         }
         {markedQReported ?
-          <a className="QAqentries_meta" href="javascrip:void();" onClick={toggleQReportedClickHandler}>Reported</a>
+          <a className="QAqentries_meta" href="javascript:void();" onClick={toggleQReportedClickHandler}>Reported</a>
           :
-          <a className="QAqentries_meta" href="javascrip:void();" onClick={toggleQReportedClickHandler}>Report</a>
+          <a className="QAqentries_meta" href="javascript:void();" onClick={toggleQReportedClickHandler}>Report</a>
         }
       </div>
       <div className="QAqentries_questionBody"><b>Question:</b>
@@ -117,10 +117,11 @@ let QuestionEntries = function({body, asker, date, helpfulCount, reported, answe
       <div className="QAqentries_answers">
         1-{displayedIndex} of {aCount} Answers
         <button className="QAqentries_addButton" type="button" onClick={aModalClickHandler}>Add an answer</button>
-
-        {/* Conditionally renders the array of answers in the current state */}
       </div>
-      {isHidden ?
+      </div>
+    </div>
+
+    {isHidden ?
         null
         :
         <div className="QAqentries_displayedAnswers">
@@ -144,17 +145,16 @@ let QuestionEntries = function({body, asker, date, helpfulCount, reported, answe
             </div>
             :
             <div className="QAqentries_loadMore">
-              <span className="QAqentries_displayCount">Answers 1-{displayedIndex} of {aCount}</span>
+              <div className="QAqentries_displayCount">Answers 1-{displayedIndex} of {aCount}</div>
+            </div>
+            }
+            <div className="QAqentries_displayButtons">
               <button className="QAqentries_loadButton" type="button" value={displayedIndex} onClick={loadClickHandler}>Show more answers</button>
               <button className="QAqentries_loadButton" type="button" value={displayedIndex} onClick={hideClickHandler}>Show less answers</button>
             </div>
-            }
           </div>
         </div>
       }
-        </div>
-    </div>
-
 
     {/* Conditional rendering of Answer Modal */}
     {showAModal ?

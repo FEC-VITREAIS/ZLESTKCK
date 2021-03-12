@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react'
 import ProductContext from '../context.jsx';
 import QuestionEntries from './QA-QuestionEntries.jsx'
 import sortingFunction from './QA-HelperFunctions.js'
+import QAstyles from './styles/QAstyles.css'
 
 let QAList = function({questions}) {
   const [currentSort, setCurrentSort] = useState('helpful')
@@ -84,12 +85,12 @@ let QAList = function({questions}) {
       <div>
         {isQFullyLoaded ?
           <div className="QAlist_loadMoreQuestions">
-            <button  classname ="QAlist_loadMoreQuestionsButton"type="button" onClick={collapseQClickHandler}>Collapse Questions</button>
+            <button  className ="QAlist_loadMoreQuestionsButton"type="button" onClick={collapseQClickHandler}>Collapse Questions</button>
           </div>
           :
           <div className="QAlist_loadMoreQuestions">
-            <button classname ="QAlist_loadMoreQuestionsButton" type="button" onClick={loadQClickHandler}>Show more questions</button>
-            <button classname ="QAlist_loadMoreQuestionsButton" type="button" onClick={hideQClickHandler}>Show less questions</button>
+            <button className ="QAlist_loadMoreQuestionsButton" type="button" onClick={loadQClickHandler}>Show more questions</button>
+            <button className ="QAlist_loadMoreQuestionsButton" type="button" onClick={hideQClickHandler}>Show less questions</button>
           </div>
         }
       </div>

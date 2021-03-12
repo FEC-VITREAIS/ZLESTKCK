@@ -1,3 +1,8 @@
+a:link {
+  color: black;
+  text-decoration: none;
+}
+
 /* QA-Container Styling */
 .QAcontainer {
   /* max-width: 700px; */
@@ -28,7 +33,7 @@
 
 .QAlist_displayCount {
   /* border: solid 2px blueviolet; */
-  font-size: 1em;
+  font-size: 0.8em;
 }
 
 .ask-button-div {
@@ -42,6 +47,7 @@
   padding: 2%;
   background-color: #F4ABAB;
   box-shadow: 0 2px 5px 0 rgb(0,0,0,0.5);
+  font-weight: bold;
 }
 
 
@@ -58,9 +64,11 @@
 
 .QAlist_sortButton {
   background-color: #F4ABAB;
-  height: 40px;
+  height: 20px;
+  font-size: 0.8em;
   padding: 0;
   box-shadow: 0 2px 5px 0 rgb(0,0,0,0.5);
+
 }
 
 .QAlist_container {
@@ -72,11 +80,12 @@
 .QAlist_loadMoreQuestions {
   /* border: solid 2px blueviolet; */
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
 }
 
 .QAlist_loadMoreQuestionsButton {
   background-color: #F4ABAB;
+  box-shadow: 0 2px 5px 0 rgb(0,0,0,0.5);
 }
 
 
@@ -87,18 +96,18 @@
   margin: 1rem auto;
   border-radius: 0.3rem;
   box-shadow: 0 2px 5px 0 rgb(0,0,0,0.5);
-  max-height: 1200px;
+  max-height: 600px;
 }
 
 .QAqentries_metaContainer {
   /* border: solid 2px green; */
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-around;
 }
 
 .QAqentries_meta {
   /* border: solid 2px green; */
-  font-size: 1em;
+  font-size: 0.8em;
 }
 
 .QAqentries_questionCollpase {
@@ -118,15 +127,30 @@
 .QAqentries_answers {
   /* border: solid 2px green; */
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-around;
+  font-size: 0.8em;
 }
 
 .QAqentries_displayedAnswers {
   /* border: solid 5px black; */
-  max-height: 400px;
+  max-height: 250px;
   overflow: auto;
   margin: auto;
-  width: 50%;
+  width: 70%;
+}
+
+.QAqentries_displayCount {
+  text-align: center;
+  padding-bottom: 10px;
+}
+
+.QAqentries_loadButton {
+  background-color: #F4ABAB;
+}
+
+.QAqentries_displayButtons {
+  display: flex;
+  justify-content: space-evenly;
 }
 
 .QAqentries_addButton {
@@ -149,12 +173,14 @@
 .QAaentries_loadButton {
   /* border: solid 2px green; */
   background-color: #F4ABAB;
+  display: flex;
+  justify-content:space-evenly;
 }
 
 .QAaentries_collapse {
   /* border: solid 2px green; */
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-around;
 }
 
 .QAaentries_collapseButton {
@@ -166,8 +192,8 @@
 /* QA-AnswerEntries Styling */
 .QAaentries {
   /* border: solid 2px darkred; */
-  /* background-color:rgb(247, 192, 192); */
-  margin: 1rem 0;
+  height: 140px;
+  margin: 1em 0;
   /* border-radius: 0.3rem; */
   box-shadow: 0 2px 5px 0 rgb(0,0,0,0.5);
 }
@@ -181,7 +207,7 @@
 
 .QAaentries_meta {
   /* border: solid 2px darkred; */
-  font-size: 1em;
+  font-size: 0.8em;
 }
 
 /* .QAaentries_answer {
@@ -190,11 +216,15 @@
 } */
 
 .QAaentries_answerBody {
-  font-size: medium;
+  padding: 0px 1%;
+  border: 1px solid rgba(0,0,0,rgb(0,0,0,0.5));
+  border-radius: 1rem;
+  width: 90%;
   margin: auto;
-  width: 50%;
-  padding: 2% 0;
+  overflow: auto;
+  font-size: 0.8em;
 }
+
 
 .QAaentries_images {
   /* border: solid 2px darkred; */
@@ -204,16 +234,19 @@
 
 .QAaentries_thumbnails {
   border: solid 1px rgb(0,0,0,0.5);
-  height: 50px;
-  width: 50px;
+  display:block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 10%;
 }
 
 .QAaentries_imageModal {
   /* border: solid 2px darkred; */
   background-color: #F2F2F2;
-  ;
-  height: 500px;
-  width: 300px;
+  display:block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
 }
 
 /* QA-Search Styling */
@@ -226,7 +259,8 @@
 
 .QAsearch_bar {
   /* border: solid 2px goldenrod; */
-  height: 50px;
+  height: 30px;
+  margin-top: 10px;
 }
 
 .QAsearchResults {
@@ -247,8 +281,6 @@
   display: flex;
   justify-content: center;
   padding: 2%;
-  border: 2px solid rgb(0,0,0,0.5);
-  border-radius: 30px;
 }
 
 .QAqmodal_subtitle {
@@ -303,7 +335,7 @@
 .QAamodal_label {
   /* border: solid 2px purple; */
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
 }
 
 .QAamodal_inputField {
@@ -312,19 +344,26 @@
 
 .QAamodal_textareaField {
   /* border: solid 2px purple; */
+  margin-bottom: 10px;
 }
 
 .QAamodal_uploadButton {
   /* border: solid 2px purple; */
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .QAamodal_subscript {
   /* border: solid 2px purple; */
-  font-size: 1em;
+  font-size: 0.7em;
 }
 
 .QAamodal_submitButton {
   /* border: solid 2px purple; */
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* QA-ImageContainer Styling */
@@ -338,6 +377,10 @@
   /* border: solid 2px rgb(112, 165, 42); */
   height: 50px;
   width: 50px;
+}
+
+.closeButton {
+  float:right;
 }
 
 
