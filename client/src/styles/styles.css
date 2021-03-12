@@ -593,6 +593,7 @@ a:link {
   /* border: solid 2px darkred; */
   display: flex;
   justify-content: space-evenly;
+  height: 44%;
 }
 
 .QAaentries_thumbnails {
