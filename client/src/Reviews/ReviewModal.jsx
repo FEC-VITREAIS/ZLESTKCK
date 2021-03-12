@@ -172,95 +172,201 @@ let ReviewModal = (props) => {
               <input type='radio' value='No' name='recommend' onClick={RecommendClick}></input>
             </fieldset>
 
-            <fieldset>
+            <fieldset className='ModalCharacteristics'>
 
-              {context.productReviewsMetaData.characteristics.Size && <div className='ModalFormSize'>
-                <label>Rate the size </label>
-                <label>Too small</label>
-                <input type='radio' value='1' name='Size' onClick={onCharClick}></input>
-                <label>Half a size too small</label>
-                <input type='radio' value='2' name='Size' onClick={onCharClick}></input>
-                <label>Perfect</label>
-                <input type='radio' value='3' name='Size' onClick={onCharClick}></input>
-                <label>Half size too big</label>
-                <input type='radio' value='4' name='Size' onClick={onCharClick}></input>
-                <label>A size too wide</label>
-                <input type='radio' value='5' name='Size' onClick={onCharClick}></input>
+              {context.productReviewsMetaData.characteristics.Size && <div className='ModalFormChar'>
+
+                <label className='ModalStyleLabel'>Rate the size: </label>
+
+                <div className='ModalCol1'>
+                  <label className='ModalLabel'>Too small</label>
+                  <input type='radio' value='1' name='Size' onClick={onCharClick} className='ModalButton'></input>
+                </div>
+
+                <div className='ModalCol2'>
+                  <label className='ModalLabel'>Half a size too small</label>
+                  <input type='radio' value='2' name='Size' onClick={onCharClick} className='ModalButton'></input>
+                </div>
+
+                <div className='ModalCol3'>
+                  <label className='ModalLabel'>Perfect</label>
+                  <input type='radio' value='3' name='Size' onClick={onCharClick} className='ModalButton'></input>
+                </div>
+
+                <div className='ModalCol4'>
+                  <label className='ModalLabel'>Half size too big</label>
+                  <input type='radio' value='4' name='Size' onClick={onCharClick} className='ModalButton'></input>
+                </div>
+
+                <div className='ModalCol5'>
+                  <label className='ModalLabel'>A size too wide</label>
+                  <input type='radio' value='5' name='Size' onClick={onCharClick} className='ModalButton'></input>
+                </div>
+                <br></br>
               </div>}
-              <br></br>
 
-              {context.productReviewsMetaData.characteristics.Width && <div className='ModalFormWidth'>
-                <label>Rate the Width </label>
-                <label>Too narrow</label>
-                <input type='radio' value='1' name='Width' onClick={onCharClick}></input>
-                <label>Slightly narrow</label>
-                <input type='radio' value='2' name='Width' onClick={onCharClick}></input>
-                <label>Perfect</label>
-                <input type='radio' value='3' name='Width' onClick={onCharClick}></input>
-                <label>Slightly wide</label>
-                <input type='radio' value='4' name='Width' onClick={onCharClick}></input>
-                <label>Too wide</label>
-                <input type='radio' value='5' name='Width' onClick={onCharClick}></input>
+
+              {context.productReviewsMetaData.characteristics.Width && <div className='ModalFormChar'>
+
+                <label className='ModalStyleLabel'>Rate the Width: </label>
+
+                <div className='ModalCol1'>
+                  <label className='ModalLabe'>Too narrow</label>
+                  <input type='radio' value='1' name='Width' onClick={onCharClick} className='ModalButton'></input>
+                </div>
+
+                <div className='ModalCol2'>
+                  <label className='ModalLabel'>Slightly narrow</label>
+                  <input type='radio' value='2' name='Width' onClick={onCharClick} className='ModalButton'></input>
+                </div>
+
+                <div className='ModalCol3'>
+                  <label className='ModalLabel'>Perfect</label>
+                  <input type='radio' value='3' name='Width' onClick={onCharClick} className='ModalButton'></input>
+                </div>
+
+                <div className='ModalCol4'>
+                  <label className='ModalLabel'>Slightly wide</label>
+                  <input type='radio' value='4' name='Width' onClick={onCharClick} className='ModalButton'></input>
+                </div>
+
+                <div className='ModalCol5'>
+                  <label className='ModalLabel'>Too wide</label>
+                  <input type='radio' value='5' name='Width' onClick={onCharClick} className='ModalButton'></input>
+                </div>
+                <br></br>
               </div>}
-              <br></br>
 
-              {context.productReviewsMetaData.characteristics.Comfort && <div className='ModalFormComfort'>
-                <label>Rate the Comfort </label>
-                <label>Uncomfortable</label>
-                <input type='radio' value='1' name='Comfort' onClick={onCharClick}></input>
-                <label>Slightly uncomfortable</label>
-                <input type='radio' value='2' name='Comfort' onClick={onCharClick}></input>
-                <label>Ok</label>
-                <input type='radio' value='3' name='Comfort' onClick={onCharClick}></input>
-                <label>Comfortable</label>
-                <input type='radio' value='4' name='Comfort' onClick={onCharClick}></input>
-                <label>Perfect</label>
-                <input type='radio' value='5' name='Comfort' onClick={onCharClick}></input>
+
+              {context.productReviewsMetaData.characteristics.Comfort && <div className='ModalFormChar'>
+
+                <label className='ModalStyleLabel'>Rate the Comfort: </label>
+
+                <div className='ModalCol1'>
+                  <label className='ModalLabel'>Uncomfortable</label>
+                  <input type='radio' value='1' name='Comfort' onClick={onCharClick} className='ModalButton'></input>
+                </div>
+
+
+                <div className='ModalCol2'>
+                  <label className='ModalLabel'>Slightly uncomfortable</label>
+                  <input type='radio' value='2' name='Comfort' onClick={onCharClick} className='ModalButton'></input>
+                </div>
+
+                <div className='ModalCol3'>
+                  <label className='ModalLabel'>Ok</label>
+                  <input type='radio' value='3' name='Comfort' onClick={onCharClick} className='ModalButton'></input>
+                </div>
+
+                <div className='ModalCol4'>
+                  <label className='ModalLabel'>Comfortable</label>
+                  <input type='radio' value='4' name='Comfort' onClick={onCharClick} className='ModalButton'></input>
+                </div>
+
+                <div className='ModalCol5'>
+                  <label className='ModalLabel'>Perfect</label>
+                  <input type='radio' value='5' name='Comfort' onClick={onCharClick} className='ModalButton'></input>
+                </div>
+
+
+                <br></br>
               </div>}
-              <br></br>
 
-              {context.productReviewsMetaData.characteristics.Quality && <div className='ModalFormQuality'>
-                <label>Rate the Quality </label>
-                <label>Poor</label>
-                <input type='radio' value='1' name='Quality' onClick={onCharClick}></input>
-                <label>Below average</label>
-                <input type='radio' value='2' name='Quality' onClick={onCharClick}></input>
-                <label>What I expected</label>
-                <input type='radio' value='3' name='Quality' onClick={onCharClick}></input>
-                <label>Pretty great</label>
-                <input type='radio' value='4' name='Quality' onClick={onCharClick}></input>
-                <label>Perfect</label>
-                <input type='radio' value='5' name='Quality' onClick={onCharClick}></input>
+
+              {context.productReviewsMetaData.characteristics.Quality && <div className='ModalFormChar'>
+
+                <label className='ModalStyleLabel'>Rate the Quality: </label>
+
+                <div className='ModalCol1'>
+                  <label className='ModalLabel'>Poor</label>
+                  <input type='radio' value='1' name='Quality' onClick={onCharClick} className='ModalButton'></input>
+                </div>
+
+                <div className='ModalCol2'>
+                  <label className='ModalLabel'>Below average</label>
+                  <input type='radio' value='2' name='Quality' onClick={onCharClick} className='ModalButton'></input>
+                </div>
+
+                <div className='ModalCol3'>
+                  <label className='ModalLabel'>What I expected</label>
+                  <input type='radio' value='3' name='Quality' onClick={onCharClick} className='ModalButton'></input>
+                </div>
+
+                <div className='ModalCol4'>
+                  <label className='ModalLabel'>Pretty great</label>
+                  <input type='radio' value='4' name='Quality' onClick={onCharClick} className='ModalButton'></input>
+                </div>
+
+                <div className='ModalCol5'>
+                  <label className='ModalLabel'>Perfect</label>
+                  <input type='radio' value='5' name='Quality' onClick={onCharClick} className='ModalButton'></input>
+                </div>
+                <br></br>
               </div>}
-              <br></br>
 
-              {context.productReviewsMetaData.characteristics.Length && <div className='ModalFormLength'>
-                <label>Rate the Length </label>
-                <label>Runs Short</label>
-                <input type='radio' value='1' name='Length' onClick={onCharClick}></input>
-                <label>Runs slightly short</label>
-                <input type='radio' value='2' name='Length' onClick={onCharClick}></input>
-                <label>Perfect</label>
-                <input type='radio' value='3' name='Length' onClick={onCharClick}></input>
-                <label>Runs slightly long</label>
-                <input type='radio' value='4' name='Length' onClick={onCharClick}></input>
-                <label>Runs long</label>
-                <input type='radio' value='5' name='Length' onClick={onCharClick}></input>
+
+              {context.productReviewsMetaData.characteristics.Length && <div className='ModalFormChar'>
+
+                <label className='ModalStyleLabel'>Rate the Length: </label>
+
+                <div className='ModalCol1'>
+                  <label className='ModalLabel'>Runs Short</label>
+                  <input type='radio' value='1' name='Length' onClick={onCharClick} className='ModalButton'></input>
+                </div>
+
+                <div className='ModalCol2'>
+                  <label className='ModalLabel'>Runs slightly short</label>
+                  <input type='radio' value='2' name='Length' onClick={onCharClick} className='ModalButton'></input>
+                </div>
+
+                <div className='ModalCol3'>
+                  <label className='ModalLabel'>Perfect</label>
+                  <input type='radio' value='3' name='Length' onClick={onCharClick} className='ModalButton'></input>
+                </div>
+
+                <div className='ModalCol4'>
+                  <label className='ModalLabel'>Runs slightly long</label>
+                  <input type='radio' value='4' name='Length' onClick={onCharClick} className='ModalButton'></input>
+                </div>
+
+                <div className='ModalCol5'>
+                  <label className='ModalLabel'>Runs long</label>
+                  <input type='radio' value='5' name='Length' onClick={onCharClick} className='ModalButton'></input>
+                </div>
+                <br></br>
+
               </div>}
-              <br></br>
 
-              {context.productReviewsMetaData.characteristics.Fit && <div className='ModalFormFit'>
-                <label>Rate the Fit </label>
-                <label>Runs tight</label>
-                <input type='radio' value='1' name='Fit' onClick={onCharClick}></input>
-                <label>Runs slightly tight</label>
-                <input type='radio' value='2' name='Fit' onClick={onCharClick}></input>
-                <label>Perfect</label>
-                <input type='radio' value='3' name='Fit' onClick={onCharClick}></input>
-                <label>Runs slightly long</label>
-                <input type='radio' value='4' name='Fit' onClick={onCharClick}></input>
-                <label>Runs long</label>
-                <input type='radio' value='5' name='Fit' onClick={onCharClick}></input>
+
+              {context.productReviewsMetaData.characteristics.Fit && <div className='ModalFormChar'>
+
+                <label className='ModalStyleLabel'>Rate the Fit: </label>
+
+                <div className='ModalCol1'>
+                  <label className='ModalLabel'>Runs tight</label>
+                  <input type='radio' value='1' name='Fit' onClick={onCharClick} className='ModalButton'></input>
+                </div>
+
+                <div className='ModalCol2'>
+                  <label className='ModalLabel'>Runs slightly tight</label>
+                  <input type='radio' value='2' name='Fit' onClick={onCharClick} className='ModalButton'></input>
+                </div>
+
+                <div className='ModalCol3'>
+                  <label className='ModalLabel'>Perfect</label>
+                  <input type='radio' value='3' name='Fit' onClick={onCharClick} className='ModalButton'></input>
+                </div>
+
+                <div className='ModalCol4'>
+                  <label className='ModalLabel'>Runs slightly long</label>
+                  <input type='radio' value='4' name='Fit' onClick={onCharClick} className='ModalButton'></input>
+                </div>
+
+                <div className='ModalCol5'>
+                  <label className='ModalLabel'>Runs long</label>
+                  <input type='radio' value='5' name='Fit' onClick={onCharClick} className='ModalButton'></input>
+                </div>
+
               </div>}
 
             </fieldset>
@@ -276,8 +382,7 @@ let ReviewModal = (props) => {
               <div className='ReviewModalBody'>
                 <label>Please leave your review: </label>
                 <textarea type='text' maxLength={1000} placeholder={'Why did you like the product or not?'} size={100} style={{height: '100px'}} onChange={HandleChange}></textarea>
-                //!Come back and fix this
-                {bodyCount < 50 && <div>Minimum required characters left: {50-bodyCount}</div>}
+                {bodyCount < 50 && <div className='MinCharLeft'>Minimum required characters left: {50-bodyCount}</div>}
                 {bodyCount >=50 && <div>Minimum Reached</div>}
               </div>
             </fieldset>
@@ -286,7 +391,7 @@ let ReviewModal = (props) => {
               <div className='ReviewModalNickname'>
                 <label>Please enter your display name: </label>
                 <input type='text' maxlength={60} size={60} placeholder={'Example: jackson11!'} onChange={handleName}></input>
-                <div>For privacy reasons, do not use your full name or email address</div>
+                <div className='MinCharLeft'>For privacy reasons, do not use your full name or email address</div>
               </div>
             </fieldset>
 
@@ -294,7 +399,7 @@ let ReviewModal = (props) => {
               <div className='ReviewModalEmail'>
                 <label>Please enter your email: </label>
                 <input type='text' size={60} maxlength={60} placeholder={'Example: jackson11@gmail.com'} onChange={handleEmail}></input>
-                <div>For authentication reasons, you will not be emailed</div>
+                <div className='MinCharLeft'>For authentication reasons, you will not be emailed</div>
               </div>
             </fieldset>
 
