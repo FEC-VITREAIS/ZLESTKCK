@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import ProductContext from '../context.jsx'; //ACTION: Delete when refactored
-// import QAstyles from './styles/QAstyles.css'
+import QAstyles from './styles/QAstyles.css'
 import AnswerEntries from './QA-AnswerEntries.jsx'
 import AModal from './QA-AnswerModal.jsx'
 import ReactModal from 'react-modal';
@@ -111,8 +111,9 @@ let QuestionEntries = function({body, asker, date, helpfulCount, reported, answe
           <a className="QAqentries_meta" href="javascrip:void();" onClick={toggleQReportedClickHandler}>Report</a>
         }
       </div>
-      <div className="QAqentries_questionBody">Q: {body}
-      <button className="accordion" onClick={hideAnswersClickHandler}>V</button>
+      <div className="QAqentries_questionBody"><b>Question:</b>
+      <span className="QAqentries_questionCollpase" onClick={hideAnswersClickHandler}>V</span>
+      <div>{body}</div>
       <div className="QAqentries_answers">
         1-{displayedIndex} of {aCount} Answers
         <button className="QAqentries_addButton" type="button" onClick={aModalClickHandler}>Add an answer</button>

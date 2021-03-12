@@ -13,7 +13,6 @@ let QAList = function({questions}) {
   const [displayedQuestions, setDisplayedQuestions] = useState(questions.slice(0,4))
   const [displayedQIndex, setDisplayedQIndex] = useState(0)
   const [isQFullyLoaded, setIsQFullyLoaded] = useState(false)
-  const [showDropdownMenu, setShowDropdownMenu] = useState(false)
 
   //DISPLAY HELPER FUNCTION
   const renderQuestions = (index) => {
@@ -44,10 +43,6 @@ let QAList = function({questions}) {
     setIsQFullyLoaded(false)
   }
 
-  const dropdownMenuClickHandler = (e) => {
-    setShowDropdownMenu(!showDropdownMenu)
-  }
-
   const sortClickHandler = (e) => {
     setCurrentSort(e.target.value)
   }
@@ -63,20 +58,11 @@ let QAList = function({questions}) {
       <>
       <div className="QAlist">
         <div className="QAlist_displayCount">Questions 1-{displayedQIndex} of {qCount}</div>
-        {showDropdownMenu ?
-          <>
-            <div>
-              <button className="QAlist_sortButton" type="button" onClick={dropdownMenuClickHandler}>Sort by</button>
-              <button className="QAlist_sortLinks" type="button" value="helpful" onClick={sortClickHandler}>Most Helpful</button>
-              <button className="QAlist_sortLinks" type="button" value="recent" onClick={sortClickHandler}>Most Recent</button>
-              <button className="QAlist_sortLinks" type="button" value="userA" onClick={sortClickHandler}>Username: Ascending</button>
-            </div>
-          </>
-          :
-          <>
-          <button className="QAlist_sortButton" type="button" onClick={dropdownMenuClickHandler}>Sort by</button>
-          </>
-        }
+        <select className="QAlist_sortButton">
+            <option className="QAlist_sortLinks" value="helpful" onClick={sortClickHandler}>Most Helpful</option>
+            <option className="QAlist_sortLinks" value="recent" onClick={sortClickHandler}>Most Recent</option>
+            <option className="QAlist_sortLinks" value="userA" onClick={sortClickHandler}>Username: Ascending</option>
+        </select>
       </div>
 
       <div className="QAlist_container">
@@ -98,12 +84,12 @@ let QAList = function({questions}) {
       <div>
         {isQFullyLoaded ?
           <div className="QAlist_loadMoreQuestions">
-            <button type="button" onClick={collapseQClickHandler}>Collapse Questions</button>
+            <button  classname ="QAlist_loadMoreQuestionsButton"type="button" onClick={collapseQClickHandler}>Collapse Questions</button>
           </div>
           :
           <div className="QAlist_loadMoreQuestions">
-            <button type="button" onClick={loadQClickHandler}>Show more questions</button>
-            <button type="button" onClick={hideQClickHandler}>Show less questions</button>
+            <button classname ="QAlist_loadMoreQuestionsButton" type="button" onClick={loadQClickHandler}>Show more questions</button>
+            <button classname ="QAlist_loadMoreQuestionsButton" type="button" onClick={hideQClickHandler}>Show less questions</button>
           </div>
         }
       </div>
