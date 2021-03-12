@@ -1,52 +1,51 @@
-import React, {useContext, useEffect, useState} from 'react'
+import React, { useContext, useEffect, useState } from "react";
 // import './styles/ReviewStyles.css';
-import ReviewListDiv from './ReviewListDiv.jsx'
-import ProductContext from '../context.jsx';
-import ReviewBreakdown from './ReviewBreakdown.jsx';
-import ReviewModal from './ReviewModal'
-import StarRating from './Star-Rating.jsx';
+import ReviewListDiv from "./ReviewListDiv.jsx";
+import ProductContext from "../context.jsx";
+import ReviewBreakdown from "./ReviewBreakdown.jsx";
+import ReviewModal from "./ReviewModal";
+import StarRating from "./Star-Rating.jsx";
 
-
-
-
-
-let ReviewContainer = function(props) {
+let ReviewContainer = function (props) {
   const context = useContext(ProductContext);
-
 
   const [ReviewMeta, setReviewMeta] = useState({});
   const [showReviewForm, setShowReviewForm] = useState(false);
 
-
   useEffect(() => {
     const reviewMeta = context.productReviewsMetaData;
-    setReviewMeta(reviewMeta)
+    setReviewMeta(reviewMeta);
   }, [context.productReviewsMetaData]);
 
   const closeForm = () => {
     setShowReviewForm(!showReviewForm);
-  }
+  };
 
   // console.log('METADATA: ', context.productReviewsMetaData);
   // console.log('Check if true: ', context.productReviewsMetaData.characteristics)
 
   return (
+    <>
+      <span id="review-container-span"></span>
+      <div className="review-container">
+        <h3>RATINGS & REVIEWS</h3>
 
-    <div className='review-container'>
+        {context.productReviews && context.productReviews.length && (
+          <ReviewListDiv
+            setShowReviewForm={setShowReviewForm}
+            showReview={showReviewForm}
+            currentSort={props.reviewsSortBy}
+          />
+        )}
 
-      <h3>RATINGS & REVIEWS</h3>
+        {ReviewMeta && ReviewMeta.ratings && (
+          <ReviewBreakdown data={ReviewMeta} />
+        )}
 
-      {context.productReviews && context.productReviews.length && <ReviewListDiv setShowReviewForm={setShowReviewForm} showReview={showReviewForm} currentSort={props.reviewsSortBy}/>}
+        <ReviewModal open={showReviewForm} closeForm={closeForm} />
+      </div>
+    </>
+  );
+};
 
-      {ReviewMeta && ReviewMeta.ratings && <ReviewBreakdown data={ReviewMeta}/> }
-
-      <ReviewModal open={showReviewForm} closeForm={closeForm}/>
-
-    </div>
-
-  )
-}
-
-export default ReviewContainer
-
-
+export default ReviewContainer;
