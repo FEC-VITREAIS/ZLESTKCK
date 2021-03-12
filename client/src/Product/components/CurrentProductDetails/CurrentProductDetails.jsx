@@ -68,7 +68,7 @@ const CurrentProductDetails = ({ CurrentProductInfo, CurrentProductView }) => {
     <>
       <div className="ProductDetailContainer">
         <div className="readAllReviewsContainer">
-          <a href="#review-container"> Read All Reviews! </a>
+          <a href="#review-container-span"> Read All Reviews! </a>
         </div>
 
         <div>

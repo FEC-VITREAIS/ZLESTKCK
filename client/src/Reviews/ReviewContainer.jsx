@@ -26,8 +26,8 @@ let ReviewContainer = function (props) {
 
   return (
     <>
-      <span id="review-container" />
-      <div className="review-container" >
+      <span id="review-container-span"></span>
+      <div className="review-container">
         <h3>RATINGS & REVIEWS</h3>
 
         {context.productReviews && context.productReviews.length && (
