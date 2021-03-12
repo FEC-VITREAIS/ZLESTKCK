@@ -15,7 +15,7 @@ let ProductContainer = function (props) {
   const [CurrentProductInfo, setCurrentProductInfo] = useState({});
 
   const [CurrentStyles, setCurrentStyles] = useState(
-    [{}]
+    [{defaultProp: true}, {defaultProp: true, photos:[""]}]
   ); /* all the list of products for display */
   const [CurrentStyle, setCurrentStyle] = useState(
     undefined
@@ -37,7 +37,8 @@ let ProductContainer = function (props) {
 
     console.log(currentStyles, "product details");
 
-    setCurrentStyles(currentStyles);
+    currentStyles.length === 0 ? setCurrentStyles( [{defaultProp: true}, {defaultProp: true}])  : setCurrentStyles(currentStyles);
+    // setCurrentStyles(currentStyles);
     setCurrentStyle(currentStyles[0]);
 
     setCurrentProductInfo(currentProductInfo);
@@ -97,7 +98,7 @@ let ProductContainer = function (props) {
           CurrentProductView={CurrentStyle || { name: "", skus: [] }}
         />
 
-        <SelectStyle CurrentStyles={ CurrentStyles || [{defaultProp: true}] } CurrentStyle={CurrentStyle} HandleStyleChange={HandleStyleChange}/>
+        <SelectStyle CurrentStyles={ CurrentStyles ||  [{defaultProp: true}, {defaultProp: true, photos:[""]}]   } CurrentStyle={CurrentStyle} HandleStyleChange={HandleStyleChange}/>
       </div>
     </>
   );

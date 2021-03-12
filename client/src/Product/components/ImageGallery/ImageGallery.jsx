@@ -13,7 +13,7 @@ const ImageGallery = ({ CurrentStyle, IncrementStyleIndex , DecrementStyleIndex 
     return <div> </div>;
   }
 
-  const url = CurrentStyle.photos[1]; // url not thumbnail! 
+  const { url } = CurrentStyle.photos[0]; // url not thumbnail! 
 
   return (
     <>
@@ -24,7 +24,8 @@ const ImageGallery = ({ CurrentStyle, IncrementStyleIndex , DecrementStyleIndex 
             /* decrement index  */
             DecrementStyleIndex();
           }}
-        ></div>
+          
+        >left arrow</div>
 
         <div className="MainStyleImg" >
           <img src={url} />
@@ -38,6 +39,7 @@ const ImageGallery = ({ CurrentStyle, IncrementStyleIndex , DecrementStyleIndex 
           }}
         >
           {" "}
+          right arrow
         </div>
       </div>
     </>

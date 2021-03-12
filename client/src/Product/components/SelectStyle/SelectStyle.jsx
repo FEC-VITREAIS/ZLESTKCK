@@ -34,31 +34,34 @@ import React from "react";
 // };
 
 const SelectStyle = ({ CurrentStyles, CurrentStyle, HandleStyleChange }) => {
+  console.log(CurrentStyles, 'styles');
+  const prop = CurrentStyles[1].defaultProp;
+    console.log(prop,'prop')
+  if (prop) {
+    return <div></div>;
+  }
 
-    const prop = CurrentStyle[1].defaultProp;
-
-    if (prop) {
-        return <div></div>
-    }
-
-    return (
+  return (
     <>
-     <div className="StylesContainer" >
+      <div className="StylesContainer">
+        {CurrentStyles.map((Style, index) => {
+            console.log(Style,'url??')
+          const { url } = Style.photos[0];
 
-        {CurrentStyles.map( ( Style, index ) => {
-
-            const { url } = Style.photos[1];
-
-            return <div className="Style" onClick={ (e) => { HandleStyleChange(e, Style, index) } } >  
-
-                <img src={url} />
-
-             </div>
+          return (
+            <div
+              className="Style"
+              onClick={(e) => {
+                HandleStyleChange(e, Style, index);
+              }}
+            >
+              <img className="StyleImg" src={url} />
+            </div>
+          );
         })}
-
-    </div>
+      </div>
     </>
-    )
-}
+  );
+};
 
 export default SelectStyle;
