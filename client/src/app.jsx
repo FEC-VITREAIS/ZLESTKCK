@@ -18,8 +18,6 @@ import ReviewContainer from './Reviews/ReviewContainer.jsx'
 
 let App = function(props) {
 
-  // console.log('rerender!');
-
   // STATE HOOKS
   const [currentProductDetails, setCurrentProductDetails] = useState({});
   const [currentProduct, setProduct] = useState("11101"); //using 11101 as the default product
@@ -33,75 +31,11 @@ let App = function(props) {
   const [productName, setProductName] = useState("Product Name")
 
 
-  // CURRENT PRODUCT STATE
-  // var fetchCurrentProduct = () => {
-
-    // fetchProductDetails(currentProduct)
-    // .then((data) => {
-    //   // console.log('current product: ', data);
-    //   setProductName(data.name)
-    //   setCurrentProductDetails(data);
-    //   //console.log('current product: ', data);
-    // })
-
-  // }
-
   var updateCurrentProduct = (newProductID) => {
     //this works and updates the current product
     setProduct(newProductID)
   }
 
-
-  // // RELATED ITEMS STATE
-  // var fetchRelatedItems = () => {
-
-  //   fetchRelatedProducts(currentProduct)
-  //   .then((relatedItemsData) => {
-  //     // console.log('related items with rating: ', relatedItemsData);
-
-  //     setRelatedItems(relatedItemsData);
-
-  //   })
-
-  // }
-
-
-  // // QA STATE
-  // var fetchProductQA = () => {
-
-  //   fetchQA(currentProduct)
-  //   .then((data) => {
-  //     //console.log('all product questions and answers', data);
-
-  //     setProductQA(data)
-  //   })
-  // };
-
-  // var fetchProductStyles = () => {
-  //   fetchStyles(currentProduct)
-  //   .then((data) => {
-  //     setProductStyles(data)
-  //   })
-  // }
-
-  // var fetchProductReviews = () => {
-
-  //   fetchReviews(currentProduct, reviewsSortBy)
-  //   .then((data) => {
-  //     // console.log('product review data: ', data);
-  //     setProductReviews(data);
-  //   })
-
-  // }
-
-  // var fetchProductReviewsMetaData = () => {
-
-  //   fetchReviewsMetaData(currentProduct)
-  //   .then((data) => {
-  //     // console.log('product review meta data: ', data);
-  //     setProductReviewsMetaData(data);
-  //   })
-  // }
 
   var changeReviewSortBy = (sortBy) => {
     //sortBy should be a string containing
@@ -110,6 +44,7 @@ let App = function(props) {
   }
 
   var fetchAPIData = () => {
+    
     //current product details
     fetchProductDetails(currentProduct)
     .then((data) => {
