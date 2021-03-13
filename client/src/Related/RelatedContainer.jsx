@@ -44,18 +44,15 @@ let RelatedContainer = function(props) {
         sharedFeatures,
         setSharedFeatures,
         modalProduct,
-        setModalProduct
+        setModalProduct,
+        handleModalClose,
       }}>
         <>
         <ReactModal
           isOpen={displayModal}
           onRequestClose={handleModalClose}
           shouldCloseOnEsc={true}>
-            <RelatedModalWindow
-            handleModalClose={handleModalClose}
-            product={modalProduct}
-            sharedFeatures={sharedFeatures}
-            />
+            <RelatedModalWindow/>
         </ReactModal>
 
           <div className='related-container'>

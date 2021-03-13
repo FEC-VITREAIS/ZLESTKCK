@@ -128,8 +128,9 @@ div, span, select {
   flex-direction: row;
   justify-content: flex-start;
   flex-wrap: nowrap;
-  /* overflow: scroll; */
+  overflow: scroll;
 }
+
 
 .related-list-card, .outfits-list-card {
   border: 1px solid #39393C;
@@ -137,10 +138,13 @@ div, span, select {
   width: 200px;
   min-width: 200px;
   margin: 10px;
-  position: relative;
   background-color: white;
+  position: relative;
 }
 
+/* .related-list-card {
+  position: relative;
+} */
 .related-list-card:hover, .outfits-list-card:hover {
   /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
   box-shadow: 0 4px 8px 0 rgba(244, 171, 171, 0.96), 0 6px 20px 0 rgba(244, 171, 171, 0.96);

@@ -13,7 +13,9 @@ var YourOutfitsList = () => {
   const context = useContext(ProductContext);
 
   console.log('outfits list cache: ', outfitsListCache);
-  console.log('current product: ', context.currentProductDetails);
+  console.log('outfits list: ', outfitsList);
+
+  // console.log('current product: ', context.currentProductDetails);
   // console.warn('current product: ', currentProduct);
 
   //settings for React-Slick Image Carousel
@@ -22,9 +24,7 @@ var YourOutfitsList = () => {
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
-    // adaptiveHeight: true,
     arrows: false,
-    // accessibility: true,
     draggable: true
   }
 
@@ -32,9 +32,9 @@ var YourOutfitsList = () => {
   //The results of three API calls for the current product are needed to create a single product object
   //that contains the details, styles, and ratings.
   useEffect(()=> {
-    const currentProduct = context.currentProductDetails;
-    const currentProductStyles = context.productStyles;
-    const currentRatings = context.productReviewsMetaData.ratings;
+    const currentProduct = Object.assign({}, context.currentProductDetails);
+    const currentProductStyles = Object.assign({}, context.productStyles);
+    const currentRatings = Object.assign({}, context.productReviewsMetaData.ratings);
 
     currentProduct.styles = {
       photo: currentProductStyles[0].photos[0].thumbnail_url,
@@ -44,7 +44,8 @@ var YourOutfitsList = () => {
 
     currentProduct.ratings = currentRatings;
     setCurrentProductDetails(currentProduct);
-  }, [outfitsListCache])
+  }, [context.currentProductDetails, outfitsList])
+
 
 
   const addNewOutfit = () => {
@@ -69,7 +70,6 @@ var YourOutfitsList = () => {
     const newOutfitCache = Object.assign({}, outfitsListCache);
     newOutfitCache[product.id] = false;
     setOutfitsListCache(newOutfitCache);
-    console.warn(outfitsList);
 
     //find the matching product id and remove it
     const updatedOutfitList = outfitsList.filter((o) => {
@@ -90,24 +90,44 @@ var YourOutfitsList = () => {
           <h2>Add New Outfit</h2>
           <span className="fa fa-plus" onClick={addNewOutfit}></span><br></br>
         </div>
-        <Slider {...sliderSettings}>
           {outfitsList.map((outfit) => {
-            if (outfit.id !== 11101) {
-
-              return (
-                <div className='slick-outfits'>
-                  {<OutfitsCard
-                  key={outfit.id}
-                  product={outfit}
-                  removeOutfit={removeOutfit} />}
-                </div>
-              )
-            }
+            return (
+              <OutfitsCard
+              key={outfit.id}
+              product={outfit}
+              removeOutfit={removeOutfit} />
+            )
           })}
-        </Slider>
       </div>
     </>
   )
+
+  // return (
+  //   <>
+  //     <h1 className='outfits-list-title'>Your Outfits</h1>
+  //     <div className='outfits-list'>
+  //       <div className='outfits-list-card'>
+  //         <h2>Add New Outfit</h2>
+  //         <span className="fa fa-plus" onClick={addNewOutfit}></span><br></br>
+  //       </div>
+  //       <Slider {...sliderSettings}>
+  //         {outfitsList.map((outfit) => {
+  //           if (outfit.id !== 11101) {
+
+  //             return (
+  //               <div className='slick-outfits'>
+  //                 {<OutfitsCard
+  //                 key={outfit.id}
+  //                 product={outfit}
+  //                 removeOutfit={removeOutfit} />}
+  //               </div>
+  //             )
+  //           }
+  //         })}
+  //       </Slider>
+  //     </div>
+  //   </>
+  // )
 
 }
 

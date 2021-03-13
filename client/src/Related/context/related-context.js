@@ -8,7 +8,8 @@ const RelatedProductContext = React.createContext({
   sharedFeatures: {},
   setsharedFeatures: () => {},
   modalProduct: {},
-  setModalProduct: ()=>{}
+  setModalProduct: ()=>{},
+  handleModalClose: ()=>{}
 });
 
 export default RelatedProductContext;

@@ -60,6 +60,7 @@ var RelatedListCard = ({product}) => {
     relatedContext.setDisplayModal(true);
   }
 
+  //checks if product object has a sale price and returns appropriate HTML
   const calculateSalePrice = () => {
     if (product.styles.salePrice) {
       return (
