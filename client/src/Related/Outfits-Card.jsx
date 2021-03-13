@@ -8,12 +8,17 @@ var OutfitsCard = ({product, removeOutfit}) => {
   const calculateSalePrice = () => {
     if (product.styles.salePrice) {
       return (
-        <span className='related-card-sale-price'><strike>{`$${product.styles.price}`}</strike> {`$${product.styles.salePrice}`}</span>
+        <span className='related-card-sale-price'>
+          <strike>{`$${product.styles.price}`}</strike> 
+          {`$${product.styles.salePrice}`}
+        </span>
       )
     } else {
       //otherwise 
       return (
-        <div className='related-card-price'>{`$${product.styles.price}`}</div>
+        <div className='related-card-price'>
+          {`$${product.styles.price}`}
+        </div>
       )
     }
   };

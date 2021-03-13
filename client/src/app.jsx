@@ -30,6 +30,7 @@ let App = function(props) {
   const [reviewsSortBy, setReviewsSortBy] = useState('newest'); //set the default reviews to sort by newest
   const [productName, setProductName] = useState("Product Name")
 
+  //FORK TEST
 
   var updateCurrentProduct = (newProductID) => {
     setProduct(newProductID)
@@ -57,10 +58,10 @@ let App = function(props) {
     });
 
     // related products
-    fetchRelatedProducts(currentProduct)
-    .then((relatedItemsData) => {
-      setRelatedItems(relatedItemsData);
-    });
+    // fetchRelatedProducts(currentProduct)
+    // .then((relatedItemsData) => {
+    //   setRelatedItems(relatedItemsData);
+    // });
 
     //Questions and Answers
     fetchQA(currentProduct)
