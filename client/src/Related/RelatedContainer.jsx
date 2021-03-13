@@ -1,10 +1,11 @@
 import React, {useContext, useState, useEffect} from 'react';
-// import './styles/styles.css';
 import RelatedList from './Related-List.jsx';
 import YourOutfitsList from './Your-Outfits-List.jsx';
-import ProductContext from '../context.jsx';
 import RelatedModalWindow from './Related-Modal-Window.jsx';
+import ProductContext from '../context.jsx';
+import RelatedProductContext from './context/related-context.js';
 import ReactModal from 'react-modal';
+import fetchRelatedProducts from '../FetchData/fetchRelatedProducts.js';
 
 
 let RelatedContainer = function(props) {
@@ -23,6 +24,7 @@ let RelatedContainer = function(props) {
    * @type {object} an empty state object that is passed to the modal window to ensure that the specific related product clicked on will return back to the related container state (which currently has no knowledge of that product)
    */
 
+  const [relatedProducts, setRelatedProducts] = useState([]);
   const [displayModal, setDisplayModal] = useState(false);
   const [sharedFeatures, setSharedFeatures] = useState({});
   const [modalProduct, setModalProduct] = useState({});
@@ -42,36 +44,67 @@ let RelatedContainer = function(props) {
     setSharedFeatures({});
   }
 
-  useEffect(()=>{}, [sharedFeatures])
+  // useEffect(()=>{}, [sharedFeatures])
+  useEffect(()=> {
+    fetchRelatedProducts(context.currentProduct)
+    .then((data) => {
+      console.warn('DATA DETECTED: ', data);
+      setRelatedProducts(data);
+    })
+  }, [context.currentProduct]);
 
-  if (context.relatedProducts && context.relatedProducts.length) {
+  if (relatedProducts.length) {
     return (
-      <>
-      <ReactModal
-        isOpen={displayModal}
-        onRequestClose={handleModalClose}
-        shouldCloseOnEsc={true}>
-           <RelatedModalWindow
-           handleModalClose={handleModalClose}
-           product={modalProduct}
-           sharedFeatures={sharedFeatures}
-          />
-      </ReactModal>
-
+      <RelatedProductContext.Provider value={{
+        relatedProducts,
+        setRelatedProducts,
+        displayModal,
+        setDisplayModal,
+        sharedFeatures,
+        setSharedFeatures,
+        modalProduct,
+        setModalProduct
+      }}>
         <div className='related-container'>
-          <RelatedList
-          setSharedFeatures={setSharedFeatures}
-          setModalProduct={setModalProduct}
-          setDisplayModal={setDisplayModal}/>
+          <RelatedList />
           <YourOutfitsList />
         </div>
-      </>
+      </RelatedProductContext.Provider>
     )
   } else {
     return (
-      <div className='related-container'></div>
+      <></>
     )
   }
+
+//   if (context.relatedProducts && context.relatedProducts.length) {
+//     return (
+//       <>
+//       <ReactModal
+//         isOpen={displayModal}
+//         onRequestClose={handleModalClose}
+//         shouldCloseOnEsc={true}>
+//            <RelatedModalWindow
+//            handleModalClose={handleModalClose}
+//            product={modalProduct}
+//            sharedFeatures={sharedFeatures}
+//           />
+//       </ReactModal>
+
+        // <div className='related-container'>
+        //   <RelatedList
+        //   setSharedFeatures={setSharedFeatures}
+        //   setModalProduct={setModalProduct}
+        //   setDisplayModal={setDisplayModal}/>
+        //   <YourOutfitsList />
+        // </div>
+//       </>
+//     )
+//   } else {
+//     return (
+//       <div className='related-container'></div>
+//     )
+//   }
 }
 
 

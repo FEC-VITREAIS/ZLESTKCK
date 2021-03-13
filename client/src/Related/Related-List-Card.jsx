@@ -1,11 +1,13 @@
 import React, {useContext, useState, useEffect} from 'react';
 import ProductContext from '../context.jsx';
+import RelatedProductContext from './context/related-context.js';
 import RelatedModalWindow from './Related-Modal-Window.jsx';
 import StarRating from '../Reviews/Star-Rating.jsx';
 
 
-var RelatedListCard = ({product, setDisplayModal, setSharedFeatures, setModalProduct}) => {
+var RelatedListCard = ({product}) => {
   const context = useContext(ProductContext);
+  const relatedContext = useContext(RelatedProductContext);
 
   const handleProductChange = () => {
     context.updateCurrentProduct(product.id)
@@ -14,8 +16,8 @@ var RelatedListCard = ({product, setDisplayModal, setSharedFeatures, setModalPro
   //click handler for x in modal window
   //sets display modal to false and resets the shared features object.
   const handleModalClose = (e) => {
-    setDisplayModal(false);
-    setSharedFeatures({});
+    relatedContext.setDisplayModal(false);
+    relatedContext.setSharedFeatures({});
   }
 
   //creates an object that compares the current product
@@ -53,9 +55,9 @@ var RelatedListCard = ({product, setDisplayModal, setSharedFeatures, setModalPro
       }
     })
 
-    setSharedFeatures(sharedFeatures);
-    setModalProduct(product);
-    setDisplayModal(true);
+    relatedContext.setSharedFeatures(sharedFeatures);
+    relatedContext.setModalProduct(product);
+    relatedContext.setDisplayModal(true);
   }
 
   const calculateSalePrice = () => {

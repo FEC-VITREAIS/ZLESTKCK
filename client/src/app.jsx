@@ -58,10 +58,10 @@ let App = function(props) {
     });
 
     // related products
-    fetchRelatedProducts(currentProduct)
-    .then((relatedItemsData) => {
-      setRelatedItems(relatedItemsData);
-    });
+    // fetchRelatedProducts(currentProduct)
+    // .then((relatedItemsData) => {
+    //   setRelatedItems(relatedItemsData);
+    // });
 
     //Questions and Answers
     fetchQA(currentProduct)

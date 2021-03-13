@@ -6,7 +6,9 @@ const RelatedProductContext = React.createContext({
   displayModal: false,
   setDiplayModal: (bool) => {},
   sharedFeatures: {},
-  setsharedFeatures: () => {}
+  setsharedFeatures: () => {},
+  modalProduct: {},
+  setModalProduct: ()=>{}
 });
 
 export default RelatedProductContext;
