@@ -4,11 +4,11 @@ A four person dev team created a front-end shopping application using React with
 ![CREAM-frameworks-logos](./README-static/Cream-Framework-Logos.png)
 
 ## Table of Contents
-1. [Installing Dependencies](##Installing-Dependencies)
-2. [Technologies Used](##Technologies-Used)
-3. [Requirements](##Requirements)
-4. [Components](#Components)
-5. [Notes](#Notes)
+1. Installing Dependencies
+2. Technologies Used
+3. Requirements
+4. Components
+5. Notes
 
 ## Installing-Dependencies
 Navigate to the root directory and run the following scripts to run locally
@@ -49,15 +49,15 @@ The seperate team member was in charge of the 4 main components seen on the app.
 
 ### Related Products Page
 
-![alt text](./READMEimgs/Related.png?raw=true "Title")
+![Alt text](READMEimgs/Related.png?raw=true "Title")
 
 ### Questions & Answers
 
-![alt text](./READMEimgs/QA.png?raw=true "Title")
+![Alt text](READMEimgs/QA.png?raw=true "Title")
 
 ### Customer Reviews
 
-![alt text](./READMEimgs/Reviews.png?raw=true "Title")
+![Alt text](READMEimgs/Reviews.png?raw=true "Title")
 
 ## Notes
 IMPORTANT: development vs. production
