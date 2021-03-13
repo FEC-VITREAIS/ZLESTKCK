@@ -62,6 +62,5 @@ The seperate team member was in charge of the 4 main components seen on the app.
 ![Alt text](READMEimgs/Reviews.png?raw=true "Title")
 
 ## Notes
-IMPORTANT: development vs. production
-
-NA
+>IMPORTANT: development vs. production
+>NA
