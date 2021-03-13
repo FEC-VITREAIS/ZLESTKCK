@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import ProductContext from '../context.jsx'; //ACTION: Delete when refactored
-import QAstyles from './styles/QAstyles.css'
+// import QAstyles from './styles/QAstyles.css'
 import AnswerEntries from './QA-AnswerEntries.jsx'
 import AModal from './QA-AnswerModal.jsx'
 import ReactModal from 'react-modal';

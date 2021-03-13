@@ -236,7 +236,7 @@ a:link {
 }
 
 .QAsearch {
-  background-color: rgb(240, 241, 145); */
+  /* background-color: rgb(240, 241, 145);  */
   display: flex;
   justify-content: center;
 }
@@ -247,13 +247,13 @@ a:link {
 }
 
 .QAsearchResults {
-  background-color: rgb(240, 241, 145); */
+  /* background-color: rgb(240, 241, 145); */
   display: flex;
   justify-content: center;
 }
 
 .QAqmodal {
-  background-color: rgb(136, 152, 245); */
+  /* background-color: rgb(136, 152, 245); */ 
 }
 
 .QAqmodal_title {
