@@ -1,7 +1,7 @@
 # CREAM App Documentation
 A four person dev team created a front-end shopping application using React with React Hooks and the React Context API as the primary libraries. Express was used for client-side routing, CSS for styling and the font-awesome library for icons. This project was built in three weeks using guidelines from a mock buisness requirements document.
 
-![CREAM-frameworks-logos](./README-static/Cream-Framework-Logos.png)
+![CREAM-frameworks-logos](./READMEimgs/Cream-Framework-Logos.png)
 
 ## Table of Contents
 1. Installing Dependencies
@@ -50,6 +50,8 @@ The seperate team member was in charge of the 4 main components seen on the app.
 ### Related Products Page
 
 ![Alt text](READMEimgs/Related.png?raw=true "Title")
+![Related-Products-Demo](READMEimgs/Related-Products-Demo.mp4)
+
 
 ### Questions & Answers
 
