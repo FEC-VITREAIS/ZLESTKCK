@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react'
 import ProductContext from '../context.jsx';
 import QuestionEntries from './QA-QuestionEntries.jsx'
 import sortingFunction from './QA-HelperFunctions.js'
-import QAstyles from './styles/QAstyles.css'
+// import QAstyles from './styles/QAstyles.css'
 
 let QAList = function({questions}) {
   const [currentSort, setCurrentSort] = useState('helpful')
