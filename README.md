@@ -45,7 +45,7 @@ The seperate team member was in charge of the 4 main components seen on the app.
 
 ### Product Overview
 
-![alt text](./READMEimgs/Overview.png?raw=true "Title")
+![alt text](./READMEimgs/Overview.png)
 
 ### Related Products Page
 
