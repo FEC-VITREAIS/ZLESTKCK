@@ -10,6 +10,7 @@ var YourOutfitsList = () => {
   const [outfitsList, setOutfitsList] = useState([]); //array containing all outfits selected by user
   const [outfitsListCache, setOutfitsListCache] = useState({11101: false}); //outfits cache object used to check for duplicate entries when adding to outfits list
   const [currentProductDetails, setCurrentProductDetails] = useState({}); //object storing the details of the currently displayed product
+  const [update, setUpdate] = useState(true);
   const context = useContext(ProductContext);
 
   console.log('outfits list cache: ', outfitsListCache);
@@ -44,7 +45,7 @@ var YourOutfitsList = () => {
 
     currentProduct.ratings = currentRatings;
     setCurrentProductDetails(currentProduct);
-  }, [context.currentProductDetails, outfitsList])
+  }, [outfitsListCache])
 
 
 
@@ -60,7 +61,6 @@ var YourOutfitsList = () => {
     if (!outfitsListCache[currentProductDetails.id]) {
       setOutfitsList([...outfitsList, currentProductDetails])
     };
-
 
   };
 
