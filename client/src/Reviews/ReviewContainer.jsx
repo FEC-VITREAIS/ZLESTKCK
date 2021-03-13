@@ -1,40 +1,51 @@
-import React, {useContext, useEffect} from 'react'
-import axios from 'axios';
-import API_KEY from '../../../config.js';
+import React, { useContext, useEffect, useState } from "react";
+// import './styles/ReviewStyles.css';
+import ReviewListDiv from "./ReviewListDiv.jsx";
+import ProductContext from "../context.jsx";
+import ReviewBreakdown from "./ReviewBreakdown.jsx";
+import ReviewModal from "./ReviewModal";
+import StarRating from "./Star-Rating.jsx";
 
-const ProductContext = React.createContext(0);
+let ReviewContainer = function (props) {
+  const context = useContext(ProductContext);
 
-let ReviewContainer = function(props) {
-
-  const value = useContext(ProductContext);
-
-  var fetchAll = () => {
-    axios.get('https://app-hrsei-api.herokuapp.com/api/fec2/hrnyc/reviews?product_id=11001&page=1',
-    {
-      headers: {
-        Authorization: API_KEY
-      }
-    })
-    .then((data) => {
-      console.log(data);
-    })
-    .catch((err) => {
-      console.log(err);
-    })
-  }
+  const [ReviewMeta, setReviewMeta] = useState({});
+  const [showReviewForm, setShowReviewForm] = useState(false);
 
   useEffect(() => {
-    fetchAll();
-  })
+    const reviewMeta = context.productReviewsMetaData;
+    setReviewMeta(reviewMeta);
+  }, [context.productReviewsMetaData]);
 
+  const closeForm = () => {
+    setShowReviewForm(!showReviewForm);
+  };
 
+  // console.log('METADATA: ', context.productReviewsMetaData);
+  // console.log('Check if true: ', context.productReviewsMetaData.characteristics)
 
   return (
-    <ProductContext.Provider>
-      <div>Product Reviews Container</div>
-      <div>{value}</div>
-    </ProductContext.Provider>
-  )
-}
+    <>
+      <span id="review-container-span"></span>
+      <div className="review-container">
+        <h3>RATINGS & REVIEWS</h3>
 
-export default ReviewContainer
+        {context.productReviews && context.productReviews.length && (
+          <ReviewListDiv
+            setShowReviewForm={setShowReviewForm}
+            showReview={showReviewForm}
+            currentSort={props.reviewsSortBy}
+          />
+        )}
+
+        {ReviewMeta && ReviewMeta.ratings && (
+          <ReviewBreakdown data={ReviewMeta} />
+        )}
+
+        <ReviewModal open={showReviewForm} closeForm={closeForm} />
+      </div>
+    </>
+  );
+};
+
+export default ReviewContainer;
