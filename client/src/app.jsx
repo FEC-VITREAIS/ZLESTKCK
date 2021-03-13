@@ -56,7 +56,7 @@ let App = function(props) {
       setCurrentProductDetails(data);
     });
 
-    //related products
+    // related products
     fetchRelatedProducts(currentProduct)
     .then((relatedItemsData) => {
       setRelatedItems(relatedItemsData);
@@ -112,7 +112,7 @@ let App = function(props) {
       <div>
         <div id='header'><img id='header-logo'src='https://i.imgur.com/g8hJeOQ.png' alt='cream company logo'/></div>
         <ProductContainer />
-        <RelatedContainer />
+        <RelatedContainer product={currentProductDetails} async/>
         <QAContainer currentProductId={currentProduct} />
         <ReviewContainer currentSort={reviewsSortBy}/>
       </div>

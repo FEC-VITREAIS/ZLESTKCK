@@ -1,10 +1,12 @@
 import React, {createContext} from 'react';
 
-const ProductContext = React.createContext({
+const RelatedProductContext = React.createContext({
+  relatedProducts: [],
+  setRelatedProducts: () => {},
   displayModal: false,
   setDiplayModal: (bool) => {},
   sharedFeatures: {},
   setsharedFeatures: () => {}
 });
 
-export default ProductContext;
+export default RelatedProductContext;
