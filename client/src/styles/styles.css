@@ -1043,8 +1043,8 @@ a:link {
   margin-bottom: 10px;
 }
 
-.RevModalForm {
-
+.RevModalTitle {
+  margin: none;
 }
 
 .RevSelectFilter {
@@ -1111,4 +1111,75 @@ a:link {
   left: 50%
 }
 
+.RevModalContainer fieldset {
+  border: none;
+}
+
+.ModalFormChar {
+  display: grid;
+  grid-template-columns: 20% 16% 16% 16% 16% 16%;
+  grid-template-rows: 100%
+}
+
+.ModalStyleLabel {
+  grid-column-start: 1;
+  justify-self: right;
+}
+
+.ModalCol1 {
+  grid-column-start: 2;
+  display: grid;
+  grid-template-rows: 15px 10px;
+  justify-self: center;
+}
+
+.ModalCol2 {
+  grid-column-start: 3;
+  display: grid;
+  grid-template-rows: 15px 10px;
+  justify-self: center;
+}
+
+.ModalCol3 {
+  grid-column-start: 4;
+  display: grid;
+  grid-template-rows: 15px 10px;
+  justify-self: center;
+}
+
+.ModalCol4 {
+  grid-column-start: 5;
+  display: grid;
+  grid-template-rows: 15px 10px;
+  justify-self: center;
+}
+
+.ModalCol5 {
+  grid-column-start: 6;
+  display: grid;
+  grid-template-rows: 15px 10px;
+  justify-self: center;
+}
+
+.ModalLabel {
+  grid-row-start: 2;
+  justify-self: center;
+  font-size: 10px;
+}
+
+.ModalButton {
+  grid-row-start: 1;
+  justify-self: center
+}
+
+.MinCharLeft {
+  font-size: 10px;
+}
+
+
+.ReviewModalBody {
+  vertical-align: middle;
+}
+
+/* Adding a comment so I can push */
 /* --------------- END OF REVIEWS STYLES --------------------*/
