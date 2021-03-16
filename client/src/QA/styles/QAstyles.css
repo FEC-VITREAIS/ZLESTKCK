@@ -253,7 +253,7 @@ a:link {
 }
 
 .QAqmodal {
-  /* background-color: rgb(136, 152, 245); */ 
+  /* background-color: rgb(136, 152, 245); */
 }
 
 .QAqmodal_title {
@@ -332,6 +332,7 @@ a:link {
 }
 
 [class ^= ReactModal] {
-  width: 70% !important;
+  width: 60% !important;
   margin: auto !important;
+  height: 80% !important;
 }
