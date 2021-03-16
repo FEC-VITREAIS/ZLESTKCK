@@ -54,52 +54,47 @@ let QAList = function({questions}) {
     renderQuestions(4)
     }, [currentSort])
 
-  if (questions.length) {
     return (
-      <>
-      <div className="QAlist">
-        <div className="QAlist_displayCount">Questions 1-{displayedQIndex} of {qCount}</div>
-        <select className="QAlist_sortButton">
-            <option className="QAlist_sortLinks" value="helpful" onClick={sortClickHandler}>Most Helpful</option>
-            <option className="QAlist_sortLinks" value="recent" onClick={sortClickHandler}>Most Recent</option>
-            <option className="QAlist_sortLinks" value="userA" onClick={sortClickHandler}>Username: Ascending</option>
-        </select>
-      </div>
-
-      <div className="QAlist_container">
-        {displayedQuestions.map((question) => {
-          return (
-            <QuestionEntries
-              body={question.question_body}
-              asker={question.asker_name}
-              date={question.question_date}
-              helpfulCount={question.question_helpfulness}
-              reported={question.reported}
-              answers={Object.values(question.answers)}
-              qCount={qCount}
-              key={question.question_id} />
-            )
-          }
-        )}
-      </div>
-      <div>
-        {isQFullyLoaded ?
-          <div className="QAlist_loadMoreQuestions">
-            <button  className ="QAlist_loadMoreQuestionsButton"type="button" onClick={collapseQClickHandler}>Collapse Questions</button>
-          </div>
-          :
-          <div className="QAlist_loadMoreQuestions">
-            <button className ="QAlist_loadMoreQuestionsButton" type="button" onClick={loadQClickHandler}>Show more questions</button>
-            <button className ="QAlist_loadMoreQuestionsButton" type="button" onClick={hideQClickHandler}>Show less questions</button>
-          </div>
-        }
-      </div>
-      </>
-    )
-  } else {
     <>
+    <div className="QAlist">
+      <div className="QAlist_displayCount">Questions 1-{displayedQIndex} of {qCount}</div>
+      <select className="QAlist_sortButton">
+          <option className="QAlist_sortLinks" value="helpful" onClick={sortClickHandler}>Most Helpful</option>
+          <option className="QAlist_sortLinks" value="recent" onClick={sortClickHandler}>Most Recent</option>
+          <option className="QAlist_sortLinks" value="userA" onClick={sortClickHandler}>Username: Ascending</option>
+      </select>
+    </div>
+
+    <div className="QAlist_container">
+      {displayedQuestions.map((question) => {
+        return (
+          <QuestionEntries
+            body={question.question_body}
+            asker={question.asker_name}
+            date={question.question_date}
+            helpfulCount={question.question_helpfulness}
+            reported={question.reported}
+            answers={Object.values(question.answers)}
+            qCount={qCount}
+            key={question.question_id} />
+          )
+        }
+      )}
+    </div>
+    <div>
+      {isQFullyLoaded ?
+        <div className="QAlist_loadMoreQuestions">
+          <button  className ="QAlist_loadMoreQuestionsButton"type="button" onClick={collapseQClickHandler}>Collapse Questions</button>
+        </div>
+        :
+        <div className="QAlist_loadMoreQuestions">
+          <button className ="QAlist_loadMoreQuestionsButton" type="button" onClick={loadQClickHandler}>Show more questions</button>
+          <button className ="QAlist_loadMoreQuestionsButton" type="button" onClick={hideQClickHandler}>Show less questions</button>
+        </div>
+      }
+    </div>
     </>
-  }
+  )
 }
 
 export default QAList
